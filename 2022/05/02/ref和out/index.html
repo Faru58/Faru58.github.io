@@ -16,19 +16,41 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://example.com/archives/index.html">
+    <meta name="description" content="#ref和out 重点知识点：1.ref和out的作用: 解决值类型和引用类型 在函数内部 改值 或者 重新声明 能够影响外部传入的变量 让其也被修改2.使用上: 就是在声明参数的时候 前面加上ref和out的 关键字即可 使用时同上3.区别： 1.ref传入的变量必须初始化  out不用 2.out传入的变量必须在内部赋值  ref不用 #练习题  static bool Login(int u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ref和out">
+<meta property="og:url" content="http://example.com/2022/05/02/ref%E5%92%8Cout/index.html">
 <meta property="og:site_name" content="垃圾桶">
+<meta property="og:description" content="#ref和out 重点知识点：1.ref和out的作用: 解决值类型和引用类型 在函数内部 改值 或者 重新声明 能够影响外部传入的变量 让其也被修改2.使用上: 就是在声明参数的时候 前面加上ref和out的 关键字即可 使用时同上3.区别： 1.ref传入的变量必须初始化  out不用 2.out传入的变量必须在内部赋值  ref不用 #练习题  static bool Login(int u">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/ref%E5%92%8Cout/%E7%BB%83%E4%B9%A0%E9%A2%98.png">
+<meta property="article:published_time" content="2022-05-01T16:58:08.000Z">
+<meta property="article:modified_time" content="2022-05-01T17:45:16.751Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/ref%E5%92%8Cout/%E7%BB%83%E4%B9%A0%E9%A2%98.png">
   
   
-  <title>归档 - 垃圾桶</title>
+  <title>ref和out - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -55,7 +77,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -151,14 +173,48 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/%E9%BB%8E%E4%B9%8B%E8%BD%A8%E8%BF%B91.png') no-repeat center center;
+         style="background: url('/img/%E4%BC%8A%E8%8B%8F9.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="垃圾分类">
+            <span class="h2" id="subtitle" title="ref和out">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-02 00:58" pubdate>
+        2022年5月2日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      864 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8 分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -171,58 +227,134 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 4 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/05/02/ref%E5%92%8Cout/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">ref和out</span>
-      <time style="float: right;">05-02</time>
-    </a>
-  
-    
-    <a href="/2022/05/01/2022%E5%B9%B45%E6%9C%881%E6%97%A5/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">2022年5月1日</span>
-      <time style="float: right;">05-01</time>
-    </a>
-  
-    
-    <a href="/2022/04/30/%E7%AC%AC%E4%B8%80%E4%BB%BD%E5%9E%83%E5%9C%BE/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">第一份垃圾</span>
-      <time style="float: right;">04-30</time>
-    </a>
-  
-    
-    <a href="/2022/04/30/hello-world/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hello World</span>
-      <time style="float: right;">04-30</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">ref和out</h1>
+            
+            <div class="markdown-body">
+              <p>#ref和out</p>
+<p>重点知识点：<br>1.ref和out的作用: 解决值类型和引用类型 在函数内部 改值 或者 重新声明 能够影响外部传入的变量 让其也被修改<br>2.使用上: 就是在声明参数的时候 前面加上ref和out的 关键字即可 使用时同上<br>3.区别：<br> 1.ref传入的变量必须初始化  out不用<br> 2.out传入的变量必须在内部赋值  ref不用</p>
+<p>#练习题</p>
+<p><img src="/ref%E5%92%8Cout/%E7%BB%83%E4%B9%A0%E9%A2%98.png" srcset="/img/loading.gif" lazyload></p>
+<div class="code-wrapper"><pre><code class="hljs">static bool Login(int user, int key, ref string info)
+    &#123;
+        if(user == 0)
+        &#123;
+            //用户名正确的逻辑
+            if(key == 0)
+            &#123;
+                //用户名正确且密码正确的逻辑
+                info = &quot;登录成功&quot;;
+            &#125;
+            else
+            &#123;
+                //密码错误的逻辑
+                info = &quot;密码错误&quot;;
+                return false;
+            &#125;
+        &#125;
+        else
+        &#123;
+            //用户名错误的逻辑
+            info = &quot;用户名错误&quot;;
+            return false;
+        &#125;       
+        return true;
+    &#125;
+static void Main(string[] args)
+    &#123;
+        Console.WriteLine(&quot;请输入用户名和密码&quot;);
+            int user = int.Parse(Console.ReadLine());
+            int key = int.Parse(Console.ReadLine());
+            string info = &quot;&quot;; //ref需要初始化
 
+            while (!Login(user, key, ref info)) //若登录失败继续尝试
+            &#123;
+                Console.WriteLine(info); //登录失败直接进入循环 打印登陆失败
+                Console.WriteLine(&quot;请输入用户名和密码&quot;);
+                user = int.Parse(Console.ReadLine()); //不需要再声明
+                key = int.Parse(Console.ReadLine());
+            &#125;
+            Console.WriteLine(info);
+    &#125;
+</code></pre></div>
 
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/study/">study</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/01/2022%E5%B9%B45%E6%9C%881%E6%97%A5/">
+                        <span class="hidden-mobile">2022年5月1日</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -305,6 +437,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 

@@ -4,12 +4,43 @@
   
   
   <entry>
+    <title>ref和out</title>
+    <link href="/2022/05/02/ref%E5%92%8Cout/"/>
+    <url>/2022/05/02/ref%E5%92%8Cout/</url>
+    
+    <content type="html"><![CDATA[<p>#ref和out</p><p>重点知识点：<br>1.ref和out的作用: 解决值类型和引用类型 在函数内部 改值 或者 重新声明 能够影响外部传入的变量 让其也被修改<br>2.使用上: 就是在声明参数的时候 前面加上ref和out的 关键字即可 使用时同上<br>3.区别：<br> 1.ref传入的变量必须初始化  out不用<br> 2.out传入的变量必须在内部赋值  ref不用</p><p>#练习题</p><p><img src="/ref%E5%92%8Cout/%E7%BB%83%E4%B9%A0%E9%A2%98.png"></p><div class="code-wrapper"><pre><code class="hljs">static bool Login(int user, int key, ref string info)    &#123;        if(user == 0)        &#123;            //用户名正确的逻辑            if(key == 0)            &#123;                //用户名正确且密码正确的逻辑                info = &quot;登录成功&quot;;            &#125;            else            &#123;                //密码错误的逻辑                info = &quot;密码错误&quot;;                return false;            &#125;        &#125;        else        &#123;            //用户名错误的逻辑            info = &quot;用户名错误&quot;;            return false;        &#125;               return true;    &#125;static void Main(string[] args)    &#123;        Console.WriteLine(&quot;请输入用户名和密码&quot;);            int user = int.Parse(Console.ReadLine());            int key = int.Parse(Console.ReadLine());            string info = &quot;&quot;; //ref需要初始化            while (!Login(user, key, ref info)) //若登录失败继续尝试            &#123;                Console.WriteLine(info); //登录失败直接进入循环 打印登陆失败                Console.WriteLine(&quot;请输入用户名和密码&quot;);                user = int.Parse(Console.ReadLine()); //不需要再声明                key = int.Parse(Console.ReadLine());            &#125;            Console.WriteLine(info);    &#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年5月1日</title>
     <link href="/2022/05/01/2022%E5%B9%B45%E6%9C%881%E6%97%A5/"/>
     <url>/2022/05/01/2022%E5%B9%B45%E6%9C%881%E6%97%A5/</url>
     
-    <content type="html"><![CDATA[<p>劳动节快乐</p><span id="more"></span><p>今天是51，兴许也该说声51快乐，大家都有各自的烦恼，无条件的快乐想必也没有那么容易吧。<br>早上也是晚晚的起床，也不能说什么都不想干，只是总感觉累累的，感觉什么都做不好罢了。倒也不能说是什么压力太大喘不过气，其实也只是让我审稿罢了，我一直想混日子度过3年时光，但说实话到现在还没混明白，主要就是感觉自己没那水平，做不好。确实是沟通太少了，不明白我导究竟是什么想法，虽然我也不觉得他会很坦诚的和我说。大家都挺不容易的，做好自己的事情都已经精一杯了，但至少我现在不迷茫了，不是吗。下周努努力，把稿子审了，把论文用LaTeX写了，加油吧，后面还有困难的强化学习等着我。<br>在想需不需要再专门做个学习记录，感觉也可以，慢慢来吧，虽然时间不多，但也正如一恒说的要注意身体，老爹说的不要着急。至少，还有人没有放弃我。</p>]]></content>
+    <content type="html"><![CDATA[<p>劳动节快乐</p><span id="more"></span><p>#更新1</p><p>今天是51，兴许也该说声51快乐，大家都有各自的烦恼，无条件的快乐想必也没有那么容易吧。<br>早上也是晚晚的起床，也不能说什么都不想干，只是总感觉累累的，感觉什么都做不好罢了。倒也不能说是什么压力太大喘不过气，其实也只是让我审稿罢了，我一直想混日子度过3年时光，但说实话到现在还没混明白，主要就是感觉自己没那水平，做不好。确实是沟通太少了，不明白我导究竟是什么想法，虽然我也不觉得他会很坦诚的和我说。大家都挺不容易的，做好自己的事情都已经精一杯了，但至少我现在不迷茫了，不是吗。下周努努力，把稿子审了，把论文用LaTeX写了，加油吧，后面还有困难的强化学习等着我。<br>在想需不需要再专门做个学习记录，感觉也可以，慢慢来吧，虽然时间不多，但也正如一恒说的要注意身体，老爹说的不要着急。至少，还有人没有放弃我。</p><p>#更新2</p><p>学了ref 和 out，属于是刷新了学C的时候的指针的概念，有点牛逼。最后还是把早坂爱强氪出来了，唉，我这脑子也得修修了，钱也不是大风刮来的。<br>下午想着自己不适合搞研究，但是也是突然想起来小昭（前野智昭）说的，最开始工作的时候都是挺折磨的，铆足了劲想着做好，直到干了18年，才能身心投入享受工作，我也是缺少这一种过程吧，只能说再加把劲吧。</p>]]></content>
     
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
     
     
     <tags>
@@ -29,6 +60,12 @@
     
     <content type="html"><![CDATA[<p>开始倒垃圾</p><span id="more"></span><p>#更新1</p><p>昨夜3点入眠，还在做着今早去不去实验室的思想斗争，结果8点半自然醒了，一股怨气油然而生，随即想睡个回笼觉，可再也没睡着。磨蹭到10点起床，想起昨晚说要弄个博客试试，搞了近两小时，也算是配置了个雏形。</p><p>过后试试调整下首页，午饭也不想去食堂吃了，中午稍微快进下看完泡泡，下午做完核酸就去实验室画个图，晚上再继续学C#，不知道我的转码之路能不能成功。</p><p>今晚再说，祝好。</p><p>#更新2</p><p>下午画了一张图，累累的，周报也就写了一点，感觉就这样了，随便扒拉两口饭就会去学C#。</p><p>#更新3</p><p>现在是深夜2点45，说实话确实打撸很累，也不应该熬夜。<br>把零碎的时间拼起来，帮王羽检查了错别字，还把函数知识点学完了，也算是不错的结束，明天是51，希望能开心度过，毕竟一会又要审稿了，不久之后就要研二的我，是否又能担起重任。</p><div class="code-wrapper"><pre><code class="hljs">函数语法 static 返回类型 函数名(参数类型 参数名1, 参数名2, ......)</code></pre></div>]]></content>
     
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
     
     
     <tags>
