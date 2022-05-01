@@ -246,7 +246,8 @@
 <p>#ref和out</p>
 <p>重点知识点：<br>1.ref和out的作用: 解决值类型和引用类型 在函数内部 改值 或者 重新声明 能够影响外部传入的变量 让其也被修改<br>2.使用上: 就是在声明参数的时候 前面加上ref和out的 关键字即可 使用时同上<br>3.区别：<br> 1.ref传入的变量必须初始化  out不用<br> 2.out传入的变量必须在内部赋值  ref不用</p>
 <p>#练习题</p>
-<p><img src="/2022/05/02/ref%E5%92%8Cout/exam.jpg" srcset="/img/loading.gif" lazyload></p>
+<img src="/2022/05/02/ref%E5%92%8Cout/exam.jpg" srcset="/img/loading.gif" lazyload class="">
+
 <div class="code-wrapper"><pre><code class="hljs">static bool Login(int user, int key, ref string info)
     &#123;
         if(user == 0)
