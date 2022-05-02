@@ -16,23 +16,23 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2022.5.1">
+    <meta name="description" content="2022.5.2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ref和out">
-<meta property="og:url" content="http://example.com/2022/05/02/ref%E5%92%8Cout/index.html">
+<meta property="og:title" content="变长参数和参数默认值">
+<meta property="og:url" content="http://example.com/2022/05/02/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E5%92%8C%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="2022.5.1">
+<meta property="og:description" content="2022.5.2">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/05/02/ref%E5%92%8Cout/exam.jpg">
-<meta property="article:published_time" content="2022-05-01T16:58:08.000Z">
-<meta property="article:modified_time" content="2022-05-01T18:20:12.012Z">
+<meta property="og:image" content="http://example.com/2022/05/02/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E5%92%8C%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC/exam.jpg">
+<meta property="article:published_time" content="2022-05-02T14:06:21.000Z">
+<meta property="article:modified_time" content="2022-05-02T16:23:10.448Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/05/02/ref%E5%92%8Cout/exam.jpg">
+<meta name="twitter:image" content="http://example.com/2022/05/02/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E5%92%8C%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC/exam.jpg">
   
   
-  <title>ref和out - 垃圾桶</title>
+  <title>变长参数和参数默认值 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -178,7 +178,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="ref和out">
+            <span class="h2" id="subtitle" title="变长参数和参数默认值">
               
             </span>
 
@@ -188,8 +188,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-02 00:58" pubdate>
-        2022年5月2日 凌晨
+      <time datetime="2022-05-02 22:06" pubdate>
+        2022年5月2日 晚上
       </time>
     </span>
   
@@ -199,7 +199,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      878 字
+      1.1k 字
     </span>
   
 
@@ -208,7 +208,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      10 分钟
     </span>
   
 
@@ -237,60 +237,78 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">ref和out</h1>
+            <h1 style="display: none">变长参数和参数默认值</h1>
             
             <div class="markdown-body">
-              <p>2022.5.1</p>
+              <p>2022.5.2</p>
 <span id="more"></span>
 
-<p>#ref和out</p>
-<p>重点知识点：<br>1.ref和out的作用: 解决值类型和引用类型 在函数内部 改值 或者 重新声明 能够影响外部传入的变量 让其也被修改<br>2.使用上: 就是在声明参数的时候 前面加上ref和out的 关键字即可 使用时同上<br>3.区别：<br> 1.ref传入的变量必须初始化  out不用<br> 2.out传入的变量必须在内部赋值  ref不用</p>
-<p>#练习题</p>
-<img src="/2022/05/02/ref%E5%92%8Cout/exam.jpg" srcset="/img/loading.gif" lazyload class="">
+<p>****#变长参数和参数默认值</p>
+<p>重点知识点：<br>****1 变长参数关键字 params<br>&amp;emsp;作用： 可以传入n个同类型参数 n可以是0<br>&amp;emsp;注意：<br>&amp;emsp;&amp;emsp;1.params 后面必须是数组 意味着只能是同一类型的可变参数<br>&amp;emsp;&amp;emsp;2.变长参数只能有一个<br>&amp;emsp;&amp;emsp;3.必须在所有参数后面写变长参数</p>
+<p>****2 参数默认值（可选参数）<br>&amp;emsp;作用：可以给参数默认值 使用时可以不传参 不传用默认的 传了用传的<br>&amp;emsp;注意：<br>&amp;emsp;&amp;emsp;1.可选参数可以有多个<br>&amp;emsp;&amp;emsp;2.正常参数必须写在可选参数前面，可选参数只能写在所有参数的后面</p>
+<p>****#练习题</p>
+<img src="/2022/05/02/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E5%92%8C%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC/exam.jpg" srcset="/img/loading.gif" lazyload class="">
 
 <p>以下是答案：</p>
-<div class="code-wrapper"><pre><code class="hljs">static bool Login(int user, int key, ref string info)
+<div class="code-wrapper"><pre><code class="hljs">using System;
+
+namespace Lesson9_变长参数和参数默认值练习题
+&#123;
+    internal class Program
     &#123;
-        if(user == 0)
+
+        #region 练习题1
+        static void SumAndAvg(params int[] arr)
         &#123;
-            //用户名正确的逻辑
-            if(key == 0)
+            int sum = 0;
+            for (int i = 0; i &lt; arr.Length; i++)
             &#123;
-                //用户名正确且密码正确的逻辑
-                info = &quot;登录成功&quot;;
+                sum += arr[i];
             &#125;
-            else
-            &#123;
-                //密码错误的逻辑
-                info = &quot;密码错误&quot;;
-                return false;
-            &#125;
+            double avg = sum / (double)arr.Length;
+            Console.WriteLine(&quot;它们的和为&#123;0&#125;,平均数为&#123;1&#125;&quot;, sum, avg);
         &#125;
-        else
+        #endregion
+
+        #region 练习题2
+        static void OddEven(params int[] arr)
         &#123;
-            //用户名错误的逻辑
-            info = &quot;用户名错误&quot;;
-            return false;
-        &#125;       
-        return true;
-    &#125;
-
-static void Main(string[] args)
-    &#123;
-        Console.WriteLine(&quot;请输入用户名和密码&quot;);
-            int user = int.Parse(Console.ReadLine());
-            int key = int.Parse(Console.ReadLine());
-            string info = &quot;&quot;; //ref需要初始化
-
-            while (!Login(user, key, ref info)) //若登录失败继续尝试
+            int odd = 0, even = 0;
+            for (int i = 0; i &lt; arr.Length; i++)
             &#123;
-                Console.WriteLine(info); //登录失败直接进入循环 打印登陆失败
-                Console.WriteLine(&quot;请输入用户名和密码&quot;);
-                user = int.Parse(Console.ReadLine()); //不需要再声明
-                key = int.Parse(Console.ReadLine());
+                if(arr[i] % 2 == 0)
+                &#123;
+                    even += arr[i];
+                &#125;
+                else
+                &#123;
+                    odd += arr[i];
+                &#125;
             &#125;
-            Console.WriteLine(info);
-    &#125;
+            Console.WriteLine(&quot;奇数和为&#123;0&#125;,偶数和为&#123;1&#125;&quot;, odd, even);
+        &#125;
+        #endregion
+
+
+
+        static void Main(string[] args)
+        &#123;
+            Console.WriteLine(&quot;变长参数和参数默认值练习题&quot;);
+
+            #region 练习题1
+
+            SumAndAvg(5, 9, 11, 52);
+
+            #endregion
+
+            #region 练习题2
+
+            OddEven(10, 11, 12);
+
+            #endregion
+
+        &#125;
+&#125;
 </code></pre></div>
 
             </div>
@@ -326,9 +344,9 @@ static void Main(string[] args)
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/02/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E5%92%8C%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC/">
+                      <a href="/2022/05/02/2022%E5%B9%B45%E6%9C%882%E6%97%A5/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">变长参数和参数默认值</span>
+                        <span class="hidden-mobile">2022年5月2日</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -336,8 +354,8 @@ static void Main(string[] args)
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/01/2022%E5%B9%B45%E6%9C%881%E6%97%A5/">
-                        <span class="hidden-mobile">2022年5月1日</span>
+                      <a href="/2022/05/02/ref%E5%92%8Cout/">
+                        <span class="hidden-mobile">ref和out</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
