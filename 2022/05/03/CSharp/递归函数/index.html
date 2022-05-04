@@ -23,12 +23,14 @@
 <meta property="og:site_name" content="垃圾桶">
 <meta property="og:description" content="2022.5.3">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/05/03/CSharp/%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0/exam.png">
 <meta property="article:published_time" content="2022-05-03T11:59:51.000Z">
 <meta property="article:modified_time" content="2022-05-03T13:12:11.131Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/05/03/CSharp/%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0/exam.png">
   
   
   <title>递归函数 - 垃圾桶</title>
@@ -245,7 +247,7 @@
 <p><strong>#递归函数</strong></p>
 <p>重点知识点：<br><strong>递归函数</strong><br>概念： 让函数自己调用自己<br>注意：<br>一个正确的递归函数<br>1.必须有结束调用的条件<br>2.用于条件判断的 这个条件必须改变 能够打到停止的目的</p>
 <p><strong>#练习题</strong></p>
-
+<img src="/2022/05/03/CSharp/%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0/exam.png" srcset="/img/loading.gif" lazyload class="">
 
 <p>using System;</p>
 <p>namespace Lesson11_递归函数练习题<br>{<br>    internal class Program<br>    {<br>        #region 练习题1<br>        static void ZeroTen(int a)<br>        {<br>            if(a &gt; 10)<br>            {<br>                return;<br>            }<br>            Console.WriteLine(a);<br>            ZeroTen(++a);<br>        }</p>
