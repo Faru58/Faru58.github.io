@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>CSharp入门实践——简易飞行棋</title>
+    <link href="/2022/05/04/CSharp/CSharp%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E7%AE%80%E6%98%93%E9%A3%9E%E8%A1%8C%E6%A3%8B/"/>
+    <url>/2022/05/04/CSharp/CSharp%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E7%AE%80%E6%98%93%E9%A3%9E%E8%A1%8C%E6%A3%8B/</url>
+    
+    <content type="html"><![CDATA[<p>控制台实现简易飞行棋</p><span id="more"></span><p><strong>#游戏逻辑流程图</strong><br>游戏逻辑题直接引用唐老狮课程里的流程图</p><p><strong>##整体逻辑流程图</strong></p><img src="/2022/05/04/CSharp/CSharp%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E7%AE%80%E6%98%93%E9%A3%9E%E8%A1%8C%E6%A3%8B/%E6%95%B4%E4%BD%93%E9%80%BB%E8%BE%91%E6%B5%81%E7%A8%8B%E5%9B%BE.png" class=""><p><strong>##开始场景流程图</strong></p><img src="/2022/05/04/CSharp/CSharp%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E7%AE%80%E6%98%93%E9%A3%9E%E8%A1%8C%E6%A3%8B/%E5%BC%80%E5%A7%8B%E5%9C%BA%E6%99%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png" class=""><p><strong>##游戏场景流程图</strong></p><img src="/2022/05/04/CSharp/CSharp%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E7%AE%80%E6%98%93%E9%A3%9E%E8%A1%8C%E6%A3%8B/%E5%BC%80%E5%A7%8B%E5%9C%BA%E6%99%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png" class=""><p><strong>##结束场景流程图</strong></p><img src="/2022/05/04/CSharp/CSharp%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E7%AE%80%E6%98%93%E9%A3%9E%E8%A1%8C%E6%A3%8B/%E7%BB%93%E6%9D%9F%E5%9C%BA%E6%99%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png" class=""><p><strong>#代码实现（更新中）</strong></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CSharp入门总结</title>
     <link href="/2022/05/04/CSharp/CSharp%E5%85%A5%E9%97%A8%E6%80%BB%E7%BB%93/"/>
     <url>/2022/05/04/CSharp/CSharp%E5%85%A5%E9%97%A8%E6%80%BB%E7%BB%93/</url>
@@ -124,7 +153,7 @@
     <link href="/2022/05/04/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%884%E6%97%A5/"/>
     <url>/2022/05/04/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%884%E6%97%A5/</url>
     
-    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="7534e47023136be9194c18eb9f1c6b6b277fbdb5e67f276a7a24e964121d9ede">a03af1012de36d86e65bfb0d51f6ff10a85bce09851f2195bb4f8fea8640a11f4fdfb5404fa16976a85f9e43e1af13b39ced62e64f813af077b9d08f855549bb693c94260630e851cfc5c04e68c527e3a17450c87ce76f6fdb2ef43a55797a7777cff256c4d0f9d6b99ad44db2b90417d46eab1db55e0489a309b13ad08a065336d8ba80d6bceb2234392ea6a1d2aa59016ed4de0f729dd0a66b15e0e6295bcb7993ecdcb8a0e37716a1bc81c0581f7ea83a7916b2faf6b3357abf5c6297ab29a1d8b8ae6bbe76d3727289f77e70db1912b12025f60a623afb3858620ac7a37d4528819ecea311b85f02e0e41336cf4fd7dd76e1a45d5768c2a26ee3e1b6b33ad0a0f5bb14841897d62af8fed3c91fe5b0360d8d0822335b213a54da95611233085af226ae6f4691997105f0c7f84ded1992f0863bf98df173d77e498db0b73d2f527e0d398a64b3c7e0fb7bc04b95e349138f1c16c15cc2da415fb3c0c51e86542d5942d124f02003374da4d9fe80761b24341778593d77fa1e3dea6b88b07a47bb6159d05ecf4b5df6e47efbe59e1c773b15af23525ff00d12014253b60ad3e6303ebf27382ba5777003119af9c0b4c7367c8837255f778d920087a8f4920b11ae07f82a190a66ba53ac3248de50b476378f0a5f8041b92ba3f8d0e1603cd47225b022a6942091e0d498619a979402f675213cda6fbd65bc31d6e72ce46984a7d2a4dc336d6ac942edef3aae22d1c74ddda4c88a34e8f609d95061d35861f539623e1818033ba8b5f3a5249bdaac5e961ea1e79aeafca5d7db1a72f2d7645a7acf41d8728cf4c94263b575d7cc8d4d5e59aee42a920597dab6c1fa0948af8414d09204dfd842bff0ca37fe263f2f72b066175b78970ce1fdee2a52215f207e426f1ea3d5cd3d7f29336792bb1378fc5c944ed94de376705e804481b9ab7a101dd9d7fa749d10a0d19a81772aee0f4211d9e1fdd886311157c618362f22d44bd1554e9421d450218d1dc2fdbc3d857bb2aa8f4d083f573fbfa407b40e62e92520f7cf5acdd9311775d67b9616e1ac75af4d9f05246df9485f608341437ddb0e</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">要密码，快滚.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="fadddd9e54679ac2a35bed723d848fd2d740f6868e0e1015f1fef4003dbc0851">a03af1012de36d86e65bfb0d51f6ff10a85bce09851f2195bb4f8fea8640a11f4fdfb5404fa16976a85f9e43e1af13b39ced62e64f813af077b9d08f855549bb693c94260630e851cfc5c04e68c527e3a17450c87ce76f6fdb2ef43a55797a7777cff256c4d0f9d6b99ad44db2b90417d46eab1db55e0489a309b13ad08a065336d8ba80d6bceb2234392ea6a1d2aa59016ed4de0f729dd0a66b15e0e6295bcb7993ecdcb8a0e37716a1bc81c0581f7ea83a7916b2faf6b3357abf5c6297ab29a1d8b8ae6bbe76d3727289f77e70db1912b12025f60a623afb3858620ac7a37d4528819ecea311b85f02e0e41336cf4fd7dd76e1a45d5768c2a26ee3e1b6b33ad0a0f5bb14841897d62af8fed3c91fe5b0360d8d0822335b213a54da95611233085af226ae6f4691997105f0c7f84ded1992f0863bf98df173d77e498db0b73d2f527e0d398a64b3c7e0fb7bc04b95e349138f1c16c15cc2da415fb3c0c51e86542d5942d124f02003374da4d9fe80761b24341778593d77fa1e3dea6b88b07a47bb6159d05ecf4b5df6e47efbe59e1c773b15af23525ff00d12014253b60ad3e6303ebf27382ba5777003119af9c0b4c7367c8837255f778d920087a8f4920b11ae07f82a190a66ba53ac3248de50b476378f0a5f8041b92ba3f8d0e1603cd47225b022a6942091e0d498619a979402f675213cda6fbd65bc31d6e72ce46984a7d2a4dc336d6ac942edef3aae22d1c74ddda4c88a34e8f609d95061d35861f539623e1818033ba8b5f3a5249bdaac5e961ea1e79aeafca5d7db1a72f2d7645a7acf41d8728cf4c94263b575d7cc8d4d5e59aee42a920597dab6c1fa0948af8414d09204dfd842bff0ca37fe263f2f72b066175b78970ce1fdee2a52215f207e426f1ea3d5cd3d7f29336792bb1378fc5c944ed94de376705e804481b9ab7a101dd9d7fa749d10a0d19a81772aee0f4211d9e1fdd886311157c618362f22d44bd1554e9421d450218d1dc2fdbc3d857bb2aa8f4d083f573fbfa407b40e62e92520f7cf5acdd9311775d67b9616e1ac755569b38fd14f71a44a83727e99a1ed617e3c3ba5f80efbcd04e988aee2cdba13d0a49592379214f103d4415b2ae3383b3c5c77a37fd5106754519f297c690448540e8391ebc7a4151a24f0c025123b24afe0e775de46ec52aae75d811f2e74b47818ce46d740f46d6421f0ea708667d232e1da65b37ff4d4772a3c2bdddc284f665c9f954496dfb1ffd6b4d4e4c59d03481717b7b7af31380bed74c31f080c474448fd4d3c3aae1271b5a58e0fcfd8ed1c65f038721e58567fb67dd8bc01e712ddf4e134bdf4c00d06772d7127eb6bebe1865dcbb18d180f31f871bfc4ed5d41f5053dc11e4197c5bd6b41ff6795d4517cb7b24551b49e3ec37638efa0639647ba8c79c8c756101292910c579406c6a3f33519927773eda162c209b8caca9ca0e1c0e829c0f703ffd2d322da562dc192d159520b59685a11ffdd2ba81e392ff7c4504b0e2bcfc29a2c80ef7bf8fec5fbc3d960705118ac80cee89fbf346265d20a45ca3ec810fd6f0bb8002d24d94554695b5ddb5c37bbc554b03716cf20cdbbdb6e534589cd6de11dbc61f35a4a8b445c5abd5888bad501b76597be254280707edeb43194a4feb65e985cd57025199af6d9c9b6047fa5b510429f364ad9fe83677eeddc509c586015559e39be95f8fc4d1514d8e75cb35af045341878b2cea71f23e7eda91a39c0abc47e0e43c1094a00fe6478a8f490067319a2f156aa2f34aba604f0ca72d6e7ade94437e51c840fcc0169c2f67b2827e3807350f1163cfd</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">要密码，快滚.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
     <categories>
