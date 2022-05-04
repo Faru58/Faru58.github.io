@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>选择排序</title>
+    <link href="/2022/05/04/CSharp/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"/>
+    <url>/2022/05/04/CSharp/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>2022.5.4</p><span id="more"></span><p><strong>#选择排序</strong></p><p>重点知识点：<br><strong>选择排序</strong><br>1.基本概念： 新建中间商 遍历依次比较找出极值 放入目标位置<br>2.套路写法：两层循环（外层轮数 内层寻找 初始索引 记录极值）<br>3.优化： 已经完成比较的不参与比较  加一个bool标识判断是否已经有序</p><p><strong>#练习题</strong></p><img src="/2022/05/04/CSharp/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/exam.png" class=""><p>以下是答案：</p><div class="code-wrapper"><pre><code class="hljs">using System;namespace Lesson14_选择排序练习题&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            Console.WriteLine(&quot;选择排序练习题&quot;);            #region 练习题1               //生成随机数组            Random r = new Random();            int[] arr = new int[20];            for (int i = 0; i &lt; arr.Length; i++)            &#123;                arr[i] = r.Next(0, 101);            &#125;            //选择排序升序排序            Console.WriteLine(&quot;选择排序升序排序结果:&quot;);            for (int m = 0; m &lt; arr.Length; m++)            &#123;                int index = 0;                int temp;                for (int n = 0; n &lt; arr.Length - m; n++)                &#123;                    if (arr[index] &lt; arr[n])                    &#123;                        index = n;                    &#125;                &#125;                if(index != arr.Length - m -1 )                &#123;                    temp = arr[index];                    arr[index] = arr[arr.Length - m - 1];                    arr[arr.Length - m - 1] = temp;                &#125;            &#125;            for (int i = 0; i &lt; arr.Length; i++)            &#123;                Console.Write(arr[i] + &quot; &quot;);            &#125;            //中间间隔            Console.WriteLine();            Console.WriteLine(&quot;*************&quot;);            //冒泡排序降序排序            Console.WriteLine(&quot;选择排序降序排序结果:&quot;);            for (int m = 0; m &lt; arr.Length; m++)            &#123;                int index = 0;                int temp;                for (int n = 0; n &lt; arr.Length - m; n++)                &#123;                    if (arr[index] &gt; arr[n])                    &#123;                        index = n;                    &#125;                &#125;                if (index != arr.Length - m - 1)                &#123;                    temp = arr[index];                    arr[index] = arr[arr.Length - m - 1];                    arr[arr.Length - m - 1] = temp;                &#125;            &#125;            for (int i = 0; i &lt; arr.Length; i++)            &#123;                Console.Write(arr[i] + &quot; &quot;);            &#125;            #endregion        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>冒泡排序</title>
+    <link href="/2022/05/04/CSharp/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
+    <url>/2022/05/04/CSharp/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>2022.5.4</p><span id="more"></span><p><strong>#冒泡排序</strong></p><p>重点知识点：<br><strong>冒泡排序</strong><br>1.基本概念： “无序”数组中两两相邻的数不断比较与交换直到“有序”<br>2.套路写法：两层循环（外层轮数 内层比较 满足则交换）<br>3.优化： 已经完成比较的不参与比较  加一个bool标识判断是否已经有序</p><p><strong>#练习题</strong></p><img src="/2022/05/04/CSharp/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/exam.png" class=""><p>以下是答案：</p><div class="code-wrapper"><pre><code class="hljs">using System;namespace Lesson13_冒泡排序练习题&#123;    internal class Program    &#123;        #region 练习题2        //冒泡排序函数        static void PaiXu( int[] arr, bool upDown)        &#123;            //小优化 在循环外声明变量 可以提高一些性能            bool isSort;            int temp;            for (int m = 0; m &lt; arr.Length; m++)            &#123;                isSort = false;                for (int n = 0; n &lt; arr.Length - 1 - m; n++)                &#123;                    if(upDown)                    &#123;                        if (arr[n] &gt; arr[n + 1])                        &#123;                            isSort = true;                            temp = arr[n];                            arr[n] = arr[n + 1];                            arr[n + 1] = temp;                        &#125;                    &#125;                    else                    &#123;                        if (arr[n] &lt; arr[n + 1])                        &#123;                            isSort = true;                            temp = arr[n];                            arr[n] = arr[n + 1];                            arr[n + 1] = temp;                        &#125;                    &#125;                &#125;                if (!isSort)                &#123;                    break;                &#125;            &#125;            if (upDown)            &#123;                Console.WriteLine(&quot;冒泡排序升序排序结果:&quot;);            &#125;            else            &#123;                Console.WriteLine(&quot;冒泡排序降序排序结果:&quot;);            &#125;            for (int i = 0; i &lt; arr.Length; i++)            &#123;                            Console.Write(arr[i] + &quot; &quot;);            &#125;        &#125;        #endregion        static void Main(string[] args)        &#123;            Console.WriteLine(&quot;冒泡排序练习题&quot;);            #region 练习题1            //判断是否已经有序 标识符            bool isSort = false;            //生成随机数组            Random r = new Random();            int[] arr1 = new int[20];            for (int i = 0; i &lt; arr1.Length; i++)            &#123;                arr1[i] = r.Next(0, 101);            &#125;            //冒泡排序升序排序            Console.WriteLine(&quot;冒泡排序升序排序结果:&quot;);            for(int m = 0; m &lt; arr1.Length; m++)            &#123;                isSort = false;                for(int n = 0; n &lt; arr1.Length - 1 - m; n++)                &#123;                    if(arr1[n] &gt; arr1[n + 1])                    &#123;                        isSort = true;                        int temp = arr1[n];                        arr1[n] = arr1[n + 1];                        arr1[n + 1] = temp;                    &#125;                &#125;                if( !isSort )                &#123;                    break;                &#125;            &#125;            for(int i = 0; i &lt; arr1.Length; i++)            &#123;                Console.Write(arr1[i] + &quot; &quot;);            &#125;            //中间间隔            Console.WriteLine();            Console.WriteLine(&quot;*************&quot;);            //冒泡排序降序排序            Console.WriteLine(&quot;冒泡排序降序排序结果:&quot;);            for (int m = 0; m &lt; arr1.Length; m++)            &#123;                isSort = false;                for (int n = 0; n &lt; arr1.Length - 1 - m; n++)                &#123;                    if (arr1[n] &lt; arr1[n + 1])                    &#123;                        isSort = true;                        int temp = arr1[n];                        arr1[n] = arr1[n + 1];                        arr1[n + 1] = temp;                    &#125;                &#125;                if (!isSort)                &#123;                    break;                &#125;            &#125;            for (int i = 0; i &lt; arr1.Length; i++)            &#123;                Console.Write(arr1[i] + &quot; &quot;);            &#125;            #endregion            //中间间隔            Console.WriteLine();            Console.WriteLine(&quot;*************&quot;);            #region 练习题2            //生成数组            int[] arr2 = new int[20];            for (int i = 0; i &lt; arr2.Length; i++)            &#123;                arr2[i] = r.Next(0, 101);            &#125;            //true代表升序排序 false代表降序排序            PaiXu( arr2, true);            //中间间隔            Console.WriteLine();            Console.WriteLine(&quot;*************&quot;);            PaiXu( arr2, false);            #endregion        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年5月4日</title>
     <link href="/2022/05/04/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%884%E6%97%A5/"/>
     <url>/2022/05/04/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%884%E6%97%A5/</url>
