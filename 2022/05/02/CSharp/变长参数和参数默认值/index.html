@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2022/05/02/CSharp/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E5%92%8C%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC/exam.jpg">
 <meta property="article:published_time" content="2022-05-02T14:06:21.000Z">
-<meta property="article:modified_time" content="2022-05-04T15:49:39.251Z">
+<meta property="article:modified_time" content="2022-05-04T18:37:36.758Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
@@ -51,7 +51,7 @@
           
           
         
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-languagecsharp.min.css" />
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" />
       
       
         <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      972 字
+      1k 字
     </span>
   
 
@@ -254,14 +254,12 @@
               <p>2022.5.2</p>
 <span id="more"></span>
 
-<p><strong># 变长参数和参数默认值</strong></p>
-<p>重点知识点：<br><strong>1 变长参数关键字 params</strong><br>作用： 可以传入n个同类型参数 n可以是0<br>注意：<br>    1.params 后面必须是数组 意味着只能是同一类型的可变参数<br>    2.变长参数只能有一个<br>    3.必须在所有参数后面写变长参数</p>
+<h1 id="变长参数和参数默认值"><a href="#变长参数和参数默认值" class="headerlink" title="变长参数和参数默认值"></a>变长参数和参数默认值</h1><p>重点知识点：<br><strong>1 变长参数关键字 params</strong><br>作用： 可以传入n个同类型参数 n可以是0<br>注意：<br>    1.params 后面必须是数组 意味着只能是同一类型的可变参数<br>    2.变长参数只能有一个<br>    3.必须在所有参数后面写变长参数</p>
 <p><strong>2 参数默认值（可选参数）</strong><br>作用：可以给参数默认值 使用时可以不传参 不传用默认的 传了用传的<br>注意：<br>    1.可选参数可以有多个<br>    2.正常参数必须写在可选参数前面，可选参数只能写在所有参数的后面</p>
-<p><strong># 练习题</strong></p>
-<img src="/2022/05/02/CSharp/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E5%92%8C%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC/exam.jpg" srcset="/img/loading.gif" lazyload class="">
+<h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><img src="/2022/05/02/CSharp/%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0%E5%92%8C%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC/exam.jpg" srcset="/img/loading.gif" lazyload class="">
 
 <p>以下是答案：</p>
-<div class="code-wrapper"><pre class="language-none"><code class="language-none">using System;
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
 
 namespace Lesson9_变长参数和参数默认值练习题
 &#123;
@@ -271,12 +269,12 @@ namespace Lesson9_变长参数和参数默认值练习题
         #region 练习题1
         static void SumAndAvg(params int[] arr)
         &#123;
-            int sum = 0;
-            for (int i = 0; i &lt; arr.Length; i++)
+            int sum &#x3D; 0;
+            for (int i &#x3D; 0; i &lt; arr.Length; i++)
             &#123;
-                sum += arr[i];
+                sum +&#x3D; arr[i];
             &#125;
-            double avg = sum / (double)arr.Length;
+            double avg &#x3D; sum &#x2F; (double)arr.Length;
             Console.WriteLine(&quot;它们的和为&#123;0&#125;,平均数为&#123;1&#125;&quot;, sum, avg);
         &#125;
         #endregion
@@ -284,16 +282,16 @@ namespace Lesson9_变长参数和参数默认值练习题
         #region 练习题2
         static void OddEven(params int[] arr)
         &#123;
-            int odd = 0, even = 0;
-            for (int i = 0; i &lt; arr.Length; i++)
+            int odd &#x3D; 0, even &#x3D; 0;
+            for (int i &#x3D; 0; i &lt; arr.Length; i++)
             &#123;
-                if(arr[i] % 2 == 0)
+                if(arr[i] % 2 &#x3D;&#x3D; 0)
                 &#123;
-                    even += arr[i];
+                    even +&#x3D; arr[i];
                 &#125;
                 else
                 &#123;
-                    odd += arr[i];
+                    odd +&#x3D; arr[i];
                 &#125;
             &#125;
             Console.WriteLine(&quot;奇数和为&#123;0&#125;,偶数和为&#123;1&#125;&quot;, odd, even);
@@ -319,9 +317,7 @@ namespace Lesson9_变长参数和参数默认值练习题
             #endregion
 
         &#125;
-&#125;
-</code></pre></div>
-
+&#125;</code></pre></div>
             </div>
             <hr>
             <div>
@@ -359,9 +355,9 @@ namespace Lesson9_变长参数和参数默认值练习题
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/02/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%882%E6%97%A5/">
+                      <a href="/2022/05/03/CSharp/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022年5月2日</span>
+                        <span class="hidden-mobile">函数重载</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

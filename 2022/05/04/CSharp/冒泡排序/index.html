@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2022/05/04/CSharp/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/exam.png">
 <meta property="article:published_time" content="2022-05-04T12:01:46.000Z">
-<meta property="article:modified_time" content="2022-05-04T15:49:06.828Z">
+<meta property="article:modified_time" content="2022-05-04T18:38:57.112Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
@@ -51,7 +51,7 @@
           
           
         
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-languagecsharp.min.css" />
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" />
       
       
         <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.2k 字
+      2.5k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      19 分钟
+      21 分钟
     </span>
   
 
@@ -254,13 +254,11 @@
               <p>2022.5.4</p>
 <span id="more"></span>
 
-<p><strong># 冒泡排序</strong></p>
-<p>重点知识点：<br><strong>冒泡排序</strong><br>1.基本概念： “无序”数组中两两相邻的数不断比较与交换直到“有序”<br>2.套路写法：两层循环（外层轮数 内层比较 满足则交换）<br>3.优化： 已经完成比较的不参与比较  加一个bool标识判断是否已经有序</p>
-<p><strong># 练习题</strong></p>
-<img src="/2022/05/04/CSharp/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/exam.png" srcset="/img/loading.gif" lazyload class="">
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>重点知识点：<br><strong>冒泡排序</strong><br>1.基本概念： “无序”数组中两两相邻的数不断比较与交换直到“有序”<br>2.套路写法：两层循环（外层轮数 内层比较 满足则交换）<br>3.优化： 已经完成比较的不参与比较  加一个bool标识判断是否已经有序</p>
+<h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><img src="/2022/05/04/CSharp/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/exam.png" srcset="/img/loading.gif" lazyload class="">
 
 <p>以下是答案：</p>
-<div class="code-wrapper"><pre class="language-none"><code class="language-none">using System;
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
 
 namespace Lesson13_冒泡排序练习题
 &#123;
@@ -268,36 +266,36 @@ namespace Lesson13_冒泡排序练习题
     &#123;
 
         #region 练习题2
-        //冒泡排序函数
+        &#x2F;&#x2F;冒泡排序函数
         static void PaiXu( int[] arr, bool upDown)
         &#123;
-            //小优化 在循环外声明变量 可以提高一些性能
+            &#x2F;&#x2F;小优化 在循环外声明变量 可以提高一些性能
             bool isSort;
             int temp;
-            for (int m = 0; m &lt; arr.Length; m++)
+            for (int m &#x3D; 0; m &lt; arr.Length; m++)
             &#123;
-                isSort = false;
+                isSort &#x3D; false;
 
-                for (int n = 0; n &lt; arr.Length - 1 - m; n++)
+                for (int n &#x3D; 0; n &lt; arr.Length - 1 - m; n++)
                 &#123;
                     if(upDown)
                     &#123;
                         if (arr[n] &gt; arr[n + 1])
                         &#123;
-                            isSort = true;
-                            temp = arr[n];
-                            arr[n] = arr[n + 1];
-                            arr[n + 1] = temp;
+                            isSort &#x3D; true;
+                            temp &#x3D; arr[n];
+                            arr[n] &#x3D; arr[n + 1];
+                            arr[n + 1] &#x3D; temp;
                         &#125;
                     &#125;
                     else
                     &#123;
                         if (arr[n] &lt; arr[n + 1])
                         &#123;
-                            isSort = true;
-                            temp = arr[n];
-                            arr[n] = arr[n + 1];
-                            arr[n + 1] = temp;
+                            isSort &#x3D; true;
+                            temp &#x3D; arr[n];
+                            arr[n] &#x3D; arr[n + 1];
+                            arr[n + 1] &#x3D; temp;
                         &#125;
                     &#125;
                 &#125;
@@ -314,7 +312,7 @@ namespace Lesson13_冒泡排序练习题
             &#123;
                 Console.WriteLine(&quot;冒泡排序降序排序结果:&quot;);
             &#125;
-            for (int i = 0; i &lt; arr.Length; i++)
+            for (int i &#x3D; 0; i &lt; arr.Length; i++)
             &#123;            
                 Console.Write(arr[i] + &quot; &quot;);
             &#125;
@@ -329,30 +327,30 @@ namespace Lesson13_冒泡排序练习题
 
             #region 练习题1
 
-            //判断是否已经有序 标识符
-            bool isSort = false;
+            &#x2F;&#x2F;判断是否已经有序 标识符
+            bool isSort &#x3D; false;
 
-            //生成随机数组
-            Random r = new Random();
-            int[] arr1 = new int[20];
-            for (int i = 0; i &lt; arr1.Length; i++)
+            &#x2F;&#x2F;生成随机数组
+            Random r &#x3D; new Random();
+            int[] arr1 &#x3D; new int[20];
+            for (int i &#x3D; 0; i &lt; arr1.Length; i++)
             &#123;
-                arr1[i] = r.Next(0, 101);
+                arr1[i] &#x3D; r.Next(0, 101);
             &#125;
 
-            //冒泡排序升序排序
+            &#x2F;&#x2F;冒泡排序升序排序
             Console.WriteLine(&quot;冒泡排序升序排序结果:&quot;);
-            for(int m = 0; m &lt; arr1.Length; m++)
+            for(int m &#x3D; 0; m &lt; arr1.Length; m++)
             &#123;
-                isSort = false;
-                for(int n = 0; n &lt; arr1.Length - 1 - m; n++)
+                isSort &#x3D; false;
+                for(int n &#x3D; 0; n &lt; arr1.Length - 1 - m; n++)
                 &#123;
                     if(arr1[n] &gt; arr1[n + 1])
                     &#123;
-                        isSort = true;
-                        int temp = arr1[n];
-                        arr1[n] = arr1[n + 1];
-                        arr1[n + 1] = temp;
+                        isSort &#x3D; true;
+                        int temp &#x3D; arr1[n];
+                        arr1[n] &#x3D; arr1[n + 1];
+                        arr1[n + 1] &#x3D; temp;
                     &#125;
                 &#125;
                 if( !isSort )
@@ -360,28 +358,28 @@ namespace Lesson13_冒泡排序练习题
                     break;
                 &#125;
             &#125;
-            for(int i = 0; i &lt; arr1.Length; i++)
+            for(int i &#x3D; 0; i &lt; arr1.Length; i++)
             &#123;
                 Console.Write(arr1[i] + &quot; &quot;);
             &#125;
 
-            //中间间隔
+            &#x2F;&#x2F;中间间隔
             Console.WriteLine();
             Console.WriteLine(&quot;*************&quot;);
 
-            //冒泡排序降序排序
+            &#x2F;&#x2F;冒泡排序降序排序
             Console.WriteLine(&quot;冒泡排序降序排序结果:&quot;);
-            for (int m = 0; m &lt; arr1.Length; m++)
+            for (int m &#x3D; 0; m &lt; arr1.Length; m++)
             &#123;
-                isSort = false;
-                for (int n = 0; n &lt; arr1.Length - 1 - m; n++)
+                isSort &#x3D; false;
+                for (int n &#x3D; 0; n &lt; arr1.Length - 1 - m; n++)
                 &#123;
                     if (arr1[n] &lt; arr1[n + 1])
                     &#123;
-                        isSort = true;
-                        int temp = arr1[n];
-                        arr1[n] = arr1[n + 1];
-                        arr1[n + 1] = temp;
+                        isSort &#x3D; true;
+                        int temp &#x3D; arr1[n];
+                        arr1[n] &#x3D; arr1[n + 1];
+                        arr1[n + 1] &#x3D; temp;
                     &#125;
                 &#125;
                 if (!isSort)
@@ -389,29 +387,29 @@ namespace Lesson13_冒泡排序练习题
                     break;
                 &#125;
             &#125;
-            for (int i = 0; i &lt; arr1.Length; i++)
+            for (int i &#x3D; 0; i &lt; arr1.Length; i++)
             &#123;
                 Console.Write(arr1[i] + &quot; &quot;);
             &#125;
 
             #endregion
 
-            //中间间隔
+            &#x2F;&#x2F;中间间隔
             Console.WriteLine();
             Console.WriteLine(&quot;*************&quot;);
 
             #region 练习题2
 
-            //生成数组
-            int[] arr2 = new int[20];
-            for (int i = 0; i &lt; arr2.Length; i++)
+            &#x2F;&#x2F;生成数组
+            int[] arr2 &#x3D; new int[20];
+            for (int i &#x3D; 0; i &lt; arr2.Length; i++)
             &#123;
-                arr2[i] = r.Next(0, 101);
+                arr2[i] &#x3D; r.Next(0, 101);
             &#125;
 
-            //true代表升序排序 false代表降序排序
+            &#x2F;&#x2F;true代表升序排序 false代表降序排序
             PaiXu( arr2, true);
-            //中间间隔
+            &#x2F;&#x2F;中间间隔
             Console.WriteLine();
             Console.WriteLine(&quot;*************&quot;);
             PaiXu( arr2, false);
@@ -420,9 +418,7 @@ namespace Lesson13_冒泡排序练习题
 
         &#125;
     &#125;
-&#125;
-</code></pre></div>
-
+&#125;</code></pre></div>
             </div>
             <hr>
             <div>
@@ -470,8 +466,8 @@ namespace Lesson13_冒泡排序练习题
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/04/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%884%E6%97%A5/">
-                        <span class="hidden-mobile">2022年5月4日</span>
+                      <a href="/2022/05/03/CSharp/%E7%BB%93%E6%9E%84%E4%BD%93/">
+                        <span class="hidden-mobile">结构体</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2022/05/03/CSharp/%E7%BB%93%E6%9E%84%E4%BD%93/exam.png">
 <meta property="article:published_time" content="2022-05-03T12:53:26.000Z">
-<meta property="article:modified_time" content="2022-05-04T15:49:50.027Z">
+<meta property="article:modified_time" content="2022-05-04T18:38:33.336Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
@@ -51,7 +51,7 @@
           
           
         
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-languagecsharp.min.css" />
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" />
       
       
         <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.1k 字
+      4.4k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      35 分钟
+      37 分钟
     </span>
   
 
@@ -254,14 +254,12 @@
               <p>2022.5.3</p>
 <span id="more"></span>
 
-<p><strong># 结构体</strong></p>
-<p>重点知识点：<br><strong>结构体</strong><br>1.概念： 结构体 struct 是变量和函数的集合 用来表示特定的数据集合<br>2.访问修饰符：用来修饰变量和方法  public-&gt;外部可以调用   private-&gt;只能内部调用   不写默认private<br>3.构造函数：没有返回值 函数名和结构体名相同 可以重载 主要是帮助我们快速初始化结构体对象</p>
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><p>重点知识点：<br><strong>结构体</strong><br>1.概念： 结构体 struct 是变量和函数的集合 用来表示特定的数据集合<br>2.访问修饰符：用来修饰变量和方法  public-&gt;外部可以调用   private-&gt;只能内部调用   不写默认private<br>3.构造函数：没有返回值 函数名和结构体名相同 可以重载 主要是帮助我们快速初始化结构体对象</p>
 <p>注意：<br>1.在结构体中声明的变量不能初始化  只能在外部或者函数中赋值（初始化）<br>2.在结构体中声明的函数 不用加static</p>
-<p><strong># 练习题</strong></p>
-<img src="/2022/05/03/CSharp/%E7%BB%93%E6%9E%84%E4%BD%93/exam.png" srcset="/img/loading.gif" lazyload class="">
+<h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><img src="/2022/05/03/CSharp/%E7%BB%93%E6%9E%84%E4%BD%93/exam.png" srcset="/img/loading.gif" lazyload class="">
 
 <p>以下是答案：</p>
-<div class="code-wrapper"><pre class="language-none"><code class="language-none">using System;
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
 
 namespace Lesson12_结构体练习题
 &#123;
@@ -275,11 +273,11 @@ namespace Lesson12_结构体练习题
         public string major;
         public Student(string name, bool sex, int age, int lesson, string major)
         &#123;
-            this.name = name;           
-            this.sex = sex;
-            this.age = age;
-            this.lesson = lesson;
-            this.major = major;
+            this.name &#x3D; name;           
+            this.sex &#x3D; sex;
+            this.age &#x3D; age;
+            this.lesson &#x3D; lesson;
+            this.major &#x3D; major;
         &#125;
         public void Information()
         &#123;
@@ -289,9 +287,9 @@ namespace Lesson12_结构体练习题
     #endregion
 
     #region 练习题2
-    //他们都是访问修饰符 用来修饰变量和方法
-    //private 只能内部调用
-    //public  外部可以调用
+    &#x2F;&#x2F;他们都是访问修饰符 用来修饰变量和方法
+    &#x2F;&#x2F;private 只能内部调用
+    &#x2F;&#x2F;public  外部可以调用
     #endregion
 
     #region 练习题3
@@ -301,8 +299,8 @@ namespace Lesson12_结构体练习题
         public int y;
         public Rectangular(int x, int y)
         &#123;
-            this.x = x;
-            this.y = y;
+            this.x &#x3D; x;
+            this.y &#x3D; y;
         &#125;
         public void Information()
         &#123;
@@ -318,26 +316,26 @@ namespace Lesson12_结构体练习题
         public E_Occupation occupation;        
         public PlayerInfo(string name, E_Occupation occupation)
         &#123;
-            this.name = name;
-            this.occupation = occupation;        
+            this.name &#x3D; name;
+            this.occupation &#x3D; occupation;        
         &#125;
         public void AttackInformation()
         &#123;
-            string o = &quot;&quot;;
-            string s = &quot;&quot;;
+            string o &#x3D; &quot;&quot;;
+            string s &#x3D; &quot;&quot;;
             switch (occupation)
             &#123;
                 case E_Occupation.Warrior:
-                    o = &quot;战士&quot;;
-                    s = &quot;冲锋&quot;;
+                    o &#x3D; &quot;战士&quot;;
+                    s &#x3D; &quot;冲锋&quot;;
                     break;
                 case E_Occupation.Hunter:
-                    o = &quot;猎人&quot;;
-                    s = &quot;假死&quot;;
+                    o &#x3D; &quot;猎人&quot;;
+                    s &#x3D; &quot;假死&quot;;
                     break;
                 case E_Occupation.Witch:
-                    o = &quot;法师&quot;;
-                    s = &quot;奥术冲击&quot;;
+                    o &#x3D; &quot;法师&quot;;
+                    s &#x3D; &quot;奥术冲击&quot;;
                     break;
             &#125;
             Console.WriteLine(&quot;&#123;0&#125;&#123;1&#125;施放了&#123;2&#125;&quot;, o, name, s);
@@ -358,9 +356,9 @@ namespace Lesson12_结构体练习题
         public int atk;
         public Monster(string name)
         &#123;
-            this.name = name;
-            Random r = new Random();
-            atk = r.Next( 10, 30 );
+            this.name &#x3D; name;
+            Random r &#x3D; new Random();
+            atk &#x3D; r.Next( 10, 30 );
         &#125;
         public void Atk()
         &#123;
@@ -378,17 +376,17 @@ namespace Lesson12_结构体练习题
         public int hp;
         public UltraMan(string name, int atk, int def, int hp)
         &#123;
-            this.name = name;
-            this.atk = atk;
-            this.def = def;
-            this.hp = hp;           
+            this.name &#x3D; name;
+            this.atk &#x3D; atk;
+            this.def &#x3D; def;
+            this.hp &#x3D; hp;           
         &#125;
 
-        //结构体是值类型 想要在函数内部改变值类型信息 外部受影响 一定要用ref或out
+        &#x2F;&#x2F;结构体是值类型 想要在函数内部改变值类型信息 外部受影响 一定要用ref或out
         public void Attack(ref Boss monster)
         &#123;
-            //奥特曼打怪兽的逻辑
-            monster.hp -= atk - monster.def;
+            &#x2F;&#x2F;奥特曼打怪兽的逻辑
+            monster.hp -&#x3D; atk - monster.def;
             Console.WriteLine(&quot;&#123;0&#125;攻击了&#123;1&#125;，造成了&#123;2&#125;点伤害，&#123;1&#125;剩余血量&#123;3&#125;&quot;, name, monster.name, atk - monster.def, monster.hp);
         &#125;
     &#125;
@@ -400,15 +398,15 @@ namespace Lesson12_结构体练习题
         public int hp;
         public Boss(string name, int atk, int def, int hp)
         &#123;
-            this.name = name;
-            this.atk = atk;
-            this.def = def;
-            this.hp = hp;
+            this.name &#x3D; name;
+            this.atk &#x3D; atk;
+            this.def &#x3D; def;
+            this.hp &#x3D; hp;
         &#125;
         public void Attack(ref UltraMan Tiga)
         &#123;
-            //怪兽打奥特曼的逻辑
-            Tiga.hp -= atk - Tiga.def;
+            &#x2F;&#x2F;怪兽打奥特曼的逻辑
+            Tiga.hp -&#x3D; atk - Tiga.def;
             Console.WriteLine(&quot;&#123;0&#125;攻击了&#123;1&#125;，造成了&#123;2&#125;点伤害，&#123;1&#125;剩余血量&#123;3&#125;&quot;, name, Tiga.name, atk - Tiga.def, Tiga.hp);
         &#125;
     &#125;
@@ -424,25 +422,25 @@ namespace Lesson12_结构体练习题
             Console.WriteLine(&quot;结构体练习题&quot;);
 
             #region 练习题1
-            Student s1 = new Student(&quot;季宝&quot;, true, 23, 2, &quot;微电子&quot;);
-            Student s2 = new Student(&quot;大逼&quot;, true, 23, 2, &quot;网安&quot;);
+            Student s1 &#x3D; new Student(&quot;季宝&quot;, true, 23, 2, &quot;微电子&quot;);
+            Student s2 &#x3D; new Student(&quot;大逼&quot;, true, 23, 2, &quot;网安&quot;);
             s1.Information();
             s2.Information();
             #endregion
 
             #region 练习题3
-            Rectangular r1 = new Rectangular (5, 4);
+            Rectangular r1 &#x3D; new Rectangular (5, 4);
             r1.Information();
             #endregion
 
             #region 练习题4
             Console.Write(&quot;请输入玩家名字：&quot;);
-            string name = Console.ReadLine();
+            string name &#x3D; Console.ReadLine();
             Console.Write(&quot;请选择你的职业：（0战士，1猎人，2法师）&quot;);
             try 
             &#123;
-                E_Occupation o = (E_Occupation)int.Parse(Console.ReadLine());
-                PlayerInfo p1 = new PlayerInfo(name ,o);
+                E_Occupation o &#x3D; (E_Occupation)int.Parse(Console.ReadLine());
+                PlayerInfo p1 &#x3D; new PlayerInfo(name ,o);
                 p1.AttackInformation();            &#125;
             catch
             &#123;
@@ -451,29 +449,29 @@ namespace Lesson12_结构体练习题
             #endregion
 
             #region 练习题6
-            //声明Monster数组
-            Monster[] monsters = new Monster[10];
-            for (int i = 0; i &lt; monsters.Length; i++)
+            &#x2F;&#x2F;声明Monster数组
+            Monster[] monsters &#x3D; new Monster[10];
+            for (int i &#x3D; 0; i &lt; monsters.Length; i++)
             &#123;
-                monsters[i] = new Monster(&quot;怪兽&quot; + i);
+                monsters[i] &#x3D; new Monster(&quot;怪兽&quot; + i);
                 monsters[i].Atk();
             &#125;
 
             #endregion
 
             #region 练习题7
-            UltraMan Tiga = new UltraMan(&quot;迪迦&quot;, 10, 5, 100);
-            Boss boss = new Boss(&quot;哥斯拉&quot;, 8, 4, 100);
+            UltraMan Tiga &#x3D; new UltraMan(&quot;迪迦&quot;, 10, 5, 100);
+            Boss boss &#x3D; new Boss(&quot;哥斯拉&quot;, 8, 4, 100);
             while(true)
             &#123;
                 Tiga.Attack(ref boss);
-                if( boss.hp &lt;= 0)
+                if( boss.hp &lt;&#x3D; 0)
                 &#123;
                     Console.WriteLine(&quot;迪迦胜利&quot;);
                     break;
                 &#125;
                 boss.Attack(ref Tiga);
-                if (Tiga.hp &lt;= 0)
+                if (Tiga.hp &lt;&#x3D; 0)
                 &#123;
                     Console.WriteLine(&quot;哥斯拉胜利&quot;);
                     break;
@@ -484,8 +482,7 @@ namespace Lesson12_结构体练习题
             #endregion
         &#125;
     &#125;
-&#125;
-</code></pre></div>
+&#125;</code></pre></div>
 
             </div>
             <hr>
@@ -524,9 +521,9 @@ namespace Lesson12_结构体练习题
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/04/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%883%E6%97%A5/">
+                      <a href="/2022/05/04/CSharp/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022年5月3日</span>
+                        <span class="hidden-mobile">冒泡排序</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
