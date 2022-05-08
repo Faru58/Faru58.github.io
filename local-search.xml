@@ -4,6 +4,77 @@
   
   
   <entry>
+    <title>类和对象</title>
+    <link href="/2022/05/08/CSharp/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/"/>
+    <url>/2022/05/08/CSharp/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><p>基本概念：<br>1.具有相同特征<br>2.具有相同行为<br>3.一类事物的抽象<br>4.类是对象的模板<br>5.可以通过类创建出对象<br>6.类的关键词 class</p><p>一般声明在 <strong>namespace</strong> 语句块中<br>声明语法：<br> <div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">访问修饰符 class 类名&#123;    &#x2F;&#x2F;封装    特征 成员变量    行为 成员方法    保护特征 成员属性    构造函数和析构函数    索引器    运算符重载    静态成员&#125;</code></pre></div></p><h1 id="（类）对象"><a href="#（类）对象" class="headerlink" title="（类）对象"></a>（类）对象</h1><p>基本概念：<br>1.<strong>类的声明</strong>和<strong>类对象（变量）声明</strong>是两个概念<br>2.<strong>类的声明</strong>类似<strong>枚举</strong>和<strong>结构体的声明</strong>（类的声明相当于声明了一个自定义变量类型）<br>3.对象是类创建出来的（相当于声明一个<strong>指定类的变量</strong>）<br>4.类创建对象的过程（一般称为<strong>实例化对象</strong>）<br>5.类对象都是<strong>引用类型</strong>的</p><p>声明语法：</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">类名 变量名;类名 变量名 &#x3D; null; &#x2F;&#x2F;null代表空类名 变量名 &#x3D; new 类名();</code></pre></div><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>1.<strong>类的声明</strong>和<strong>类对象（变量）声明</strong>是两个概念<br>2.<strong>类的声明</strong>是声明对象的模板，用来抽象（形容）显示事物的<br>3.<strong>类对象（变量）声明</strong>是用来表示现实中的对象个体的</p><p>4.<strong>类</strong>是一个自定义的变量类型<br>5.实例化一个<strong>类对象</strong>是在声明变量</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/08/CSharp/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E7%BB%83%E4%B9%A0%E9%A2%98.png" class=""><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">练习题1 懒得做练习题2 A保持不变        GameObject A &#x3D; new GameObject(); &#x2F;&#x2F;新建栈 堆        GameObject B &#x3D; A; &#x2F;&#x2F;新建栈 指向A的堆        B &#x3D; null; &#x2F;&#x2F;B的栈 指向null的堆练习题3 A和B没关系        GameObject A &#x3D; new GameObject(); &#x2F;&#x2F;新建栈 堆        GameObject B &#x3D; A; &#x2F;&#x2F;新建栈 指向A的堆        B &#x3D; new GameObject(); &#x2F;&#x2F;B的栈 指向new的堆</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>面向对象编程</title>
+    <link href="/2022/05/08/CSharp/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
+    <url>/2022/05/08/CSharp/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<p>面向对象编程 面向过程编程</p><span id="more"></span><h1 id="面向过程编程"><a href="#面向过程编程" class="headerlink" title="面向过程编程"></a>面向过程编程</h1><p>一种<strong>以过程为中心</strong>的编程思想<br>分析出解决问题所需要的步骤<br>然后用函数把步骤一步一步实现<br>使用的时候一个一个一次调用</p><h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><p>面向对象是一种<strong>对现实世界理解和抽象</strong>的编程方法<br><strong>把相关的数据和方法组织为一个整体来看待</strong><br>从更高的层次来进行程序开发<br>更贴近事物的自然运行模式</p><p>万物皆对象  用程序来抽象（形容）对象  用面向对象的思想来编程</p><img src="/2022/05/08/CSharp/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/%E5%AF%B9%E8%B1%A1.png" class=""><p><strong>套路：</strong><br>用中文去形容一类对象<br>把一类对象的共同点提取出来<br>然后用程序语言把它翻译过来<br>带着对象的概念在程序中使用他们</p><h1 id="重要知识点"><a href="#重要知识点" class="headerlink" title="重要知识点"></a>重要知识点</h1><h2 id="面向对象关键知识"><a href="#面向对象关键知识" class="headerlink" title="面向对象关键知识"></a>面向对象关键知识</h2><p>类（class 关键词）</p><h2 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h2><p>重点中的重点：<br><strong>封装</strong> + <strong>继承</strong> + <strong>多态</strong><br><strong>封装</strong>：用程序语言来形容对象<br><strong>继承</strong>：复用封装对象的代码；儿子继承父亲，复用现成代码<br><strong>多态</strong>：同样行为的不同表现，儿子继承父亲的基金但是有不同的行为表现</p><h2 id="面向对象七大原则"><a href="#面向对象七大原则" class="headerlink" title="面向对象七大原则"></a>面向对象七大原则</h2><p>开闭原则<br>依赖倒转原则<br><strong>里式替换原则</strong><br>单一职责原则<br>接口隔离原则<br>合成复用原则<br>迪米特法则</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年5月8日</title>
+    <link href="/2022/05/08/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%888%E6%97%A5/"/>
+    <url>/2022/05/08/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%888%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>飞行棋逻辑整理</title>
     <link href="/2022/05/07/CSharp/%E9%A3%9E%E8%A1%8C%E6%A3%8B%E9%80%BB%E8%BE%91%E6%95%B4%E7%90%86/"/>
     <url>/2022/05/07/CSharp/%E9%A3%9E%E8%A1%8C%E6%A3%8B%E9%80%BB%E8%BE%91%E6%95%B4%E7%90%86/</url>
