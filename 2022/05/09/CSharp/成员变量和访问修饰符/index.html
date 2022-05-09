@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="类 对象">
+    <meta name="description" content="成员变量  访问修饰符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类和对象">
-<meta property="og:url" content="http://example.com/2022/05/08/CSharp/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:title" content="成员变量和访问修饰符">
+<meta property="og:url" content="http://example.com/2022/05/09/CSharp/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="类 对象">
+<meta property="og:description" content="成员变量  访问修饰符">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/05/08/CSharp/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E7%BB%83%E4%B9%A0%E9%A2%98.png">
-<meta property="article:published_time" content="2022-05-08T07:09:24.000Z">
-<meta property="article:modified_time" content="2022-05-09T12:15:25.720Z">
+<meta property="og:image" content="http://example.com/2022/05/09/CSharp/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/exam.png">
+<meta property="article:published_time" content="2022-05-09T12:13:47.000Z">
+<meta property="article:modified_time" content="2022-05-09T13:29:47.854Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/05/08/CSharp/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E7%BB%83%E4%B9%A0%E9%A2%98.png">
+<meta name="twitter:image" content="http://example.com/2022/05/09/CSharp/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/exam.png">
   
   
-  <title>类和对象 - 垃圾桶</title>
+  <title>成员变量和访问修饰符 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="类和对象">
+            <span class="h2" id="subtitle" title="成员变量和访问修饰符">
               
             </span>
 
@@ -199,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-08 15:09" pubdate>
-        2022年5月8日 下午
+      <time datetime="2022-05-09 20:13" pubdate>
+        2022年5月9日 晚上
       </time>
     </span>
   
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      753 字
+      1.7k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7 分钟
+      15 分钟
     </span>
   
 
@@ -248,45 +248,124 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">类和对象</h1>
+            <h1 style="display: none">成员变量和访问修饰符</h1>
             
             <div class="markdown-body">
-              <p>类 对象</p>
+              <p>成员变量  访问修饰符</p>
 <span id="more"></span>
 
-<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><p>基本概念：<br>1.具有相同特征<br>2.具有相同行为<br>3.一类事物的抽象<br>4.类是对象的模板<br>5.可以通过类创建出对象<br>6.类的关键词 class</p>
-<p>一般声明在 <strong>namespace</strong> 语句块中<br>声明语法：<br> <div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">访问修饰符 class 类名
+
+<h1 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h1><p>基本规则：<br>1.声明在类语句块中 class<br>2.用来描述对象的特征<br>3.可以是任意变量类型<br>4.数量不做限制<br>5.是否赋值根据需求来定<br>6.在类里 可以声明和自己一样的变量类型 但不能对它实例化</p>
+<h1 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h1><p>基本作用： 决定类内部成员的访问权限<br><strong>public</strong>  公共的  自己（内部）和别人（外部）都能访问和使用<br><strong>private</strong>  私有的  自己（内部）才能访问和使用    不写默认为private<br><strong>protected</strong>  保护的  自己（内部）和子类才能访问和使用</p>
+<h1 id="成员变量的初始值"><a href="#成员变量的初始值" class="headerlink" title="成员变量的初始值"></a>成员变量的初始值</h1><p><strong>值类型</strong>：数字类型默认0  bool类型默认false<br><strong>引用类型</strong>：默认为null<br>技巧： Console.WriteLine(default(你想查询初始值的类型名));</p>
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/09/CSharp/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+
+namespace Lesson2_成员变量和访问修饰符
 &#123;
-    &#x2F;&#x2F;封装
-    特征 成员变量
-    行为 成员方法
-    保护特征 成员属性
+    #region 练习题1
+    &#x2F;&#x2F; 3P &#x3D; public  private  protected  访问修饰符
+    #endregion
 
-    构造函数和析构函数
-    索引器
-    运算符重载
-    静态成员
-&#125;</code></pre></div></p>
-<h1 id="（类）对象"><a href="#（类）对象" class="headerlink" title="（类）对象"></a>（类）对象</h1><p>基本概念：<br>1.<strong>类的声明</strong>和<strong>类对象（变量）声明</strong>是两个概念<br>2.<strong>类的声明</strong>类似<strong>枚举</strong>和<strong>结构体的声明</strong>（类的声明相当于声明了一个自定义变量类型）<br>3.对象是类创建出来的（相当于声明一个<strong>指定类的变量</strong>）<br>4.类创建对象的过程（一般称为<strong>实例化对象</strong>）<br>5.类对象都是<strong>引用类型</strong>的</p>
-<p>声明语法：</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">类名 变量名;
-类名 变量名 &#x3D; null; &#x2F;&#x2F;null代表空
-类名 变量名 &#x3D; new 类名();</code></pre></div>
+    #region 练习题2
+    &#x2F;&#x2F;定义人类
+    class Person
+    &#123;
+        &#x2F;&#x2F;特征 成员变量
+        &#x2F;&#x2F;姓名
+        public string name;
+        &#x2F;&#x2F;身高
+        public int height;
+        &#x2F;&#x2F;年龄
+        public int age; 
+        &#x2F;&#x2F;家庭住址
+        public string location;
+    &#125;
+    #endregion
 
+    #region 练习题3
+    &#x2F;&#x2F;定义学生
+    class Student
+    &#123;
+        &#x2F;&#x2F;特征 成员变量
+        &#x2F;&#x2F;姓名
+        public string name;
+        &#x2F;&#x2F;学号
+        public string ID;
+        &#x2F;&#x2F;年龄
+        public int age; 
+        &#x2F;&#x2F;同桌
+        public Student deskmate;
 
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>1.<strong>类的声明</strong>和<strong>类对象（变量）声明</strong>是两个概念<br>2.<strong>类的声明</strong>是声明对象的模板，用来抽象（形容）显示事物的<br>3.<strong>类对象（变量）声明</strong>是用来表示现实中的对象个体的</p>
-<p>4.<strong>类</strong>是一个自定义的变量类型<br>5.实例化一个<strong>类对象</strong>是在声明变量</p>
-<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/08/CSharp/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E7%BB%83%E4%B9%A0%E9%A2%98.png" srcset="/img/loading.gif" lazyload class="">
+        &#x2F;&#x2F;行为 成员方法
+        
+    &#125;
+    #endregion
 
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">练习题1 懒得做
-练习题2 A保持不变
-        GameObject A &#x3D; new GameObject(); &#x2F;&#x2F;新建栈 堆
-        GameObject B &#x3D; A; &#x2F;&#x2F;新建栈 指向A的堆
-        B &#x3D; null; &#x2F;&#x2F;B的栈 指向null的堆
-练习题3 A和B没关系
-        GameObject A &#x3D; new GameObject(); &#x2F;&#x2F;新建栈 堆
-        GameObject B &#x3D; A; &#x2F;&#x2F;新建栈 指向A的堆
-        B &#x3D; new GameObject(); &#x2F;&#x2F;B的栈 指向new的堆</code></pre></div>
+    #region 练习题4
+    &#x2F;&#x2F;定义班级
+    class Lesson
+    &#123;
+        &#x2F;&#x2F;特征 成员变量
+        &#x2F;&#x2F;专业名称
+        public string majorName;
+        &#x2F;&#x2F;学号
+        public string ID;
+        &#x2F;&#x2F;教师容量
+        public int teacherNum;
+        &#x2F;&#x2F;学生
+        public Student[] students;
+    &#125;
+    #endregion
+
+    
+    internal class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;         
+
+            #region 练习题5
+            Person p &#x3D; new Person();
+            p.age &#x3D; 10;
+            Person p2 &#x3D; new Person();
+            p2.age &#x3D; 20;
+            Console.WriteLine(p.age);
+            &#x2F;&#x2F;10
+            #endregion
+
+            #region 练习题6
+            Person p3 &#x3D; new Person();
+            p3.age &#x3D; 10;
+            Person p4 &#x3D; p3;
+            p4.age &#x3D; 20;
+            Console.WriteLine(p3.age);
+            &#x2F;&#x2F;20
+            #endregion
+
+            #region 练习题7
+            Student s &#x3D; new Student();
+            s.age &#x3D; 10;
+            int age &#x3D; s.age;
+            age &#x3D; 20;
+            Console.WriteLine(s.age);
+            &#x2F;&#x2F;10
+            #endregion
+
+            #region 练习题8
+            Student s1 &#x3D; new Student();
+            s1.deskmate &#x3D; new Student();
+            s1.deskmate.age &#x3D; 10;
+            Student s2 &#x3D; s1.deskmate;
+            s2.age &#x3D; 20;
+            Console.WriteLine(s1.deskmate.age);
+            &#x2F;&#x2F;20
+            #endregion
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+
             </div>
             <hr>
             <div>
@@ -324,9 +403,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/09/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%889%E6%97%A5/">
+                      <a href="/2022/05/09/CSharp/%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022年5月9日</span>
+                        <span class="hidden-mobile">成员方法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -334,8 +413,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/08/CSharp/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
-                        <span class="hidden-mobile">面向对象编程</span>
+                      <a href="/2022/05/09/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%889%E6%97%A5/">
+                        <span class="hidden-mobile">2022年5月9日</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
