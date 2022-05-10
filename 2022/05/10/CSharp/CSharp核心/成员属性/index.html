@@ -1,0 +1,636 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/yagyu.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="成员属性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="成员属性">
+<meta property="og:url" content="http://example.com/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7/index.html">
+<meta property="og:site_name" content="垃圾桶">
+<meta property="og:description" content="成员属性">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7/exam.png">
+<meta property="article:published_time" content="2022-05-10T13:35:08.000Z">
+<meta property="article:modified_time" content="2022-05-10T15:33:56.164Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="C#">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7/exam.png">
+  
+  
+  <title>成员属性 - 垃圾桶</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Faru</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/%E4%BC%8A%E8%8B%8F9.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="成员属性">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-10 21:35" pubdate>
+        2022年5月10日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">成员属性</h1>
+            
+            <div class="markdown-body">
+              <p>成员属性</p>
+<span id="more"></span>
+
+
+<h1 id="成员属性"><a href="#成员属性" class="headerlink" title="成员属性"></a>成员属性</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>1.用于保护成员变量<br>2.为成员属性的获取和赋值添加逻辑处理<br>3.解决3P的局限性<br>    public - 内外访问<br>    private - 内部访问<br>    protected - 内部和子类访问<br>属性可以让成员变量在外部 <strong>只能获取不能修改</strong> 或 <strong>只能修改不能获取</strong></p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Person
+&#123;
+    private string name;
+
+    &#x2F;&#x2F;属性的命名一般使用 帕斯卡命名法
+    &#x2F;&#x2F;访问修饰符 属性类型 属性名
+    public string Name
+    &#123;
+        get
+        &#123;
+            &#x2F;&#x2F;可以在返回前添加一下逻辑规则（解密）
+            &#x2F;&#x2F;get意味着这个属性可以获取的内容 需要return内容
+            return name;
+        &#125;
+        set
+        &#123;
+            &#x2F;&#x2F;可以在设置前添加一下逻辑规则（加密）
+            &#x2F;&#x2F; value 关键字 用于表示外部传入的值
+            name &#x3D; value;                 
+        &#125;
+    &#125;
+&#125;  </code></pre></div>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Person p &#x3D; new Person();
+p.Name &#x3D; &quot;季宝&quot;;</code></pre></div>
+
+<h2 id="get和set前可以加访问修饰符"><a href="#get和set前可以加访问修饰符" class="headerlink" title="get和set前可以加访问修饰符"></a>get和set前可以加访问修饰符</h2><p><strong>解决3P局限性</strong><br>1.默认不加 会使用属性声明时的访问权限<br>2.加的访问修饰符要低于属性的访问权限（public的访问权限是最高级的）<br>3.不能让get和set的访问权限都低于属性的权限（逻辑上外部的访问修饰符无效，报错）</p>
+<h2 id="get和set只能有一个"><a href="#get和set只能有一个" class="headerlink" title="get和set只能有一个"></a>get和set只能有一个</h2><p>只有一个时 没有必要在前面加访问修饰符<br>且一般只有get 没有set</p>
+<h2 id="自动属性"><a href="#自动属性" class="headerlink" title="自动属性"></a>自动属性</h2><p>属性语句块中只有get和set<br><strong>作用：</strong><br>外部能得不能改的特征<br>如果类中有一个特征是只希望外部能得不能改的 又没有什么特别处理<br>那么可以直接使用自动属性</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Person
+&#123;
+    &#x2F;&#x2F;不用专门去声明成员变量 直接通过属性来表示特殊的成员变量
+    public float Height
+    &#123;
+        &#x2F;&#x2F;没有在get和set中写逻辑的需求或者想法
+        get;
+        set;
+    &#125;
+&#125;  </code></pre></div>
+
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+
+namespace Lesson5_成员属性
+&#123;
+    class Student
+    &#123;
+        private string name;
+        private string sex;
+        private int age;
+        private int csharpScore;
+        private int unityScore;
+
+        public string Name &#123; get; set; &#125;
+        public string Sex 
+        &#123; 
+            get
+            &#123;
+                if (sex !&#x3D; &quot;男&quot; &amp;&amp; sex !&#x3D; &quot;女&quot;)
+                &#123;
+                    Console.WriteLine(&quot;请输入正确的性别,默认男&quot;);
+                    return &quot;男&quot;;
+                &#125;
+                else
+                &#123;
+                    return sex;
+                &#125;
+                
+            &#125;
+            set
+            &#123;
+                sex &#x3D; value;
+            &#125;
+        &#125;
+        public int Age 
+        &#123; 
+            get
+            &#123;
+                return age;    
+            &#125;
+            set
+            &#123;
+                if (value &gt;&#x3D; 0 &amp;&amp; value &lt;&#x3D; 150)
+                &#123;
+                    age &#x3D; value;
+                &#125;
+                else
+                &#123;
+                    Console.WriteLine(&quot;请输入0~150之间的年龄,默认20&quot;);
+                    age &#x3D; 20;
+                &#125;   
+            &#125;
+        &#125;
+        public int CSharpScore
+        &#123;
+            get
+            &#123;
+                if (csharpScore &gt;&#x3D; 0 &amp;&amp; csharpScore &lt;&#x3D; 150)
+                &#123;
+                    return csharpScore;
+                &#125;
+                else
+                &#123;
+                    Console.WriteLine(&quot;请输入0~100之间的成绩,默认60&quot;);
+                    return 60;
+                &#125;
+            &#125;
+            set
+            &#123;
+                csharpScore &#x3D; value;
+            &#125;
+        &#125;
+        public int UnityScore
+        &#123;
+            get
+            &#123;
+                if (unityScore &gt;&#x3D; 0 &amp;&amp; unityScore &lt;&#x3D; 150)
+                &#123;
+                    return unityScore;
+                &#125;
+                else
+                &#123;
+                    Console.WriteLine(&quot;请输入0~100之间的成绩,默认60&quot;);
+                    return 60;
+                &#125;
+            &#125;
+            set
+            &#123;
+                unityScore &#x3D; value;
+            &#125;
+        &#125;
+
+        public void Hello1()
+        &#123;
+            Console.WriteLine(&quot;我叫&#123;0&#125;,今年&#123;1&#125;岁了&quot;, Name, Age);
+        &#125;
+        public void Hello2()
+        &#123;
+            Console.WriteLine(&quot;我是&#123;0&#125;生,我的总分是&#123;1&#125;,平均分是&#123;2&#125;&quot;, Sex, CSharpScore + UnityScore, (CSharpScore + UnityScore)&#x2F;2);
+        &#125;
+    &#125;
+    internal class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            Student s1 &#x3D; new Student();
+            s1.Name &#x3D; &quot;季宝&quot;;
+            s1.Sex &#x3D; &quot;男&quot;;
+            s1.Age &#x3D; 170;
+            s1.CSharpScore &#x3D; 80;
+            s1.UnityScore &#x3D; 80;
+            s1.Hello1();
+            s1.Hello2();
+            Student s2 &#x3D; new Student();
+        &#125;
+    &#125;
+&#125;
+</code></pre></div>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/study/">study</a>
+                    
+                      <a class="hover-with-bg" href="/categories/study/C/">C#</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C#</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/10/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%8810%E6%97%A5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022年5月10日</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/">
+                        <span class="hidden-mobile">封装_构造函数和析构函数</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
