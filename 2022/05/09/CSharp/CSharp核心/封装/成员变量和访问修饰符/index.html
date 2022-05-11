@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="封装_构造函数和析构函数">
+    <meta name="description" content="成员变量  访问修饰符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="封装_构造函数和析构函数">
-<meta property="og:url" content="http://example.com/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="成员变量和访问修饰符">
+<meta property="og:url" content="http://example.com/2022/05/09/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="封装_构造函数和析构函数">
+<meta property="og:description" content="成员变量  访问修饰符">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/exam.png">
-<meta property="article:published_time" content="2022-05-10T11:49:11.000Z">
-<meta property="article:modified_time" content="2022-05-10T13:37:09.313Z">
+<meta property="og:image" content="http://example.com/2022/05/09/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/exam.png">
+<meta property="article:published_time" content="2022-05-09T12:13:47.000Z">
+<meta property="article:modified_time" content="2022-05-09T13:29:47.854Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/exam.png">
+<meta name="twitter:image" content="http://example.com/2022/05/09/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/exam.png">
   
   
-  <title>封装_构造函数和析构函数 - 垃圾桶</title>
+  <title>成员变量和访问修饰符 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="封装_构造函数和析构函数">
+            <span class="h2" id="subtitle" title="成员变量和访问修饰符">
               
             </span>
 
@@ -199,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-10 19:49" pubdate>
-        2022年5月10日 晚上
+      <time datetime="2022-05-09 20:13" pubdate>
+        2022年5月9日 晚上
       </time>
     </span>
   
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.6k 字
+      1.7k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      22 分钟
+      15 分钟
     </span>
   
 
@@ -248,135 +248,124 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">封装_构造函数和析构函数</h1>
+            <h1 style="display: none">成员变量和访问修饰符</h1>
             
             <div class="markdown-body">
-              <p>封装_构造函数和析构函数</p>
+              <p>成员变量  访问修饰符</p>
 <span id="more"></span>
 
 
-<h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>在实例化对象时 会调用的用于初始化的函数<br>（如果不写 默认存在一个无参构造函数）</p>
-<h2 id="写法"><a href="#写法" class="headerlink" title="写法"></a>写法</h2><p>1.没有返回值<br>2.函数名和类名必须相同<br>3.没有特殊需求时，一般都是public的<br>4.构造函数可以被重载<br>5.this代表当前调用该函数的对象自己</p>
-<h2 id="特殊写法"><a href="#特殊写法" class="headerlink" title="特殊写法"></a>特殊写法</h2><p>可以通过this 重用构造函数代码</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">访问修饰符 构造函数名(参数列表):this(参数1,参数2......)</code></pre></div>
-<p>即该构造函数会先执行this所代表的构造函数，再执行自己的逻辑</p>
-<p><strong>注意</strong><br>1.类中是允许自己声明无参构造函数的，结构体是不允许的<br>2.如果不自己实现无参构造函数而实现了有参构造函数，会失去默认的无参构造函数</p>
-<h1 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h1><h2 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h2><p>当<strong>引用类型的堆内存被回收</strong>时，会调用该函数<br>对于需要手动管理内存的语言(比如c++)，需要在析构函数中做一些内存回收处理<br>但是c#中存在垃圾回收机制GC<br>所以几乎不会怎么使用析构函数，除非需要对某一个对象被垃圾回收时，做一些特殊处理</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">~类名()
-&#123;
-
-&#125;</code></pre></div>
-
-
-<h1 id="垃圾回收机制"><a href="#垃圾回收机制" class="headerlink" title="垃圾回收机制"></a>垃圾回收机制</h1><p>垃圾回收(GC,Garbage Collector)<br>1.垃圾回收的过程是遍历堆(Heap)上动态分配的所有对象<br>2.通过识别他们是否被引用来确定哪些对象是垃圾，哪些对象仍要被引用<br>3.所谓的垃圾就是没有被任何变量，对象引用的内容(垃圾就需要被回收释放)</p>
-<p>垃圾回收有多种算法：<br>1.引用计数(Reference Counting)<br>2.标记清楚(Mark Sweep)<br>3.标记整理(Mark Compact)<br>4.复制集合(Copy Collection)</p>
-<p><strong>注意</strong><br>GC只负责堆(Heap)内存的垃圾回收<br>引用类型都是存在堆(Heap)中的，所以它的分配和释放都通过垃圾回收机制来管理</p>
-<p>栈(Stack)上的内存是有系统自动管理的<br>值类型是在栈(Stack)中分配内存的，他们有自己的生命周期，不用对他们进行管理，会自动分配和释放</p>
-<p><strong>C#中内存回收机制的大概原理</strong><br>内存分为： 0代内存 1代内存 2代内存<br><strong>代的概念</strong>：<br>代是垃圾回收机制使用的一种算法(分代算法)<br>新分配的对象都会被配置在第0代内存中<br>每次分配都可能会进行垃圾回收以释放内存(0代内存满时)</p>
-<p>在一次内存回收过程开始时，垃圾回收器会认为堆中全是垃圾，会进行以下两步：<br>1.标记对象，从根（静态字段、方法参数）开始检查引用对象，标记后为可达对象，未标记为不可达对象，不可达对象就认为是垃圾<br>2.搬迁对象压缩堆（挂起执行托管代码线程），释放未标记的对象，搬迁可达对象，修改引用地址</p>
-<p>大对象总被认为是第2代内存，目的是减少性能损耗，提高性能<br>不会对大对象进行搬迁压缩 85000字节（83kb）以上的对象为大对象</p>
-<p>手动触发垃圾回收的方法<br>一般情况下不会频繁调用<br>都是在Loading过场景时才调用</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">GC.Collect();</code></pre></div>
-
-
-<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/exam.png" srcset="/img/loading.gif" lazyload class="">
+<h1 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h1><p>基本规则：<br>1.声明在类语句块中 class<br>2.用来描述对象的特征<br>3.可以是任意变量类型<br>4.数量不做限制<br>5.是否赋值根据需求来定<br>6.在类里 可以声明和自己一样的变量类型 但不能对它实例化</p>
+<h1 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h1><p>基本作用： 决定类内部成员的访问权限<br><strong>public</strong>  公共的  自己（内部）和别人（外部）都能访问和使用<br><strong>private</strong>  私有的  自己（内部）才能访问和使用    不写默认为private<br><strong>protected</strong>  保护的  自己（内部）和子类才能访问和使用</p>
+<h1 id="成员变量的初始值"><a href="#成员变量的初始值" class="headerlink" title="成员变量的初始值"></a>成员变量的初始值</h1><p><strong>值类型</strong>：数字类型默认0  bool类型默认false<br><strong>引用类型</strong>：默认为null<br>技巧： Console.WriteLine(default(你想查询初始值的类型名));</p>
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/09/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/exam.png" srcset="/img/loading.gif" lazyload class="">
 
 
 <div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
 
-namespace Lesson4_封装_构造函数和析构函数
+namespace Lesson2_成员变量和访问修饰符
 &#123;
+    #region 练习题1
+    &#x2F;&#x2F; 3P &#x3D; public  private  protected  访问修饰符
+    #endregion
+
+    #region 练习题2
+    &#x2F;&#x2F;定义人类
     class Person
     &#123;
+        &#x2F;&#x2F;特征 成员变量
+        &#x2F;&#x2F;姓名
         public string name;
-        public int age;
-
-        public Person()
-        &#123;
-            name &#x3D; &quot;大逼&quot;;
-            age &#x3D; 23;
-        &#125;
-        public Person(string name)
-            &#123; this.name &#x3D; name; &#125;
-        public Person(int age)
-            &#123; this.age &#x3D; age; &#125;
+        &#x2F;&#x2F;身高
+        public int height;
+        &#x2F;&#x2F;年龄
+        public int age; 
+        &#x2F;&#x2F;家庭住址
+        public string location;
     &#125;
+    #endregion
 
+    #region 练习题3
+    &#x2F;&#x2F;定义学生
+    class Student
+    &#123;
+        &#x2F;&#x2F;特征 成员变量
+        &#x2F;&#x2F;姓名
+        public string name;
+        &#x2F;&#x2F;学号
+        public string ID;
+        &#x2F;&#x2F;年龄
+        public int age; 
+        &#x2F;&#x2F;同桌
+        public Student deskmate;
+
+        &#x2F;&#x2F;行为 成员方法
+        
+    &#125;
+    #endregion
+
+    #region 练习题4
+    &#x2F;&#x2F;定义班级
     class Lesson
     &#123;
-        public int ID;
-        public int num;
-
-        public Lesson()
-        &#123;
-            ID &#x3D; 1;
-            num &#x3D; 10;
-        &#125;
-        public Lesson(int ID, int num)
-        &#123; 
-            this.ID &#x3D; ID; 
-            this.num &#x3D; num;
-        &#125;
+        &#x2F;&#x2F;特征 成员变量
+        &#x2F;&#x2F;专业名称
+        public string majorName;
+        &#x2F;&#x2F;学号
+        public string ID;
+        &#x2F;&#x2F;教师容量
+        public int teacherNum;
+        &#x2F;&#x2F;学生
+        public Student[] students;
     &#125;
+    #endregion
 
-    class Ticket
-    &#123;
-        public uint distance;
-        public float price;
-
-        public Ticket(uint distance)
-        &#123;
-            this.distance &#x3D; distance;
-        &#125;
-        public void GetPrice()
-        &#123;
-            if(0 &lt;&#x3D; distance &amp;&amp; distance &lt;&#x3D; 100)
-            &#123;
-                price &#x3D; 1.0f * distance;
-            &#125;
-            else if(100 &lt; distance &amp;&amp; distance &lt;&#x3D; 200)
-            &#123;
-                price &#x3D; 0.95f * (distance - 100) + 100;
-            &#125;
-            else if(200 &lt; distance &amp;&amp; distance &lt;&#x3D; 300)
-            &#123;
-                price &#x3D; 0.9f * (distance - 200) + 195;
-            &#125;
-            else if(distance &gt; 300)
-            &#123;
-                price &#x3D; 0.8f * (distance - 300) + 385;
-            &#125;
-        &#125;
-        public void Print()
-        &#123;
-            GetPrice();
-            Console.WriteLine(&quot;&#123;0&#125;公里&#123;1&#125;块钱&quot;, distance, price);
-        &#125;
-
-    &#125;
+    
     internal class Program
     &#123;
         static void Main(string[] args)
-        &#123;
-            Person p1 &#x3D; new Person();
-            Person p2 &#x3D; new Person(&quot;季宝&quot;);
-            Person p3 &#x3D; new Person(22);
+        &#123;         
 
-            Lesson l1 &#x3D; new Lesson();
-            Lesson l2 &#x3D; new Lesson(2, 46);
+            #region 练习题5
+            Person p &#x3D; new Person();
+            p.age &#x3D; 10;
+            Person p2 &#x3D; new Person();
+            p2.age &#x3D; 20;
+            Console.WriteLine(p.age);
+            &#x2F;&#x2F;10
+            #endregion
 
-            try
-            &#123;
-                Ticket t1 &#x3D; new Ticket(uint.Parse(Console.ReadLine()));
-                t1.Print();
-            &#125;
-            catch
-            &#123;
-                Console.WriteLine(&quot;请输入正数&quot;);
-            &#125;
-            &#125;
+            #region 练习题6
+            Person p3 &#x3D; new Person();
+            p3.age &#x3D; 10;
+            Person p4 &#x3D; p3;
+            p4.age &#x3D; 20;
+            Console.WriteLine(p3.age);
+            &#x2F;&#x2F;20
+            #endregion
+
+            #region 练习题7
+            Student s &#x3D; new Student();
+            s.age &#x3D; 10;
+            int age &#x3D; s.age;
+            age &#x3D; 20;
+            Console.WriteLine(s.age);
+            &#x2F;&#x2F;10
+            #endregion
+
+            #region 练习题8
+            Student s1 &#x3D; new Student();
+            s1.deskmate &#x3D; new Student();
+            s1.deskmate.age &#x3D; 10;
+            Student s2 &#x3D; s1.deskmate;
+            s2.age &#x3D; 20;
+            Console.WriteLine(s1.deskmate.age);
+            &#x2F;&#x2F;20
+            #endregion
+        &#125;
     &#125;
 &#125;</code></pre></div>
+
             </div>
             <hr>
             <div>
@@ -414,9 +403,9 @@ namespace Lesson4_封装_构造函数和析构函数
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7/">
+                      <a href="/2022/05/09/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">成员属性</span>
+                        <span class="hidden-mobile">成员方法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -424,8 +413,8 @@ namespace Lesson4_封装_构造函数和析构函数
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/09/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95/">
-                        <span class="hidden-mobile">成员方法</span>
+                      <a href="/2022/05/09/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%889%E6%97%A5/">
+                        <span class="hidden-mobile">2022年5月9日</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

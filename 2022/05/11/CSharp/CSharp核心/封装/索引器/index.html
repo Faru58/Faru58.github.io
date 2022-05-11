@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="类 对象">
+    <meta name="description" content="索引器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类和对象">
-<meta property="og:url" content="http://example.com/2022/05/08/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:title" content="索引器">
+<meta property="og:url" content="http://example.com/2022/05/11/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E7%B4%A2%E5%BC%95%E5%99%A8/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="类 对象">
+<meta property="og:description" content="索引器">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/05/08/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E7%BB%83%E4%B9%A0%E9%A2%98.png">
-<meta property="article:published_time" content="2022-05-08T07:09:24.000Z">
-<meta property="article:modified_time" content="2022-05-09T12:15:25.720Z">
+<meta property="og:image" content="http://example.com/2022/05/11/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E7%B4%A2%E5%BC%95%E5%99%A8/exam.png">
+<meta property="article:published_time" content="2022-05-11T12:41:52.000Z">
+<meta property="article:modified_time" content="2022-05-11T14:33:01.332Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/05/08/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E7%BB%83%E4%B9%A0%E9%A2%98.png">
+<meta name="twitter:image" content="http://example.com/2022/05/11/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E7%B4%A2%E5%BC%95%E5%99%A8/exam.png">
   
   
-  <title>类和对象 - 垃圾桶</title>
+  <title>索引器 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="类和对象">
+            <span class="h2" id="subtitle" title="索引器">
               
             </span>
 
@@ -199,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-08 15:09" pubdate>
-        2022年5月8日 下午
+      <time datetime="2022-05-11 20:41" pubdate>
+        2022年5月11日 晚上
       </time>
     </span>
   
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      753 字
+      3.3k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7 分钟
+      28 分钟
     </span>
   
 
@@ -248,45 +248,240 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">类和对象</h1>
+            <h1 style="display: none">索引器</h1>
             
             <div class="markdown-body">
-              <p>类 对象</p>
+              <p>索引器</p>
 <span id="more"></span>
 
-<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><p>基本概念：<br>1.具有相同特征<br>2.具有相同行为<br>3.一类事物的抽象<br>4.类是对象的模板<br>5.可以通过类创建出对象<br>6.类的关键词 class</p>
-<p>一般声明在 <strong>namespace</strong> 语句块中<br>声明语法：<br> <div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">访问修饰符 class 类名
+<h1 id="索引器"><a href="#索引器" class="headerlink" title="索引器"></a>索引器</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>让对象可以像数组一样通过索引访问其中元素<br>使程序看起来更直观，更容易编写</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Person
 &#123;
-    &#x2F;&#x2F;封装
-    特征 成员变量
-    行为 成员方法
-    保护特征 成员属性
+    private string name;
+    private int age;
+    private Person[] friends;
 
-    构造函数和析构函数
-    索引器
-    运算符重载
-    静态成员
-&#125;</code></pre></div></p>
-<h1 id="（类）对象"><a href="#（类）对象" class="headerlink" title="（类）对象"></a>（类）对象</h1><p>基本概念：<br>1.<strong>类的声明</strong>和<strong>类对象（变量）声明</strong>是两个概念<br>2.<strong>类的声明</strong>类似<strong>枚举</strong>和<strong>结构体的声明</strong>（类的声明相当于声明了一个自定义变量类型）<br>3.对象是类创建出来的（相当于声明一个<strong>指定类的变量</strong>）<br>4.类创建对象的过程（一般称为<strong>实例化对象</strong>）<br>5.类对象都是<strong>引用类型</strong>的</p>
-<p>声明语法：</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">类名 变量名;
-类名 变量名 &#x3D; null; &#x2F;&#x2F;null代表空
-类名 变量名 &#x3D; new 类名();</code></pre></div>
+    &#x2F;&#x2F;访问修饰符 返回值 this[参数类型 参数名, 参数类型 参数名, ......]
+    public Person this[int index]
+    &#123;
+        get
+        &#123;
+            return friends[index];
+        &#125;
+        set
+        &#123;
+            friends[index] &#x3D; value;
+        &#125;
+    &#125;
+&#125;</code></pre></div>
 
 
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>1.<strong>类的声明</strong>和<strong>类对象（变量）声明</strong>是两个概念<br>2.<strong>类的声明</strong>是声明对象的模板，用来抽象（形容）显示事物的<br>3.<strong>类对象（变量）声明</strong>是用来表示现实中的对象个体的</p>
-<p>4.<strong>类</strong>是一个自定义的变量类型<br>5.实例化一个<strong>类对象</strong>是在声明变量</p>
-<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/08/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E7%BB%83%E4%B9%A0%E9%A2%98.png" srcset="/img/loading.gif" lazyload class="">
+<h2 id="索引器的使用"><a href="#索引器的使用" class="headerlink" title="索引器的使用"></a>索引器的使用</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Person p &#x3D; new Person();
+p[0] &#x3D; new Person();</code></pre></div>
 
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">练习题1 懒得做
-练习题2 A保持不变
-        GameObject A &#x3D; new GameObject(); &#x2F;&#x2F;新建栈 堆
-        GameObject B &#x3D; A; &#x2F;&#x2F;新建栈 指向A的堆
-        B &#x3D; null; &#x2F;&#x2F;B的栈 指向null的堆
-练习题3 A和B没关系
-        GameObject A &#x3D; new GameObject(); &#x2F;&#x2F;新建栈 堆
-        GameObject B &#x3D; A; &#x2F;&#x2F;新建栈 指向A的堆
-        B &#x3D; new GameObject(); &#x2F;&#x2F;B的栈 指向new的堆</code></pre></div>
+
+<h2 id="索引器中可以写逻辑"><a href="#索引器中可以写逻辑" class="headerlink" title="索引器中可以写逻辑"></a>索引器中可以写逻辑</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Person
+&#123;
+    private string name;
+    private int age;
+    private Person[] friends;
+
+    public Person this[int index]
+    &#123;
+        get
+        &#123;
+            if(friends &#x3D;&#x3D; null || 
+               friends.Length - 1 &lt; index)
+            &#123;
+                return null;
+            &#125;
+            return friends[index];
+        &#125;
+        set
+        &#123;
+            if(friends &#x3D;&#x3D; null)
+            &#123;
+                friends &#x3D; new Person[] &#123; value &#125;;
+            &#125;
+            else if(index &gt; friends.Length - 1)
+            &#123;
+                &#x2F;&#x2F;自己定了一个规则 如果索引越界 就默认把最后一个朋友顶掉
+                friends[friends.Length - 1] &#x3D; value;
+            &#125;
+            friends[index] &#x3D; value;
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+
+
+<h2 id="索引器可以重载"><a href="#索引器可以重载" class="headerlink" title="索引器可以重载"></a>索引器可以重载</h2><p>重载的概念是：函数名相同，参数类型、数量、顺序不同</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Person
+&#123;
+    private string name;
+    private int age;
+    private Person[] friends;
+
+    private int[,] array;
+    &#x2F;&#x2F;重载this
+    public int this[int i, int j]
+    &#123;
+        get
+        &#123;
+            return array[i, j];
+        &#125;
+        set
+        &#123;
+            array[i, j] &#x3D; value;
+        &#125;
+    &#125;
+    public int this[string str]
+    &#123;
+        get
+        &#123;
+            switch(str)
+            &#123;
+                case &quot;name&quot;:
+                    return this.name;
+                case &quot;age&quot;:
+                    return age.ToString();
+            &#125;
+            return &quot;&quot;;
+        &#125;
+    &#125;
+
+    public Person this[int index]
+    &#123;
+        get
+        &#123;
+            return friends[index];
+        &#125;
+        set
+        &#123;
+            friends[index] &#x3D; value;
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>索引器的作用：<br>1.以中括号的形式访问自定义类中的元素<br>2.规则自己定，访问时与数组相同<br>3.比较适用于，在类中有数组变量时使用，可以方便地访问和进行逻辑处理</p>
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/11/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E7%B4%A2%E5%BC%95%E5%99%A8/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+
+namespace Lesson6_索引器
+&#123;
+    class Num
+    &#123;
+        private int[] number &#x3D; new int[5];
+
+        &#x2F;&#x2F;用索引器由外部定义数组
+        public int this[int index]
+        &#123;
+            get
+            &#123;
+                return number[index];
+            &#125;
+            set
+            &#123;
+                number[index] &#x3D; value;
+            &#125;
+        &#125;
+
+        &#x2F;&#x2F;增
+        public void Add(Num arr, int num)
+        &#123;
+            int[] number1 &#x3D; new int[arr.number.Length + 1];
+            for (int i &#x3D; 0; i &lt; arr.number.Length; i++)
+            &#123;
+                number1[i] &#x3D; arr.number[i];
+            &#125;
+            number1[number.Length] &#x3D; num;
+            arr.number &#x3D; number1;
+            &#x2F;&#x2F;因为number数组是private类型 只能在类内直接打印
+            for (int i &#x3D; 0; i &lt; arr.number.Length; i++)
+            &#123;
+                Console.WriteLine(arr.number[i]);
+            &#125;
+        &#125;
+
+        &#x2F;&#x2F;查
+        public int Search(Num arr, int num)
+        &#123;
+            &#x2F;&#x2F;暴力遍历寻找
+            for (int i &#x3D; 0; i &lt; arr.number.Length; i++)
+            &#123;
+                if(arr.number[i] &#x3D;&#x3D; num)
+                &#123;
+                    &#x2F;&#x2F;找到输出位置
+                    return i;
+                &#125;
+            &#125;
+            &#x2F;&#x2F;找不到输出-1
+            return -1;
+        &#125;
+
+        &#x2F;&#x2F;删
+        public void Del(Num arr, int num)
+        &#123;     
+            if(arr.Search(arr, num) !&#x3D; -1)
+            &#123;
+                for (int i &#x3D; arr.Search(arr, num); i &lt; arr.number.Length - 1; i++)
+                &#123;
+                    arr.number[i] &#x3D; arr.number[i + 1];
+                &#125;
+                arr.number[arr.number.Length - 1] &#x3D; 0;
+                Console.WriteLine(&quot;删除成功&quot;); 
+            &#125;
+            else
+            &#123;
+                Console.WriteLine(&quot;没有您想要删的数，删除失败&quot;);
+            &#125;
+        &#125;
+
+        &#x2F;&#x2F;改  num1改成num2
+        public void Change(Num arr, int num1, int num2)
+        &#123;
+            if (arr.Search(arr, num1) !&#x3D; -1)
+            &#123;
+                arr.number[arr.Search(arr, num1)] &#x3D; num2;
+                Console.WriteLine(&quot;修改成功&quot;);
+            &#125;
+            else
+            &#123;
+                Console.WriteLine(&quot;没有您想要改的数，修改失败&quot;);
+            &#125;
+        &#125;
+    &#125;
+    internal class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            &#x2F;&#x2F;初始化数组
+            Num arr &#x3D; new Num();
+            arr[0] &#x3D; 1;
+            arr[1] &#x3D; 15;
+            arr[2] &#x3D; 8;
+            arr[3] &#x3D; 11;
+            arr[4] &#x3D; 7;
+
+            &#x2F;&#x2F;增
+            arr.Add(arr, 9);
+
+            &#x2F;&#x2F;删
+            arr.Del(arr, 1);
+            arr.Del(arr, 10);
+
+            &#x2F;&#x2F;查
+            int n &#x3D; int.Parse(Console.ReadLine());
+            Console.WriteLine(&quot;您想找的数&#123;0&#125;在数组的第&#123;1&#125;位&quot;, n, arr.Search(arr, n) + 1);
+
+            &#x2F;&#x2F;改
+            arr.Change(arr, 9, 66);
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+
             </div>
             <hr>
             <div>
@@ -324,9 +519,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/09/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%889%E6%97%A5/">
+                      <a href="/2022/05/11/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%8811%E6%97%A5/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022年5月9日</span>
+                        <span class="hidden-mobile">2022年5月11日</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -334,8 +529,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/08/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
-                        <span class="hidden-mobile">面向对象编程</span>
+                      <a href="/2022/05/10/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%8810%E6%97%A5/">
+                        <span class="hidden-mobile">2022年5月10日</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
