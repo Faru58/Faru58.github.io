@@ -16,24 +16,22 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="静态类和静态构造函数">
+    <meta name="description" content="内部类和分部类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="静态类和静态构造函数">
-<meta property="og:url" content="http://example.com/2022/05/12/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E9%9D%99%E6%80%81%E7%B1%BB%E5%92%8C%E9%9D%99%E6%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="内部类和分部类">
+<meta property="og:url" content="http://example.com/2022/05/13/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E5%86%85%E9%83%A8%E7%B1%BB%E5%92%8C%E5%88%86%E9%83%A8%E7%B1%BB/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="静态类和静态构造函数">
+<meta property="og:description" content="内部类和分部类">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/05/12/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E9%9D%99%E6%80%81%E7%B1%BB%E5%92%8C%E9%9D%99%E6%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png">
-<meta property="article:published_time" content="2022-05-12T11:58:56.000Z">
-<meta property="article:modified_time" content="2022-05-12T13:26:06.974Z">
+<meta property="article:published_time" content="2022-05-13T15:34:17.000Z">
+<meta property="article:modified_time" content="2022-05-13T15:59:54.604Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/05/12/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E9%9D%99%E6%80%81%E7%B1%BB%E5%92%8C%E9%9D%99%E6%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png">
   
   
-  <title>静态类和静态构造函数 - 垃圾桶</title>
+  <title>内部类和分部类 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +187,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="静态类和静态构造函数">
+            <span class="h2" id="subtitle" title="内部类和分部类">
               
             </span>
 
@@ -199,8 +197,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-12 19:58" pubdate>
-        2022年5月12日 晚上
+      <time datetime="2022-05-13 23:34" pubdate>
+        2022年5月13日 晚上
       </time>
     </span>
   
@@ -210,7 +208,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      1.2k 字
     </span>
   
 
@@ -219,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14 分钟
+      10 分钟
     </span>
   
 
@@ -248,117 +246,106 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">静态类和静态构造函数</h1>
+            <h1 style="display: none">内部类和分部类</h1>
             
             <div class="markdown-body">
-              <p>静态类和静态构造函数</p>
+              <p>内部类和分部类</p>
 <span id="more"></span>
 
-<h1 id="静态类和静态构造函数"><a href="#静态类和静态构造函数" class="headerlink" title="静态类和静态构造函数"></a>静态类和静态构造函数</h1><h2 id="静态类"><a href="#静态类" class="headerlink" title="静态类"></a>静态类</h2><p><strong>基本概念：</strong><br>用static修饰的类</p>
-<p><strong>特点：</strong><br>1.只能包含静态成员<br>2.不能被实例化</p>
-<p><strong>作用：</strong><br>1.将常用的静态成员写在静态类中 方便使用<br>2.静态类不能被实例化，更能体现工具性、唯一性<br>    Console就是一个静态类</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">static class TestStatic
+
+<h1 id="内部类和分部类"><a href="#内部类和分部类" class="headerlink" title="内部类和分部类"></a>内部类和分部类</h1><h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p><strong>基本概念：</strong><br>在一个类中再声明一个类</p>
+<p><strong>特点：</strong><br>使用时要用包裹者点出自己</p>
+<p><strong>作用：</strong><br>亲密关系的表现</p>
+<p><strong>注意：</strong><br>访问修饰符作用很大</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Person
+ &#123;
+     public int age;
+     public string name;
+     public Body body;
+
+     public class Body
+     &#123;
+         Arm leftArm;
+         Arm rightArm;
+         &#x2F;&#x2F;class在内部类里默认private
+         class Arm
+         &#123;
+
+         &#125;
+     &#125;
+
+     
+ &#125;
+
+
+ internal class Program
+ &#123;
+     static void Main(string[] args)
+     &#123;
+         Person p &#x3D; new Person();
+         Person.Body body &#x3D; new Person.Body();
+         &#x2F;&#x2F;Person.Body.Arm arm &#x3D; new Person.Body.Arm(); 会报错
+     &#125;
+ &#125;
+</code></pre></div>
+
+
+<h2 id="分部类"><a href="#分部类" class="headerlink" title="分部类"></a>分部类</h2><p><strong>基本概念：</strong><br>把一个类分成几部分声明</p>
+<p><strong>关键字</strong> <em>partial</em></p>
+<p><strong>作用：</strong><br>1.分布描述一个类<br>2.增加程序的拓展性</p>
+<p><strong>注意：</strong><br>1.分部类可以写在多个脚本文件中<br>2.分部类的访问修饰符要一致<br>3.分部类中不能有重复成员</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">partial class Student
 &#123;
-    &#x2F;&#x2F;静态成员变量
-    public static int testIndex &#x3D; 0;
+    public bool sex;
+    public string name;
 
-    public static void TestFun()
-    &#123;
-
-    &#125; 
-
-    public static int TestIndex()
-    &#123;
-        get;
-        set;
-    &#125; </code></pre></div>
-
-
-<h2 id="静态构造函数"><a href="#静态构造函数" class="headerlink" title="静态构造函数"></a>静态构造函数</h2><p><strong>基本概念：</strong><br>在构造函数前加上 static 修饰</p>
-<p><strong>特点：</strong><br>1.静态类和普通类都可以有<br>2.不能使用访问修饰符<br>3.不能有参数<br>4.只会自动调用一次</p>
-<p><strong>作用：</strong><br>在静态构造函数中初始化 静态变量</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;静态类中的静态构造函数
-static class StaticClass
-&#123;
-    public static int testInt &#x3D; 100;
-    public static int testInt2 &#x3D; 100;
-
-    static StaticClass()
-    &#123;
-        &#x2F;&#x2F;只会在初次使用的时候 调用一次
-        Console.WriteLine(&quot;静态构造函数&quot;);
-        testInt &#x3D; 200;
-        testInt2 &#x3D; 200;
-    &#125; 
 &#125;
 
-&#x2F;&#x2F;普通类中的静态构造函数
-class Test
+&#x2F;&#x2F;一个类 分开写
+partial class Student
 &#123;
-    public static int testInt &#x3D; 200;
-    static Test()
+    public int number;
+    public void Speak(string str)
     &#123;
-        Console.WriteLine(&quot;静态构造&quot;);
+
     &#125;
-    &#x2F;&#x2F;这不是重载 这是两个不同的函数
-    public Test()
+
+&#125;
+
+internal class Program
+&#123;
+    static void Main(string[] args)
     &#123;
-        Console.WriteLine(&quot;普通构造&quot;);
+        Student student &#x3D; new Student();
+        student.Speak(string.Empty);
     &#125;
 &#125;
 </code></pre></div>
 
 
-<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/12/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E9%9D%99%E6%80%81%E7%B1%BB%E5%92%8C%E9%9D%99%E6%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png" srcset="/img/loading.gif" lazyload class="">
-
-
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
-
-namespace Lesson8_静态类和静态构造函数
-&#123;
-    &#x2F;&#x2F;数学计算静态类
-    static class Calc
+<h2 id="分部方法"><a href="#分部方法" class="headerlink" title="分部方法"></a>分部方法</h2><p><strong>基本概念：</strong><br>将方法的声明和实现分离</p>
+<p><strong>特点：</strong><br>1.不能加访问修饰符  默认private<br>2.只能在分部类中声明<br>3.返回值只能是void<br>4.可以有参数  不能用out关键字</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;声明和实现分到两个分部类里面
+    partial class Student
     &#123;
-        public static float PI &#x3D;3.145926f;
-
-
-
-        &#x2F;&#x2F;计算圆的面积
-        public static float CircleS(int r)
-        &#123;
-            return PI * r * r;
-        &#125;
-
-        &#x2F;&#x2F;计算圆的周长
-        public static float CircleL(int r)
-        &#123;
-            return PI * r * 2;
-        &#125;
-
-        &#x2F;&#x2F;计算矩形的面积
-        public static float RectangleS(int l, int w)
-        &#123;
-            return l * w;
-        &#125;
-
-        &#x2F;&#x2F;计算矩形的周长
-        public static float RectangleL(int l, int w)
-        &#123;
-            return 2 * (l + w);
-        &#125;
-
+        public bool sex;
+        public string name;
+        &#x2F;&#x2F;声明
+        partial void Speak();
     &#125;
-    internal class Program
+
+    &#x2F;&#x2F;一个类 分开写
+    partial class Student
     &#123;
-        static void Main(string[] args)
+        public int number;
+        &#x2F;&#x2F;实现
+        partial void Speak()
         &#123;
-            Console.WriteLine(&quot;半径为3的圆面积是&#123;0&#125;&quot;, Calc.CircleS(3));
-            Console.WriteLine(&quot;半径为3的圆周长是&#123;0&#125;&quot;, Calc.CircleL(3));
-            Console.WriteLine(&quot;长为3宽为3的矩形面积是&#123;0&#125;&quot;, Calc.RectangleS(3, 3));
-            Console.WriteLine(&quot;长为3宽为3的矩形周长是&#123;0&#125;&quot;, Calc.RectangleL(3, 3));
+            &#x2F;&#x2F;实现逻辑
         &#125;
     &#125;
-&#125;</code></pre></div>
+</code></pre></div>
+
 
 
 
@@ -403,9 +390,9 @@ namespace Lesson8_静态类和静态构造函数
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/12/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%8B%93%E5%B1%95%E6%96%B9%E6%B3%95/">
+                      <a href="/2022/05/14/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">拓展方法</span>
+                        <span class="hidden-mobile">继承的基本规则</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -413,8 +400,8 @@ namespace Lesson8_静态类和静态构造函数
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/12/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%8812%E6%97%A5/">
-                        <span class="hidden-mobile">2022年5月12日</span>
+                      <a href="/2022/05/13/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/">
+                        <span class="hidden-mobile">运算符重载</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

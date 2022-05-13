@@ -16,19 +16,52 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="标签 - C#">
-<meta property="og:url" content="http://example.com/tags/C/index.html">
+    <meta name="description" content="继承的基本规则">
+<meta property="og:type" content="article">
+<meta property="og:title" content="继承的基本规则">
+<meta property="og:url" content="http://example.com/2022/05/14/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/index.html">
 <meta property="og:site_name" content="垃圾桶">
+<meta property="og:description" content="继承的基本规则">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/05/14/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/%E6%A0%91%E7%8A%B6%E5%9B%BE.png">
+<meta property="article:published_time" content="2022-05-13T16:00:50.000Z">
+<meta property="article:modified_time" content="2022-05-13T16:49:05.607Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/05/14/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/%E6%A0%91%E7%8A%B6%E5%9B%BE.png">
   
   
-  <title>标签 - C# - 垃圾桶</title>
+  <title>继承的基本规则 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -55,7 +88,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -151,22 +184,52 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/%E4%BC%8A%E8%8B%8F9.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签 - C#">
+            <span class="h2" id="subtitle" title="继承的基本规则">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-14 00:00" pubdate>
+        2022年5月14日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      202 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      2 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -175,100 +238,118 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 25 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/05/14/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">继承的基本规则</span>
-      <time style="float: right;">05-14</time>
-    </a>
-  
-    
-    <a href="/2022/05/13/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E5%86%85%E9%83%A8%E7%B1%BB%E5%92%8C%E5%88%86%E9%83%A8%E7%B1%BB/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">内部类和分部类</span>
-      <time style="float: right;">05-13</time>
-    </a>
-  
-    
-    <a href="/2022/05/13/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">运算符重载</span>
-      <time style="float: right;">05-13</time>
-    </a>
-  
-    
-    <a href="/2022/05/12/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%8B%93%E5%B1%95%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">拓展方法</span>
-      <time style="float: right;">05-12</time>
-    </a>
-  
-    
-    <a href="/2022/05/12/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E9%9D%99%E6%80%81%E7%B1%BB%E5%92%8C%E9%9D%99%E6%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">静态类和静态构造函数</span>
-      <time style="float: right;">05-12</time>
-    </a>
-  
-    
-    <a href="/2022/05/11/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E9%9D%99%E6%80%81%E6%88%90%E5%91%98/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">静态成员</span>
-      <time style="float: right;">05-11</time>
-    </a>
-  
-    
-    <a href="/2022/05/11/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E7%B4%A2%E5%BC%95%E5%99%A8/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">索引器</span>
-      <time style="float: right;">05-11</time>
-    </a>
-  
-    
-    <a href="/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">成员属性</span>
-      <time style="float: right;">05-10</time>
-    </a>
-  
-    
-    <a href="/2022/05/10/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E5%B0%81%E8%A3%85-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">封装_构造函数和析构函数</span>
-      <time style="float: right;">05-10</time>
-    </a>
-  
-    
-    <a href="/2022/05/09/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">成员方法</span>
-      <time style="float: right;">05-09</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">继承的基本规则</h1>
+            
+            <div class="markdown-body">
+              <p>继承的基本规则</p>
+<span id="more"></span>
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/C/page/2/#board">2</a><a class="page-number" href="/tags/C/page/3/#board">3</a><a class="extend next" rel="next" href="/tags/C/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
+<h1 id="继承的基本规则"><a href="#继承的基本规则" class="headerlink" title="继承的基本规则"></a>继承的基本规则</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>一个类A继承一个类B<br>类A将会继承类B的所有成员<br>类A将拥有类B的所有特征和行为</p>
+<p><strong>被继承的类：</strong><br><em>父类</em> &#x2F; 基类 &#x2F; 超类 </p>
+<p><strong>继承的类：</strong><br><em>子类</em> &#x2F; 派生类</p>
+<p>子类可以有自己的特征和行为</p>
+<p><strong>特点：</strong><br>1.单根性：子类只能有一个父类<br>2.传递性：子类可以简介继承父类的父类</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class 类名 : 被继承的类名
+&#123;
+
+&#125;
+</code></pre></div>
+
+<img src="/2022/05/14/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/%E6%A0%91%E7%8A%B6%E5%9B%BE.png" srcset="/img/loading.gif" lazyload class="">
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class 类名 : 被继承的类名
+&#123;
+
+&#125;
+</code></pre></div>
 
 
 
 
-              </div>
+
+
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/study/">study</a>
+                    
+                      <a class="hover-with-bg" href="/categories/study/C/">C#</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C#</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/13/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E5%86%85%E9%83%A8%E7%B1%BB%E5%92%8C%E5%88%86%E9%83%A8%E7%B1%BB/">
+                        <span class="hidden-mobile">内部类和分部类</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -359,6 +440,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
