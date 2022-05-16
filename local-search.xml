@@ -4,6 +4,89 @@
   
   
   <entry>
+    <title>继承中的构造函数</title>
+    <link href="/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"/>
+    <url>/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<p>继承中的构造函数</p><span id="more"></span><h1 id="继承中的构造函数"><a href="#继承中的构造函数" class="headerlink" title="继承中的构造函数"></a>继承中的构造函数</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>特点：</strong><br>当声明一个子类对象时<br>先执行父类的构造函数<br>再执行子类的构造函数</p><p><strong>注意：</strong><br>1.父类的无参构造 很重要<br>2.子类可以通过base关键字 代表父类 调用父类构造</p><h2 id="继承中构造函数的执行顺序"><a href="#继承中构造函数的执行顺序" class="headerlink" title="继承中构造函数的执行顺序"></a>继承中构造函数的执行顺序</h2><p>父类的父类的构造函数 -&gt; 父类的构造函数 -&gt; 子类的构造函数<br>从高到低依次调用</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>里式替换原则</title>
+    <link href="/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E9%87%8C%E5%BC%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/"/>
+    <url>/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E9%87%8C%E5%BC%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/</url>
+    
+    <content type="html"><![CDATA[<p>里式替换原则</p><span id="more"></span><h1 id="里式替换原则"><a href="#里式替换原则" class="headerlink" title="里式替换原则"></a>里式替换原则</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>任何父类出现的地方，子类都可以替代</p><p><strong>重点</strong><br>语法表现： 父类容器装子类对象，因为子类对象包含了父类的所有内容</p><p><strong>作用</strong><br>方便进行对象存储和管理</p><h2 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class GameObject&#123;&#125;class Player : GameObject&#123;    public void PlayerAtk()    &#123;        Console.WriteLine(&quot;玩家攻击&quot;);    &#125;&#125;class Monster : GameObject&#123;    public void MonsterAtk()    &#123;        Console.WriteLine(&quot;怪物攻击&quot;);    &#125;&#125;class Boss : GameObject&#123;    public void BossAtk()    &#123;        Console.WriteLine(&quot;Boss攻击&quot;);    &#125;&#125;internal class Program&#123;    static void Main(string[] args)    &#123;        &#x2F;&#x2F;里式替换原则 用父类容器 装载子类对象        GameObject player &#x3D; new Player();        GameObject monster &#x3D; new Monster();        GameObject boss &#x3D; new Boss();        GameObject[] objects &#x3D; new GameObject[] &#123; new Player(), new Monster(), new Boss() &#125;;                &#x2F;&#x2F;此时player对象中不存在Playeratk的方法，因为player是在父类容器GameObject中，而GameObject中没有Playeratk的方法        &#x2F;&#x2F;即父类容器装载子类对象不能直接使用子类中的方法    &#125;&#125;</code></pre></div><h2 id="is和as"><a href="#is和as" class="headerlink" title="is和as"></a>is和as</h2><p><strong>基本概念</strong><br>is : 判断一个对象是否是指定类对象<br>返回值： bool 是为true 不是为false</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if(player is Player)&#123;&#125;else if (player is Monster)&#123;&#125;</code></pre></div><p>as : 将一个对象转换为指定类对象<br>返回值： 指定类型对象<br>成功返回指定类型对象，失败返回null</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Player p &#x3D; player as Player; &#x2F;&#x2F;成功 p 是PlayerPlayer p &#x3D; monster as Player; &#x2F;&#x2F;失败 p &#x3D; null</code></pre></div><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if(player is Player)&#123;    &#x2F;&#x2F;Player p &#x3D; player as Player;    &#x2F;&#x2F;p.Playatk();    (player as Player).PlayerAtk();    &#x2F;&#x2F;上面两种等价&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E9%87%8C%E5%BC%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>is是判断该对象是不是这个类，返回的是bool值<br>as是将该对象转换为指定类型，成功则转换成功，失败则将该对象变为null</p><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson13_里式替换原则&#123;    class Monster    &#123;    &#125;    class Boss : Monster    &#123;        public void Skill()        &#123;            Console.WriteLine(&quot;Boss释放技能&quot;);        &#125;    &#125;    class Goblin : Monster    &#123;        public void Atk()        &#123;            Console.WriteLine(&quot;哥布林攻击&quot;);        &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            Monster[] monsters &#x3D; new Monster[10];            Random rand &#x3D; new Random();            for (int i &#x3D; 0; i &lt; monsters.Length; i++)            &#123;                if(rand.Next(1,101) &lt;&#x3D; 50)                &#123;                    monsters[i] &#x3D; new Boss();                &#125;                else                &#123;                    monsters[i] &#x3D; new Goblin();                &#125;            &#125;            for (int i &#x3D; 0; i &lt; monsters.Length; i++)            &#123;                if(monsters[i] is Boss)                &#123;                    (monsters[i] as Boss).Skill();                &#125;                else if(monsters[i] is Goblin)                &#123;                    (monsters[i] as Goblin).Atk();                &#125;            &#125;        &#125;    &#125;&#125;</code></pre></div><h2 id="题3"><a href="#题3" class="headerlink" title="题3"></a>题3</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson13_里式替换原则&#123;    &#x2F;&#x2F;玩家类    class Player    &#123;        public void SwitchWeapon(int k)        &#123;            Player[] weapons &#x3D; new Player[4] &#123; new SMG(), new Shotgun(), new Pistol(), new Dagger() &#125;;            if (weapons[k] is SMG)            &#123;                (weapons[k] as SMG).Print();            &#125;            else if (weapons[k] is Shotgun)            &#123;                (weapons[k] as Shotgun).Print();            &#125;            else if (weapons[k] is Pistol)            &#123;                (weapons[k] as Pistol).Print();            &#125;            else if (weapons[k] is Dagger)            &#123;                (weapons[k] as Dagger).Print();            &#125;        &#125;    &#125;    &#x2F;&#x2F;冲锋枪类    class SMG : Player    &#123;        public void Print()        &#123;            Console.WriteLine(&quot;你现在手持冲锋枪&quot;);        &#125;    &#125;    &#x2F;&#x2F;霰弹枪类    class Shotgun : Player    &#123;        public void Print()        &#123;            Console.WriteLine(&quot;你现在手持霰弹枪&quot;);        &#125;    &#125;    &#x2F;&#x2F;手枪类    class Pistol : Player    &#123;        public void Print()        &#123;            Console.WriteLine(&quot;你现在手持手枪&quot;);        &#125;    &#125;    &#x2F;&#x2F;匕首类    class Dagger : Player    &#123;        public void Print()        &#123;            Console.WriteLine(&quot;你现在手持匕首&quot;);        &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            Player p &#x3D; new Player();            &#x2F;&#x2F;默认匕首            p.SwitchWeapon(3);            Console.WriteLine(&quot;按1(冲锋枪),2(霰弹枪),3(手枪),4(匕首)进行切枪&quot; + &quot; &quot; + &quot;按q退出程序&quot;);            while (true)            &#123;                char cmd &#x3D; Console.ReadKey(true).KeyChar;                try                 &#123;                    if(cmd !&#x3D; &#39;q&#39;)                    &#123;                        p.SwitchWeapon(Convert.ToInt32(cmd - &#39;0&#39;) - 1);                    &#125;                    else                    &#123;                        Environment.Exit(0);                    &#125;                &#125;                catch                &#123;                    Console.WriteLine(&quot;请输入正确指令&quot;);                &#125;                           &#125;        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年5月16日</title>
+    <link href="/2022/05/16/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%8816%E6%97%A5/"/>
+    <url>/2022/05/16/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%8816%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="8ff5085b02db703695eb0573d5e2395718f232387ff5a7bcffab20389c364185">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe505b803b8feaab671cea5ab5e4652ea6c36a02f1947ad70fc2430bd172aca29c6de61259f12fbbd1a4855621ddc3d9d79291f362396f3716bf88727952e141b19141594a62e1e2a1cfce1049c766c052e9189ec318c83d4889671d1206c52a37e925512f04d7e6cf54ff03f5a54a66e4d0f1771bd9a0aa9e6e12bde83af7c4521de6822c6a3c85521d8406e4ee55cc09630a7a3b945f25dbcd29f27aeaa1955a761710f18fbc6df5b1461fe1d5e9ff92b8445f70ec9d16c48ae8eab299ea194cb155a5dbb022d2862dbaabc2f3e4554310341b80c0e38ad644bef9f30ce6c9862b12efd2953531245df513c5ea1e5c94483495f72abfdb32eeec3a1bec1e7f82612dadd133fe3bc11200d8944b1abf9ad0ffba36bc6025ad69f3988ab774dbe96e8d090740736b887dc8998511d9063c9605290758a36a4f6160c28f2e6cc61b2e213a6d6b9ec204ab8d0c2ec0799e9c2677eadc39875b2e663f17c41b31bc971117b9a800d3087acdd0d368d71e4393cb</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">要密码，快滚.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年5月15日</title>
     <link href="/2022/05/15/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%8815%E6%97%A5/"/>
     <url>/2022/05/15/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%8815%E6%97%A5/</url>
