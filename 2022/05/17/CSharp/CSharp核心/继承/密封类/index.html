@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="继承中的构造函数">
+    <meta name="description" content="密封类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="继承中的构造函数">
-<meta property="og:url" content="http://example.com/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="密封类">
+<meta property="og:url" content="http://example.com/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E5%AF%86%E5%B0%81%E7%B1%BB/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="继承中的构造函数">
+<meta property="og:description" content="密封类">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png">
-<meta property="article:published_time" content="2022-05-16T15:24:17.000Z">
-<meta property="article:modified_time" content="2022-05-17T11:16:54.893Z">
+<meta property="og:image" content="http://example.com/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E5%AF%86%E5%B0%81%E7%B1%BB/exam.png">
+<meta property="article:published_time" content="2022-05-17T12:47:41.000Z">
+<meta property="article:modified_time" content="2022-05-17T15:52:57.669Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png">
+<meta name="twitter:image" content="http://example.com/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E5%AF%86%E5%B0%81%E7%B1%BB/exam.png">
   
   
-  <title>继承中的构造函数 - 垃圾桶</title>
+  <title>密封类 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="继承中的构造函数">
+            <span class="h2" id="subtitle" title="密封类">
               
             </span>
 
@@ -199,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-16 23:24" pubdate>
-        2022年5月16日 晚上
+      <time datetime="2022-05-17 20:47" pubdate>
+        2022年5月17日 晚上
       </time>
     </span>
   
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.7k 字
+      2.1k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      23 分钟
+      18 分钟
     </span>
   
 
@@ -248,163 +248,131 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">继承中的构造函数</h1>
+            <h1 style="display: none">密封类</h1>
             
             <div class="markdown-body">
-              <p>继承中的构造函数</p>
+              <p>密封类</p>
 <span id="more"></span>
 
 
-<h1 id="继承中的构造函数"><a href="#继承中的构造函数" class="headerlink" title="继承中的构造函数"></a>继承中的构造函数</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>特点：</strong><br>当声明一个子类对象时<br>先执行父类的构造函数<br>再执行子类的构造函数</p>
-<p><strong>注意：</strong><br>1.父类的无参构造 很重要<br>2.子类可以通过base关键字 代表父类 调用父类构造</p>
-<h2 id="继承中构造函数的执行顺序"><a href="#继承中构造函数的执行顺序" class="headerlink" title="继承中构造函数的执行顺序"></a>继承中构造函数的执行顺序</h2><p>1.父类的父类的构造函数<br>2.父类的构造函数<br>3.子类的构造函数<br>即<strong>从高到低依次调用</strong></p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class GameObject
-&#123;
-    public GameObject()
-    &#123;
-        Console.WriteLine(&quot;GameObject的构造函数&quot;);
-    &#125;
-&#125;
+<h1 id="密封类"><a href="#密封类" class="headerlink" title="密封类"></a>密封类</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>密封类：使用sealed密封关键字修饰的类<br>作用：让类无法再被继承</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">sealed class 类名</code></pre></div>
 
-class Player : GameObject
-&#123;
-    public Player()
-    &#123;
-        Console.WriteLine(&quot;Player的构造函数&quot;);
-    &#125;
-&#125;
-
-class MainPlayer : Player
-&#123;
-    public MainPlayer()
-    &#123;
-        Console.WriteLine(&quot;MainPlayer的构造函数&quot;);
-    &#125;
-&#125;
-
-internal class Program
-&#123;
-    static void Main(string[] args)
-    &#123;
-        MainPlayer mp &#x3D; new MainPlayer();
-    &#125;
-&#125;</code></pre></div>
-
-
-<h2 id="父类的无参构造函数很重要"><a href="#父类的无参构造函数很重要" class="headerlink" title="父类的无参构造函数很重要"></a>父类的无参构造函数很重要</h2><p>重点：<br>无参构造函数会被有参构造函数顶替</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Father
-&#123;
-    public Father(int i)
-    &#123;
-        Console.WriteLine(&quot;Father构造函数&quot;);
-    &#125;
-&#125;
-
-class Son : Father
-&#123;
-    &#x2F;&#x2F;默认调用父类的无参构造函数，但父类中无参构造函数被顶替，所以报错
-&#125;
-
-internal class Program
-&#123;
-    static void Main(string[] args)
-    &#123;
-        Son s &#x3D; new Son();
-    &#125;
-&#125;</code></pre></div>
-
-
-<h2 id="通过base调用制定父类构造"><a href="#通过base调用制定父类构造" class="headerlink" title="通过base调用制定父类构造"></a>通过base调用制定父类构造</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Father
-&#123;
-    public Father(int i)
-    &#123;
-        Console.WriteLine(&quot;Father构造函数&quot;);
-    &#125;
-&#125;
-
-class Son : Father
-&#123;
-    public Son(int i) : base(i)
-    &#123;
-        Console.WriteLine(&quot;Son一个参数的构造函数&quot;);
-    &#125;
-    public Son(int i, string str) : this (i)
-    &#x2F;&#x2F;this其实是先调用base(i),是一种间接的方式;如果用base会直接执行父类构造函数
-    &#123;
-        Console.WriteLine(&quot;Son两个参数的构造函数&quot;);
-    &#125;
-&#125;
-
-internal class Program
-&#123;
-    static void Main(string[] args)
-    &#123;
-        Son s1 &#x3D; new Son(1, &quot;123&quot;);
-
-
-    &#125;
-&#125;</code></pre></div>
-
-<p>注意：<br>this和base的区别<br>this:自己的另一个对应构造函数<br>base:父类的对应构造函数</p>
-<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png" srcset="/img/loading.gif" lazyload class="">
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>不允许最底层子类被继承，保证程序的规范性、结构性、安全性</p>
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E5%AF%86%E5%B0%81%E7%B1%BB/exam.png" srcset="/img/loading.gif" lazyload class="">
 
 <div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
 
-namespace Lesson14_继承中的构造函数
+namespace Lesson16_密封类
 &#123;
-    enum E_TypeOfWork
+
+    sealed class Carrier
     &#123;
-        Programmer,
-        Planner,
-        Artist,
-    &#125;
-    enum E_WorkContent
-    &#123;
-        program,
-        plan,
-        paint,
-    &#125;
-    class Worker
-    &#123;
-        public E_TypeOfWork typeOfWork;
-        public E_WorkContent workContent;
-        public Worker(E_TypeOfWork typeOfWork, E_WorkContent workContent)
+        &#x2F;&#x2F;两站间隔1km
+        int s &#x3D; 1000;
+        &#x2F;&#x2F;载具速度
+        int speed;
+        &#x2F;&#x2F;最大速度100m&#x2F;min
+        int speedMax &#x3D; 100;
+        &#x2F;&#x2F;最大可乘10人,包含司机
+        int maxNumber &#x3D; 10;
+        
+        &#x2F;&#x2F;上车人数
+        public int onNum &#x3D; 0;
+        &#x2F;&#x2F;下车人数
+        public int offNum &#x3D; 0;
+        &#x2F;&#x2F;乘客数组
+        public bool[] passengers &#x3D; new bool[10];
+
+        &#x2F;&#x2F;上下车人数的随机数,载具速度的随机数
+        Random r &#x3D; new Random();
+
+        &#x2F;&#x2F;逻辑上先上车再下车
+        &#x2F;&#x2F;上车 + 下车
+        public void GetOnOff(ref int nowNum)
+        &#123; 
+            &#x2F;&#x2F;上车人数不能超过总人数
+            onNum &#x3D; r.Next(10 - nowNum);
+            Console.Write(&quot;上车&#123;0&#125;人  &quot;, onNum);
+            for (int i &#x3D; nowNum; i &lt; nowNum + onNum; i++)
+            &#123;
+                passengers[i] &#x3D; true;
+            &#125;
+            &#x2F;&#x2F;下车人数不能超过原已上车人数
+            offNum &#x3D; r.Next(nowNum); 
+            Console.Write(&quot;下车&#123;0&#125;人  &quot;, offNum);
+            for (int i &#x3D; nowNum + onNum - 1; i &gt;&#x3D; nowNum + onNum - offNum; i--)
+            &#123;
+                passengers[i] &#x3D; false;
+            &#125;
+            &#x2F;&#x2F;更新已上车人数
+            nowNum &#x3D; nowNum + onNum - offNum;
+        &#125;
+
+        &#x2F;&#x2F;行驶 打印多久到下一站 按任意键到下一站
+        public void Drive()
         &#123;
-            Console.WriteLine(&quot;我是打工人&quot;);
+            &#x2F;&#x2F;载具速度
+            speed &#x3D; r.Next(50, speedMax + 1);
+            Console.WriteLine(&quot;耗时&#123;0&#125;分钟,到达下一站&quot;, s&#x2F;speed);
+        
+        &#125;
+
+        &#x2F;&#x2F;车祸
+        public void Accident()
+        &#123;
+            Console.WriteLine(&quot;很不幸,发生了车祸&quot;);
+            Environment.Exit(0);
         &#125;
     &#125;
-    
-    class Programmer : Worker
-    &#123;
-        public Programmer(E_TypeOfWork typeOfWork, E_WorkContent workContent) : base(typeOfWork, workContent)
-        &#123;
-            Console.WriteLine(&quot;&#123;0&#125; is &#123;1&#125;ing&quot;, typeOfWork, workContent);
-        &#125;
-    &#125;
-    class Planner : Worker
-    &#123;
-        public Planner(E_TypeOfWork typeOfWork, E_WorkContent workContent) : base(typeOfWork, workContent)
-        &#123;
-            Console.WriteLine(&quot;&#123;0&#125; is &#123;1&#125;ing&quot;, typeOfWork, workContent);
-        &#125;
-    &#125;
-    class Artist : Worker
-    &#123;
-        public Artist(E_TypeOfWork typeOfWork, E_WorkContent workContent) : base(typeOfWork, workContent)
-        &#123;
-            Console.WriteLine(&quot;&#123;0&#125; is &#123;1&#125;ing&quot;, typeOfWork, workContent);
-        &#125;
-    &#125;
+
+
     internal class Program
     &#123;
         static void Main(string[] args)
         &#123;
-            Programmer programmer &#x3D; new Programmer(E_TypeOfWork.Programmer, E_WorkContent.program); 
-            Planner planner &#x3D; new Planner(E_TypeOfWork.Planner, E_WorkContent.plan);
-            Artist artist &#x3D; new Artist(E_TypeOfWork.Artist, E_WorkContent.paint);
+            &#x2F;&#x2F;定义一个随机数,判断是否车祸
+            Random r &#x3D; new Random();
+            &#x2F;&#x2F;默认一开始没人上车,即乘客全为false
+            Carrier c &#x3D; new Carrier();
+            &#x2F;&#x2F;已上车人数 初始为0
+            int nowNum &#x3D; 0;
+            &#x2F;&#x2F;计数到站数,设一共10站
+            int set &#x3D; 0;
+            for (int i &#x3D; 0; i &lt; c.passengers.Length; i++)
+            &#123;
+                c.passengers[i] &#x3D; false;
+            &#125;
+            Console.WriteLine(&quot;现在从始发站开始出发,车上无乘客&quot;);
+
+            while(true)
+            &#123;
+                Console.WriteLine(&quot;请按任意键前往下一站&quot;);
+                Console.WriteLine(&quot;&quot;);
+                Console.ReadKey(true);
+                
+                &#x2F;&#x2F;95%的概率正常行驶,5%的概率出车祸
+                if ( r.Next(101) &lt;&#x3D; 95 )
+                &#123;
+                    c.Drive();
+                    c.GetOnOff(ref nowNum);
+                    Console.WriteLine(&quot;现在车上有&#123;0&#125;人&quot;, nowNum);
+                    set++;
+                &#125;
+                else
+                &#123;
+                    c.Accident();
+                &#125;
+                if( set &#x3D;&#x3D; 10 )
+                &#123;
+                    Console.WriteLine(&quot;\n已到达终点站&quot;);
+                    Environment.Exit(0);
+                &#125;
+            &#125; 
         &#125;
     &#125;
 &#125;</code></pre></div>
+
 
 
 
@@ -445,9 +413,9 @@ namespace Lesson14_继承中的构造函数
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E4%B8%87%E7%89%A9%E4%B9%8B%E7%88%B6%E5%92%8C%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/">
+                      <a href="/2022/05/17/%E6%97%A5%E8%AE%B0/2022%E5%B9%B45%E6%9C%88/2022%E5%B9%B45%E6%9C%8817%E6%97%A5/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">万物之父和装箱拆箱</span>
+                        <span class="hidden-mobile">2022年5月17日</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -455,8 +423,8 @@ namespace Lesson14_继承中的构造函数
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E9%87%8C%E5%BC%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/">
-                        <span class="hidden-mobile">里式替换原则</span>
+                      <a href="/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E4%B8%87%E7%89%A9%E4%B9%8B%E7%88%B6%E5%92%8C%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/">
+                        <span class="hidden-mobile">万物之父和装箱拆箱</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

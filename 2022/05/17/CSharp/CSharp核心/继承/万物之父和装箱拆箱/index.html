@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="继承中的构造函数">
+    <meta name="description" content="万物之父和装箱拆箱">
 <meta property="og:type" content="article">
-<meta property="og:title" content="继承中的构造函数">
-<meta property="og:url" content="http://example.com/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="万物之父和装箱拆箱">
+<meta property="og:url" content="http://example.com/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E4%B8%87%E7%89%A9%E4%B9%8B%E7%88%B6%E5%92%8C%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="继承中的构造函数">
+<meta property="og:description" content="万物之父和装箱拆箱">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png">
-<meta property="article:published_time" content="2022-05-16T15:24:17.000Z">
-<meta property="article:modified_time" content="2022-05-17T11:16:54.893Z">
+<meta property="og:image" content="http://example.com/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E4%B8%87%E7%89%A9%E4%B9%8B%E7%88%B6%E5%92%8C%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/exam.png">
+<meta property="article:published_time" content="2022-05-17T11:17:14.000Z">
+<meta property="article:modified_time" content="2022-05-17T12:19:34.536Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png">
+<meta name="twitter:image" content="http://example.com/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E4%B8%87%E7%89%A9%E4%B9%8B%E7%88%B6%E5%92%8C%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/exam.png">
   
   
-  <title>继承中的构造函数 - 垃圾桶</title>
+  <title>万物之父和装箱拆箱 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="继承中的构造函数">
+            <span class="h2" id="subtitle" title="万物之父和装箱拆箱">
               
             </span>
 
@@ -199,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-16 23:24" pubdate>
-        2022年5月16日 晚上
+      <time datetime="2022-05-17 19:17" pubdate>
+        2022年5月17日 晚上
       </time>
     </span>
   
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.7k 字
+      1.2k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      23 分钟
+      11 分钟
     </span>
   
 
@@ -248,90 +248,23 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">继承中的构造函数</h1>
+            <h1 style="display: none">万物之父和装箱拆箱</h1>
             
             <div class="markdown-body">
-              <p>继承中的构造函数</p>
+              <p>万物之父和装箱拆箱</p>
 <span id="more"></span>
 
-
-<h1 id="继承中的构造函数"><a href="#继承中的构造函数" class="headerlink" title="继承中的构造函数"></a>继承中的构造函数</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>特点：</strong><br>当声明一个子类对象时<br>先执行父类的构造函数<br>再执行子类的构造函数</p>
-<p><strong>注意：</strong><br>1.父类的无参构造 很重要<br>2.子类可以通过base关键字 代表父类 调用父类构造</p>
-<h2 id="继承中构造函数的执行顺序"><a href="#继承中构造函数的执行顺序" class="headerlink" title="继承中构造函数的执行顺序"></a>继承中构造函数的执行顺序</h2><p>1.父类的父类的构造函数<br>2.父类的构造函数<br>3.子类的构造函数<br>即<strong>从高到低依次调用</strong></p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class GameObject
-&#123;
-    public GameObject()
-    &#123;
-        Console.WriteLine(&quot;GameObject的构造函数&quot;);
-    &#125;
-&#125;
-
-class Player : GameObject
-&#123;
-    public Player()
-    &#123;
-        Console.WriteLine(&quot;Player的构造函数&quot;);
-    &#125;
-&#125;
-
-class MainPlayer : Player
-&#123;
-    public MainPlayer()
-    &#123;
-        Console.WriteLine(&quot;MainPlayer的构造函数&quot;);
-    &#125;
-&#125;
-
-internal class Program
-&#123;
-    static void Main(string[] args)
-    &#123;
-        MainPlayer mp &#x3D; new MainPlayer();
-    &#125;
-&#125;</code></pre></div>
-
-
-<h2 id="父类的无参构造函数很重要"><a href="#父类的无参构造函数很重要" class="headerlink" title="父类的无参构造函数很重要"></a>父类的无参构造函数很重要</h2><p>重点：<br>无参构造函数会被有参构造函数顶替</p>
+<h1 id="万物之父和装箱拆箱"><a href="#万物之父和装箱拆箱" class="headerlink" title="万物之父和装箱拆箱"></a>万物之父和装箱拆箱</h1><h2 id="万物之父"><a href="#万物之父" class="headerlink" title="万物之父"></a>万物之父</h2><p>关键字： object<br>概念： object是所有类型的基类，它是一个类（引用类型）<br>作用：<br>1.可以利用里式替换原则，用object容器装所有对象<br>2.可以用来表示不确定类型，作为函数参数类型</p>
 <div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Father
 &#123;
-    public Father(int i)
-    &#123;
-        Console.WriteLine(&quot;Father构造函数&quot;);
-    &#125;
+
 &#125;
 
 class Son : Father
 &#123;
-    &#x2F;&#x2F;默认调用父类的无参构造函数，但父类中无参构造函数被顶替，所以报错
-&#125;
-
-internal class Program
-&#123;
-    static void Main(string[] args)
+    public void Speak()
     &#123;
-        Son s &#x3D; new Son();
-    &#125;
-&#125;</code></pre></div>
 
-
-<h2 id="通过base调用制定父类构造"><a href="#通过base调用制定父类构造" class="headerlink" title="通过base调用制定父类构造"></a>通过base调用制定父类构造</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Father
-&#123;
-    public Father(int i)
-    &#123;
-        Console.WriteLine(&quot;Father构造函数&quot;);
-    &#125;
-&#125;
-
-class Son : Father
-&#123;
-    public Son(int i) : base(i)
-    &#123;
-        Console.WriteLine(&quot;Son一个参数的构造函数&quot;);
-    &#125;
-    public Son(int i, string str) : this (i)
-    &#x2F;&#x2F;this其实是先调用base(i),是一种间接的方式;如果用base会直接执行父类构造函数
-    &#123;
-        Console.WriteLine(&quot;Son两个参数的构造函数&quot;);
     &#125;
 &#125;
 
@@ -339,71 +272,68 @@ internal class Program
 &#123;
     static void Main(string[] args)
     &#123;
-        Son s1 &#x3D; new Son(1, &quot;123&quot;);
+        Father f &#x3D; new Son();
+        if( f is Son )
+        &#123;
+            ( f as Son ).Speak();
+        &#125;
 
+        &#x2F;&#x2F;引用类型
+        object o &#x3D; new Son();
+        if( o is Son )
+        &#123;
+            (o as Son ).Speak();
+        &#125;
+        &#x2F;&#x2F;值类型
+        object o2 &#x3D; 1;
+        &#x2F;&#x2F;用强转进行数值使用
+        int i &#x3D; (int)o2;
+
+        &#x2F;&#x2F;特殊的string类型
+        object o3 &#x3D; &quot;123123&quot;;
+        string s &#x3D; o3 as string; &#x2F;&#x2F;o3.ToString();
+
+        &#x2F;&#x2F;数组类型
+        object o4 &#x3D; new int[10];
+        int[] arr &#x3D; o4 as int[]; &#x2F;&#x2F;(int[])o4;
 
     &#125;
 &#125;</code></pre></div>
 
-<p>注意：<br>this和base的区别<br>this:自己的另一个对应构造函数<br>base:父类的对应构造函数</p>
-<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png" srcset="/img/loading.gif" lazyload class="">
 
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
-
-namespace Lesson14_继承中的构造函数
+<h2 id="拆箱装箱"><a href="#拆箱装箱" class="headerlink" title="拆箱装箱"></a>拆箱装箱</h2><p>发生条件：<br>装箱： object中存入值类型<br>拆箱： object转为值类型</p>
+<p>装箱：<br>把值类型用引用类型存储<br>栈内存会迁移到堆内存中</p>
+<p>拆箱：<br>把引用类型存储的值类型取出来<br>堆内存会迁移到栈内存中</p>
+<p>好处：不确定类型时可以方便参数的存储和传递<br>坏处：存在内存迁移，增加性能消耗</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">internal class Program
 &#123;
-    enum E_TypeOfWork
+    static void Main(string[] args)
     &#123;
-        Programmer,
-        Planner,
-        Artist,
+        &#x2F;&#x2F;装箱
+        object v &#x3D; 3;
+        &#x2F;&#x2F;拆箱
+        int intValue &#x3D; (int)v;
+
+        &#x2F;&#x2F;传入object类数组
+        TestFun(1, 1.5f , 2, &quot;123&quot;, new int[10]);
     &#125;
-    enum E_WorkContent
+
+    static void TestFun( params object[] array )
     &#123;
-        program,
-        plan,
-        paint,
+
     &#125;
-    class Worker
-    &#123;
-        public E_TypeOfWork typeOfWork;
-        public E_WorkContent workContent;
-        public Worker(E_TypeOfWork typeOfWork, E_WorkContent workContent)
-        &#123;
-            Console.WriteLine(&quot;我是打工人&quot;);
-        &#125;
-    &#125;
-    
-    class Programmer : Worker
-    &#123;
-        public Programmer(E_TypeOfWork typeOfWork, E_WorkContent workContent) : base(typeOfWork, workContent)
-        &#123;
-            Console.WriteLine(&quot;&#123;0&#125; is &#123;1&#125;ing&quot;, typeOfWork, workContent);
-        &#125;
-    &#125;
-    class Planner : Worker
-    &#123;
-        public Planner(E_TypeOfWork typeOfWork, E_WorkContent workContent) : base(typeOfWork, workContent)
-        &#123;
-            Console.WriteLine(&quot;&#123;0&#125; is &#123;1&#125;ing&quot;, typeOfWork, workContent);
-        &#125;
-    &#125;
-    class Artist : Worker
-    &#123;
-        public Artist(E_TypeOfWork typeOfWork, E_WorkContent workContent) : base(typeOfWork, workContent)
-        &#123;
-            Console.WriteLine(&quot;&#123;0&#125; is &#123;1&#125;ing&quot;, typeOfWork, workContent);
-        &#125;
-    &#125;
-    internal class Program
-    &#123;
-        static void Main(string[] args)
-        &#123;
-            Programmer programmer &#x3D; new Programmer(E_TypeOfWork.Programmer, E_WorkContent.program); 
-            Planner planner &#x3D; new Planner(E_TypeOfWork.Planner, E_WorkContent.plan);
-            Artist artist &#x3D; new Artist(E_TypeOfWork.Artist, E_WorkContent.paint);
-        &#125;
-    &#125;
+&#125;</code></pre></div>
+
+
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E4%B8%87%E7%89%A9%E4%B9%8B%E7%88%B6%E5%92%8C%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+<h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>装箱： object中存入值类型；把值类型用引用类型存储；栈内存会迁移到堆内存中<br>拆箱： object转为值类型；把引用类型存储的值类型取出来；堆内存会迁移到栈内存中</p>
+<h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">internal class Program
+&#123;
+    &#x2F;&#x2F;装箱
+    object v &#x3D; 3;
+    &#x2F;&#x2F;拆箱
+    int intValue &#x3D; (int)v;
 &#125;</code></pre></div>
 
 
@@ -445,9 +375,9 @@ namespace Lesson14_继承中的构造函数
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E4%B8%87%E7%89%A9%E4%B9%8B%E7%88%B6%E5%92%8C%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1/">
+                      <a href="/2022/05/17/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E5%AF%86%E5%B0%81%E7%B1%BB/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">万物之父和装箱拆箱</span>
+                        <span class="hidden-mobile">密封类</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -455,8 +385,8 @@ namespace Lesson14_继承中的构造函数
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E9%87%8C%E5%BC%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99/">
-                        <span class="hidden-mobile">里式替换原则</span>
+                      <a href="/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
+                        <span class="hidden-mobile">继承中的构造函数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
