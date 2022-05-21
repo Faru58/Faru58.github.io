@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>命名空间</title>
+    <link href="/2022/05/21/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/"/>
+    <url>/2022/05/21/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/</url>
+    
+    <content type="html"><![CDATA[<p>命名空间</p><span id="more"></span><h1 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>命名空间是用来组织和重用代码的<br>作用：<br>就像是一个工具包，类就像是一件一件的工具，都是声明在命名空间中的</p><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">namespace 命名空间名&#123;    class 类名    &#123;    &#125;    class 类名    &#123;    &#125;&#125;</code></pre></div><p>1.可以写成分部形式（同名写多个）以继承<br>2.但在同一命名空间中不能有同名类</p><h2 id="不同命名空间中相互使用，需要引用命名空间或指明出处"><a href="#不同命名空间中相互使用，需要引用命名空间或指明出处" class="headerlink" title="不同命名空间中相互使用，需要引用命名空间或指明出处"></a>不同命名空间中相互使用，需要引用命名空间或指明出处</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;引用命名空间using 命名空间名&#x2F;&#x2F;可以使用该命名空间里的类&#x2F;&#x2F;指明出处命名空间名.类名 &#x3D; new 命名空间名.类名();</code></pre></div><h2 id="不同命名空间中允许有同名类"><a href="#不同命名空间中允许有同名类" class="headerlink" title="不同命名空间中允许有同名类"></a>不同命名空间中允许有同名类</h2><p>在调用同名类时不仅需要引用命名空间，还需要指明出处以实例化</p><h2 id="命名空间可以包裹命名空间"><a href="#命名空间可以包裹命名空间" class="headerlink" title="命名空间可以包裹命名空间"></a>命名空间可以包裹命名空间</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">namespace MyGame&#123;    namespace UI    &#123;        class Image        &#123;        &#125;    &#125;    namespace Game    &#123;        class Image        &#123;                    &#125;    &#125;&#125;&#x2F;&#x2F;调用using MyGame.UI;MyGame.UI.Image img &#x3D; new MyGame.UI.Image();</code></pre></div><h2 id="关于修饰类的访问修饰符"><a href="#关于修饰类的访问修饰符" class="headerlink" title="关于修饰类的访问修饰符"></a>关于修饰类的访问修饰符</h2><p>public - 命名空间中的类 默认为public<br>internal - 只能在该程序集（工程）中使用<br>abstract - 抽象类<br>sealed - 密封类<br>partial - 分部类</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/21/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>using可以调用该命名空间中的类，以及类中的方法</p><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using UI;using Graph;namespace UI&#123;    class Image    &#123;            &#125;&#125;namespace Graph&#123;    class Image    &#123;    &#125;&#125;namespace Lesson21_命名空间&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            UI.Image image &#x3D; new UI.Image();            Graph.Image image1 &#x3D; new Graph.Image();        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>密封函数</title>
+    <link href="/2022/05/21/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%A4%9A%E6%80%81/%E5%AF%86%E5%B0%81%E5%87%BD%E6%95%B0/"/>
+    <url>/2022/05/21/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%A4%9A%E6%80%81/%E5%AF%86%E5%B0%81%E5%87%BD%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<p>密封函数</p><span id="more"></span><h1 id="密封函数"><a href="#密封函数" class="headerlink" title="密封函数"></a>密封函数</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>用密封关键字sealed修饰的重写函数<br>作用：让虚方法或者抽象方法之后不能再被重写<br>特点：和override一起出现，不能写在abstract和virtual前</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年5月21日</title>
     <link href="/2022/05/21/diary/2022.5/2022%E5%B9%B45%E6%9C%8821%E6%97%A5/"/>
     <url>/2022/05/21/diary/2022.5/2022%E5%B9%B45%E6%9C%8821%E6%97%A5/</url>
