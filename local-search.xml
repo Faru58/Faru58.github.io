@@ -4,11 +4,123 @@
   
   
   <entry>
+    <title>抽象类和接口的区别</title>
+    <link href="/2022/05/23/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <url>/2022/05/23/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    
+    <content type="html"><![CDATA[<p>抽象类和接口的区别</p><span id="more"></span><h1 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h1><h2 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h2><p>1.都可以被继承<br>2.都可以被实例化<br>3.都可以包含方法声明<br>4.子类必须是实现未实现的方法<br>5.都遵循里式替换原则</p><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>1.抽象类中可以有构造函数；接口不能<br>2.抽象类只能备单一继承；接口类可以被继承多个<br>3.抽象类中可以有成员变量；接口中不能<br>4.抽象类中可以声明成员方法，虚方法，抽象方法，静态方法；接口中只能声明没有实现的抽象方法<br>5.抽象类方法可以使用访问修饰符；接口中建议不写，默认public</p><h2 id="如何选择抽象类和接口"><a href="#如何选择抽象类和接口" class="headerlink" title="如何选择抽象类和接口"></a>如何选择抽象类和接口</h2><p>表示对象的用抽象类（动物等），表示行为拓展的用接口（飞翔等）<br>不同对象拥有的共同行为，我们往往可以使用接口来实现</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年5月23日</title>
+    <link href="/2022/05/23/diary/2022.5/2022%E5%B9%B45%E6%9C%8823%E6%97%A5/"/>
+    <url>/2022/05/23/diary/2022.5/2022%E5%B9%B45%E6%9C%8823%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="638f7a94ae9f94bd977cbdbc5d29c560c560ead633262ea8e276a739e991176a">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50c8bc290f7583a7ed781da721f0adc73ccebdd6e51127fd5055d63ed9483b654136048faba7cf5273ddbf55c1c792351d3a5445e28648adfc311760c649dfa9d6cf4ec3ced3274cd0a77f0c6d97ae266d8eb322573d38c79dcd925eb1023941a3597f2757d301258715bd3581dadfb5f7f0e63bc4bbeadcffb6daaae98457a8053699b8393abaec0f9fb4695f30a2f904869c5bc0803f61cbed0d1b7596578defb2054ca325fc36cba335ca364ae68ba135d7146e7b46f6839726c3bb46e77ed0f5af1de6007d85396215f6a5c86694de52936e28a470900976f79ec0483ed885b44068612035cdad1a005122e1246a8f8664f6ec50ee51bde518d1ba5d6a6d6b952807d224a0a5bd57d7b26284be865d</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">要密码，快滚.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>结构体和类的区别</title>
+    <link href="/2022/05/23/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <url>/2022/05/23/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    
+    <content type="html"><![CDATA[<p>结构体和类的区别</p><span id="more"></span><h1 id="结构体和类的区别"><a href="#结构体和类的区别" class="headerlink" title="结构体和类的区别"></a>结构体和类的区别</h1><h2 id="区别概述"><a href="#区别概述" class="headerlink" title="区别概述"></a>区别概述</h2><p>结构体和类最大的区别是在存储空间上的，因为结构体是值，类是引用，<br>因此他们的存储位置一个在栈上，一个在堆上，</p><p>结构体和类在使用上很类似，结构体甚至可以用面向对象的思想来形容一类对象。<br>结构体具备着面向对象思想中封装的特性，但是他不具备继承和多态的特性，因此大大减少了它的使用频率。<br>由于结构体不具备继承的特性，所以它不能够使用protected保护访问修饰符。</p><h2 id="细节区别"><a href="#细节区别" class="headerlink" title="细节区别"></a>细节区别</h2><p>1.结构体是值类型，类是引用类型<br>2.结构体存在栈中，类存在栈中<br>3.结构体成员不能使用protected访问修饰符，而类可以<br>4.结构体成员变量声明不能指定初始值，而类可以<br>5.结构体不能声明无参的构造函数，而类可以<br>6.结构体声明有参构造函数后，无参构造函数不会被顶掉<br>7.结构体不能声明构析函数，而类可以<br>8.结构体不能被继承，而类可以<br>9.结构体需要在构造函数中初始化所有成员变量，而类随意<br>10.结构体不能被静态static修饰（不存在静态结构体），而类可以<br>11.结构体不能在内部声明和自己一样的结构体变量，而类可以</p><h2 id="结构体的特别之处"><a href="#结构体的特别之处" class="headerlink" title="结构体的特别之处"></a>结构体的特别之处</h2><p>结构体可以继承接口<br>因为接口是行为的抽象</p><h2 id="如何选择结构体和类"><a href="#如何选择结构体和类" class="headerlink" title="如何选择结构体和类"></a>如何选择结构体和类</h2><p>1.想要用继承和多态时，直接淘汰结构体，比如玩家、怪物等等<br>2.对象是数据集合时，优先考虑结构体，比如位置、坐标等等<br>3.从值类型和引用类型赋值时的区别上去考虑，比如经常被赋值传递的对象，并且改变赋值对象，原对象不想跟着变化时，就用结构体，比如坐标、向量、旋转等等</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>stringBuilder</title>
+    <link href="/2022/05/23/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/stringBulider/"/>
+    <url>/2022/05/23/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/stringBulider/</url>
+    
+    <content type="html"><![CDATA[<p>stringBuilder</p><span id="more"></span><h1 id="stringBuilder"><a href="#stringBuilder" class="headerlink" title="stringBuilder"></a>stringBuilder</h1><p>C#提供的一个用于处理字符串的公共类<br>主要解决的问题：<br>修改字符串而不创建新的对象，需要频繁修改和拼接字符串可以使用它，可以提升性能<br>使用前 需要引用命名空间 using System.Text;</p><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>直接指明内容</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">StringBuilder str &#x3D; new StringBuilder(&quot;内容&quot;);StringBuilder str &#x3D; new StringBuilder(&quot;内容&quot;, 容量大小);</code></pre></div><h2 id="容量"><a href="#容量" class="headerlink" title="容量"></a>容量</h2><p>StringBuilder存在一个容量的问题，每次往里面增加时，会自动扩容</p><p>获得容量</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">StringBuilder str &#x3D; new StringBuilder(&quot;内容&quot;);str.Capacity;</code></pre></div><h2 id="增删查改替换"><a href="#增删查改替换" class="headerlink" title="增删查改替换"></a>增删查改替换</h2><p>增</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">str.Append(&quot;要增加的内容&quot;);str.AppendFormat(&quot;&#123;0&#125;&#123;1&#125;&quot;, 内容1, 内容2);</code></pre></div><p>插入</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">str.Insert(插入的位置, &quot;内容&quot;); &#x2F;&#x2F;插在前面</code></pre></div><p>删</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">str.Remove(开始删的位置, 删的数量);</code></pre></div><p>查</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">str.clear();</code></pre></div><p>查</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Console.WriteLine(str[1]);</code></pre></div><p>改</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">str[0] &#x3D; &#39;A&#39;; &#x2F;&#x2F;string不能这样改 StringBuilder可以这样改</code></pre></div><p>替换</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">str.Replace(&quot;你想改的字符&quot;, &quot;你想改成的字符&quot;);</code></pre></div><p>重新赋值 StringBuilder</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">str.clear(); &#x2F;&#x2F;先清空&#x2F;&#x2F;再赋值</code></pre></div><p>判断字符串是否相等</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( str.Equals(&quot;想要判断是否相等的字符串&quot;) )</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/23/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/stringBulider/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>1.string相对于stringbuilder更容易产生垃圾 每次修改拼接都会产生垃圾<br>2.string相对stringbuilder更加灵活 因为它提供了更多的方法供使用<br>如何选择：<br>需要频繁修改拼接的字符串可以用stringbuilder<br>需要使用string独特的一些方法来处理一些特殊逻辑时可以使用string</p><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><p>内存优化实际上是两个问题：<br>1.如何节约内存<br>2.如何尽量少的GC</p><p>解决方法：<br>1.少new对象，少产生垃圾<br>2.合理使用static<br>3.合理使用string和stringbuilder</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>string</title>
     <link href="/2022/05/22/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/string/"/>
     <url>/2022/05/22/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/string/</url>
     
-    <content type="html"><![CDATA[<p>string</p><span id="more"></span><h1 id="string"><a href="#string" class="headerlink" title="string"></a>string</h1><h2 id="字符串指定位置获取"><a href="#字符串指定位置获取" class="headerlink" title="字符串指定位置获取"></a>字符串指定位置获取</h2><p>字符串本质是char数组</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;唐老狮&quot;;Console.WriteLine(str[0]); &#x2F;&#x2F;打印“唐”</code></pre></div><p>可以转换化为char数组</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">char[] chars &#x3D; str.ToCharArray();Console.WriteLine(chars[1]); &#x2F;&#x2F;打印“老”</code></pre></div><h2 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h2><p>Format(); 后接变长参数</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; string.Format(&quot;&#123;0&#125;&#123;1&#125;&quot;, 1, 3333);Console.WriteLine(str); &#x2F;&#x2F;打印13333</code></pre></div><h2 id="正向查找字符位置"><a href="#正向查找字符位置" class="headerlink" title="正向查找字符位置"></a>正向查找字符位置</h2><p>IndexOf(); 返回字符位置</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;我是唐老狮！&quot;;int index &#x3D; str.IndexOf(&quot;唐&quot;);Console.WriteLine(index); &#x2F;&#x2F;打印1</code></pre></div><p> 若没找到则返回-1</p><h2 id="反向查找指定字符串位置"><a href="#反向查找指定字符串位置" class="headerlink" title="反向查找指定字符串位置"></a>反向查找指定字符串位置</h2><h2 id="移出指定位置后的字符-及-替换指定字符串"><a href="#移出指定位置后的字符-及-替换指定字符串" class="headerlink" title="移出指定位置后的字符 及 替换指定字符串"></a>移出指定位置后的字符 及 替换指定字符串</h2><h2 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h2><h2 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h2>]]></content>
+    <content type="html"><![CDATA[<p>string</p><span id="more"></span><h1 id="string"><a href="#string" class="headerlink" title="string"></a>string</h1><h2 id="字符串指定位置获取"><a href="#字符串指定位置获取" class="headerlink" title="字符串指定位置获取"></a>字符串指定位置获取</h2><p>字符串本质是char数组</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;唐老狮&quot;;Console.WriteLine(str[0]); &#x2F;&#x2F;打印“唐”</code></pre></div><p>可以转换化为char数组</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">char[] chars &#x3D; str.ToCharArray();Console.WriteLine(chars[1]); &#x2F;&#x2F;打印“老”</code></pre></div><h2 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h2><p>Format(); 后接变长参数</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; string.Format(&quot;&#123;0&#125;&#123;1&#125;&quot;, 1, 3333);Console.WriteLine(str); &#x2F;&#x2F;打印13333</code></pre></div><h2 id="正向查找字符位置"><a href="#正向查找字符位置" class="headerlink" title="正向查找字符位置"></a>正向查找字符位置</h2><p>IndexOf(); 返回字符位置</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;我是唐老狮！&quot;;int index &#x3D; str.IndexOf(&quot;唐&quot;);Console.WriteLine(index); &#x2F;&#x2F;打印1</code></pre></div><p> 若没找到则返回-1</p><h2 id="反向查找指定字符串位置"><a href="#反向查找指定字符串位置" class="headerlink" title="反向查找指定字符串位置"></a>反向查找指定字符串位置</h2><p>LastIndexOf(); 反向查找并返回字符串位置(字符串第一个字符的位置)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;我是唐老狮唐老狮&quot;;int index &#x3D; str.IndexOf(&quot;唐老狮&quot;);Console.WriteLine(index); &#x2F;&#x2F;打印5</code></pre></div><p> 若没找到则返回-1</p><h2 id="移除指定位置后的字符"><a href="#移除指定位置后的字符" class="headerlink" title="移除指定位置后的字符"></a>移除指定位置后的字符</h2><p>Remove();  </p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;我是唐老狮唐老狮&quot;;str.Remove(4);  &#x2F;&#x2F;移除4及之后的字符，不会改变原字符串Console.WriteLine(str); &#x2F;&#x2F;打印不变str &#x3D; str.Remove(4);Console.WriteLine(str); &#x2F;&#x2F;打印0-3 “我是唐老”&#x2F;&#x2F;重载 Remove(参数1, 参数2);&#x2F;&#x2F;参数1，开始位置；参数2，字符个数str &#x3D; str.Remove(1, 1);Console.WriteLine(str); &#x2F;&#x2F;打印 “我唐老”</code></pre></div><h2 id="替换指定字符串"><a href="#替换指定字符串" class="headerlink" title="替换指定字符串"></a>替换指定字符串</h2><p>Replace();</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;我是唐老狮唐老狮&quot;;&#x2F;&#x2F;参数一：原字符串；参数2：新字符串str &#x3D; str.Replace(&quot;唐老狮&quot;, &quot;老炮儿&quot;);Console.WriteLine(str); &#x2F;&#x2F;打印“我是老炮儿老炮儿”</code></pre></div><h2 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h2><p>ToUpper();<br>ToLower();</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;asdfasd&quot;;str &#x3D; str.ToUpper(str);Console.WriteLine(str); &#x2F;&#x2F;打印ASDFASD&#x2F;&#x2F;ToLower同理</code></pre></div><h2 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h2><p>Substring();</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;唐老狮唐老狮&quot;;&#x2F;&#x2F;截取从指定位置开始之后的字符str &#x3D; str.Substring(2);Console.WriteLine(str); &#x2F;&#x2F;打印“狮唐老狮”&#x2F;&#x2F;截取从指定位置开始数量为（参数2）的字符 不能超过总长度str &#x3D; str.Substring(2, 2);Console.WriteLine(str); &#x2F;&#x2F;打印“老狮”</code></pre></div><h2 id="字符串切割"><a href="#字符串切割" class="headerlink" title="字符串切割"></a>字符串切割</h2><p>Split();</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string str &#x3D; &quot;1,2,3,5,6,7,8&quot;;&#x2F;&#x2F;截取从指定位置开始之后的字符string[] strs &#x3D; str.Split(&#39;,&#39;);for ( i &#x3D; 0; i &lt; strs.Length; i++)&#123;    Console.WriteLine(str[i]); &#x2F;&#x2F;打印1\n2\n...&#125;&#x2F;&#x2F;截取从指定位置开始数量为（参数2）的字符 不能超过总长度str &#x3D; str.Substring(2, 2);Console.WriteLine(str); &#x2F;&#x2F;打印“老狮”</code></pre></div><p> 用于商业游戏配置表</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/22/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94/string/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>截取：Substring(参数1);    Substring(参数1, 参数2);<br>替换：Replace(参数1);   Replace(参数1, 参数2);</p><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson23_面向对象相关string&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            string str &#x3D; &quot;1|2|3|4|5|6|7&quot;;            string[] strs &#x3D; str.Split(&#39;|&#39;);            str &#x3D; &quot;&quot;;            for (int i &#x3D; 0; i &lt; strs.Length; i++)            &#123;                str +&#x3D; int.Parse(strs[i]) + 1;                if(i !&#x3D; strs.Length - 1)                &#123;                    str +&#x3D; &quot;|&quot;;                &#125;            &#125;            Console.WriteLine(str);        &#125;    &#125;&#125;</code></pre></div><h2 id="题3"><a href="#题3" class="headerlink" title="题3"></a>题3</h2><p>实际上没有区别<br>后者是前者的别名，是程序的关键字<br>String,Int32,Int64,Int16是大的结构体名</p><h2 id="题4"><a href="#题4" class="headerlink" title="题4"></a>题4</h2><p>str &#x3D; null    str2 &#x3D; str<br>这两句没有分配新的堆空间<br>故分配了3个新的堆空间</p><h2 id="题5"><a href="#题5" class="headerlink" title="题5"></a>题5</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson23_面向对象相关string&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            Console.WriteLine(&quot;请输入字符串：&quot;);            string str &#x3D; Console.ReadLine();            Console.WriteLine(&quot;反转后的字符串为&quot;);            Reverse(ref str);            Console.WriteLine(str);        &#125;        static void Reverse(ref string str)        &#123;            char[] chars &#x3D; str.ToCharArray();            for (int i &#x3D; 0; i &lt; chars.Length &#x2F; 2; i++)            &#123;                chars[i] &#x3D; (char)(chars[i] + chars[chars.Length - 1 - i]);                chars[chars.Length - 1 - i] &#x3D; (char)(chars[i] - chars[chars.Length - 1 - i]);                chars[i] &#x3D; (char)(chars[i] - chars[chars.Length - 1 - i]);            &#125;            str &#x3D; new string(chars);        &#125;    &#125;&#125;</code></pre></div>]]></content>
     
     
     <categories>
