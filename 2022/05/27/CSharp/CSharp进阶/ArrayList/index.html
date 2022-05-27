@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/yagyu.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="ArrayList">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArrayList">
+<meta property="og:url" content="https://faru58.github.io/2022/05/27/CSharp/CSharp%E8%BF%9B%E9%98%B6/ArrayList/index.html">
+<meta property="og:site_name" content="垃圾桶">
+<meta property="og:description" content="ArrayList">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://faru58.github.io/2022/05/27/CSharp/CSharp%E8%BF%9B%E9%98%B6/ArrayList/exam.png">
+<meta property="article:published_time" content="2022-05-27T07:20:31.000Z">
+<meta property="article:modified_time" content="2022-05-27T13:20:53.851Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="C#">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://faru58.github.io/2022/05/27/CSharp/CSharp%E8%BF%9B%E9%98%B6/ArrayList/exam.png">
+  
+  
+  <title>ArrayList - 垃圾桶</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"faru58.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Faru</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/%E4%BC%8A%E8%8B%8F9.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="ArrayList">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-27 15:20" pubdate>
+        2022年5月27日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">ArrayList</h1>
+            
+            <div class="markdown-body">
+              <p>ArrayList</p>
+<span id="more"></span>
+
+<h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><p>ArrayList是C#已经封装好的一个类<br>它的本质是一个object类型的数组</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+    ArrayList array &#x3D; new ArrayList();</code></pre></div>
+
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;增加一个元素
+array.Add(object);
+&#x2F;&#x2F;批量增加，把另一个list容器中的元素加到后面
+array.AddRange(array2);
+&#x2F;&#x2F;插入元素
+array.Insert(索引值, object); &#x2F;&#x2F;在该位置插入想要插入的元素</code></pre></div>
+
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;移出指定元素，从头找，找到删
+array.Remove(object);
+&#x2F;&#x2F;移除指定位置元素
+array.RemoveAt(索引值);
+&#x2F;&#x2F;清空数组
+array.Clear();</code></pre></div>
+
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;得到指定位置的元素
+Console.WriteLine(array[0]);
+&#x2F;&#x2F;查询元素是否存在
+array.Contains(object); &#x2F;&#x2F;存在为真,不存在为假
+&#x2F;&#x2F;正向查找元素位置,正向第一个找到的位置
+array.IndexOf(object); &#x2F;&#x2F;返回索引值,没找到返回-1 
+&#x2F;&#x2F;正向查找元素位置,反向第一个找到的位置
+array.LastIndexOf(object); &#x2F;&#x2F;返回索引值,没找到返回-1 </code></pre></div>
+
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;直接改指定位置的元素
+array[索引值] &#x3D; object;</code></pre></div>
+
+
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;数组长度
+array.Count
+&#x2F;&#x2F;数组容量
+array.Capacity
+&#x2F;&#x2F;遍历
+for( i &#x3D; 0; i &lt; array.Count; i++ )
+&#123;
+    &#x2F;&#x2F;需要的逻辑
+&#125;
+&#x2F;&#x2F;迭代器遍历 把array里的元素放到item里
+foreach (object item in array)
+&#123;
+    &#x2F;&#x2F;需要的逻辑 
+&#125;</code></pre></div>
+
+
+<h2 id="装箱拆箱"><a href="#装箱拆箱" class="headerlink" title="装箱拆箱"></a>装箱拆箱</h2><p>ArrayList本质上是一个可以自动扩容的object数组<br>由于用万物之父object来存储数据，自然存在装箱拆箱。<br>当往其中进行值类型存储时即为装箱，当将值类型对象取出来时即为拆箱<br>ArrayList尽量少用</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int i &#x3D; 1;
+array[0] &#x3D; i; &#x2F;&#x2F;装箱
+i &#x3D; (int)array[0]; &#x2F;&#x2F;拆箱</code></pre></div>
+
+
+
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/27/CSharp/CSharp%E8%BF%9B%E9%98%B6/ArrayList/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+<h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>ArrayList就是一个可以自动扩容的object类型的数组</p>
+<h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+using System.Collections;
+
+namespace Lesson1_ArrayList
+&#123;
+    &#x2F;&#x2F;&#x2F; &lt;summary&gt;
+    &#x2F;&#x2F;&#x2F; 道具种类
+    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;
+    enum E_ItemType
+    &#123;
+        &#x2F;&#x2F;&#x2F; &lt;summary&gt;
+        &#x2F;&#x2F;&#x2F; 回血药
+        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;
+        HpRecovery,
+        &#x2F;&#x2F;&#x2F; &lt;summary&gt;
+        &#x2F;&#x2F;&#x2F; 回蓝药
+        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;
+        MpRecovery,
+        &#x2F;&#x2F;&#x2F; &lt;summary&gt;
+        &#x2F;&#x2F;&#x2F; 复活药
+        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;
+        Revival,
+    &#125;
+
+    class BagManagement
+    &#123;
+        &#x2F;&#x2F;初始金币100
+        private int money &#x3D; 100;
+        &#x2F;&#x2F;道具
+        private ArrayList items &#x3D; new ArrayList();
+
+        public BagManagement()
+        &#123;
+            items.Clear();
+        &#125;
+        &#x2F;&#x2F;购买道具方法
+        public void BuyItem(Item i)
+        &#123;
+            if((money - i.price) &gt; 0 )
+            &#123;
+                items.Add(i);
+                money -&#x3D; i.price;
+                Console.WriteLine(&quot;购买成功\n&quot;);
+            &#125;
+            else
+            &#123;
+                Console.WriteLine(&quot;金币不够，购买失败\n&quot;);
+            &#125;              
+        &#125;
+
+        &#x2F;&#x2F;卖出道具方法
+        public void SellItem(Item i)
+        &#123;
+            if(items.Contains(i))
+            &#123;
+                items.Remove(i);
+                money +&#x3D; i.price;
+                Console.WriteLine(&quot;出售成功\n&quot;);
+            &#125;
+            else
+            &#123;
+                Console.WriteLine(&quot;出售失败\n&quot;);
+            &#125;
+            
+        &#125;
+
+        &#x2F;&#x2F;显示道具方法
+        public void MyBag()
+        &#123;
+            if(items.Count &gt; 0)
+            &#123;
+                for (int i &#x3D; 0; i &lt; items.Count; i++)
+                &#123;
+                    (items[i] as Item).Show(); 
+                &#125;
+                Console.WriteLine(&quot;现在还有&#123;0&#125;金币\n&quot;, money);
+            &#125;
+            else
+            &#123;
+                Console.WriteLine(&quot;背包为空&quot;);
+            &#125;
+        &#125;
+
+    &#125;
+
+    abstract class Item
+    &#123;
+        abstract public void Show();
+        protected E_ItemType type;
+        public int price;
+    &#125;
+
+    class HpRecovery : Item
+    &#123;
+        public HpRecovery()
+        &#123;
+            type &#x3D; E_ItemType.HpRecovery;
+            price &#x3D; 20;
+        &#125;
+
+        public override void Show()
+        &#123;
+            Console.Write(&quot;回血药*1,&quot;);
+        &#125;
+    &#125;
+
+    class MpRecovery : Item
+    &#123;
+        public MpRecovery()
+        &#123;
+            type &#x3D; E_ItemType.MpRecovery;
+            price &#x3D; 10;
+        &#125;
+
+        public override void Show()
+        &#123;
+            Console.Write(&quot;回蓝药*1,&quot;);
+        &#125;
+    &#125;
+
+    class Revival : Item
+    &#123;
+        public Revival()
+        &#123;
+            type &#x3D; E_ItemType.Revival;
+            price &#x3D; 50;
+        &#125;
+
+        public override void Show()
+        &#123;
+            Console.Write(&quot;复活药*1,&quot;);
+        &#125;
+    &#125;
+
+
+
+    internal class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            Item hpRecovery &#x3D; new HpRecovery();
+            Item mpRecovery &#x3D; new MpRecovery();
+            Item Revival &#x3D; new Revival();
+            BagManagement bagManagement &#x3D; new BagManagement();
+            Console.WriteLine(&quot;进入商店，店里有回血药（20金币）、回蓝药（10金币）、复活药（50）金币&quot;);
+            
+            Console.WriteLine(&quot;&quot;);
+
+            while (true)
+            &#123;
+                
+                try
+                &#123;
+                    Console.WriteLine(&quot;按q进入购买模式，按w进入出售模式，按e显示背包，按r退出商店&quot;);
+                    switch (Console.ReadKey(true).Key)
+                    &#123;
+                        case ConsoleKey.Q:
+                            Console.WriteLine(&quot;按a选择回血药，按s选择回蓝药，按d选择复活药&quot;);
+                            try
+                            &#123;
+                                switch (Console.ReadKey(true).Key)
+                                &#123;
+                                    case ConsoleKey.A:
+                                        bagManagement.BuyItem(hpRecovery);
+                                        break;
+                                    case ConsoleKey.S:
+                                        bagManagement.BuyItem(mpRecovery);
+                                        break;
+                                    case ConsoleKey.D:
+                                        bagManagement.BuyItem(Revival);
+                                        break;
+                                &#125;
+                            &#125;
+                            catch &#123; Console.WriteLine(&quot;请输入正确指令\n&quot;); &#125;
+                            break;                        
+                        case ConsoleKey.W:
+                            Console.WriteLine(&quot;按a选择回血药，按s选择回蓝药，按d选择复活药&quot;);
+                            try
+                            &#123;
+                                switch (Console.ReadKey(true).Key)
+                                &#123;
+                                    case ConsoleKey.A:
+                                        bagManagement.SellItem(hpRecovery);
+                                        break;
+                                    case ConsoleKey.S:
+                                        bagManagement.SellItem(mpRecovery);
+                                        break;
+                                    case ConsoleKey.D:
+                                        bagManagement.SellItem(Revival);
+                                        break;
+                                &#125;
+                            &#125;
+                            catch &#123; Console.WriteLine(&quot;请输入正确指令\n&quot;); &#125;
+                            break;
+                        case ConsoleKey.E:
+                            bagManagement.MyBag();
+                            break;
+                        case ConsoleKey.R:
+                            Environment.Exit(0);
+                            break;
+                    &#125;
+                &#125;
+                catch
+                &#123;
+                    Console.WriteLine(&quot;请输入正确指令\n&quot;);
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/study/">study</a>
+                    
+                      <a class="hover-with-bg" href="/categories/study/C/">C#</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C#</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/27/CSharp/CSharp%E8%BF%9B%E9%98%B6/Stack/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Stack</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/27/diary/2022.5/2022%E5%B9%B45%E6%9C%8827%E6%97%A5/">
+                        <span class="hidden-mobile">2022年5月27日</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

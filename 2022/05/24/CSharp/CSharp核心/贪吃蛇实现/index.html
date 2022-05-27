@@ -24,7 +24,7 @@
 <meta property="og:description" content="贪吃蛇实现">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-24T03:24:42.000Z">
-<meta property="article:modified_time" content="2022-05-26T18:23:03.691Z">
+<meta property="article:modified_time" content="2022-05-27T04:42:31.794Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      106 分钟
+      107 分钟
     </span>
   
 
@@ -967,7 +967,14 @@ namespace 贪吃蛇.Snake
                     return true;
                 &#125;
             &#125;
-
+            &#x2F;&#x2F;是否碰到身体
+            for (int i &#x3D; 1; i &lt; nowNum; i++)
+            &#123;
+                if (bodys[0].pos &#x3D;&#x3D; bodys[i].pos)
+                &#123;
+                    return true;
+                &#125;
+            &#125;
             return false;
         &#125;
     &#125;
