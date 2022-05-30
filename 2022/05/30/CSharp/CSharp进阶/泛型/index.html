@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hashtable">
+    <meta name="description" content="泛型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hashtable">
-<meta property="og:url" content="https://faru58.github.io/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/index.html">
+<meta property="og:title" content="泛型">
+<meta property="og:url" content="https://faru58.github.io/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="Hashtable">
+<meta property="og:description" content="泛型">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://faru58.github.io/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/exam.png">
-<meta property="article:published_time" content="2022-05-28T09:36:53.000Z">
-<meta property="article:modified_time" content="2022-05-28T14:38:35.420Z">
+<meta property="og:image" content="https://faru58.github.io/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B/exam.png">
+<meta property="article:published_time" content="2022-05-30T08:50:32.000Z">
+<meta property="article:modified_time" content="2022-05-30T12:09:55.621Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://faru58.github.io/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/exam.png">
+<meta name="twitter:image" content="https://faru58.github.io/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B/exam.png">
   
   
-  <title>Hashtable - 垃圾桶</title>
+  <title>泛型 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hashtable">
+            <span class="h2" id="subtitle" title="泛型">
               
             </span>
 
@@ -199,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-28 17:36" pubdate>
-        2022年5月28日 下午
+      <time datetime="2022-05-30 16:50" pubdate>
+        2022年5月30日 下午
       </time>
     </span>
   
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.6k 字
+      1.9k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      23 分钟
+      16 分钟
     </span>
   
 
@@ -248,139 +248,140 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hashtable</h1>
+            <h1 style="display: none">泛型</h1>
             
             <div class="markdown-body">
-              <p>Hashtable</p>
+              <p>泛型</p>
 <span id="more"></span>
 
-<h1 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h1><p>Hashtable(又称散列表)，表示根据键的哈希代码进行组织的<strong>键&#x2F;值对</strong>的集合。<br>它的主要作用是提高数据查询的效率<br>使用键来访问集合中的元素(object类型)</p>
-<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
-    Hashtable hashtable &#x3D; new Hashtable();</code></pre></div>
+<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>泛型实现了类型参数化，打到代码重用的目的<br>通过类型参数化来实现同一份代码上操作多种类型</p>
+<p>泛型相当于类型占位符<br>定义类或方法时使用替代符代表变量类型<br>当真正使用类或者方法时再具体指定类型</p>
+<h2 id="泛型分类"><a href="#泛型分类" class="headerlink" title="泛型分类"></a>泛型分类</h2><p>泛型类和泛型接口<br>基本语法：</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class 类名&lt;泛型占位字符&gt;
+interface 接口名&lt;泛型占位字符&gt;</code></pre></div>
 
+<p>泛型函数<br>基本语法：</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">函数名&lt;泛型占位字符&gt;(参数列表)</code></pre></div>
 
-<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;往表中加一对(键, 值)
-hashtable.Add(object, object);
-&#x2F;&#x2F;不能有相同键</code></pre></div>
-
-<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;只能通过键去删除
-hashtable.Remove(object); &#x2F;&#x2F;键
-&#x2F;&#x2F;删除不存在的键不会报错也不能删除
-&#x2F;&#x2F;清空
-hashtable.Clear();</code></pre></div>
-
-<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;通过键查看对应的值，找不到会返回空
-hashtable[object]; &#x2F;&#x2F;键
-&#x2F;&#x2F;查看元素是否存在hashtable中(bool)
-hashtable.Contains(object); &#x2F;&#x2F;键 
-hashtable.ContainsKey(object); &#x2F;&#x2F;键
-hashtable.ContainsValue(object); &#x2F;&#x2F;值</code></pre></div>
-
-<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><p>只能改键对应的值内容，无法修改键</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">hashtable[object] &#x3D; new object;</code></pre></div>
-
-
-<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;键值对的对数
-hashtable.Count
-
-&#x2F;&#x2F;迭代器遍历所有的键
-foreach (object item in hashtable.Keys)
+<p><strong>注意：</strong><br>泛型占位字母可以有多个，用逗号分开</p>
+<h2 id="泛型分类实例"><a href="#泛型分类实例" class="headerlink" title="泛型分类实例"></a>泛型分类实例</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class TestClass&lt;T&gt;
 &#123;
-    &#x2F;&#x2F;需要的逻辑 
+    public T value;
+&#125;
+class TestClass&lt;T1,T2,K,M,Key&gt;
+&#123;
+    &#x2F;&#x2F;每个占位符
 &#125;
 
-&#x2F;&#x2F;迭代器遍历所有的值
-foreach (object item in hashtable.Values)
+TestClass&lt;int&gt; t &#x3D; new TestClass&lt;int&gt;();</code></pre></div>
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">interface TestInterface&lt;T&gt;
 &#123;
-    &#x2F;&#x2F;需要的逻辑 
+    T value
+    &#123;
+        get;
+        set;
+    &#125;
 &#125;
 
-&#x2F;&#x2F;迭代器遍历所有的键值对
-foreach (DictionaryEntry item in hashtable)
+class Test : TestInterface&lt;int&gt;
 &#123;
-    &#x2F;&#x2F;需要的逻辑 
+    public int value
+    &#123;
+        get;
+        set;
+    &#125;
+&#125;</code></pre></div>
+
+
+<h2 id="泛型方法实例"><a href="#泛型方法实例" class="headerlink" title="泛型方法实例"></a>泛型方法实例</h2><h3 id="普通类中的泛型方法"><a href="#普通类中的泛型方法" class="headerlink" title="普通类中的泛型方法"></a>普通类中的泛型方法</h3><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test2
+&#123;
+    public void TestFun&lt;T&gt;( T value )
+    &#123;
+        Console.WriteLine(value);
+    &#125;
 &#125;
 
-&#x2F;&#x2F;迭代器遍历法
-IDictionaryEnumerator myEnumerator &#x3D; hashtable.GetEnumerator();
-bool flag &#x3D; myEnumerator.MoveNext();
-while (flag)
+Test2 test2 &#x3D; new Test2();
+test2.TestFun&lt;string&gt;(&quot;123123&quot;);</code></pre></div>
+
+<h3 id="泛型类中的泛型方法"><a href="#泛型类中的泛型方法" class="headerlink" title="泛型类中的泛型方法"></a>泛型类中的泛型方法</h3><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test2&lt;T&gt;
 &#123;
-    Console.WriteLine(&quot;键&#x3D;&#123;0&#125;，值&#x3D;&#123;1&#125;&quot;, myEnumerator.Key, myEnumerator.Value);
-    flag &#x3D; myEnumerator.MoveNext();
+    public T value;
+
+    &#x2F;&#x2F;这不是一个泛型方法，因为T是泛型类声明的时候就指定，在使用这个函数的时候不能动态的改变T
+    public void TestFun(T t)
+    &#123;
+
+    &#125;
+
+    &#x2F;&#x2F;这是一个泛型方法，T已经被泛型类使用，泛型方法中不能用T
+    public void TestFun&lt;K&gt;( K value )
+    &#123;
+        Console.WriteLine(value);
+    &#125;
 &#125;
-</code></pre></div>
+
+Test2 test2 &#x3D; new Test2();
+test2.TestFun&lt;string&gt;(&quot;123123&quot;);</code></pre></div>
 
 
-<h2 id="装箱拆箱"><a href="#装箱拆箱" class="headerlink" title="装箱拆箱"></a>装箱拆箱</h2><p>hashtable本质上是一个有特殊存储规则的object数组<br>由于用万物之父object来存储数据，自然存在装箱拆箱。<br>当往其中进行值类型存储时即为装箱，当将值类型对象取出来时即为拆箱</p>
-<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/exam.png" srcset="/img/loading.gif" lazyload class="">
-
-<h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>存的是一对键&#x2F;值，他们都是object类型</p>
-<h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
-using System.Collections;
-
-namespace Lesson4_Hashtable
+<h2 id="泛型的作用"><a href="#泛型的作用" class="headerlink" title="泛型的作用"></a>泛型的作用</h2><p>1.不同类型对象的相同逻辑处理就可以选择泛型<br>2.使用泛型可以一定程度避免装箱拆箱</p>
+<p>举例：优化ArrayList</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class ArrayList&lt;T&gt;
 &#123;
+    private T[] array;
+    public void Add(T value)
+    &#123;
+
+    &#125;
+    public void Remove(T value)
+    &#123;
+
+    &#125;
+&#125;</code></pre></div>
+
+
+
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+
+namespace Lesson5_泛型
+&#123;
+    class Type
+    &#123;
+        public void WhatType&lt;T&gt; ()
+        &#123;
+            if (typeof(T) &#x3D;&#x3D; typeof(int))
+            &#123;
+                Console.WriteLine(&quot;整形, 4字节&quot;);
+            &#125;
+            else if(typeof(T) &#x3D;&#x3D; typeof(char))
+            &#123;
+                Console.WriteLine(&quot;字符, 1字节&quot;);
+            &#125;
+            else if (typeof(T) &#x3D;&#x3D; typeof(float))
+            &#123;
+                Console.WriteLine(&quot;单精度浮点数, 8字节&quot;);
+            &#125;
+            else if (typeof(T) &#x3D;&#x3D; typeof(string))
+            &#123;
+                Console.WriteLine(&quot;字符串, 不定字节数&quot;);
+            &#125;
+            else
+            &#123;
+                Console.WriteLine(&quot;其他类型&quot;);
+            &#125;
+
+        &#125;
+    &#125;
     internal class Program
     &#123;
         static void Main(string[] args)
         &#123;
-            Console.WriteLine(&quot;怪物管理器&quot;);
-            Hashtable hashtable &#x3D; new Hashtable();
-            string name;
-            int index &#x3D; 0;
-            
-            
-            while (true)
-            &#123;
-                Console.WriteLine(&quot;按q进入创建怪兽模式，按w进入移出怪兽模式，按r退出商店，按a打印现在有的怪兽&quot;);
-                switch (Console.ReadKey(true).Key)
-                &#123;
-                    case ConsoleKey.Q:
-                        Console.WriteLine(&quot;按e可以退出模式&quot;);
-                        while (true)
-                        &#123;
-                            Console.WriteLine(&quot;请输入怪兽名以创建：&quot;);
-                            name &#x3D; Console.ReadLine();
-                            hashtable.Add(name, index++);
-                            if (Console.ReadKey(true).Key &#x3D;&#x3D; ConsoleKey.E)
-                            &#123;
-                                break;
-                            &#125;
-                        &#125;
-                        break;
-                    case ConsoleKey.W:
-                        Console.WriteLine(&quot;按e可以退出模式&quot;);
-                        while (true)
-                        &#123;
-                            Console.WriteLine(&quot;请输入想要删除的怪兽：&quot;);
-                            name &#x3D; Console.ReadLine();
-                            hashtable.Remove(name);
-                            if (Console.ReadKey(true).Key &#x3D;&#x3D; ConsoleKey.E)
-                            &#123;
-                                break;
-                            &#125;
-                        &#125;
-                        break;
-                    case ConsoleKey.A:
-                        NowMonster(hashtable);
-                        break;
-                    case ConsoleKey.R:
-                        Environment.Exit(0);
-                        break;
-                &#125;
-            &#125;
-        &#125;
-
-        static void NowMonster(Hashtable hashtable)
-        &#123;
-            IDictionaryEnumerator myEnumerator &#x3D; hashtable.GetEnumerator();
-            bool flag &#x3D; myEnumerator.MoveNext();
-            while (flag)
-            &#123;
-                Console.WriteLine(&quot;怪兽：&#123;0&#125;，ID&#x3D;&#123;1&#125;&quot;, myEnumerator.Key, myEnumerator.Value);
-                flag &#x3D; myEnumerator.MoveNext();
-            &#125;
+            Type type &#x3D; new Type();
+            type.WhatType&lt;int&gt;();
         &#125;
     &#125;
 &#125;</code></pre></div>
@@ -421,9 +422,9 @@ namespace Lesson4_Hashtable
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/30/diary/2022.5/2022%E5%B9%B45%E6%9C%8829%E6%97%A5/">
+                      <a href="/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022年5月29日</span>
+                        <span class="hidden-mobile">泛型约束</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -431,8 +432,8 @@ namespace Lesson4_Hashtable
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Queue/">
-                        <span class="hidden-mobile">Queue</span>
+                      <a href="/2022/05/30/diary/2022.5/2022%E5%B9%B45%E6%9C%8830%E6%97%A5/">
+                        <span class="hidden-mobile">2022年5月30日</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

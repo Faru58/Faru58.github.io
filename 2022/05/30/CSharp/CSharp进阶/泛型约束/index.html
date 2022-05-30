@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hashtable">
+    <meta name="description" content="泛型约束">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hashtable">
-<meta property="og:url" content="https://faru58.github.io/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/index.html">
+<meta property="og:title" content="泛型约束">
+<meta property="og:url" content="https://faru58.github.io/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="Hashtable">
+<meta property="og:description" content="泛型约束">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://faru58.github.io/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/exam.png">
-<meta property="article:published_time" content="2022-05-28T09:36:53.000Z">
-<meta property="article:modified_time" content="2022-05-28T14:38:35.420Z">
+<meta property="og:image" content="https://faru58.github.io/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/exam.png">
+<meta property="article:published_time" content="2022-05-30T12:12:36.000Z">
+<meta property="article:modified_time" content="2022-05-30T13:49:53.680Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://faru58.github.io/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/exam.png">
+<meta name="twitter:image" content="https://faru58.github.io/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/exam.png">
   
   
-  <title>Hashtable - 垃圾桶</title>
+  <title>泛型约束 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hashtable">
+            <span class="h2" id="subtitle" title="泛型约束">
               
             </span>
 
@@ -199,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-28 17:36" pubdate>
-        2022年5月28日 下午
+      <time datetime="2022-05-30 20:12" pubdate>
+        2022年5月30日 晚上
       </time>
     </span>
   
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.6k 字
+      4.8k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      23 分钟
+      41 分钟
     </span>
   
 
@@ -248,139 +248,320 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hashtable</h1>
+            <h1 style="display: none">泛型约束</h1>
             
             <div class="markdown-body">
-              <p>Hashtable</p>
+              <p>泛型约束</p>
 <span id="more"></span>
 
-<h1 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h1><p>Hashtable(又称散列表)，表示根据键的哈希代码进行组织的<strong>键&#x2F;值对</strong>的集合。<br>它的主要作用是提高数据查询的效率<br>使用键来访问集合中的元素(object类型)</p>
-<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
-    Hashtable hashtable &#x3D; new Hashtable();</code></pre></div>
-
-
-<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;往表中加一对(键, 值)
-hashtable.Add(object, object);
-&#x2F;&#x2F;不能有相同键</code></pre></div>
-
-<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;只能通过键去删除
-hashtable.Remove(object); &#x2F;&#x2F;键
-&#x2F;&#x2F;删除不存在的键不会报错也不能删除
-&#x2F;&#x2F;清空
-hashtable.Clear();</code></pre></div>
-
-<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;通过键查看对应的值，找不到会返回空
-hashtable[object]; &#x2F;&#x2F;键
-&#x2F;&#x2F;查看元素是否存在hashtable中(bool)
-hashtable.Contains(object); &#x2F;&#x2F;键 
-hashtable.ContainsKey(object); &#x2F;&#x2F;键
-hashtable.ContainsValue(object); &#x2F;&#x2F;值</code></pre></div>
-
-<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><p>只能改键对应的值内容，无法修改键</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">hashtable[object] &#x3D; new object;</code></pre></div>
-
-
-<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;键值对的对数
-hashtable.Count
-
-&#x2F;&#x2F;迭代器遍历所有的键
-foreach (object item in hashtable.Keys)
+<h1 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>让泛型的类型有一定的限制<br>关键字：where<br>泛型约束共有6种<br>1.值类型                            where 泛型字母:struct<br>2.引用类型                          where 泛型字母:class<br>3.存在无参公共构造函数               where 泛型字母:new()<br>4.某个类本身或者其派生类             where 泛型字母:类名<br>5.某个接口的派生类型                 where 泛型字母:接口名<br>6.另一个泛型类型本身或者派生类型      where 泛型字母:另一个泛型字母</p>
+<p>where 泛型字母:(约束的类型)</p>
+<h2 id="各个泛型约束"><a href="#各个泛型约束" class="headerlink" title="各个泛型约束"></a>各个泛型约束</h2><p>1.值类型约束</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test1&lt;T&gt; where T:struct
 &#123;
-    &#x2F;&#x2F;需要的逻辑 
+    public T value;
+    public void TestFun&lt;K&gt;(K k) where K:struct
+    &#123;
+
+    &#125;
 &#125;
 
-&#x2F;&#x2F;迭代器遍历所有的值
-foreach (object item in hashtable.Values)
+&#x2F;&#x2F;int 和 float 都是struct类型（值类型，初值不能为空）
+Test1&lt;int&gt; t1 &#x3D; new Test1&lt;int&gt;();
+t1.TestFun&lt;float&gt;(1.3f);</code></pre></div>
+
+<p>2.引用类型约束</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test2&lt;T&gt; where T:class
 &#123;
-    &#x2F;&#x2F;需要的逻辑 
+    public T value;
+    public void TestFun&lt;K&gt;(K k) where K:class
+    &#123;
+
+    &#125;
 &#125;
 
-&#x2F;&#x2F;迭代器遍历所有的键值对
-foreach (DictionaryEntry item in hashtable)
+&#x2F;&#x2F;Random 和 object 都是class类型
+Test2&lt;Random&gt; t2 &#x3D; new Test2&lt;Random&gt;();
+t2.TestFun&lt;object&gt;(new object());</code></pre></div>
+
+<p>3.存在无参公共构造函数约束（非抽象类）</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test3&lt;T&gt; where T:new()
 &#123;
-    &#x2F;&#x2F;需要的逻辑 
+    public T value;
+    public void TestFun&lt;K&gt;(K k) where K:new()
+    &#123;
+
+    &#125;
 &#125;
 
-&#x2F;&#x2F;迭代器遍历法
-IDictionaryEnumerator myEnumerator &#x3D; hashtable.GetEnumerator();
-bool flag &#x3D; myEnumerator.MoveNext();
-while (flag)
+class Test1
 &#123;
-    Console.WriteLine(&quot;键&#x3D;&#123;0&#125;，值&#x3D;&#123;1&#125;&quot;, myEnumerator.Key, myEnumerator.Value);
-    flag &#x3D; myEnumerator.MoveNext();
+
 &#125;
-</code></pre></div>
 
-
-<h2 id="装箱拆箱"><a href="#装箱拆箱" class="headerlink" title="装箱拆箱"></a>装箱拆箱</h2><p>hashtable本质上是一个有特殊存储规则的object数组<br>由于用万物之父object来存储数据，自然存在装箱拆箱。<br>当往其中进行值类型存储时即为装箱，当将值类型对象取出来时即为拆箱</p>
-<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/exam.png" srcset="/img/loading.gif" lazyload class="">
-
-<h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>存的是一对键&#x2F;值，他们都是object类型</p>
-<h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
-using System.Collections;
-
-namespace Lesson4_Hashtable
+class Test2
 &#123;
+    public Test2(int a)
+    &#123;
+
+    &#125;
+&#125;
+
+&#x2F;&#x2F;Test1可以（有公共无参构造函数） Test2不行（公共有参、私有无参、抽象类都不行）
+Test3&lt;Test1&gt; t3 &#x3D; new Test3&lt;Test1&gt;();</code></pre></div>
+
+<p>4.某个类本身或者其派生类 约束</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test4&lt;T&gt; where T:Test1
+&#123;
+    public T value;
+    public void TestFun&lt;K&gt;(K k) where K:Test1
+    &#123;
+
+    &#125;
+&#125;
+
+class Test3 : Test1
+&#123;
+
+&#125;
+
+&#x2F;&#x2F;Test1可以（类） Test3可以（派生类） Test2不行
+Test4&lt;Test1&gt; t4 &#x3D; new Test4&lt;Test1&gt;();
+Test4&lt;Test3&gt; t4 &#x3D; new Test4&lt;Test3&gt;();</code></pre></div>
+
+<p>5.某个接口的派生类型约束</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">interface IFly
+&#123;
+
+&#125;
+
+class Test4 : IFly
+&#123;
+
+&#125;
+class Test5&lt;T&gt; where T:IFly
+&#123;
+    public T value;
+    public void TestFun&lt;K&gt;(K k) where K:IFly
+    &#123;
+
+    &#125;
+&#125;
+
+&#x2F;&#x2F;IFly可以（接口） Test4可以（派生类） 
+Test5&lt;IFly&gt; t5 &#x3D; new Test5&lt;IFly&gt;();
+t5.value &#x3D; new Test4(); &#x2F;&#x2F;里式替换
+Test4&lt;Test4&gt; t5 &#x3D; new Test4&lt;Test4&gt;();</code></pre></div>
+
+<p>6.另一个泛型类型本身或者派生类型约束</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;T要么是U,要么是U的派生类型
+class Test6&lt;T,U&gt; where T:U
+&#123;
+    public T value;
+    public void TestFun&lt;K,V&gt;(K k) where K:V
+    &#123;
+
+    &#125;
+&#125;
+
+&#x2F;&#x2F;Test4是IFly的派生类型 
+Test6&lt;Test4, IFly&gt; t6 &#x3D; new Test6&lt;Test4, IFly&gt;();</code></pre></div>
+
+
+<h2 id="约束的组合使用"><a href="#约束的组合使用" class="headerlink" title="约束的组合使用"></a>约束的组合使用</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test7&lt;T&gt; where T:class, new()
+&#123;
+
+&#125;</code></pre></div>
+
+
+<h2 id="多个泛型有约束"><a href="#多个泛型有约束" class="headerlink" title="多个泛型有约束"></a>多个泛型有约束</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test8&lt;T,K&gt; where T:class, new() where K:struct
+&#123;
+    
+&#125;</code></pre></div>
+
+
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+<h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+
+namespace Lesson6_泛型约束
+&#123;
+    class SingleBase&lt;T&gt; where T : new()
+    &#123;
+        private static T instance &#x3D; new T();
+
+        public static T Instance
+        &#123;
+            get &#123; return instance; &#125;
+        &#125;
+    &#125;
+
+    &#x2F;&#x2F;继承的子类一定要有公共无参构造函数
+    class GameMgr : SingleBase&lt;GameMgr&gt;
+    &#123;
+        public int value &#x3D; 10;
+    &#125;
+
+    class Test
+    &#123;
+        private static Test instance &#x3D; new Test();
+
+        private Test()
+        &#123;
+
+        &#125;
+
+        public static Test Instance
+        &#123;
+            get
+            &#123;
+                return instance;
+            &#125;
+        &#125;
+    &#125;
+
     internal class Program
     &#123;
         static void Main(string[] args)
         &#123;
-            Console.WriteLine(&quot;怪物管理器&quot;);
-            Hashtable hashtable &#x3D; new Hashtable();
-            string name;
-            int index &#x3D; 0;
-            
-            
-            while (true)
+            GameMgr.Instance.value &#x3D; 10;
+        &#125;
+    &#125;
+&#125;
+</code></pre></div>
+
+
+<h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+
+namespace Lesson6_泛型约束
+&#123;
+    class ArrayList&lt;T&gt;
+    &#123;
+        private T[] array;
+        private int count;
+
+        &#x2F;&#x2F;&#x2F; &lt;summary&gt;
+        &#x2F;&#x2F;&#x2F; 获取已存数量
+        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;
+        public int Count
+        &#123;
+            get &#123; return count; &#125;
+        &#125;
+
+        &#x2F;&#x2F;&#x2F; &lt;summary&gt;
+        &#x2F;&#x2F;&#x2F; 获取容量
+        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;
+        public int Capacity &#123; get &#123; return array.Length; &#125; &#125;
+
+        public ArrayList()
+        &#123;
+            count &#x3D; 0;
+            &#x2F;&#x2F;一开始的容量为16
+            array &#x3D; new T[16];
+        &#125;
+
+        &#x2F;&#x2F;增
+        public void Add(T value)
+        &#123;
+            &#x2F;&#x2F;判断是否需要扩容
+            if(count &gt;&#x3D; Capacity)
             &#123;
-                Console.WriteLine(&quot;按q进入创建怪兽模式，按w进入移出怪兽模式，按r退出商店，按a打印现在有的怪兽&quot;);
-                switch (Console.ReadKey(true).Key)
+                T[] newArray &#x3D; new T[Capacity &lt;&lt; 1];
+                for (int i &#x3D; 0; i &lt; Capacity; i++)
                 &#123;
-                    case ConsoleKey.Q:
-                        Console.WriteLine(&quot;按e可以退出模式&quot;);
-                        while (true)
-                        &#123;
-                            Console.WriteLine(&quot;请输入怪兽名以创建：&quot;);
-                            name &#x3D; Console.ReadLine();
-                            hashtable.Add(name, index++);
-                            if (Console.ReadKey(true).Key &#x3D;&#x3D; ConsoleKey.E)
-                            &#123;
-                                break;
-                            &#125;
-                        &#125;
-                        break;
-                    case ConsoleKey.W:
-                        Console.WriteLine(&quot;按e可以退出模式&quot;);
-                        while (true)
-                        &#123;
-                            Console.WriteLine(&quot;请输入想要删除的怪兽：&quot;);
-                            name &#x3D; Console.ReadLine();
-                            hashtable.Remove(name);
-                            if (Console.ReadKey(true).Key &#x3D;&#x3D; ConsoleKey.E)
-                            &#123;
-                                break;
-                            &#125;
-                        &#125;
-                        break;
-                    case ConsoleKey.A:
-                        NowMonster(hashtable);
-                        break;
-                    case ConsoleKey.R:
-                        Environment.Exit(0);
-                        break;
+                    newArray[i] &#x3D; array[i];
                 &#125;
+                array &#x3D; newArray;
+            &#125;
+            &#x2F;&#x2F;不需要扩容
+            array[count++] &#x3D; value;
+        &#125;
+
+        &#x2F;&#x2F;删
+        public void Remove(T value)
+        &#123;
+            int index &#x3D; -1;
+            for (int i &#x3D; 0; i &lt; Count; i++)
+            &#123;
+                &#x2F;&#x2F;因为不是所有的类型都重载了&#x3D;&#x3D;,所以无法用&#x3D;&#x3D;判断
+                if(value.Equals(array[i]))
+                &#123;
+                    index &#x3D; i;
+                    break;
+                &#125;
+            &#125;
+            if(index !&#x3D; -1)
+            &#123;
+                for (int i &#x3D; index; i &lt; Count; i++)
+                &#123;
+                    array[i] &#x3D; array[i + 1];
+                &#125;
+                array[Count] &#x3D; default(T);
+                --count;
             &#125;
         &#125;
 
-        static void NowMonster(Hashtable hashtable)
+        &#x2F;&#x2F;查
+        public void RemoveAt(int index)
         &#123;
-            IDictionaryEnumerator myEnumerator &#x3D; hashtable.GetEnumerator();
-            bool flag &#x3D; myEnumerator.MoveNext();
-            while (flag)
+            if(index &lt; 0 || index &gt;&#x3D; Count)
             &#123;
-                Console.WriteLine(&quot;怪兽：&#123;0&#125;，ID&#x3D;&#123;1&#125;&quot;, myEnumerator.Key, myEnumerator.Value);
-                flag &#x3D; myEnumerator.MoveNext();
+                return;
             &#125;
+            for (int i &#x3D; index; i &lt; Count; i++)
+            &#123;
+                array[i] &#x3D; array[i + 1];
+            &#125;
+            array[Count] &#x3D; default(T);
+            --count;
+        &#125;
+
+        &#x2F;&#x2F;改
+        public T this[int index]
+        &#123;
+            get 
+            &#123;
+                if (index &lt; 0 || index &gt;&#x3D; Count)
+                &#123;
+                    return default(T);
+                &#125;
+                return array[index]; 
+            &#125;
+            set 
+            &#123;
+                if (index &lt; 0 || index &gt;&#x3D; Count)
+                &#123;
+                    return;
+                &#125;
+                array[index] &#x3D; value; 
+            &#125;
+        &#125;
+    &#125;
+
+    internal class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            ArrayList&lt;int&gt; array &#x3D; new ArrayList&lt;int&gt;();
+            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, array.Count, array.Capacity);
+            array.Add(1);
+            array.Add(2);
+            array.Add(3);
+            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, array.Count, array.Capacity);
+
+            Console.WriteLine(array[1]);
+            Console.WriteLine(array[-1]);
+
+            array.RemoveAt(0);
+            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, array.Count, array.Capacity);
+            for (int i &#x3D; 0; i &lt; array.Count; i++)
+            &#123;
+                Console.WriteLine(array[i]);
+            &#125;
+
+            Console.WriteLine(array[0]);
+            array[0] &#x3D; 5;
+            Console.WriteLine(array[0]);
         &#125;
     &#125;
 &#125;</code></pre></div>
@@ -421,18 +602,12 @@ namespace Lesson4_Hashtable
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/30/diary/2022.5/2022%E5%B9%B45%E6%9C%8829%E6%97%A5/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022年5月29日</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Queue/">
-                        <span class="hidden-mobile">Queue</span>
+                      <a href="/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B/">
+                        <span class="hidden-mobile">泛型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

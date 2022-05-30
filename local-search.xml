@@ -4,6 +4,114 @@
   
   
   <entry>
+    <title>泛型约束</title>
+    <link href="/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/"/>
+    <url>/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/</url>
+    
+    <content type="html"><![CDATA[<p>泛型约束</p><span id="more"></span><h1 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>让泛型的类型有一定的限制<br>关键字：where<br>泛型约束共有6种<br>1.值类型                            where 泛型字母:struct<br>2.引用类型                          where 泛型字母:class<br>3.存在无参公共构造函数               where 泛型字母:new()<br>4.某个类本身或者其派生类             where 泛型字母:类名<br>5.某个接口的派生类型                 where 泛型字母:接口名<br>6.另一个泛型类型本身或者派生类型      where 泛型字母:另一个泛型字母</p><p>where 泛型字母:(约束的类型)</p><h2 id="各个泛型约束"><a href="#各个泛型约束" class="headerlink" title="各个泛型约束"></a>各个泛型约束</h2><p>1.值类型约束</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test1&lt;T&gt; where T:struct&#123;    public T value;    public void TestFun&lt;K&gt;(K k) where K:struct    &#123;    &#125;&#125;&#x2F;&#x2F;int 和 float 都是struct类型（值类型，初值不能为空）Test1&lt;int&gt; t1 &#x3D; new Test1&lt;int&gt;();t1.TestFun&lt;float&gt;(1.3f);</code></pre></div><p>2.引用类型约束</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test2&lt;T&gt; where T:class&#123;    public T value;    public void TestFun&lt;K&gt;(K k) where K:class    &#123;    &#125;&#125;&#x2F;&#x2F;Random 和 object 都是class类型Test2&lt;Random&gt; t2 &#x3D; new Test2&lt;Random&gt;();t2.TestFun&lt;object&gt;(new object());</code></pre></div><p>3.存在无参公共构造函数约束（非抽象类）</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test3&lt;T&gt; where T:new()&#123;    public T value;    public void TestFun&lt;K&gt;(K k) where K:new()    &#123;    &#125;&#125;class Test1&#123;&#125;class Test2&#123;    public Test2(int a)    &#123;    &#125;&#125;&#x2F;&#x2F;Test1可以（有公共无参构造函数） Test2不行（公共有参、私有无参、抽象类都不行）Test3&lt;Test1&gt; t3 &#x3D; new Test3&lt;Test1&gt;();</code></pre></div><p>4.某个类本身或者其派生类 约束</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test4&lt;T&gt; where T:Test1&#123;    public T value;    public void TestFun&lt;K&gt;(K k) where K:Test1    &#123;    &#125;&#125;class Test3 : Test1&#123;&#125;&#x2F;&#x2F;Test1可以（类） Test3可以（派生类） Test2不行Test4&lt;Test1&gt; t4 &#x3D; new Test4&lt;Test1&gt;();Test4&lt;Test3&gt; t4 &#x3D; new Test4&lt;Test3&gt;();</code></pre></div><p>5.某个接口的派生类型约束</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">interface IFly&#123;&#125;class Test4 : IFly&#123;&#125;class Test5&lt;T&gt; where T:IFly&#123;    public T value;    public void TestFun&lt;K&gt;(K k) where K:IFly    &#123;    &#125;&#125;&#x2F;&#x2F;IFly可以（接口） Test4可以（派生类） Test5&lt;IFly&gt; t5 &#x3D; new Test5&lt;IFly&gt;();t5.value &#x3D; new Test4(); &#x2F;&#x2F;里式替换Test4&lt;Test4&gt; t5 &#x3D; new Test4&lt;Test4&gt;();</code></pre></div><p>6.另一个泛型类型本身或者派生类型约束</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;T要么是U,要么是U的派生类型class Test6&lt;T,U&gt; where T:U&#123;    public T value;    public void TestFun&lt;K,V&gt;(K k) where K:V    &#123;    &#125;&#125;&#x2F;&#x2F;Test4是IFly的派生类型 Test6&lt;Test4, IFly&gt; t6 &#x3D; new Test6&lt;Test4, IFly&gt;();</code></pre></div><h2 id="约束的组合使用"><a href="#约束的组合使用" class="headerlink" title="约束的组合使用"></a>约束的组合使用</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test7&lt;T&gt; where T:class, new()&#123;&#125;</code></pre></div><h2 id="多个泛型有约束"><a href="#多个泛型有约束" class="headerlink" title="多个泛型有约束"></a>多个泛型有约束</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test8&lt;T,K&gt; where T:class, new() where K:struct&#123;    &#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson6_泛型约束&#123;    class SingleBase&lt;T&gt; where T : new()    &#123;        private static T instance &#x3D; new T();        public static T Instance        &#123;            get &#123; return instance; &#125;        &#125;    &#125;    &#x2F;&#x2F;继承的子类一定要有公共无参构造函数    class GameMgr : SingleBase&lt;GameMgr&gt;    &#123;        public int value &#x3D; 10;    &#125;    class Test    &#123;        private static Test instance &#x3D; new Test();        private Test()        &#123;        &#125;        public static Test Instance        &#123;            get            &#123;                return instance;            &#125;        &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            GameMgr.Instance.value &#x3D; 10;        &#125;    &#125;&#125;</code></pre></div><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson6_泛型约束&#123;    class ArrayList&lt;T&gt;    &#123;        private T[] array;        private int count;        &#x2F;&#x2F;&#x2F; &lt;summary&gt;        &#x2F;&#x2F;&#x2F; 获取已存数量        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;        public int Count        &#123;            get &#123; return count; &#125;        &#125;        &#x2F;&#x2F;&#x2F; &lt;summary&gt;        &#x2F;&#x2F;&#x2F; 获取容量        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;        public int Capacity &#123; get &#123; return array.Length; &#125; &#125;        public ArrayList()        &#123;            count &#x3D; 0;            &#x2F;&#x2F;一开始的容量为16            array &#x3D; new T[16];        &#125;        &#x2F;&#x2F;增        public void Add(T value)        &#123;            &#x2F;&#x2F;判断是否需要扩容            if(count &gt;&#x3D; Capacity)            &#123;                T[] newArray &#x3D; new T[Capacity &lt;&lt; 1];                for (int i &#x3D; 0; i &lt; Capacity; i++)                &#123;                    newArray[i] &#x3D; array[i];                &#125;                array &#x3D; newArray;            &#125;            &#x2F;&#x2F;不需要扩容            array[count++] &#x3D; value;        &#125;        &#x2F;&#x2F;删        public void Remove(T value)        &#123;            int index &#x3D; -1;            for (int i &#x3D; 0; i &lt; Count; i++)            &#123;                &#x2F;&#x2F;因为不是所有的类型都重载了&#x3D;&#x3D;,所以无法用&#x3D;&#x3D;判断                if(value.Equals(array[i]))                &#123;                    index &#x3D; i;                    break;                &#125;            &#125;            if(index !&#x3D; -1)            &#123;                for (int i &#x3D; index; i &lt; Count; i++)                &#123;                    array[i] &#x3D; array[i + 1];                &#125;                array[Count] &#x3D; default(T);                --count;            &#125;        &#125;        &#x2F;&#x2F;查        public void RemoveAt(int index)        &#123;            if(index &lt; 0 || index &gt;&#x3D; Count)            &#123;                return;            &#125;            for (int i &#x3D; index; i &lt; Count; i++)            &#123;                array[i] &#x3D; array[i + 1];            &#125;            array[Count] &#x3D; default(T);            --count;        &#125;        &#x2F;&#x2F;改        public T this[int index]        &#123;            get             &#123;                if (index &lt; 0 || index &gt;&#x3D; Count)                &#123;                    return default(T);                &#125;                return array[index];             &#125;            set             &#123;                if (index &lt; 0 || index &gt;&#x3D; Count)                &#123;                    return;                &#125;                array[index] &#x3D; value;             &#125;        &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            ArrayList&lt;int&gt; array &#x3D; new ArrayList&lt;int&gt;();            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, array.Count, array.Capacity);            array.Add(1);            array.Add(2);            array.Add(3);            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, array.Count, array.Capacity);            Console.WriteLine(array[1]);            Console.WriteLine(array[-1]);            array.RemoveAt(0);            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, array.Count, array.Capacity);            for (int i &#x3D; 0; i &lt; array.Count; i++)            &#123;                Console.WriteLine(array[i]);            &#125;            Console.WriteLine(array[0]);            array[0] &#x3D; 5;            Console.WriteLine(array[0]);        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>泛型</title>
+    <link href="/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B/"/>
+    <url>/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B/</url>
+    
+    <content type="html"><![CDATA[<p>泛型</p><span id="more"></span><h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>泛型实现了类型参数化，打到代码重用的目的<br>通过类型参数化来实现同一份代码上操作多种类型</p><p>泛型相当于类型占位符<br>定义类或方法时使用替代符代表变量类型<br>当真正使用类或者方法时再具体指定类型</p><h2 id="泛型分类"><a href="#泛型分类" class="headerlink" title="泛型分类"></a>泛型分类</h2><p>泛型类和泛型接口<br>基本语法：</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class 类名&lt;泛型占位字符&gt;interface 接口名&lt;泛型占位字符&gt;</code></pre></div><p>泛型函数<br>基本语法：</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">函数名&lt;泛型占位字符&gt;(参数列表)</code></pre></div><p><strong>注意：</strong><br>泛型占位字母可以有多个，用逗号分开</p><h2 id="泛型分类实例"><a href="#泛型分类实例" class="headerlink" title="泛型分类实例"></a>泛型分类实例</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class TestClass&lt;T&gt;&#123;    public T value;&#125;class TestClass&lt;T1,T2,K,M,Key&gt;&#123;    &#x2F;&#x2F;每个占位符&#125;TestClass&lt;int&gt; t &#x3D; new TestClass&lt;int&gt;();</code></pre></div><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">interface TestInterface&lt;T&gt;&#123;    T value    &#123;        get;        set;    &#125;&#125;class Test : TestInterface&lt;int&gt;&#123;    public int value    &#123;        get;        set;    &#125;&#125;</code></pre></div><h2 id="泛型方法实例"><a href="#泛型方法实例" class="headerlink" title="泛型方法实例"></a>泛型方法实例</h2><h3 id="普通类中的泛型方法"><a href="#普通类中的泛型方法" class="headerlink" title="普通类中的泛型方法"></a>普通类中的泛型方法</h3><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test2&#123;    public void TestFun&lt;T&gt;( T value )    &#123;        Console.WriteLine(value);    &#125;&#125;Test2 test2 &#x3D; new Test2();test2.TestFun&lt;string&gt;(&quot;123123&quot;);</code></pre></div><h3 id="泛型类中的泛型方法"><a href="#泛型类中的泛型方法" class="headerlink" title="泛型类中的泛型方法"></a>泛型类中的泛型方法</h3><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test2&lt;T&gt;&#123;    public T value;    &#x2F;&#x2F;这不是一个泛型方法，因为T是泛型类声明的时候就指定，在使用这个函数的时候不能动态的改变T    public void TestFun(T t)    &#123;    &#125;    &#x2F;&#x2F;这是一个泛型方法，T已经被泛型类使用，泛型方法中不能用T    public void TestFun&lt;K&gt;( K value )    &#123;        Console.WriteLine(value);    &#125;&#125;Test2 test2 &#x3D; new Test2();test2.TestFun&lt;string&gt;(&quot;123123&quot;);</code></pre></div><h2 id="泛型的作用"><a href="#泛型的作用" class="headerlink" title="泛型的作用"></a>泛型的作用</h2><p>1.不同类型对象的相同逻辑处理就可以选择泛型<br>2.使用泛型可以一定程度避免装箱拆箱</p><p>举例：优化ArrayList</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class ArrayList&lt;T&gt;&#123;    private T[] array;    public void Add(T value)    &#123;    &#125;    public void Remove(T value)    &#123;    &#125;&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B/exam.png" class=""><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson5_泛型&#123;    class Type    &#123;        public void WhatType&lt;T&gt; ()        &#123;            if (typeof(T) &#x3D;&#x3D; typeof(int))            &#123;                Console.WriteLine(&quot;整形, 4字节&quot;);            &#125;            else if(typeof(T) &#x3D;&#x3D; typeof(char))            &#123;                Console.WriteLine(&quot;字符, 1字节&quot;);            &#125;            else if (typeof(T) &#x3D;&#x3D; typeof(float))            &#123;                Console.WriteLine(&quot;单精度浮点数, 8字节&quot;);            &#125;            else if (typeof(T) &#x3D;&#x3D; typeof(string))            &#123;                Console.WriteLine(&quot;字符串, 不定字节数&quot;);            &#125;            else            &#123;                Console.WriteLine(&quot;其他类型&quot;);            &#125;        &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            Type type &#x3D; new Type();            type.WhatType&lt;int&gt;();        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年5月30日</title>
+    <link href="/2022/05/30/diary/2022.5/2022%E5%B9%B45%E6%9C%8830%E6%97%A5/"/>
+    <url>/2022/05/30/diary/2022.5/2022%E5%B9%B45%E6%9C%8830%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="7f50a5faf5aa1f555cc0cc3f0e02ec71225da4aee28e2835c2827c7bbedea88f">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50fdd0ca3edc57389bd0e88084b7db2023162afbff53542a89ea79d2bc20a5a460011d779c4a734dae53a0a6590315caa329d41c248858e3439fdfd312079e72ef1122dd3ff3bfdede7e6ce61a85d23b4c6692b6fa4af166de9c4417b8d7ad1606ec540046038eef308ceaf01891fdfbab76bda4bb18d8e952487d4a7b87a5eefbc8cd39cbed02db97b1a54e4a16c6de7955b581a7ae02c259c4fd3194960312e821d0fecde17294e971a68fc8aee2e0638a8e7f0aec2eda62332b823239b70693805e230f376ba3b89130043136bbc9835019b11fd2b1a19d07ca789db8b95bd011333e271235931f70c46c9a8d2e40417072fc2628ccaddc7c78f0ade743d8b4528f2897a19675751e65a9a3e17be9ae4b0795dcb8d54571540fef72b98c76deeaa7f94ce5780c1bbba1b6127c5b675ad755a7df02902fdb41d1b71cf28824c6f081d371e6023848fcd0abcb1ae7656ecb16af96c2b601e74c497dbd0fc3150d</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年5月29日</title>
+    <link href="/2022/05/30/diary/2022.5/2022%E5%B9%B45%E6%9C%8829%E6%97%A5/"/>
+    <url>/2022/05/30/diary/2022.5/2022%E5%B9%B45%E6%9C%8829%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="0e17085469af6251ac8009fe38cf278000804a29448ff6133bbc02d73d404fd3">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe500369424d0a5d6c91d4929760e488202cf5c260e28b2f7c911f78a16a927e3650be915fff1bb966a7bd9cfa54e7b9bd19abcfcba2f73f70df369bf026f9d13f79f742032eeded394a91a966c343c200c92dc11231e1f605e089d8dc4eeabbca8ae5c0dcbfaf3c5388017f3a408ccc37225cf18c56e419046b4254225c1172e2ff26abfb9f4b7abc732b519e0841e6d6c369a55d1c9996698e241aff4e9af9fbbf345aed4a3a88b92c4192e88a4fea449e199a6324b34199688aa619aca3954ce29f7c7806f7ff91bf82b2c7b320cd049dbabd1822f8e43c4a8d71f7899070a5b7d18900014341ea8ef4852e047a6c6fab3188ad5f9565a2738686832e1ad7e3faab53fa161a517765df3e968d8606bb059bdd9254b9cb4a69ddbce52aecb20c848a03e1743313edc92c2a89aa6387208ebb9e2ddf6ba9056b1f0880fcdacc7752b2e5d17ee5c867b3bde97741e7093364ffabfac9c9aa7bcddc130db77a9363f7126b613b86b3375d0e5d34630249c3e870ded3a07152675953028c4568b91a0e53b7e232ef1f4f31cce705aad189273a914974a701d258745997e5f45f68aed38e3558c5719de77eddf994ed79af6685</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hashtable</title>
     <link href="/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/"/>
     <url>/2022/05/28/CSharp/CSharp%E8%BF%9B%E9%98%B6/Hashtable/</url>
