@@ -4,6 +4,201 @@
   
   
   <entry>
+    <title>泛型栈和队列</title>
+    <link href="/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    <url>/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<p>泛型栈和队列</p><span id="more"></span><h1 id="泛型栈和队列"><a href="#泛型栈和队列" class="headerlink" title="泛型栈和队列"></a>泛型栈和队列</h1><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections.Generic;    Stack&lt;int&gt; stack &#x3D; new Stack&lt;int&gt;();    Queue&lt;int&gt; queue &#x3D; new Queue&lt;int&gt;();</code></pre></div><p>具体方法与Stack和Queue一样</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/exam.png" class=""><p>普通线性表：数组，list，linkedlist<br>数组：固定不变的一组数据<br>list：经常改变，经常通过下标查找<br>linkedlist：不确定长度的，经常临时插入改变，查找不多</p><p>先进后出：Stack<br>对于一些可以利用先进后出存储特点的逻辑<br>比如：UI面板显隐规则</p><p>先进先出：Queue<br>对于一些可以利用先进先出存储特点的逻辑<br>比如：消息队列，有了就往里放，然后依次处理</p><p>键值对：Dictionary<br>需要频繁查找的，有对应关系的数据<br>比如一些数据存储，ID对应数据内容<br>道具ID - 道具信息<br>怪物ID - 怪物对象<br>等等</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LinkedList</title>
+    <link href="/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/LinkedList/"/>
+    <url>/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/LinkedList/</url>
+    
+    <content type="html"><![CDATA[<p>LinkedList</p><span id="more"></span><h1 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>List是一个C#为我们封装好的类，<br>它的本质是一个可变类型的泛型双向链表。</p><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections.Generic;    LinkedList&lt;类型&gt; linkedlist &#x3D; new LinkedList&lt;类型&gt;();</code></pre></div><p>两个类： 链表本身LinkedList   链表节点类LinkedListNode</p><h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;在链表尾部添加节点linkedlist.AddLast(类型);&#x2F;&#x2F;在链表头部添加节点linkedlist.AddFirst(类型);&#x2F;&#x2F;在某一个节点后添加节点LinkedListNode&lt;类型&gt; node &#x3D; LinkedList.Find(类型);node.AddAfter(类型);&#x2F;&#x2F;在某一个节点前添加节点LinkedListNode&lt;类型&gt; node &#x3D; LinkedList.Find(类型);node.AddBefore(类型);</code></pre></div><h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;移除头节点linkedlist.RemoveFirst();&#x2F;&#x2F;移除尾节点linkedlist.RemoveLast();&#x2F;&#x2F;移除指定节点linkedlist.Remove(类型);&#x2F;&#x2F;清空链表linkedlist.Clear();</code></pre></div><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;查询头节点LinkedListNode&lt;类型&gt; first &#x3D; LinkedList.First;&#x2F;&#x2F;查询尾节点LinkedListNode&lt;类型&gt; last &#x3D; LinkedList.Last;&#x2F;&#x2F;找到指定值的节点（无法通过下标找，只能遍历查找）LinkedListNode&lt;类型&gt; node &#x3D; LinkedList.Find(类型);&#x2F;&#x2F;判断是否存在 boollinkedlist.Contains(类型)</code></pre></div><h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;直接改指定位置的元素LinkedListNode&lt;类型&gt; node &#x3D; LinkedList.Find(类型);node.value &#x3D; 类型;</code></pre></div><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;数组长度list.Count&#x2F;&#x2F;数组容量list.Capacity&#x2F;&#x2F;foreach遍历foreach (类型 item in linkedlist)&#123;    &#x2F;&#x2F;直接取value    Console.WriteLine(item);&#125;&#x2F;&#x2F;从头到尾遍历LinkedListNode&lt;类型&gt; nowNode &#x3D; LinkedList.First;while( nowNode !&#x3D; null )&#123;    Console.WriteLine(nowNode.value);    nowNode &#x3D; nowNode.Next;&#125;&#x2F;&#x2F;从尾到头遍历LinkedListNode&lt;类型&gt; nowNode &#x3D; LinkedList.Last;while( nowNode !&#x3D; null )&#123;    Console.WriteLine(nowNode.value);    nowNode &#x3D; nowNode.Previous;&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/LinkedList/exam.png" class=""><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections.Generic;namespace Lesson10_LinkedList&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            LinkedList&lt;int&gt; list &#x3D; new LinkedList&lt;int&gt;();            Random r &#x3D; new Random();            for (int i &#x3D; 0; i &lt; 10; i++)            &#123;                list.AddLast(r.Next(100));            &#125;            &#x2F;&#x2F;正向遍历            LinkedListNode&lt;int&gt; node &#x3D; list.First;            while (node !&#x3D; null)            &#123;                Console.Write(node.Value + &quot; &quot;);                node &#x3D; node.Next;            &#125;            Console.WriteLine(&quot;&quot;);            &#x2F;&#x2F;反向遍历            node &#x3D; list.Last;            while (node !&#x3D; null)            &#123;                Console.Write(node.Value + &quot; &quot;);                node &#x3D; node.Previous;            &#125;        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>顺序存储和链式存储</title>
+    <link href="/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E5%92%8C%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/"/>
+    <url>/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E5%92%8C%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/</url>
+    
+    <content type="html"><![CDATA[<p>顺序存储和链式存储</p><span id="more"></span><h1 id="顺序存储和链式存储"><a href="#顺序存储和链式存储" class="headerlink" title="顺序存储和链式存储"></a>顺序存储和链式存储</h1><h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p>线性表是一种数据结构，是由n个具有相同特效的数据元素的有限序列<br>比如数组、ArrayList、Stack、Queue、链表等等</p><p>顺序存储和链式存储 是数据结构中的两种存储结构</p><h2 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h2><p>数组、ArrayList、Stack、Queue、List 等<br>但 数组、Stack、Queue的 组织规则不同</p><p>顺序存储：<br>用一组<strong>地址连续</strong>的存储单元一次存储线性表的各个数据元素</p><h2 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h2><p>单向链表、双向链表、循环链表 等</p><p>链式存储（又称链接存储）：<br>用一组任意的存储单元存储线性表中的各个数据元素</p><h2 id="单向链表实现"><a href="#单向链表实现" class="headerlink" title="单向链表实现"></a>单向链表实现</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class LinkedNode&lt;T&gt;&#123;    public T value;    public LinkedNode&lt;T&gt; nextNode;    public LinkedNode(T value)    &#123;        this.value &#x3D; value;    &#125;&#125;class LinkedList&lt;T&gt;&#123;    public LinkedNode&lt;T&gt; head;    public LinkedNode&lt;T&gt; tail;    public void Add(T value)    &#123;        LinkedNode&lt;T&gt; node &#x3D; new LinkedNode&lt;T&gt;(value);        if(head &#x3D;&#x3D; null)        &#123;            head &#x3D; node;            tail &#x3D; node;        &#125;        else        &#123;            tail.nextNode &#x3D; node;            tail &#x3D; node;        &#125;    &#125;    public void Remove(T value)    &#123;        if(head &#x3D;&#x3D; null)        &#123;            return;        &#125;        else if(head.value.Equals(value))        &#123;            head &#x3D; head.nextNode;            &#x2F;&#x2F;如果头节点变空，那说明只有一个节点，尾结点也要空            if(head &#x3D;&#x3D; null)            &#123;                tail &#x3D; null;            &#125;            return;        &#125;        LinkedNode&lt;T&gt; node &#x3D; head;        while(node.nextNode !&#x3D; null)        &#123;            if(node.value.Equals(value))            &#123;                node.nextNode &#x3D; node.nextNode.nextNode;                break;            &#125;            node &#x3D; node.nextNode;        &#125;    &#125;&#125;</code></pre></div><h2 id="顺序存储和链式存储的优缺点"><a href="#顺序存储和链式存储的优缺点" class="headerlink" title="顺序存储和链式存储的优缺点"></a>顺序存储和链式存储的优缺点</h2><p>增：链式存储 计算上 优于 顺序存储 （中间插入时链式不用想顺序一样去移动位置）<br>删：链式存储 计算上 优于 顺序存储 （中间删除时链式不用想顺序一样去移动位置）<br>查：顺序存储 使用上 优于 链式存储 （数组可以直接通过下标得到元素，链式需要遍历）<br>改：顺序存储 使用上 优于 链式存储 （数组可以直接通过下标得到元素，链式需要遍历）</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E5%92%8C%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>数组、栈、队列、链表、树、图、堆、散列表</p><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><p>顺序存储：<br>用一组<strong>地址连续</strong>的存储单元一次存储线性表的各个数据元素<br>链式存储（又称链接存储）：<br>用一组任意的存储单元存储线性表中的各个数据元素</p><h2 id="题3"><a href="#题3" class="headerlink" title="题3"></a>题3</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson9_顺序存储和链式存储&#123;    class LinkedNode&lt;T&gt;    &#123;        public T value;        public LinkedNode&lt;T&gt; nextNode;        public LinkedNode&lt;T&gt; frontNode;        public LinkedNode(T value)        &#123;            this.value &#x3D; value;        &#125;    &#125;    class LinkedList&lt;T&gt;    &#123;        private int count &#x3D; 0;        private LinkedNode&lt;T&gt; head;        private LinkedNode&lt;T&gt; tail;        public int Count            &#123; get &#123; return count; &#125; &#125;        public LinkedNode&lt;T&gt; Head            &#123; get &#123; return head; &#125; &#125;        public LinkedNode&lt;T&gt; Tail            &#123; get &#123; return tail; &#125; &#125;        public void Add(T value)        &#123;            LinkedNode&lt;T&gt; node &#x3D; new LinkedNode&lt;T&gt;(value);            if(head &#x3D;&#x3D; null)            &#123;                head &#x3D; node;                tail &#x3D; node;            &#125;            else            &#123;                &#x2F;&#x2F;连到尾部                tail.nextNode &#x3D; node;                &#x2F;&#x2F;双向连前面                node.frontNode &#x3D; tail;                tail &#x3D; node;            &#125;            ++count;        &#125;        public void RemoveAt(int index)        &#123;            LinkedNode&lt;T&gt; tempNode &#x3D; head;            int tempCount &#x3D; 0;            &#x2F;&#x2F;判断有没有头            if (head &#x3D;&#x3D; null)            &#123;                Console.WriteLine(&quot;链表为空，无法删除&quot;);                return;            &#125;            &#x2F;&#x2F;判断是否越界            if (index &gt;&#x3D; count)            &#123;                Console.WriteLine(&quot;只有&#123;0&#125;个节点&quot;, count);                return;            &#125;            else if(index &lt; 0)            &#123;                Console.WriteLine(&quot;请输入正确的正整数&quot;);                return;            &#125;            else            &#123;                for (int i &#x3D; 0; i &lt; index; i++)                &#123;                    tempNode &#x3D; tempNode.nextNode;                &#125;                if (tempNode &#x3D;&#x3D; head)                &#123;                    head &#x3D; tempNode.nextNode;                    head.frontNode &#x3D; null;                &#125;                else if (tempNode &#x3D;&#x3D; tail)                &#123;                    tail &#x3D; tempNode.frontNode;                    tail.nextNode &#x3D; null;                &#125;                else                &#123;                    &#x2F;&#x2F;删除的节点的前一个节点连着后一个节点                    tempNode.frontNode.nextNode &#x3D; tempNode.nextNode;                    &#x2F;&#x2F;删除的节点的后一个节点连着前一个节点                    tempNode.nextNode.frontNode &#x3D; tempNode.frontNode;                &#125;                --count;                &#x2F;&#x2F;while(true)                &#x2F;&#x2F;&#123;                &#x2F;&#x2F;    if(tempCount &#x3D;&#x3D; index)                &#x2F;&#x2F;    &#123;                &#x2F;&#x2F;        if(tempNode.frontNode !&#x3D; null)                &#x2F;&#x2F;        &#123;                &#x2F;&#x2F;            tempNode.frontNode.nextNode &#x3D; tempNode.nextNode;                &#x2F;&#x2F;        &#125;                &#x2F;&#x2F;        if (tempNode.nextNode !&#x3D; null)                &#x2F;&#x2F;        &#123;                &#x2F;&#x2F;            tempNode.nextNode.frontNode &#x3D; tempNode.frontNode;                &#x2F;&#x2F;        &#125;                &#x2F;&#x2F;        if(index &#x3D;&#x3D; 0)                &#x2F;&#x2F;        &#123;                &#x2F;&#x2F;            head &#x3D; head.nextNode;                &#x2F;&#x2F;        &#125;                &#x2F;&#x2F;        if(index &#x3D;&#x3D; count - 1)                &#x2F;&#x2F;        &#123;                &#x2F;&#x2F;            tail &#x3D; tail.frontNode;                &#x2F;&#x2F;        &#125;                &#x2F;&#x2F;        break;                &#x2F;&#x2F;        --count;                &#x2F;&#x2F;    &#125;                &#x2F;&#x2F;    tempNode &#x3D; tempNode.nextNode;                &#x2F;&#x2F;    tempCount++;                &#x2F;&#x2F;&#125;            &#125;                    &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            LinkedList&lt;int&gt; list &#x3D; new LinkedList&lt;int&gt;();            list.Add(1);            list.Add(2);            list.Add(3);            list.Add(4);            LinkedNode&lt;int&gt; node &#x3D; list.Head;            &#x2F;&#x2F;正向遍历            while(node !&#x3D; null)            &#123;                Console.Write(node.value);                node &#x3D; node.nextNode;            &#125;            Console.WriteLine(&quot;&quot;);            &#x2F;&#x2F;反向遍历            node &#x3D; list.Tail;            while (node !&#x3D; null)            &#123;                Console.Write(node.value);                node &#x3D; node.frontNode;            &#125;            Console.WriteLine(&quot;&quot;);            list.RemoveAt(1);            &#x2F;&#x2F;正向遍历            node &#x3D; list.Head;            while (node !&#x3D; null)            &#123;                Console.Write(node.value);                node &#x3D; node.nextNode;            &#125;            Console.WriteLine(&quot;&quot;);            &#x2F;&#x2F;反向遍历            node &#x3D; list.Tail;            while (node !&#x3D; null)            &#123;                Console.Write(node.value);                node &#x3D; node.frontNode;            &#125;        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年6月1日</title>
+    <link href="/2022/06/01/diary/2022.6/2022%E5%B9%B46%E6%9C%881%E6%97%A5/"/>
+    <url>/2022/06/01/diary/2022.6/2022%E5%B9%B46%E6%9C%881%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="5b54890c877d7b4c0f134a3f6c9e3be8b1c68ba90b800d2c13ca744db55132c1">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50b288bc91ee7b4bdb0528294bd9891ed4e409f14cf933b3be0b9fc9aaa1127d0592710b8aba39567caf477fd33ada3322a3e50913d027fe793d26756bc8710000dce524e22ef4104a15af2aeced7c161268c42285e78963783c5da734de84db4b66ad5254bf41b3c0bad15602f75507a2f3c98a52118cd630e22fa1654ced68f214106ac154ec270047ed4b38c04efd8dd3246b44eeae22d2199ab8265ad71c93f5429825116d700a5baf1b7140c39154f732fb5e75a6f3f17d5752bef961631e45f82dc61e133a8abf73fafb64c64b26d7958f9c3a235f4c934048a23c048f99c4836fed46a1d365ba46b2ebfc8f57bc750bc8a15aedcc328208bf6ad1385e098974c3c6629b42172b4b15951a075d87cb5676841be2c2a332272a167aec189f</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Dictionary</title>
+    <link href="/2022/05/31/CSharp/CSharp%E8%BF%9B%E9%98%B6/Dictionary/"/>
+    <url>/2022/05/31/CSharp/CSharp%E8%BF%9B%E9%98%B6/Dictionary/</url>
+    
+    <content type="html"><![CDATA[<p>Dictionary</p><span id="more"></span><h1 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h1><p>Dictionary可理解为拥有泛型的Hashtable<br>它也是基于键的哈希代码组织起来的 键&#x2F;值对<br>键&#x2F;值对类型从Hashtable的object类型变为了可以自己指定的泛型</p><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections.Generic;    Dictionary&lt;键类型, 值类型&gt; dictionary &#x3D; new Dictionary&lt;键类型, 值类型&gt;();</code></pre></div><h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;往表中加一对(键, 值)dictionary.Add(键类型的对象, 值类型的对象);&#x2F;&#x2F;不能有相同键</code></pre></div><h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;只能通过键去删除dictionary.Remove(键类型的对象); &#x2F;&#x2F;键&#x2F;&#x2F;删除不存在的键不会报错也不能删除&#x2F;&#x2F;清空dictionary.Clear();</code></pre></div><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;通过键查看对应的值，找不到会报错dictionary[键类型的对象]; &#x2F;&#x2F;键&#x2F;&#x2F;查看元素是否存在hashtable中(bool)dictionary.ContainsKey(键类型的对象); &#x2F;&#x2F;键dictionary.ContainsValue(值类型的对象); &#x2F;&#x2F;值</code></pre></div><h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><p>只能改键对应的值内容，无法修改键</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">dictionary[键类型的对象] &#x3D; 新的值类型的对象;</code></pre></div><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;键值对的对数dictionary.Count&#x2F;&#x2F;迭代器遍历所有的键foreach (键类型 item in dictionary.Keys)&#123;    Console.WriteLine(&quot;&#123;0&#125;:&#123;1&#125;&quot;, item, dictionary[item]);&#125;&#x2F;&#x2F;迭代器遍历所有的值foreach (值类型 item in dictionary.Values)&#123;    Console.WriteLine(item);&#125;&#x2F;&#x2F;迭代器遍历所有的键值对foreach (KeyValuePair&lt;键类型, 值类型&gt; item in dictionary)&#123;    Console.WriteLine(&quot;&#123;0&#125;:&#123;1&#125;&quot;, item.Key, item.Value);&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/31/CSharp/CSharp%E8%BF%9B%E9%98%B6/Dictionary/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections.Generic;namespace Lesson8_Dictionary&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            try            &#123;                Console.WriteLine(&quot;请输入一个三位以内的数&quot;);                Console.WriteLine(GetInfo(int.Parse(Console.ReadLine())));            &#125;            catch            &#123;                Console.WriteLine(&quot;请输入正确的数字&quot;);            &#125;        &#125;        static string GetInfo(int num)        &#123;            Dictionary&lt;int, string&gt; dic &#x3D; new Dictionary&lt;int, string&gt;();            dic.Add(0, &quot;零&quot;);            dic.Add(1, &quot;壹&quot;);            dic.Add(2, &quot;贰&quot;);            dic.Add(3, &quot;叁&quot;);            dic.Add(4, &quot;肆&quot;);            dic.Add(5, &quot;伍&quot;);            dic.Add(6, &quot;陆&quot;);            dic.Add(7, &quot;柒&quot;);            dic.Add(8, &quot;捌&quot;);            dic.Add(9, &quot;玖&quot;);            string str &#x3D; &quot;&quot;;            int b &#x3D; num &#x2F; 100;            if (b !&#x3D; 0)            &#123;                str +&#x3D; dic[b];            &#125;            int s &#x3D; num % 100 &#x2F; 10;            if(str !&#x3D; &quot;&quot; || s !&#x3D; 0)            &#123;                str +&#x3D; dic[s];            &#125;            int g &#x3D; num % 10;            str +&#x3D; dic[g];            return str;        &#125;    &#125;&#125;</code></pre></div><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections.Generic;namespace Lesson8_Dictionary&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            Dictionary&lt;char, int&gt; dic &#x3D; new Dictionary&lt;char, int&gt;();            string str &#x3D; &quot;Welcome to Unity World!&quot;;            str &#x3D; str.ToLower();            for (int i &#x3D; 0; i &lt; str.Length; i++)            &#123;                if( dic.ContainsKey(str[i]))                &#123;                    dic[str[i]]++;                &#125;                else                &#123;                    dic.Add(str[i], 1);                &#125;                &#125;            foreach (char item in dic.Keys)            &#123;                Console.WriteLine(&quot;字母&#123;0&#125;出现了&#123;1&#125;次&quot;, item, dic[item]);            &#125;        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>List</title>
+    <link href="/2022/05/31/CSharp/CSharp%E8%BF%9B%E9%98%B6/List/"/>
+    <url>/2022/05/31/CSharp/CSharp%E8%BF%9B%E9%98%B6/List/</url>
+    
+    <content type="html"><![CDATA[<p>List</p><span id="more"></span><h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>List是一个C#为我们封装好的类，<br>它的本质是一个可变类型的泛型数组。</p><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections.Generic;    List&lt;类型&gt; list &#x3D; new List&lt;类型&gt;();</code></pre></div><h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;增加一个元素list.Add(类型);&#x2F;&#x2F;批量增加，把另一个list容器中的元素加到后面list.AddRange(另一个list);</code></pre></div><h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;移出指定元素，从头找，找到删array.Remove(元素);&#x2F;&#x2F;移除指定位置元素array.RemoveAt(索引值);&#x2F;&#x2F;清空数组array.Clear();</code></pre></div><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;得到指定位置的元素Console.WriteLine(list[0]);&#x2F;&#x2F;查询元素是否存在array.Contains(元素); &#x2F;&#x2F;存在为真,不存在为假&#x2F;&#x2F;正向查找元素位置,正向第一个找到的位置array.IndexOf(元素); &#x2F;&#x2F;返回索引值,没找到返回-1 &#x2F;&#x2F;正向查找元素位置,反向第一个找到的位置array.LastIndexOf(元素); &#x2F;&#x2F;返回索引值,没找到返回-1 </code></pre></div><h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;直接改指定位置的元素array[索引值] &#x3D; 元素;</code></pre></div><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;数组长度list.Count&#x2F;&#x2F;数组容量list.Capacity&#x2F;&#x2F;遍历for( i &#x3D; 0; i &lt; list.Count; i++ )&#123;    &#x2F;&#x2F;需要的逻辑&#125;&#x2F;&#x2F;迭代器遍历 把array里的元素放到item里foreach (object item in list)&#123;    &#x2F;&#x2F;需要的逻辑 &#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/05/31/CSharp/CSharp%E8%BF%9B%E9%98%B6/List/exam.png" class=""><h1 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h1><p>ArrayList是一个object类型的数组，会出现装箱拆箱<br>List是一个泛型类，会直接定好类型，不会出现装箱拆箱</p><h1 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h1><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections.Generic;namespace Lesson7_List&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            List&lt;int&gt; list &#x3D; new List&lt;int&gt;();            list.Add(10);            list.Add(9);            list.Add(8);            list.Add(7);            list.Add(6);            list.Add(5);            list.Add(4);            list.Add(3);            list.Add(2);            list.Add(1);            list.RemoveAt(4);            foreach (int i in list)            &#123;                Console.WriteLine(i);            &#125;        &#125;    &#125;&#125;</code></pre></div><h1 id="题3"><a href="#题3" class="headerlink" title="题3"></a>题3</h1><p>子类默认先调用父类的无参构造函数</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections.Generic;namespace Lesson7_List&#123;    abstract class Monster    &#123;        &#x2F;&#x2F;静态列表 不会改变        public static List&lt;Monster&gt; monsters &#x3D; new List&lt;Monster&gt;();        public Monster()        &#123;            monsters.Add(this);        &#125;        abstract public void Atk();    &#125;    class Boss : Monster    &#123;        public override void Atk()        &#123;            Console.WriteLine(&quot;Boss攻击&quot;);        &#125;    &#125;    class Goblin : Monster    &#123;        public override void Atk()        &#123;            Console.WriteLine(&quot;Goblin攻击&quot;);        &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            Boss boss1 &#x3D; new Boss();            Boss boss2 &#x3D; new Boss();            Goblin goblin1 &#x3D; new Goblin();            Goblin goblin2 &#x3D; new Goblin();            for (int i &#x3D; 0; i &lt; Monster.monsters.Count; i++)            &#123;                Monster.monsters[i].Atk();            &#125;        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年5月31日</title>
+    <link href="/2022/05/31/diary/2022.5/2022%E5%B9%B45%E6%9C%8831%E6%97%A5/"/>
+    <url>/2022/05/31/diary/2022.5/2022%E5%B9%B45%E6%9C%8831%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="7449399fa491da47b53a9a8ef770f67540731192631d3816acb044e49da245c4">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50827eb88e76e5b7252b59da810bd88ec56cd6c3cb9fc41f65ff8e1abf03c11befacc8d888eca9bd903a440117993f3ffca1c7c27b8ef3de34b11171a3e22e0e849759db59eda7d3700424065de857d38619c04cb29e5bdbafa8a9ccfab2abf7697e68e4d07b390519ff2db96b518cecd2dd153a877347bed9a2101ba3c35786e85060b92a7290f80801954c041c7696d482ebfacc1255d0eff23b99d3a2b407b9a7afc97f69087aa51181af537f37d6a266326a27d74b24e15c15a34882d324bf0fa6f42cb57f9ecb8ab5b93cb3a8dfc4550add626eb44d970f99cf45e9e62eea9b175cf0b3f2327ed3a2590d34a41d02fb326ff05db6e728955e5040c759af581f61f5ae18693c44d57ab90dbf91044fb5acbb5963d9b7c28dcda2b3d04081355dcb5956c8799bfad85c7ceeb204f4e017e93307a9689df2bbbcc7268e8690d384b914d9fb2773d8323866f80c534d28c5fec04875abd9a4d2b7f2547e85295c16b1382807ae696a9f51092d99002e55610ac1f449f605878beb5749d6b9adfb</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>泛型约束</title>
     <link href="/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/"/>
     <url>/2022/05/30/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F/</url>
