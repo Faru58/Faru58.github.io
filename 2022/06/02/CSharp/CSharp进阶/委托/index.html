@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="泛型栈和队列">
+    <meta name="description" content="委托">
 <meta property="og:type" content="article">
-<meta property="og:title" content="泛型栈和队列">
-<meta property="og:url" content="https://faru58.github.io/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.html">
+<meta property="og:title" content="委托">
+<meta property="og:url" content="https://faru58.github.io/2022/06/02/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%A7%94%E6%89%98/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="泛型栈和队列">
+<meta property="og:description" content="委托">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://faru58.github.io/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/exam.png">
-<meta property="article:published_time" content="2022-06-01T13:19:55.000Z">
-<meta property="article:modified_time" content="2022-06-01T14:17:45.397Z">
+<meta property="og:image" content="https://faru58.github.io/2022/06/02/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%A7%94%E6%89%98/exam.png">
+<meta property="article:published_time" content="2022-06-02T11:52:12.000Z">
+<meta property="article:modified_time" content="2022-06-02T14:33:39.728Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://faru58.github.io/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/exam.png">
+<meta name="twitter:image" content="https://faru58.github.io/2022/06/02/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%A7%94%E6%89%98/exam.png">
   
   
-  <title>泛型栈和队列 - 垃圾桶</title>
+  <title>委托 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="泛型栈和队列">
+            <span class="h2" id="subtitle" title="委托">
               
             </span>
 
@@ -199,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-06-01 21:19" pubdate>
-        2022年6月1日 晚上
+      <time datetime="2022-06-02 19:52" pubdate>
+        2022年6月2日 晚上
       </time>
     </span>
   
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      407 字
+      3.4k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      29 分钟
     </span>
   
 
@@ -248,24 +248,234 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">泛型栈和队列</h1>
+            <h1 style="display: none">委托</h1>
             
             <div class="markdown-body">
-              <p>泛型栈和队列</p>
+              <p>委托</p>
 <span id="more"></span>
 
-<h1 id="泛型栈和队列"><a href="#泛型栈和队列" class="headerlink" title="泛型栈和队列"></a>泛型栈和队列</h1><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections.Generic;
-    Stack&lt;int&gt; stack &#x3D; new Stack&lt;int&gt;();
-    Queue&lt;int&gt; queue &#x3D; new Queue&lt;int&gt;();</code></pre></div>
+<h1 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>委托是函数（方法）的容器，可以理解为表示函数（方法）的变量类型，可以用来存储、传递函数（方法）<br>委托本质是一个类，用来定义函数（方法）的类型（返回值和参数的类型）<br>不同的函数（方法）必须对应各自“格式”一致的委托</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>关键字： delegate</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>访问修饰符 delegate 返回值 委托名(参数列表);<br>可以声明在namespace和class语句块中 更多的写在namespace中<br>    函数声明语法前 + delegate</p>
+<h3 id="定义自定义委托"><a href="#定义自定义委托" class="headerlink" title="定义自定义委托"></a>定义自定义委托</h3><p>访问修饰符默认不写为public 在别的命名空间中也能使用<br>private 其他命名空间就不能使用了<br>一般使用public<br>同一个命名空间中委托不能重名</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">delegate void MyFun();
+delegate int MyFun2(int value);</code></pre></div>
 
-<p>具体方法与Stack和Queue一样</p>
-<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%B3%9B%E5%9E%8B%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/exam.png" srcset="/img/loading.gif" lazyload class="">
+<h3 id="使用定义好的委托"><a href="#使用定义好的委托" class="headerlink" title="使用定义好的委托"></a>使用定义好的委托</h3><p>委托变量是函数的容器</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">static void Fun()
+&#123;
+    Console.WriteLine(&quot;&quot;);
+&#125;
+
+MyFun f &#x3D; new MyFun(Fun);
+f.Invoke();
+
+MyFun f2 &#x3D; Fun;
+f2();</code></pre></div>
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">static int Fun2(int value)
+&#123;
+    return value;
+&#125;
+
+MyFun2 f3 &#x3D; new MyFun2(Fun2);
+f3.Invoke();
+
+MyFun2 f4 &#x3D; Fun2;
+f4(1);</code></pre></div>
+
+<p>委托常用在：<br>1.作为类的成员<br>2.作为函数的参数</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Test
+&#123;
+    public MyFun fun;
+    public MyFun2 fun2;
+
+    public void TestFun( MyFun fun, MyFun2 fun2 )
+    &#123;
+        &#x2F;&#x2F;先处理一些别的逻辑 当这些逻辑处理完了 再执行传入的函数
+        &#x2F;&#x2F;
+        &#x2F;&#x2F;fun();
+        &#x2F;&#x2F;fun2(i);
+
+        this.fun &#x3D; fun;
+        this.fun2 &#x3D; fun2;
+    &#125;
+&#125;
+
+Test t &#x3D; new Test();
+t.TestFun(Fun, Fun2);</code></pre></div>
+
+<h2 id="委托变量可以存储多个函数（多播函数）"><a href="#委托变量可以存储多个函数（多播函数）" class="headerlink" title="委托变量可以存储多个函数（多播函数）"></a>委托变量可以存储多个函数（多播函数）</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">MyFun ff &#x3D; Fun;
+if( ff !&#x3D; null )
+&#123;
+    ff();
+&#125;</code></pre></div>
+
+<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public void AddFun( MyFun fun, MyFun2 fun2 )
+&#123;
+    this.fun +&#x3D; fun;
+    this.fun2 +&#x3D; fun2;
+&#125;</code></pre></div>
+
+<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public void RemoveFun( MyFun fun, MyFun2 fun2 )
+&#123;
+    this.fun -&#x3D; fun;
+    this.fun2 -&#x3D; fun2;
+&#125;</code></pre></div>
+
+<h2 id="系统定义好的委托"><a href="#系统定义好的委托" class="headerlink" title="系统定义好的委托"></a>系统定义好的委托</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;无参无返回值
+Action action &#x3D; Fun;
+action +&#x3D; Fun;
+action();</code></pre></div>
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;支持泛型的 可以让返回值和参数可变
+Func&lt;string&gt; funcString &#x3D; Fun4;
+Func&lt;int&gt; funcInt &#x3D; Fun5;
+</code></pre></div>
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;可以传n个参数的 系统提供1-16个参数
+Action&lt;int, string, bool&gt; action &#x3D; Fun;</code></pre></div>
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;可以传n个参数的 有返回值的
+Func&lt;int, int&gt; func2 &#x3D; Fun;</code></pre></div>
 
 
-<p>普通线性表：数组，list，linkedlist<br>数组：固定不变的一组数据<br>list：经常改变，经常通过下标查找<br>linkedlist：不确定长度的，经常临时插入改变，查找不多</p>
-<p>先进后出：Stack<br>对于一些可以利用先进后出存储特点的逻辑<br>比如：UI面板显隐规则</p>
-<p>先进先出：Queue<br>对于一些可以利用先进先出存储特点的逻辑<br>比如：消息队列，有了就往里放，然后依次处理</p>
-<p>键值对：Dictionary<br>需要频繁查找的，有对应关系的数据<br>比如一些数据存储，ID对应数据内容<br>道具ID - 道具信息<br>怪物ID - 怪物对象<br>等等</p>
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/02/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%A7%94%E6%89%98/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+<h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+
+namespace Lesson12_委托
+&#123;
+    abstract class Person
+    &#123;
+        public abstract void Eat();
+    &#125;
+
+    class Mother : Person
+    &#123;
+        public Action beginEat;
+
+        public override void Eat()
+        &#123;
+            Console.WriteLine(&quot;妈妈吃饭&quot;);
+        &#125;
+        public void Cook()
+        &#123;
+            Console.WriteLine(&quot;妈妈做饭&quot;);
+            &#x2F;&#x2F;执行委托函数
+            if(beginEat !&#x3D; null)
+            &#123;
+                beginEat();
+            &#125;
+        &#125;
+    &#125;
+
+    class Father : Person
+    &#123;
+        public override void Eat()
+        &#123;
+            Console.WriteLine(&quot;爸爸吃饭&quot;);
+        &#125;
+    &#125;
+
+    class Child : Person
+    &#123;
+        public override void Eat()
+        &#123;
+            Console.WriteLine(&quot;孩子吃饭&quot;);
+        &#125;
+    &#125;
+
+    internal class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            Mother mother &#x3D; new Mother();
+            Father father &#x3D; new Father();
+            Child child &#x3D; new Child();
+
+            mother.beginEat +&#x3D; father.Eat;
+            mother.beginEat +&#x3D; child.Eat;
+            mother.beginEat +&#x3D; mother.Eat;
+
+            mother.Cook();
+        &#125;
+    &#125;
+&#125;
+</code></pre></div>
+
+<h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+
+namespace Lesson12_委托
+&#123;
+    class Monster
+    &#123;
+        public Action&lt;Monster&gt; die;
+        public int money &#x3D; 10;
+
+        public void Dead()
+        &#123;
+            if (die !&#x3D; null)
+            &#123;
+                die(this);
+            &#125;
+            &#x2F;&#x2F;一般情况下 委托关联的函数 有加就有减 或直接清空
+            die &#x3D; null;
+        &#125;
+    &#125;
+
+    class Player
+    &#123;
+        private int nowMoney &#x3D; 0;
+        public void MonsterDie( Monster monster )
+        &#123;
+            nowMoney +&#x3D; monster.money;
+            Console.WriteLine(&quot;当前面板显示&#123;0&#125;钱&quot;, nowMoney);
+        &#125;
+    &#125;
+
+    class Panel
+    &#123;
+        private int nowMoney &#x3D; 0;
+        public void MonsterDie( Monster monster )
+        &#123;
+            nowMoney +&#x3D; monster.money;
+            Console.WriteLine(&quot;当前面板显示&#123;0&#125;钱&quot;, nowMoney);
+        &#125;
+    &#125;
+
+    class Achievement
+    &#123;
+        private int nowKill&#x3D; 0;
+        public void MonsterDie(Monster monster)
+        &#123;
+            nowKill++;
+            Console.WriteLine(&quot;当前击杀&#123;0&#125;怪物&quot;, nowKill);
+        &#125;
+    &#125;
+
+    internal class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            Monster monster &#x3D; new Monster();
+            Player player &#x3D; new Player();
+            Panel panel &#x3D; new Panel();
+            Achievement achievement &#x3D; new Achievement();
+
+            monster.die +&#x3D; player.MonsterDie;
+            monster.die +&#x3D; panel.MonsterDie;
+            monster.die +&#x3D; achievement.MonsterDie;
+
+            monster.Dead();
+        &#125;
+    &#125;
+&#125;
+</code></pre></div>
+
+
+
+
 
             </div>
             <hr>
@@ -304,18 +514,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/02/diary/2022.6/2022%E5%B9%B46%E6%9C%882%E6%97%A5/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022年6月2日</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/01/CSharp/CSharp%E8%BF%9B%E9%98%B6/LinkedList/">
-                        <span class="hidden-mobile">LinkedList</span>
+                      <a href="/2022/06/02/diary/2022.6/2022%E5%B9%B46%E6%9C%882%E6%97%A5/">
+                        <span class="hidden-mobile">2022年6月2日</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
