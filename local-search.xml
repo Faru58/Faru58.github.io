@@ -4,6 +4,89 @@
   
   
   <entry>
+    <title>协变逆变</title>
+    <link href="/2022/06/04/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/"/>
+    <url>/2022/06/04/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/</url>
+    
+    <content type="html"><![CDATA[<p>协变逆变</p><span id="more"></span><h1 id="协变逆变"><a href="#协变逆变" class="headerlink" title="协变逆变"></a>协变逆变</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>协变：和谐的变换，自然的变化<br>因为里式替换原则，父类可以装子类<br>所以子类变父类，比如 string变成object<br>这个感受是和谐的</p><p>逆变：逆常规的变化，不正常的变化<br>因为里式替换原则，父类可以装子类，但是子类不能装父类<br>所以父类变子类，比如 object变成string<br>这个感受是不和谐的</p><p>协变和逆变是用来修饰泛型的<br>协变：out   逆变：in<br>用于在泛型中修饰泛型字母的<br>只有泛型接口和泛型委托能使用</p><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ol><li>返回值 和 参数</li></ol><p>(1) 用out修饰的泛型 只能作为返回值</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">delegate T TestOut &lt;out T&gt;();</code></pre></div><p>(2) 用in修饰的泛型 只能作为参数</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">delegate void TestIn &lt;in T&gt;(T t);</code></pre></div><ol start="2"><li>结合里式替换原则去理解</li></ol><p>(1) 协变</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">delegate T TestOut &lt;out T&gt;();class Father&#123;&#125;class Son : Father&#123;&#125;class Program&#123;    static void Main()    &#123;        &#x2F;&#x2F;协变 父类泛型委托装子类泛型委托        &#x2F;&#x2F;看起来就是 son -&gt; father        TestOut&lt;Son&gt; os &#x3D; () &#x3D;&gt;        &#123;            return new Son();        &#125;;        TestOut&lt;Father&gt; of &#x3D; os;        Father f &#x3D; of(); &#x2F;&#x2F;实际上返回的是 os里面装的函数 返回的是Son    &#125;&#125;</code></pre></div><p>(2) 逆变</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">delegate void TestIn &lt;in T&gt;(T t);class Father&#123;&#125;class Son : Father&#123;&#125;class Program&#123;    static void Main()    &#123;        &#x2F;&#x2F;逆变 子类泛型委托装父类泛型委托        &#x2F;&#x2F;看起来就是 father -&gt; son        TestIn&lt;Father&gt; iF &#x3D; (value) &#x3D;&gt;        &#123;                    &#125;;        TestIn&lt;Son&gt; iS &#x3D; iF;        iS(new Son()); &#x2F;&#x2F;实际上 调用的是iF    &#125;&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/04/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%8D%8F%E5%8F%98%E9%80%86%E5%8F%98/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>协变和逆变是用来修饰泛型替代符的，且只能用于泛型委托和泛型接口中</p><ol><li><p>out修饰的泛型类型只能作为返回值类型，in修饰的泛型类型只能作为参数类型<br>out协变，in逆变</p></li><li><p>遵循里式替换原则，用out和in修饰的泛型委托可以相互装载</p></li></ol><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">delegate T TestOut &lt;out T&gt;();delegate void TestIn &lt;in T&gt;(T t);class Father&#123;&#125;class Son : Father&#123;&#125;class Program&#123;    static void Main()    &#123;        &#x2F;&#x2F;协变 父类泛型委托装子类泛型委托        &#x2F;&#x2F;看起来就是 son -&gt; father        TestOut&lt;Son&gt; os &#x3D; () &#x3D;&gt;        &#123;            return new Son();        &#125;;        TestOut&lt;Father&gt; of &#x3D; os;        Father f &#x3D; of(); &#x2F;&#x2F;实际上返回的是 os里面装的函数 返回的是Son        &#x2F;&#x2F;逆变 子类泛型委托装父类泛型委托        &#x2F;&#x2F;看起来就是 father -&gt; son        TestIn&lt;Father&gt; iF &#x3D; (value) &#x3D;&gt;        &#123;                    &#125;;        TestIn&lt;Son&gt; iS &#x3D; iF;        iS(new Son()); &#x2F;&#x2F;实际上 调用的是iF    &#125;&#125;</code></pre></div><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>List排序</title>
+    <link href="/2022/06/04/CSharp/CSharp%E8%BF%9B%E9%98%B6/List%E6%8E%92%E5%BA%8F/"/>
+    <url>/2022/06/04/CSharp/CSharp%E8%BF%9B%E9%98%B6/List%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>List排序</p><span id="more"></span><h1 id="List排序"><a href="#List排序" class="headerlink" title="List排序"></a>List排序</h1><h2 id="List自带排序方法"><a href="#List自带排序方法" class="headerlink" title="List自带排序方法"></a>List自带排序方法</h2><p>系统自带的变量(int, double ,float, …)可以直接Sort</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">List&lt;int&gt; list &#x3D; new List&lt;int&gt;();&#x2F;&#x2F;升序排序list.Sort();&#x2F;&#x2F;ArrayList中也有Sort方法</code></pre></div><h2 id="自定义类的排序"><a href="#自定义类的排序" class="headerlink" title="自定义类的排序"></a>自定义类的排序</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Item : IComparable&lt;Item&gt;&#123;    public int money;    public Item(int money)    &#123;        this.money &#x3D; money;    &#125;    public int CompareTo(Item other)    &#123;        &#x2F;&#x2F;返回值的含义        &#x2F;&#x2F;大于0：放在传入对象的后面        &#x2F;&#x2F;等于0：保持当前位置不变        &#x2F;&#x2F;小于0：放在传入对象的前面        if(this.money &gt; other.money)            &#123;            return 1;        &#125;        else         &#123;            return -1;        &#125;    &#125;&#125;List&lt;Item&gt; listItem &#x3D; new List&lt;Item&gt;();  listItem.Sort();</code></pre></div><h2 id="通过委托函数进行排序"><a href="#通过委托函数进行排序" class="headerlink" title="通过委托函数进行排序"></a>通过委托函数进行排序</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class shopItem &#123;    public int id;    public shopItem(int id)    &#123;        this.id &#x3D; id;    &#125;&#125;List&lt;shopItem&gt; listShopItem &#x3D; new List&lt;shopItem&gt;();  listShopItem.Sort(SortShopItem);static int SortShopItem( shopItem a, shopItem b ) &#123;    &#x2F;&#x2F;传入的两个对象为列表中的两个对象    &#x2F;&#x2F;左边的a和右边的b比较 a比b大就放在b的后面（前面）    if( a.id &gt; b.id )    &#123;        return 1;    &#125;    else    &#123;        return -1;    &#125;&#125;&#x2F;&#x2F;也可以直接匿名函数listShopItem.Sort(delegate( shopItem a, shopItem b )&#123;    if( a.id &gt; b.id )    &#123;        return 1;    &#125;    else    &#123;        return -1;    &#125;&#125;);&#x2F;&#x2F;甚至lambda表达式(配合三目运算符)listShopItem.Sort((a, b) &#x3D;&gt; &#123; return a.id &gt; b.id ? 1 : -1; &#125;);</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/04/CSharp/CSharp%E8%BF%9B%E9%98%B6/List%E6%8E%92%E5%BA%8F/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections.Generic;namespace Lesson16_List排序&#123;    class Monster    &#123;        public int atk;        public int def;        public int hp;        public Monster(int atk, int def, int hp)        &#123;            this.atk &#x3D; atk;            this.def &#x3D; def;            this.hp &#x3D; hp;        &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            List&lt;Monster&gt; monsters &#x3D; new List&lt;Monster&gt;();            Random r &#x3D; new Random();            for (int i &#x3D; 0; i &lt; 10; i++)            &#123;                monsters.Add(new Monster(r.Next(20, 50), r.Next(10, 30), r.Next(100, 200)));            &#125;            Console.WriteLine(&quot;输入1按攻击排序，输入2按防御排序，输入3按血量排序，输入4反转&quot;);            try            &#123;                int inputIndex &#x3D; int.Parse(Console.ReadLine());                switch (inputIndex)                &#123;                    case 1:                        monsters.Sort((a, b) &#x3D;&gt; &#123; return a.atk &gt; b.atk ? 1 : -1; &#125;);                        break;                    case 2:                        monsters.Sort((a, b) &#x3D;&gt; &#123; return a.def &gt; b.def ? 1 : -1; &#125;);                        break;                    case 3:                        monsters.Sort((a, b) &#x3D;&gt; &#123; return a.hp &gt; b.hp ? 1 : -1; &#125;);                        break;                    case 4:                        monsters.Reverse();                        break;                &#125;                for (int i &#x3D; 0; i &lt; monsters.Count; i++)                &#123;                    Console.WriteLine(&quot;怪兽&#123;0&#125;的攻击力&#123;1&#125;，防御力&#123;2&#125;，血量&#123;3&#125;&quot;, i, monsters[i].atk, monsters[i].def, monsters[i].hp);                &#125;            &#125;            catch            &#123;                Console.WriteLine(&quot;请输入正确的数字&quot;);            &#125;        &#125;    &#125;&#125;</code></pre></div><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections.Generic;namespace Lesson16_List排序&#123;    class Item    &#123;        public int type;        public string name;        public int quality;        public Item(int type, string name, int quality)        &#123;            this.type &#x3D; type;            this.name &#x3D; name;            this.quality &#x3D; quality;        &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            List&lt;Item&gt; items &#x3D; new List&lt;Item&gt;();            Random r &#x3D; new Random();            Console.WriteLine(&quot;排序权重：类型 &gt; 品质 &gt; 名字长度&quot;);            for (int i &#x3D; 0; i &lt; 10; i++)            &#123;                items.Add(new Item(r.Next(1, 7), &quot;Item&quot; + r.Next(1, 300), r.Next(10, 100)));                Console.WriteLine(&quot;物品类型&#123;0&#125;，名字&#123;1&#125;，品质&#123;2&#125;&quot;, items[i].type, items[i].name, items[i].quality);            &#125;            items.Sort((a, b) &#x3D;&gt;            &#123;                if (a.type !&#x3D; b.type)                &#123;                    return a.type &gt; b.type ? 1 : -1;                &#125;                else if (a.quality !&#x3D; b.quality)                &#123;                    return a.quality &gt; b.quality ? -1 : 1;                &#125;                else                &#123;                    return (a.name).Length &gt; (b.name).Length ? 1 : -1;                &#125;            &#125;);            Console.WriteLine(&quot;&quot;);            for (int i &#x3D; 0; i &lt; 10; i++)            &#123;                Console.WriteLine(&quot;物品类型&#123;0&#125;，名字&#123;1&#125;，品质&#123;2&#125;&quot;, items[i].type, items[i].name, items[i].quality);            &#125;        &#125;    &#125;&#125;</code></pre></div><h2 id="题3"><a href="#题3" class="headerlink" title="题3"></a>题3</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections.Generic;namespace Lesson16_List排序&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            Dictionary&lt;int, int&gt; dic &#x3D; new Dictionary&lt;int, int&gt;();            dic.Add(1, 88);            dic.Add(2, 56);            dic.Add(3, 66);            dic.Add(4, 45);            dic.Add(5, 23);            dic.Add(6, 76);            List&lt;KeyValuePair&lt;int, int&gt;&gt; list &#x3D; new List&lt;KeyValuePair&lt;int, int&gt;&gt;();            foreach (KeyValuePair&lt;int, int&gt; item in dic)            &#123;                list.Add(item);            &#125;                        list.Sort(( a, b ) &#x3D;&gt;            &#123;                return a.Value - b.Value;            &#125;);            for (int i &#x3D; 0; i &lt; list.Count; i++)            &#123;                Console.WriteLine(list[i].Key + &quot; &quot; + list[i].Value);            &#125;        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年6月4日</title>
+    <link href="/2022/06/04/diary/2022.6/2022%E5%B9%B46%E6%9C%884%E6%97%A5/"/>
+    <url>/2022/06/04/diary/2022.6/2022%E5%B9%B46%E6%9C%884%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="b258684107192d4ca707f23769eec91b46e51e24b35abc86de93181b1089a8e3">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe502c7f0c62ed20fcf2210812afb4fab0bcb7a12c9a592d2ebbeee8fed8de7a9fa4051050f7bc52309d2e9466293c8943dfceee16df3f5e1ba62c86ba862bbbcb423955bdc2ed57401f61ebc0d12331ab505793601f2bdc88dfa083ab42b980654f379fbb7fdc5bad8b94cdf56ff1f68d5783bc640ac209acec7780155fa3feac1e11c56d8d6a9e2e6ce7467054a84f78fc6f2e59b6ade6d79728976c3da584e8ae5ad45343e86c8d9d0cbcf381c5c49ddd5910286a6059931035cb35f8ce608b5acae0f0467e9dd65ae4813d146e7d22ea73b55345092dde31a102385366c08625385b0d85065dfe911634bcdf4104d7384a182eac07c3ba14b3e7ca7f0d3cca9e9b6ab0dd1fa1d7742f731b343badecd2a3b64fea81b0729bde66bb5f95c663ea69e527f32d4a18e7878315d58936e9ab7bd36e6b0ac24ca74f3d09aa634599f5bb305b1613ae0a9104feac5ac62678dab49f4378aee0fd443569c0678016fa1e83ce345f1404ce783bebe1051f00a984e15973123746ddbcca6f2370116cf53fb0fa8730c45a664accc941058f18b42173a89a2a39ac603d947df37085227ce346fd462dba6b37ba878855a04cabe3738cae2a8d81c33b1897d6d47e915f0c216cf56dd1785e168622dc54240beb1c6b55fe1f9d262285e0bea2f4f7b46ee15023ca7d7260c608f6dc089b2b2abd7451e17dcde672552671ede3150cea48af0c8ff4df724505f2b6d86691f97fe4ed68559bb5e72f2feabceae4dd5e95a35d02666a8f7a0c570361e723a17f44b7db956031e8782b5121afed76d6c436cc76319c74889f4cc762182a1c5e3d873e3a222d2df4f872fd4aa8e3e6061c8b49708ab23bf89ed8e1c07598656adf99c60b27f1e0be5622ca45b304154791e200fb895d5a47d18ba97619479ef58b7955ec55aa1fcc533b1685626d98adee72ff9b1abfe968265b7b1422b2bcb4305406b70a9c81f5082b5a1ca25df8fa6b48f344394d0db35e4718fc946ebb2845f66606cfd229a69eb0a083ebc25350988445db480ed5d7f8947868d384345a9a7ff1943d3b55bf1cb6e7f90f538d89ea3a5b975111a8ec6c6b263e7bab604bc65d2dbe012235f410bb3a317cd011b90656410cdad5e5b8f998155451b726a193114656a5d03ac80c0fb397a364c1c7c25db95b16055e286bd55a9cf8bf09c53aa50e216a0303708e8b2ad967aabbb7aacf59f2cd7c412dad213a69c6aca7099dd2787506a2eb7347fb8a542f4fbc0a9be38bc46f153445e915792d4902ff8beb938630b65d38e141872ca7fcca59cd5bab33a97156fbd214ad30dc4da94071edea03fb7c514c4dc37b6a2bbf686223b0b459b0958a7ff9ab000ab17a7764cc4d2ccd5ceedef458dea04c0a22e7d034317e355edfea0be79d61ed867a4abb0001ac800443</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Lambda表达式</title>
     <link href="/2022/06/03/CSharp/CSharp%E8%BF%9B%E9%98%B6/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <url>/2022/06/03/CSharp/CSharp%E8%BF%9B%E9%98%B6/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
