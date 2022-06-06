@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>预处理器指令</title>
+    <link href="/2022/06/06/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E6%8C%87%E4%BB%A4/"/>
+    <url>/2022/06/06/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E6%8C%87%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<p>预处理器指令</p><span id="more"></span><h1 id="预处理器指令"><a href="#预处理器指令" class="headerlink" title="预处理器指令"></a>预处理器指令</h1><h2 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h2><p>编译器是一种翻译程序<br>它用于将源语言程序翻译成目标语言程序<br>源语言程序：C#、C、C++、Java<br>目标语言程序：二进制数表示的伪机器代码写的程序</p><h2 id="预处理器指令-1"><a href="#预处理器指令-1" class="headerlink" title="预处理器指令"></a>预处理器指令</h2><p>预处理器指令:<br>1.指导编译器在实际编译开始之前对信息进行预处理<br>2.都是以#开始<br>3.不是语句，所以不以；结束</p><h2 id="常见的预处理器指令"><a href="#常见的预处理器指令" class="headerlink" title="常见的预处理器指令"></a>常见的预处理器指令</h2><ol><li>#define<br>定义了一个符号，类似一个没有值的变量</li></ol><p>#undef<br>取消define定义的符号，让其失效<br>两者都是写在脚本文件最前面<br>一般配合 if指令使用 或配合特性</p><p>判断所在平台:PC&#x2F;iOS&#x2F;Android</p><ol start="2"><li><p>#if #elif #else #endif<br>和if语句规则一样，一般配合#define定义的符号使用<br>可以配合逻辑与或<br>用于告诉编译器进行编译代码的流程控制</p></li><li><p>#warning #error<br>告诉编译器是报警告还是报错<br>一般还是配合#if使用</p></li></ol><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/06/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E6%8C%87%E4%BB%A4/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>#define<br>#undef<br>#if<br>#elif<br>#else<br>#endif<br>#warning<br>#error</p><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">#define Unity5#define Unity2017#define Unity2020using System;namespace Lesson19_预处理器指令&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            Console.WriteLine(Calc(10, 5));        &#125;        static int Calc(int a, int b)        &#123;#if Unity5            return a + b;#elif Unity2017            return a * b;#else            return a - b;#endif        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年6月6日</title>
+    <link href="/2022/06/06/diary/2022.6/2022%E5%B9%B46%E6%9C%886%E6%97%A5/"/>
+    <url>/2022/06/06/diary/2022.6/2022%E5%B9%B46%E6%9C%886%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="e8ad5cbc8151b5779d77ef9357a282809511dac15d30b66661487256f11fc9b4">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50fdd0ca3edc57389bd0e88084b7db2023f7942cd8762e524c0666b6efe70c1762acc788116f6736bc674e211a2d0d06aa3ce76477735d2e1334d977d8ce4380eb9e3d0da3c5390f5b8f7aa2b9df82da58d4dec6c57342a6e787f0b0b75312fa0dbc3f2cd6b7bb96b1b78302777cdd8bc0ab8795ca7aca95a4e22202f800b68d42d1a43c68f5b5a63560a665c5da373993</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>多线程</title>
     <link href="/2022/06/05/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <url>/2022/06/05/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
