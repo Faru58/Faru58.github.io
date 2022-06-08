@@ -4,6 +4,118 @@
   
   
   <entry>
+    <title>值类型和引用类型2</title>
+    <link href="/2022/06/08/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B2/"/>
+    <url>/2022/06/08/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B2/</url>
+    
+    <content type="html"><![CDATA[<p>值类型和引用类型2</p><span id="more"></span><h1 id="值类型和引用类型2"><a href="#值类型和引用类型2" class="headerlink" title="值类型和引用类型2"></a>值类型和引用类型2</h1><p>值类型：<br>无符号、有符号、浮点数、特殊、枚举、结构体</p><p>引用类型：<br>string、数组、class、interface、委托</p><h2 id="如何判断-值类型和引用类型"><a href="#如何判断-值类型和引用类型" class="headerlink" title="如何判断 值类型和引用类型"></a>如何判断 值类型和引用类型</h2><p>F12进到类型的内部去查看<br>class -&gt; 引用类型<br>struct -&gt; 值类型</p><h2 id="语句块"><a href="#语句块" class="headerlink" title="语句块"></a>语句块</h2><p>命名空间<br>   ↓<br>类、接口、结构体<br>   ↓<br>函数、属性、索引器、运算符重载等（类、接口、结构体）<br>   ↓<br>条件分支、循环</p><p>上层语句块：类、结构体<br>中层语句块：函数<br>底层语句块：条件分支、循环等</p><p>逻辑代码写在中层和底层</p><p>上层语句块中声明成员变量<br>中、底层语句块中声明临时变量</p><h2 id="变量的生命周期"><a href="#变量的生命周期" class="headerlink" title="变量的生命周期"></a>变量的生命周期</h2><p>编程时大部分都是 临时变量<br>在中底层声明的临时变量，在语句块执行结束后，没有被记录的对象将被回收或变成垃圾<br>值类型：被系统自动回收<br>引用类型：栈上用于存地址的房间被系统自动回收，堆中具体内容变成垃圾，待下次GC回收</p><p>要想不被回收或者不变垃圾，必须将其记录下来：<br>在更高层级记录 &#x2F; 使用静态全局变量记录</p><h2 id="结构体中的值和引用"><a href="#结构体中的值和引用" class="headerlink" title="结构体中的值和引用"></a>结构体中的值和引用</h2><p>结构体本身是值类型<br>前提：该结构体没有作为其他类的成员<br>在结构体中的值，栈中存储值的内容<br>在结构体中的引用，堆中存储引用具体的内容</p><p>引用类型始终存储在堆中<br>真正通过结构体使用其中引用类型时只是顺藤摸瓜</p><h2 id="类中的值和引用"><a href="#类中的值和引用" class="headerlink" title="类中的值和引用"></a>类中的值和引用</h2><p>类本身是引用类型<br>在类中的值，堆中存储具体的值<br>在类中的引用，堆中存储具体的值</p><p>值类型跟着大哥走，引用类型一根筋</p><h2 id="数组中的存储规则"><a href="#数组中的存储规则" class="headerlink" title="数组中的存储规则"></a>数组中的存储规则</h2><p>数组本身是引用类型<br>值类型数组，堆中房间存具体内容<br>引用类型数组，堆中房间存地址</p><h2 id="结构体继承接口"><a href="#结构体继承接口" class="headerlink" title="结构体继承接口"></a>结构体继承接口</h2><p>利用里式替换原则，用接口容器装载结构体存在装箱拆箱</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>特殊语法</title>
+    <link href="/2022/06/08/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E7%89%B9%E6%AE%8A%E8%AF%AD%E6%B3%95/"/>
+    <url>/2022/06/08/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E7%89%B9%E6%AE%8A%E8%AF%AD%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<p>特殊语法</p><span id="more"></span><h1 id="特殊语法"><a href="#特殊语法" class="headerlink" title="特殊语法"></a>特殊语法</h1><h2 id="var隐式类型"><a href="#var隐式类型" class="headerlink" title="var隐式类型"></a>var隐式类型</h2><p>var是一种特殊的变量类型<br>它可以用来表示任意类型的变量<br>注意：</p><ol><li>var不能作为类的成员 只能用于临时变量声明时（一般写在函数语句块中）</li><li>var必须初始化</li></ol><h2 id="设置对象初始值"><a href="#设置对象初始值" class="headerlink" title="设置对象初始值"></a>设置对象初始值</h2><p>声明对象时<br>可以通过直接写大括号的形式初始化公共成员变量和属性<br>先执行构造函数，再执行大括号</p><h2 id="设置集合初始值"><a href="#设置集合初始值" class="headerlink" title="设置集合初始值"></a>设置集合初始值</h2><p>声明集合对象时<br>也可以通过大括号直接初始化内部属性</p><h2 id="匿名类型"><a href="#匿名类型" class="headerlink" title="匿名类型"></a>匿名类型</h2><p>var变量可以声明为自定义的匿名类型</p><h2 id="可空类型"><a href="#可空类型" class="headerlink" title="可空类型"></a>可空类型</h2><ol><li><p>值类型不能赋值为null</p></li><li><p>声明时 在值类型后面加?可以赋值为空</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int? n &#x3D; null;int? c &#x3D; 3;</code></pre></div></li><li><p>判断是否为空</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( c.HasValue )&#123;    Console.WriteLine(c);    Console.WriteLine(c.Value);&#125;</code></pre></div></li><li><p>安全获取可空类型值</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int? value &#x3D; null;&#x2F;&#x2F;4.1-如果为空，默认返回值类型的默认值Console.WriteLine(value.GetValueOrDefault());&#x2F;&#x2F;4.2-也可以指定一个默认值Console.WriteLine(value.GetValueOrDefault(100));&#x2F;&#x2F;?相当于是一种语法糖 能够自动去判断是否为null&#x2F;&#x2F;如果为null就不会执行也不报错object o &#x3D; null;o?.ToString();int[] arrayInt &#x3D; null;Console.WriteLine(arrayInt?[0]);Action action &#x3D; null;action?.Invoke();</code></pre></div></li></ol><h2 id="空合并操作符"><a href="#空合并操作符" class="headerlink" title="空合并操作符"></a>空合并操作符</h2><p>空合并操作符 ??<br>左边值 ?? 右边值<br>如果左边值为null就返回右边值，反之<br>只要是可以为null的类型都能用</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int? intV &#x3D; null;int intI &#x3D; intV ?? 100 ;string str &#x3D; null;str &#x3D; str ?? &quot;hahaha&quot;;</code></pre></div><h2 id="内插字符串"><a href="#内插字符串" class="headerlink" title="内插字符串"></a>内插字符串</h2><p>关键符号 $<br>用$来构造字符串，让字符串中可以拼接变量</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string st &#x3D; &quot;天天向上&quot;;Console.WriteLine($&quot;好好学习,&#123;st&#125;&quot;);</code></pre></div><h2 id="单句逻辑简略写法"><a href="#单句逻辑简略写法" class="headerlink" title="单句逻辑简略写法"></a>单句逻辑简略写法</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年6月8日</title>
+    <link href="/2022/06/08/diary/2022.6/2022%E5%B9%B46%E6%9C%888%E6%97%A5/"/>
+    <url>/2022/06/08/diary/2022.6/2022%E5%B9%B46%E6%9C%888%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="2aa2a112af096da7941ef9d5ace83db534d0f7454c49fa15b611acea0437afed">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe506adb6fa8b87e21b2fd70e028d7df70fae1b0b8ac5b2b913d82f154f5ec6432433c15f50cf1dcd6ce7989e620855dca875ad2614c8656c586a84f41b84a48160b09188201ea00b67df2e2743f309612768e57872a827b2d171885ce99aa933d42cce54d96df727cfc031c0eab596babd48149e7aed8672a6372ac577f542446274625f478bc49f6715af88ffe685e500e25cee9200f713068599739eec5dc00a74ba8ec9b2774ffb1cbcf048f361b08d13a3d2d4eb66290b2402037e41b5af2c231875bcb59b0486e251b229b3e9fa3f925256116b129b8f49b795957bd6a0bee</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>迭代器</title>
+    <link href="/2022/06/08/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E8%BF%AD%E4%BB%A3%E5%99%A8/"/>
+    <url>/2022/06/08/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E8%BF%AD%E4%BB%A3%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<p>迭代器</p><span id="more"></span><h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p>迭代器(iterator)有时又称光标(cursor)，是程序设计的软件设计模式<br>迭代器模式提供一个方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的标识</p><p>在表现效果上看，它是一个可以在容器对象(例如链表或数组)上遍历访问的接口<br>设计人员无需关心容器对象的内存分配的实现细节<br>可以用foreach遍历的类，都是实现了迭代器的</p><h2 id="标准迭代器的实现方法"><a href="#标准迭代器的实现方法" class="headerlink" title="标准迭代器的实现方法"></a>标准迭代器的实现方法</h2><p>关键接口： IEnumerator, IEnumerable<br>命名空间： using System.Collections;<br>可以通过同时继承IEnumerator和IEnumerable实现其中的方法</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class CustomList : IEnumerable, IEnumerator&#123;    private int[] list;    &#x2F;&#x2F;从-1开始的光标，用于表示数据到了哪个位置    private int cursor &#x3D; -1;    public CustomList()    &#123;        list &#x3D; new int[] &#123;1, 2, 3, 4, 5, 6, 7, 8&#125;;    &#125;    &#x2F;&#x2F;IEnumerable的方法    public IEnumerator GetEnumerator()    &#123;        Reset();        return this;    &#125;    &#x2F;&#x2F;IEnumerator的方法    public object Current     &#123;        get        &#123;            return list[cursor];        &#125;    &#125;    public bool MoveNext()    &#123;        &#x2F;&#x2F;移动光标        ++cursor;        &#x2F;&#x2F;是否溢出  溢出就不合法        return cursor &lt; list.Length;    &#125;    public void Reset()    &#123;        cursor &#x3D; -1;    &#125;&#125;class Program&#123;    CustomList list &#x3D; new CustomList();    &#x2F;&#x2F;foreach本质：1.先获取in后面这个对象的IEnumerator 其中的GetEnumerator方法来获取    &#x2F;&#x2F;2.执行得到这个IEnumerator对象中的 MoveNext方法    &#x2F;&#x2F;3.只要MoveNext方法的返回值为true 就回去得到Current复制给item    foreach(int item in list)    &#123;        Console.WriteLine(item);    &#125;&#125;</code></pre></div><h2 id="用-yield-return-语法糖实现迭代器"><a href="#用-yield-return-语法糖实现迭代器" class="headerlink" title="用 yield return 语法糖实现迭代器"></a>用 yield return 语法糖实现迭代器</h2><p>yield return 是C#提供给我们的语法糖（糖衣语法）<br>主要作用就是讲复杂逻辑简单化，增加程序的可读性，从而煎炒程序代码出错的几率</p><p>关键接口： IEnumerable<br>命名空间： using System.Collections;<br>让想要通过foreach遍历的自定义类实现接口中的方法GetEnumerator即可</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class CustomList2 : IEnumerable&#123;    private int[] list;    public CustomList2()    &#123;        list &#x3D; new int[] &#123;1, 2, 3, 4, 5, 6, 7, 8&#125;;    &#125;    public IEnumerator GetEnumerator()    &#123;        for(int i &#x3D; 0; i &lt; list.Length; i++)        &#123;            &#x2F;&#x2F;yield关键字 配合迭代器使用            &#x2F;&#x2F;可以理解为 暂时返回 保留当前的状态            yield return list[i];        &#125;    &#125;&#125;class Program&#123;    CustomList2 list2 &#x3D; new CustomList2();    foreach(int item in list2)    &#123;        Console.WriteLine(item);    &#125;&#125;</code></pre></div><h2 id="用-yield-return-语法糖为泛型类实现迭代器"><a href="#用-yield-return-语法糖为泛型类实现迭代器" class="headerlink" title="用 yield return 语法糖为泛型类实现迭代器"></a>用 yield return 语法糖为泛型类实现迭代器</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class CustomList&lt;T&gt; : IEnumerable&#123;    private T[] array;    public CustomList(params T[] array)    &#123;        this.array &#x3D; array;    &#125;    public IEnumerator GetEnumerator()    &#123;        for(int i &#x3D; 0; i &lt; array.Length; i++)        &#123;            yield return array[i];        &#125;    &#125;&#125;class Program&#123;    CustomList&lt;string&gt; list &#x3D; new CustomList&lt;string&gt;(&quot;1&quot;,&quot;22&quot;,&quot;333&quot;);    foreach(string item in list)    &#123;        Console.WriteLine(item);    &#125;&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/08/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E8%BF%AD%E4%BB%A3%E5%99%A8/exam.png" class=""><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections;namespace Lesson22_迭代器&#123;    class CustomList : IEnumerable, IEnumerator    &#123;        private int[] list;        private int cursor &#x3D; -1;        public CustomList()        &#123;            list &#x3D; new int[] &#123;1, 2, 3, 4, 5, 6, 7, 8&#125;;        &#125;        &#x2F;&#x2F;第一种        public IEnumerator GetEnumerator()        &#123;            Reset();            return this;        &#125;        public object Current        &#123;            get            &#123;                return list[cursor];            &#125;        &#125;        public bool MoveNext()        &#123;            ++cursor;            return cursor &lt; list.Length;        &#125;        public void Reset()        &#123;            cursor &#x3D; -1;        &#125;        &#x2F;&#x2F;第二种        public IEnumerator GetEnumerator()        &#123;            for (int i &#x3D; 0; i &lt; list.Length; i++)            &#123;                yield return list[i];            &#125;        &#125;    &#125;    internal class Program    &#123;        static void Main(string[] args)        &#123;            CustomList list &#x3D; new CustomList();            foreach (int item in list)            &#123;                Console.WriteLine(item);            &#125;        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>反射和特性—特性</title>
     <link href="/2022/06/07/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%8F%8D%E5%B0%84%E5%92%8C%E7%89%B9%E6%80%A7%E2%80%94%E7%89%B9%E6%80%A7/"/>
     <url>/2022/06/07/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%8F%8D%E5%B0%84%E5%92%8C%E7%89%B9%E6%80%A7%E2%80%94%E7%89%B9%E6%80%A7/</url>
