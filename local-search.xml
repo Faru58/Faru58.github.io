@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>插入排序</title>
+    <link href="/2022/06/09/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    <url>/2022/06/09/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>插入排序</p><span id="more"></span><h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>对于一个无序序列，将其分为两个区域：排序区、未排序区，通过一个索引值做分水岭<br>未排序区元素与排序区元素比较，将未排序区元素插入到合适位置，直到未排序区清空</p><h2 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h2><p>实现升序<br>前提规则：排序开始前，首先认为第一个元素在排序区中，其他所有元素在未排序区中<br>排序开始后：每次将未排序区第一个元素取出，用于和排序区中元素比较（从后往前），若满足条件（较大或较小），则排序区中元素往后移动一个位置<br>注意：所有数字都在一个数组中，所谓的两个区域是一个分水岭索引</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson23_插入排序&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            int[] array &#x3D; new int[] &#123; 8, 7, 1, 5, 4, 2, 6, 3, 9 &#125;;            InsertSort(array);            for (int i &#x3D; 0; i &lt; array.Length; i++)            &#123;                Console.WriteLine(array[i]);            &#125;        &#125;        static void InsertSort(int[] array)        &#123;            for (int i &#x3D; 1; i &lt; array.Length; i++)            &#123;                int sortIndex &#x3D; i - 1;                int noSortNum &#x3D; array[i];                while (sortIndex &gt;&#x3D; 0 &amp;&amp; noSortNum &lt; array[sortIndex])                &#123;                    array[sortIndex + 1] &#x3D; array[sortIndex];                    --sortIndex;                &#125;                array[sortIndex + 1] &#x3D; noSortNum;            &#125;        &#125;    &#125;&#125;</code></pre></div><p>注意：while循环中的判断条件中，索引值的判断(sortIndex &gt;&#x3D; 0)一定要在前<br>若是在后，sortIndex变为-1时(noSortNum &lt; array[sortIndex])中array的索引会直接报错<br>今后的有关数组的循环若是有改变索引值，因注意让索引值的判断在前</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li><p>两层循环<br>第一层循环：依次取出未排序区的元素进行排序<br>第二层循环：找到想要插入的位置</p></li><li><p>第一层循环从1开始遍历<br>将数组分为两个区域<br>默认第一个元素在已排序区</p></li><li><p>使用while循环<br>满足条件才比较，否则说明插入位置已确定</p></li><li><p>直接往后移位置<br>每轮未排序数已记录，不需担忧丢失</p></li><li><p>最后需要使索引值+1<br>在循环的最后扔减了一次索引值</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年6月9日</title>
+    <link href="/2022/06/09/diary/2022.6/2022%E5%B9%B46%E6%9C%889%E6%97%A5/"/>
+    <url>/2022/06/09/diary/2022.6/2022%E5%B9%B46%E6%9C%889%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="b044f210c0eb2c88ed9c27b89936022989287bc87626d5a056b4b3b1c62f3913">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50eba07a9a235632a8b7b0b218e3ea35ba9f59265b68abe7c4b7756ad162c48ecf4e4efe363830c455c5b953d1a4f50793cbaefe26d85cbc8443529401f55010a1f096d27ee9b258601f75451379d77126cb33b72217564b7997a05a021a3d833519c0b817cb8aca57547a5b79ae2f9e08af1b05f08854d36f61e01bb060bb43828f8190824226f5adb48c1a2c084fafe349c3dda4de3145392cf376882864bcefdd7143b9ef8f046bc27d7c56fe34102de7fd7cd06baf45d34e68b05a97075b3e</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>值类型和引用类型2</title>
     <link href="/2022/06/08/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B2/"/>
     <url>/2022/06/08/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B2/</url>
