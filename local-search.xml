@@ -4,6 +4,89 @@
   
   
   <entry>
+    <title>2022年6月10日</title>
+    <link href="/2022/06/10/diary/2022.6/2022%E5%B9%B46%E6%9C%8810%E6%97%A5/"/>
+    <url>/2022/06/10/diary/2022.6/2022%E5%B9%B46%E6%9C%8810%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="6bc1d365cb505031f7d0615a01ead992992e320de866b2991de778ec103cb45f">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50fdd0ca3edc57389bd0e88084b7db2023f26cc975401d5edbf40ed2d1f3fbeb3d6c2d8176456882886755f387fc6c633227c1a373ef78f5454959de0ecb4fedce49c214b9792dc1939719f927621bd2d2f93958981f3abf7d690bc5fc0cb56edd4102a4a4fcc2b0729fa23350dca237514040c6178be5a97e408de9a52bb19989bfa369360c9957df9ef5cc62496cca0669ea8f9d3924111d74c06154476deb1fcb21ec93dc33387027194c844a1d0616e1b9eb75d2295efd89e7859f3c7586b9d29e5e42dd81a17d47c6c51c482eb239d47599d8e1853be9971ad02f2ff3a9e4eea501a44672392832db21c3ffbecde436830bf0598e51c12d8317246272e4ee403bfe69b694e6bda9e9a487aca9df9154deb0c82504f1b2b5199d3317d6634544b8a4b6ec394c0908c29f5359a784ed</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>归并排序</title>
+    <link href="/2022/06/10/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
+    <url>/2022/06/10/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>归并排序</p><span id="more"></span><h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>归并 &#x3D; 递归 + 合并</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>数组分左右：左右元素相比较，满足条件放入新数组，一侧用完放对面<br>递归不停分：分完再排序，排序结束往上走，边走边合并，走到头顶出结果</p><p>归并排序分成两部分：</p><ol><li>基本排序规则：左右元素进行比较，依次放入新数组中，一侧没有了另一侧直接放入新数组</li><li>递归平分数组：不停进行分割，长度小于2停止，开始比较，一层一层向上比</li></ol><h2 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h2><p>实现升序</p><ol><li>第一步：基本排序规则</li><li>第二步：递归平分数组</li></ol><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson25_归并排序&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            int[] array &#x3D; new int[] &#123; 8, 7, 1, 5, 4, 2, 6, 3, 9 &#125;;            array &#x3D; Merge(array);            for (int i &#x3D; 0; i &lt; array.Length; i++)            &#123;                Console.WriteLine(array[i]);            &#125;        &#125;        &#x2F;&#x2F;基本排序规则        static int[] Sort(int[] left, int[] right)        &#123;            int[] arrNew &#x3D; new int[left.Length + right.Length];            int leftIndex &#x3D; 0;            int rightIndex &#x3D; 0;            for (int i &#x3D; 0; i &lt; arrNew.Length; i++)            &#123;                &#x2F;&#x2F;左侧放完了，之后放右侧                if(leftIndex &gt;&#x3D; left.Length)                &#123;                    arrNew[i] &#x3D; right[rightIndex];                    rightIndex++;                &#125;                else if(rightIndex &gt;&#x3D; right.Length)                &#123;                    arrNew[i] &#x3D; left[leftIndex];                    leftIndex++;                &#125;                else if(left[leftIndex] &gt; right[rightIndex])                &#123;                    arrNew[i] &#x3D; right[rightIndex];                    rightIndex++;                &#125;                else if(left[leftIndex] &lt; right[rightIndex])                &#123;                     arrNew[i] &#x3D; left[leftIndex];                    leftIndex++;                &#125;                          &#125;            return arrNew;        &#125;        &#x2F;&#x2F;递归平分        static int[] Merge(int[] array)        &#123;            if(array.Length &lt; 2)                return array;            &#x2F;&#x2F;1.数组分两段，得到一个中间索引            int mid &#x3D; array.Length &#x2F; 2;            &#x2F;&#x2F;2.初始化左右数组            &#x2F;&#x2F;左数组            int[] left &#x3D; new int[mid];            &#x2F;&#x2F;右数组            int[] right &#x3D; new int[array.Length - mid];            &#x2F;&#x2F;左右初始化内容            for (int i &#x3D; 0; i &lt; array.Length; i++)            &#123;                if(i &lt; mid)                &#123;                    left[i] &#x3D; array[i];                &#125;                else                &#123;                    right[i - mid] &#x3D; array[i];                &#125;            &#125;            &#x2F;&#x2F;3.递归再分再排序            return Sort(Merge(left), Merge(right));         &#125;    &#125;&#125;</code></pre></div><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li><p>理解递归逻辑<br>一开始不会执行Sort函数，要先找到最小容量的数组，才会回头递归调用Sort进行排序</p></li><li><p>基本原理<br>归并 &#x3D; 递归 + 合并<br>数组分左右：左右元素相比较，满足条件放入新数组，一侧用完放对面<br>递归不停分：分完再排序，排序结束往上走，边走边合并，走到头顶出结果</p></li><li><p>套路写法<br>两个函数<br>一个基本排序规则<br>一个递归平分数组</p></li><li><p>注意事项<br>排序规则函数在平分数组函数的内部 return调用</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>希尔排序</title>
+    <link href="/2022/06/10/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/"/>
+    <url>/2022/06/10/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>希尔排序</p><span id="more"></span><h1 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h1><p>插入排序的升级版</p><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>将整个待排序序列，分割成为若干子序列，分别进行插入排序<br>希尔排序对插入排序的升级主要就是加入了一个步长的概念，通过步长每次可以把原序列分为多个子序列<br>对子序列进行插入排序，在极限情况下可以有效降低普通插入排序的时间复杂度，提升算法效率</p><h2 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h2><p>实现升序<br>比插入排序多一层循环，同时每次更换都是移动一共步长的单位<br>默认步长 &#x3D; 数组长度 &#x2F; 2, 之后每一次步长都是上一次步长&#x2F;2，步长小于1时结束<br>注意：每次得到步长后，都会把该步长下所有序列都进行插入排序</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson24_希尔排序&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            int[] array &#x3D; new int[] &#123; 8, 7, 1, 5, 4, 2, 6, 3, 9 &#125;;            ShellSort(array);            for (int i &#x3D; 0; i &lt; array.Length; i++)            &#123;                Console.WriteLine(array[i]);            &#125;        &#125;        static void ShellSort(int[] array)        &#123;                  for (int step &#x3D; array.Length &#x2F; 2; step &gt; 0; step &#x2F;&#x3D; 2)            &#123;                for (int i &#x3D; step; i &lt; array.Length; i++)                &#123;                    int sortIndex &#x3D; i - step;                    int noSortNum &#x3D; array[i];                    while (sortIndex &gt;&#x3D; 0 &amp;&amp; noSortNum &lt; array[sortIndex])                    &#123;                        array[sortIndex + step] &#x3D; array[sortIndex];                        sortIndex -&#x3D; step;                    &#125;                    array[sortIndex + step] &#x3D; noSortNum;                &#125;            &#125;        &#125;    &#125;&#125;</code></pre></div><p>注意：while循环中的判断条件中，索引值的判断(sortIndex &gt;&#x3D; 0)一定要在前<br>若是在后，sortIndex变为-1时(noSortNum &lt; array[sortIndex])中array的索引会直接报错<br>今后的有关数组的循环若是有改变索引值，因注意让索引值的判断在前</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li><p>设置步长<br>步长不断&#x2F;2缩小，直到1时结束排序</p></li><li><p>三层循环<br>第一层循环：获取步长<br>第二层循环：获取未排序区的元素<br>第三层循环：找到想要插入的位置</p></li><li><p>具体排序方式<br>插入排序的应用</p></li><li><p>注意事项<br>步长确定后，会将所有子序列进行插入排序</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>插入排序</title>
     <link href="/2022/06/09/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
     <url>/2022/06/09/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</url>
