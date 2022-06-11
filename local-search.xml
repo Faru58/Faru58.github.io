@@ -4,6 +4,89 @@
   
   
   <entry>
+    <title>2022年6月11日</title>
+    <link href="/2022/06/12/diary/2022.6/2022%E5%B9%B46%E6%9C%8811%E6%97%A5/"/>
+    <url>/2022/06/12/diary/2022.6/2022%E5%B9%B46%E6%9C%8811%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="a66a0861e12d403cc4eb368c0ef733e05d120e4a7ccac275cd3af0ac9dd71807">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe508b6d7ce86004fdd44d2d1618d39f5d99e8792f64775ea32f2e5ecfe1acc29df7e82b3bfbce8b764bf0345a8b77c090becf045a9f063c263f3acb0370c40a4533be3e27575311494373fc33ff5bedd5b1c3aa7b5094680ff397492723bec5dbe6055154761e151502f43f2cdc53ceda137d146ab497e3a429071f27d97dc43a74f6b346f8d1b9196a8cce4d3e50240fc49a92aa8adb0458c2c5b9e026f10580c65d3b165af8390eb1f1d6e6d94c328d70edc52c530d7fe70356a634b3f518efd2cac4ac8466fc04a37edfb67fd3fa1434913cbbe34cab465272a510902b399c5f4efe27899338a7d6372a544f3ec6e934b76e7e872b575bf577303b62d523b5c55e69d5c6dff81a4576f0eb350975654721a0f59e1ec5a0f00b0030f422fd52f5627e06b04763e706f3a73baf7ea25e781c2baed7346036f2309a02b26277bdf00e041a35ede287c6562a44fda5d5b394633e5b7dfed3dff38d88e263aafeaf03ad2a3064307be3b51aaea0fe3aa68e2544df6a62b9d02771b37749bd008f0a47684394bf9b3f02f77a31d21594741008965627ae9a4e102beb82b4f771e6c9b87e08b3c9adf95ddc3fbb386d6557e37e40b12d47f4d6d4aa7b03b0be8e017cb4d10bcd472923c9b9d94004d6bba3130081ccb5ac037a56ac7d0447a70516b79b9481c8109490dff34bfdf40fca3aa401bb30993e6d8d0fceec36072b609d52974b5cdd62c393ffbbd9d748992c16fd91a90ed01176a37cecefac1f6fcc5ef29fa9e270d0dceb3aea2c06d0aab255abdb6f1924281bcc18ba7e33686f02a334829fef6c8844bf99c17c1f2879b1aa62ff1833b981153f4433acb874d2d1f2622682558530834f4d279252535cdeec4b65604e350d2e4a2728771c9f7084b8c9a2096f71f25daab7d0c456beb33d67c482ad7068e45b2bfaf2153b8a9e8c0dd03c88b338389e42243148f7293f527b1ea9efc60f60638686d7ddc40a06fef6aa653935ff362706706d3c42ec96ddd6052c556c3915b6673e1447575a5ea79a82605a2ae537da7b1012ff382c73e4952adb24ff610875effd03995323ad4659e2efc677ea315bb91958784cb8d3caccff24e079afa5d8601bc2d8ad410988ae16b175be5196a50acea954ba358917a326b9612894c077a1413188b0c03339f73975bad41c8123e508cd165bdb2b93557397</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>堆排序</title>
+    <link href="/2022/06/11/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%A0%86%E6%8E%92%E5%BA%8F/"/>
+    <url>/2022/06/11/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%A0%86%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>堆排序</p><span id="more"></span><h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>构建二叉树，大堆顶调整，堆顶往后放，不停变堆顶<br>关键规则： 最大的非叶子节点索引 &#x3D; 数组长度 &#x2F; 2 - 1<br>父节点和叶子节点： 父节点为i，左节点为2i+1，右节点为2i+2</p><h2 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h2><p>套路写法：<br>三个函数</p><ol><li>堆顶比较（一个父节点，两个子节点，三个节点的比较）</li><li>构建大堆顶（大堆顶是即是一种每个子叶都完成堆顶比较的状态）</li><li>堆排序（最后循环排序，每次交换还需通过堆顶比较检查）</li></ol><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson27_堆排序&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            int[] array &#x3D; new int[] &#123; 8, 7, 1, 5, 4, 2, 6, 3, 9 &#125;;            HeapSort(array);            for (int i &#x3D; 0; i &lt; array.Length; i++)            &#123;                Console.WriteLine(array[i]);            &#125;        &#125;        &#x2F;&#x2F;&#x2F; &lt;summary&gt;        &#x2F;&#x2F;&#x2F; 叶子比较（三角关系）        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;array&quot;&gt;需要排序的数组&lt;&#x2F;param&gt;        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;nowIndex&quot;&gt;当前作为根节点的索引&lt;&#x2F;param&gt;        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;arrayLength&quot;&gt;哪些位置未被确定&lt;&#x2F;param&gt;        static void HeapCompare(int[] array, int nowIndex, int arrayLength)        &#123;            &#x2F;&#x2F;左右子叶节点            int left &#x3D; 2 * nowIndex + 1;            int right &#x3D; 2 * nowIndex + 2;            int maxIndex &#x3D; nowIndex;            &#x2F;&#x2F;先比左，再比右， 且索引不能溢出            if(left &lt; arrayLength &amp;&amp;                array[left] &gt; array[maxIndex])            &#123;                maxIndex &#x3D; left;            &#125;            else if(right &lt; arrayLength &amp;&amp;                array[right] &gt; array[maxIndex])            &#123;                maxIndex &#x3D; right;            &#125;            if( maxIndex !&#x3D; nowIndex)            &#123;                int temp &#x3D; array[maxIndex];                array[maxIndex] &#x3D; array[nowIndex];                array[nowIndex] &#x3D; temp;                &#x2F;&#x2F;通过递归 看是否影响了叶子节点的三角关系                HeapCompare(array, maxIndex, arrayLength);            &#125;        &#125;        &#x2F;&#x2F;构建大堆顶        static void BuildMaxHeap(int[] array)        &#123;            &#x2F;&#x2F;从最大的非叶子节点索引开始，不断往前构建大堆顶            for (int i &#x3D; array.Length &#x2F; 2 - 1; i &gt;&#x3D; 0; i--)            &#123;                HeapCompare(array, i, array.Length);            &#125;        &#125;        &#x2F;&#x2F;结合大堆顶和节点比较实现堆排序，把堆顶不停往后移动        static void HeapSort(int[] array)        &#123;            BuildMaxHeap(array);            for (int i &#x3D; array.Length - 1; i &gt; 0 ; i--)            &#123;                           int temp &#x3D; array[i];                array[i] &#x3D; array[0];                array[0] &#x3D; temp;                HeapCompare(array, 0, i);            &#125;        &#125;    &#125;&#125;</code></pre></div><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>堆是一类特殊的数<br>堆的通用特点就是父节点会大于或小于所有子节点<br>只利用了堆的特点来解决排序问题</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>快速排序</title>
+    <link href="/2022/06/11/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
+    <url>/2022/06/11/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>快速排序</p><span id="more"></span><h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>选取基准，产生左右标识，左右比基准，满足则换位<br>排完一次基准定位，左右递归直到有序</p><h2 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h2><p>套路写法：基准值变量，左右游标记录<br>三层while循环</p><ol><li>游标不停左右移动，重合则结束，结束定基准</li><li>递归排左右，错位则结束</li><li>左右互访，while循环外定基准</li></ol><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;namespace Lesson26_快速排序&#123;    internal class Program    &#123;        static void Main(string[] args)        &#123;            int[] array &#x3D; new int[] &#123; 8, 7, 1, 5, 4, 2, 6, 3, 9 &#125;;            QuickSort(array, 0, array.Length - 1);            for (int i &#x3D; 0; i &lt; array.Length; i++)            &#123;                Console.WriteLine(array[i]);            &#125;        &#125;        static void QuickSort(int[] array, int left, int right)        &#123;            if (left &gt;&#x3D; right)                return;            int temp &#x3D; array[left];            int tempLeft &#x3D; left;            int tempRight &#x3D; right;                     while(tempLeft !&#x3D; tempRight)            &#123;                &#x2F;&#x2F;先从右边开始，比基准值大，则继续寻找，否则将该右移到左边                while(tempLeft &lt; tempRight &amp;&amp;                    array[tempRight] &gt; temp)                &#123;                    tempRight--;                &#125;                array[tempLeft] &#x3D; array[tempRight];                &#x2F;&#x2F;再从左边开始，比基准值小，则继续寻找，否则将该左移到刚才右边移动的位置                while (tempLeft &lt; tempRight &amp;&amp;                    array[tempLeft] &lt; temp)                &#123;                    tempLeft++;                &#125;                array[tempRight] &#x3D; array[tempLeft];            &#125;            &#x2F;&#x2F;tempLeft和tempRight相等，插入基准值            array[tempLeft] &#x3D; temp;            &#x2F;&#x2F;递归左边            QuickSort(array, left, tempRight - 1);            &#x2F;&#x2F;递归右边            QuickSort(array, tempLeft + 1, right);        &#125;    &#125;&#125;</code></pre></div><p>注意：while循环中的判断条件中，索引值的判断(sortIndex &gt;&#x3D; 0)一定要在前<br>若是在后，sortIndex变为-1时(noSortNum &lt; array[sortIndex])中array的索引会直接报错<br>今后的有关数组的循环若是有改变索引值，因注意让索引值的判断在前</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>归并排序和快速排序都会用到递归<br>相同点：<br>它们都会把数组分成几部分<br>不同点：</p><ol><li>归并排序递归过程中会产生新数组用于合并；快速排序不会产生新数组</li><li>归并排序是拆分数组完毕后再进行排序；快速排序是边排序边拆分</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>C#</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年6月10日</title>
     <link href="/2022/06/10/diary/2022.6/2022%E5%B9%B46%E6%9C%8810%E6%97%A5/"/>
     <url>/2022/06/10/diary/2022.6/2022%E5%B9%B46%E6%9C%8810%E6%97%A5/</url>
