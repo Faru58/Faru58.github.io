@@ -4,6 +4,89 @@
   
   
   <entry>
+    <title>有序查找</title>
+    <link href="/2022/06/14/DataStructure/Vector/%E6%9C%89%E5%BA%8F%E6%9F%A5%E6%89%BE/"/>
+    <url>/2022/06/14/DataStructure/Vector/%E6%9C%89%E5%BA%8F%E6%9F%A5%E6%89%BE/</url>
+    
+    <content type="html"><![CDATA[<p>有序查找</p><span id="more"></span><h1 id="有序查找"><a href="#有序查找" class="headerlink" title="有序查找"></a>有序查找</h1><h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p>binSearch 反复确定中点<br>递归次数： O( log n )<br>查找长度： O( 1.50 * log n )</p><p>但还有改进空间：<br>转向左右分支前的关键码<strong>比较次数</strong>不等，而<strong>递归深度</strong>却相同<br>若能通过<strong>递归深度</strong>的不均衡，对转向成本的不均衡进行<strong>补偿</strong>，平均查找长度应能进一步缩短</p><h2 id="Fibonacci查找"><a href="#Fibonacci查找" class="headerlink" title="Fibonacci查找"></a>Fibonacci查找</h2><p>按黄金分割比切分<br>查找长度： O( 1.44 * log n )</p><h2 id="直接改进二分查找"><a href="#直接改进二分查找" class="headerlink" title="直接改进二分查找"></a>直接改进二分查找</h2><p>将中点的判断归入右侧分支<br>待查找区间缩短至1<br>[lo, mi), [mi, hi)</p><h2 id="再次改进二分查找"><a href="#再次改进二分查找" class="headerlink" title="再次改进二分查找"></a>再次改进二分查找</h2><p>区间宽度缩短至0<br>[lo, mi), (mi, hi)</p><h2 id="插值查找"><a href="#插值查找" class="headerlink" title="插值查找"></a>插值查找</h2><p>Interpolation Search</p><p>假设：已知有序算法中各元素随机分布的规律<br>则 [lo, hi) 内各元素应大致按照线性趋势增长<br>通过猜测轴点mi，可以极大地提高收敛速度</p><p>最坏情况 O(n)</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>大规模：插值查找 （缩小规模，将问题规模缩小到足够小）<br>中规模：二分查找<br>小规模：顺序查找</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年6月14日</title>
+    <link href="/2022/06/14/diary/2022.6/2022%E5%B9%B46%E6%9C%8814%E6%97%A5/"/>
+    <url>/2022/06/14/diary/2022.6/2022%E5%B9%B46%E6%9C%8814%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="348e8cd34b2294512220628aa4dc827ed079f7a7cee34f06faadcff5e83ff23f">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe5015a6898243a759b1cf6f35a8161fcb4e824514fe2b7e9ecc053dfe632722ab60e17001aefcca9ad4b38497be7d23a43ec81d3b5d37369b8908920a18bdb1c2bf417419b2eed8535c2f189945426d2fb636f82ea4a308c7880c5420b2ddd465ec994e1e7a042f514139f941529c36c9486d7c18317850759d0ac5fc708a7b99735e22e516b650d606d9fa16d62aa414954f0d50d95ee8d7b73398e049373f65542c34e27e8b0b8d6dbb52a023bcde5e00cd57bb2ad57ab0adc90c1b0bd35aa53c966572b76b4ece27fd4c790b13b7214f9e83f40164ecef3e0e12de0589a1e4f45fd93df44cee4649d12bc75da9e62541a6771ed2cc5b54f2f42b257e463af0b20248017296e4860d3c01ccd5b023598aeb93cd67921d736b2f445cfef1bcc00965b18a0cbf625b0f6a03246f50d59bb7cfb755f617a1663a4cf2663eeeecd0e8a2157a8b3cf6a82398f921fdf3337f90b9ad0ea28548d03cc20e44501dd0b14a7ddbc4d26e9e77a66a907aa78b6d72a5e9073627b357241b5861b2272043786cc1b7863810c0b24101ca3ae79c896bdcddc9a69a17a02a8ae8d61509203084d908e54dd6ba08c57c50d663e481893d37427918df8c49be85a17292abb9befdb10d0aee6461d65b738cb5906c5df5500a86a1c168690b858e6f70940f5e76243bfa9d7a9100eb664ee452c686b8fd495b7631b5369c11d9658733125c0023d3116a5bc9cd158154b1a5a925031a4b40939e6c566d57ef6545ae41c07d88490ae89129c1be1bd2b33c406f7823f4e38147089ce4fd3323b8de3696898d0d9f818bcfe2ea7f0a1a180fad83ba87b661116939f59e344d462a8dd5fdaf511d997f9178c70a856e68cf16952eba282eeca08e5cf1d67cbd7ea661f0289c96f1d78b3dbd718234754b9aad91a4e00276b4e63522bc53f10eb8b3d032d5abaa8434b9531efeba1b72db90b0001d79345490b0e9f8def7f5c8eab6a0b238bd543cfafaf71a9a617a86d97ca69c1e34d1d9090bfac34fc6eca02b341b2118708cca8256fcf2eb21d6bc1015160e5f21971b3912d1a452bb3a14f035d372034e52c4f0cd3826b9e5be58986921924192e0d588093c9ade63d8b88b4ca2c53332ecfa2557a3c4eea6559563d7b53a48d05bd4f4d615d6f39986ea4d31621c97b5732180e68914af2ec656c427f77b3cdd4d90b48746ae7132755f239195f8144eb8b4d6bb1fc518cef848f34f6220db9b81cc18e739737aff70c520f78135240b4491962422183a0c49f4af75ecbfe1d356e6f46be5e80d683f53a0ed8bb64d8076f091912122854e06bcb76ec6bd8585c1319d5607c633729f78a8b2bd9a7adff2369379c14d788140c4b6044596d5e2987e312eb83fd6c9881578409bef60e7e9271ab04383809118b31d6e707d2eb3c60f1996e1446c5ba24d383c14217991660d1e614daaf2cf48029bab94a265451c5eb5fbee7bdbd6bc0da7b59efafff1c96422aafd2dd9b41712599550776b6cb9cf085cca13b9e8e44d000a6e7d235b5bf276068537e0b82d8a09ef249642695306676bb8556483697fdef31cfa5833682fdcf2d7bd270ce5a253a2f0956df946cc7fb12667d73931848810db86972c9775d29e36f2872d292145100ebbca6a829bfcb905c3d6ea88f4f3b3ffed179fc87a08acd2bf46609b172858875b71b83450b591956e2e418f745aaba714ceb57195f8bf9f1880aba2fd01062b7f6e64afdffaa058d515e5a03b392b44093ebdad06d3dcdbce28ba57c503894e2e1e4ffe9ef4e18b71b0432743c52007053ed75b169aa450a8aa9c0e070690e71672b5633a66847544e168c120bd69123e8d76f1feb32a86f42c5dca0c76278e26b036fe2f8edebb8911ff6629b14ff13e71e642562eb8b51d81e967120aaac6bd6b95a6de3b00fb4abb555274df03104da4788ace0574b6a1b96b305cbb0394008dd846aae5b543de63f2bbfbe700ae8435a47c44858077ddab0f8a429bc5e2a597630268d9050df124f04d9be3107ce87c3d1b4931ea08e79e8b22c37dcd7cfd3dcbfa30dab6701d22e97402c6e2f439a3aecd24b11fc21480c590309c8bd528f68b2156eaab8327402d729c88e1effbbfbcbd646df3b3a8db73b779c2d82ffa83c772dc6339eab40c3dd256d09094fc183282c97b015209bd24d21c525d058296501a7c872d7f24cb0f3d374531c41569b0ee6e368ba457d60fb0ae16f47181c988fb587986fd5fc1cbcf4b10fb58b1e5aed690f4d004333ba16debfcd36a3c704ba6a464ede606e828f98a3f77adf83eafeb270abf07</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>唯一化</title>
+    <link href="/2022/06/14/DataStructure/Vector/%E5%94%AF%E4%B8%80%E5%8C%96/"/>
+    <url>/2022/06/14/DataStructure/Vector/%E5%94%AF%E4%B8%80%E5%8C%96/</url>
+    
+    <content type="html"><![CDATA[<p>唯一化</p><span id="more"></span><h1 id="唯一化"><a href="#唯一化" class="headerlink" title="唯一化"></a>唯一化</h1><p>有序向量的唯一化<br>Remove()能保证唯一性，但是低效</p><p>低效的根源在于：同一元素可作为被删除元素的后继多次前移<br>启示：若能以重复区间为单位，<strong>成批</strong>删除雷同元素，性能必将改进</p><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">template &lt;typename T&gt; int vector T :: uniquify()&#123;    rank i &#x3D; 0, j &#x3D; 0; &#x2F;&#x2F;各对互异“相邻”元素的秩    while( ++j &lt; _size ) &#x2F;&#x2F;逐一扫描，直至末元素        &#x2F;&#x2F;跳过雷同者；发现不同元素时，向前移至紧邻于前者右侧        if( _elem[i] !&#x3D; _elem[j] ) _elem[++i] &#x3D; _elem[j];    _size &#x3D; ++i; shrink(); &#x2F;&#x2F;直接截除尾部多余元素    return j - i; &#x2F;&#x2F;向量规模变化量，即被删除的元素总数&#125; &#x2F;&#x2F;注意：通过remove(lo, hi)批量删除，依旧达不到最高效率</code></pre></div><p>共计迭代 n - 1 次，每次常数时间，累计 O(n) 时间</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>俄罗斯方块</title>
     <link href="/2022/06/13/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97/"/>
     <url>/2022/06/13/CSharp/CSharp%E8%BF%9B%E9%98%B6/%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97/</url>
