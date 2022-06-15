@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年6月15日</title>
+    <link href="/2022/06/15/diary/2022.6/2022%E5%B9%B46%E6%9C%8815%E6%97%A5/"/>
+    <url>/2022/06/15/diary/2022.6/2022%E5%B9%B46%E6%9C%8815%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="d525efc2b230a0f97f9df66ece80e12052b33bd225265389e707cac6767cca6c">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50ecab829110ede2524b195b26a687cebadcdb6d4681849ee9f2a8e051c80c7f2bb4bd4a88a3d9e3fffe3fecbf55175a61ca977a67733bda548f96b87419d9105753881d1194274a717fb934dc919c2a4aae5e34a5f9c5b570f7bb8869644a379fd498ae1553c9c43e08337c8ccc406044ad459826b56f732c38bb0fc0b2d572cd13f4b4ab79261352cc8f69cc2248c42b1a8fcf1b82dd2ffcd3f88882dcbed36320c3767ab4dbff7d064b3a2faa344eecbcf63de29bd5c27b9e2201192a92fc4661c65194895224990baaa51b51e0bfa9430bb56377bd7b51295d4ce7c0fad616a6d61604aeffb992a2cfb71b8e2efd9eb3807072da5b027585e8aaab9c8c815582928d70a876b0e978ecdd9ded4ad37cd32262b472be19d5da128098076babe3389a1136a23e7d2c053e21f92c68cef7caa46ad580505b37ac2880bb2de779a9841bff0e57f503e95d38aa95db340a2805f08b4d02c17b9df6ebeb8f2a5f523df22e4e8fd1b550f7cf1efb2267022d76874f831f77d2bc4b69adb91eea5c068d0c473c4938c94efe900215e636d24823b419290867aa59af62298eac81a4b6849de3052ebdcdca633fd987c12994e067c19f10d92141c700b78c44ad36978bf749cb10915aeec4b106af93af254e4d69</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>接口与实现</title>
+    <link href="/2022/06/15/DataStructure/Vector/%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
+    <url>/2022/06/15/DataStructure/Vector/%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%AE%9E%E7%8E%B0/</url>
+    
+    <content type="html"><![CDATA[<p>接口与实现</p><span id="more"></span><h1 id="接口与实现"><a href="#接口与实现" class="headerlink" title="接口与实现"></a>接口与实现</h1><h2 id="从静态到动态"><a href="#从静态到动态" class="headerlink" title="从静态到动态"></a>从静态到动态</h2><p>操作方式根据是否修改数据可分为：</p><ol><li>静态： 仅读取，数据结构的内容及组成一般不变(get, search等)</li><li>动态： 需写入，数据结构的局部或整体将改变(insert, remove等)</li></ol><p>数据元素的存储与组织方式也可分为：</p><ol><li>静态： 数据空间整体创建或销毁，数据元素的<strong>物理存储次序</strong>与<strong>逻辑次序</strong>严格一致，可支持高效的静态操作</li><li>动态： 为各数据元素动态的分配和回收的物理空间，逻辑上相邻的元素记录彼此的物理地址，在逻辑上形成一个整体，可支持高效的动态操作</li></ol><h2 id="从列表到向量"><a href="#从列表到向量" class="headerlink" title="从列表到向量"></a>从列表到向量</h2><p>列表(list)是采用动态存储策略的典型结构，其中的各元素成为节点(node)，在<strong>逻辑</strong>上构成一个线性序列<br>相邻节点彼此互称为前驱(predecessor)或后继(successor)，前驱或后继若存在，则必然唯一<br>没有前驱&#x2F;后继的节点称为首(first&#x2F;front)节点&#x2F;末(last&#x2F;rear)节点</p><h2 id="从秩到位置"><a href="#从秩到位置" class="headerlink" title="从秩到位置"></a>从秩到位置</h2><p>向量支持循秩访问(call-by-rank)<br>根据数据元素的秩可以在O(1)时间内直接确定其物理地址<br>列表也可以通过秩定位，但循秩访问的成本较高，一般使用循位置访问(call-by-position)</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>有序查找</title>
     <link href="/2022/06/14/DataStructure/Vector/%E6%9C%89%E5%BA%8F%E6%9F%A5%E6%89%BE/"/>
     <url>/2022/06/14/DataStructure/Vector/%E6%9C%89%E5%BA%8F%E6%9F%A5%E6%89%BE/</url>
