@@ -16,19 +16,50 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://faru58.github.io/archives/2022/05/page/5/index.html">
+    <meta name="description" content="二叉树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树">
+<meta property="og:url" content="https://faru58.github.io/2022/06/17/DataStructure/Vector/%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="垃圾桶">
+<meta property="og:description" content="二叉树">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-17T10:28:44.000Z">
+<meta property="article:modified_time" content="2022-06-17T10:38:50.392Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>归档 - 垃圾桶</title>
+  <title>二叉树 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -55,7 +86,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -151,14 +182,48 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/%E9%BB%8E%E4%B9%8B%E8%BD%A8%E8%BF%B91.png') no-repeat center center;
+         style="background: url('/img/%E4%BC%8A%E8%8B%8F9.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="二叉树">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-06-17 18:28" pubdate>
+        2022年6月17日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      427 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4 分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -171,100 +236,118 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 125 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/05/14/diary/2022.5/2022%E5%B9%B45%E6%9C%8814%E6%97%A5/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">2022年5月14日</span>
-      <time style="float: right;">05-14</time>
-    </a>
-  
-    
-    <a href="/2022/05/14/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">继承的基本规则</span>
-      <time style="float: right;">05-14</time>
-    </a>
-  
-    
-    <a href="/2022/05/13/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E5%86%85%E9%83%A8%E7%B1%BB%E5%92%8C%E5%88%86%E9%83%A8%E7%B1%BB/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">内部类和分部类</span>
-      <time style="float: right;">05-13</time>
-    </a>
-  
-    
-    <a href="/2022/05/13/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">运算符重载</span>
-      <time style="float: right;">05-13</time>
-    </a>
-  
-    
-    <a href="/2022/05/13/diary/2022.5/2022%E5%B9%B45%E6%9C%8813%E6%97%A5/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">2022年5月13日</span>
-      <time style="float: right;">05-13</time>
-    </a>
-  
-    
-    <a href="/2022/05/12/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E6%8B%93%E5%B1%95%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">拓展方法</span>
-      <time style="float: right;">05-12</time>
-    </a>
-  
-    
-    <a href="/2022/05/12/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E9%9D%99%E6%80%81%E7%B1%BB%E5%92%8C%E9%9D%99%E6%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">静态类和静态构造函数</span>
-      <time style="float: right;">05-12</time>
-    </a>
-  
-    
-    <a href="/2022/05/12/diary/2022.5/2022%E5%B9%B45%E6%9C%8812%E6%97%A5/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">2022年5月12日</span>
-      <time style="float: right;">05-12</time>
-    </a>
-  
-    
-    <a href="/2022/05/11/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E5%B0%81%E8%A3%85/%E9%9D%99%E6%80%81%E6%88%90%E5%91%98/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">静态成员</span>
-      <time style="float: right;">05-11</time>
-    </a>
-  
-    
-    <a href="/2022/05/11/diary/2022.5/2022%E5%B9%B45%E6%9C%8811%E6%97%A5/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">2022年5月11日</span>
-      <time style="float: right;">05-11</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">二叉树</h1>
+            
+            <div class="markdown-body">
+              <p>二叉树</p>
+<span id="more"></span>
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2022/05/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2022/05/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2022/05/page/3/#board">3</a><a class="page-number" href="/archives/2022/05/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/2022/05/page/6/#board">6</a><a class="page-number" href="/archives/2022/05/page/7/#board">7</a><a class="page-number" href="/archives/2022/05/page/8/#board">8</a><a class="extend next" rel="next" href="/archives/2022/05/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
+<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p>树是一个半线性的数据结构(连通无环图)<br>任意子树的高度 &#x3D; 根节点的高度</p>
+<p>二叉树即为每个节点均设两个引用</p>
+<p>父+子结构存储n个节点的树，需要空间O(n)</p>
+<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p>二叉树(binary tree)是有根有序的</p>
+<h2 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h2><p>先序遍历(preorder)<br>沿着左子树向下遍历<br>沿着右子树向上遍历</p>
+<h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h2><p>中序遍历(inorder)<br>从最左的节点开始访问，沿右斜向上的方向访问<br>有右子树进右子树</p>
+<h2 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h2><p>后序遍历(postorder)<br>从左右都无法向下的几点开始访问</p>
+<h2 id="层次遍历"><a href="#层次遍历" class="headerlink" title="层次遍历"></a>层次遍历</h2><p>用Queue存储</p>
+<p>根节点先入队<br>while(队列 !&#x3D; null)<br>{<br>    取出首节点访问;<br>    if(有左子节点) 左子节点入队;<br>    if(有右子节点) 右子节点入队;<br>}</p>
+<p>[先序&#x2F;后序]+中序<br>[先序+后序]*真遍历</p>
+<h2 id="Huffman算法"><a href="#Huffman算法" class="headerlink" title="Huffman算法"></a>Huffman算法</h2><p>PFC编码:.</p>
+<ol>
+<li>字符编码不必等长</li>
+<li>不同字符编码互不为前缀</li>
+</ol>
+<p>最优带权编码数：<br>频率高&#x2F;低的字符，应尽可能放在高&#x2F;低处，<br>可通过适当交换，同样靠要缩短wald(T)</p>
+<p>合并树达到最优解</p>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/study/">study</a>
+                    
+                      <a class="hover-with-bg" href="/categories/study/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/06/17/diary/2022.6/2022%E5%B9%B46%E6%9C%8817%E6%97%A5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022年6月17日</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/16/Unity/Unity%E5%85%A5%E9%97%A8/Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/">
+                        <span class="hidden-mobile">Scene和Hierarchy窗口</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -355,6 +438,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 

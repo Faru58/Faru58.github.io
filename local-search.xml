@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年6月17日</title>
+    <link href="/2022/06/17/diary/2022.6/2022%E5%B9%B46%E6%9C%8817%E6%97%A5/"/>
+    <url>/2022/06/17/diary/2022.6/2022%E5%B9%B46%E6%9C%8817%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="16401207982d456154fe8e3e884cea2dbcbe585ce8c056aab4e27250008f05a8">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50a5541d2fd46387588d34f754efbe0a053b4979b79e7b4be6011b9c58517a9acc505dce8ae22f9ccee80b40f256ea422cc6fb6af7785063815e8879bc5898c652de1e80af8669deb5876fa77f1d77937ec53de9e021a43e1ae36584cb0db4b5a3c25fe569b9283370f0c00efc105d4ca2d5747dbf2f1c8a41617db5b0dbffada913df00680ac26ecbce1b5787c4b8da77f5058672b158db4f34cbe8530ad26b73cf16a505d132416a54579e39a0df1b061bc91953e38bd8d5cb472ae3c8054369fbb62d9ef4803298154111860779fa76912a167fe0526a3662f6ff77c84f2455678adf3d028d43dfe82bb9ebdf7b4864e31833c22721b441aca627d8427b0311bd9de132994c5fc4e9f8f15f30790aa44b8b315b85d00b96174dd0a629bbeb47e1e18dc36d1437564f53e51cd80da1c441dc3a421451e458a15aae6b2a55a8d759360bd9967d312d5329f75aade46742f164d95c32f193569f47364bef95b03cc8980f5307517c413e053068f4425cf2587cf630ddb7234318410ed42ef07d33b39172c4a643e651a95a0266b602e9330e81b56b9911200e0666644ae72080aba3730aae63db0aee39eb0797ac109d3430436ea869103b334e3eccbc728cf261a2a2d6bf5afebdea345fcc480f2bf99d53d203abbc7307bd0cacd39132651f697a47471ce50ca4c5283fa7ed1f5598f7eb6c501af4d4dd765f0426d675c8910150b555c1369b0a94d3ddf0ee2f82170202b6992c6c41a565d8e5d3d0c54f412b45ddf943583b32b11df53e63024f9f5751db0d06b23043db0aa9c13f25d494d4ffd11db53e351010c2f4d419e909126f7f9d8bfb8fa228191a923792f1ec9dd5f66a90d15e267db00e2f23b8666d25e2366de13c19683bd4c7a3226089c1b8951aa164badfe59a8951ba0e16dfcadb5773658508c6d3c0b702e7798087f306a3c0eea47300e10fbf4696303db8028aacec9b1c7faea603e2f1757306af33584d220b7f256e7b904610416651d3968de4a57a8377b67c753472a1e98428acf97441a7808c73e577c28c7c72909a50cde91b43cd66a1444543cd9f44de29373bdf4f93c04fdc3f083c55e3aebc6dfc3470befac9554c849c2b42b2379bfa2dbb737bb4219d1166082e8901c80f66686c6ea6564d2020410c068952e3b3c6352c7c40415255c1d66b9a01b2cf3f5175b2e94ebd97ab0b350ac3f7aa6cf2ee43219f17a918c8a63d920d83826be344a2db61430db2e34e7b372f4162e057393529af0745aeb3b06a054ee9ad54b768b8e2dfe032894850aae0f200b0177708cf91025fd4f1ea972a8889f56778a4724a1ceb6e8285205d6459c496f4b2ac91d517d54c70e007a7b8daa42026f68b7d4a70a879a7135a93efe0e85ba922eedbf809e5e0d471d693bbd03320a1b93731d830c7b917981f28b85d5cc0890104859430eb7165808a3f860e765bbac9e1eb3da22d77410d0b5ecad22f5ba3f34637b33f2f</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>二叉树</title>
+    <link href="/2022/06/17/DataStructure/Vector/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <url>/2022/06/17/DataStructure/Vector/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    
+    <content type="html"><![CDATA[<p>二叉树</p><span id="more"></span><h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p>树是一个半线性的数据结构(连通无环图)<br>任意子树的高度 &#x3D; 根节点的高度</p><p>二叉树即为每个节点均设两个引用</p><p>父+子结构存储n个节点的树，需要空间O(n)</p><h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p>二叉树(binary tree)是有根有序的</p><h2 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h2><p>先序遍历(preorder)<br>沿着左子树向下遍历<br>沿着右子树向上遍历</p><h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h2><p>中序遍历(inorder)<br>从最左的节点开始访问，沿右斜向上的方向访问<br>有右子树进右子树</p><h2 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h2><p>后序遍历(postorder)<br>从左右都无法向下的几点开始访问</p><h2 id="层次遍历"><a href="#层次遍历" class="headerlink" title="层次遍历"></a>层次遍历</h2><p>用Queue存储</p><p>根节点先入队<br>while(队列 !&#x3D; null)<br>{<br>    取出首节点访问;<br>    if(有左子节点) 左子节点入队;<br>    if(有右子节点) 右子节点入队;<br>}</p><p>[先序&#x2F;后序]+中序<br>[先序+后序]*真遍历</p><h2 id="Huffman算法"><a href="#Huffman算法" class="headerlink" title="Huffman算法"></a>Huffman算法</h2><p>PFC编码:.</p><ol><li>字符编码不必等长</li><li>不同字符编码互不为前缀</li></ol><p>最优带权编码数：<br>频率高&#x2F;低的字符，应尽可能放在高&#x2F;低处，<br>可通过适当交换，同样靠要缩短wald(T)</p><p>合并树达到最优解</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Scene和Hierarchy窗口</title>
     <link href="/2022/06/16/Unity/Unity%E5%85%A5%E9%97%A8/Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/"/>
     <url>/2022/06/16/Unity/Unity%E5%85%A5%E9%97%A8/Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/</url>
