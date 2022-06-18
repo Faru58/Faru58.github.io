@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年6月18日</title>
+    <link href="/2022/06/18/diary/2022.6/2022%E5%B9%B46%E6%9C%8818%E6%97%A5/"/>
+    <url>/2022/06/18/diary/2022.6/2022%E5%B9%B46%E6%9C%8818%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="c65ba0cbe0277d1784c7764ea9ad6a05e433f21236963e9d3882141ea4d0746f">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50f3d9befd224da50ebd33ddda44ff86e0cd4783699ae90746d09355e830d1bd3500866b3cde6b5e215ae7012472f79c8f1d90f6f4055551c836439e7458c3993d88bff2d4be74098c21f5ec1d53c458e2ef613d02a3e42b5684a7ebb982b4b564ea82e277a03cf1a9a65d32e9f46f2a66a5be837627cb0e23bdb04656fad4474414d6b32ec3b3816e808407aa36a10a7b0c26a0918fc1d273c50db711d0d7faa8d473915741011c76b550e2ea31b76332e8f6833fecf03f5565e457c9ee044836b198f72d3f77533d48fe7ea7b46fa540e0d106314187fdecd656202bfb97a5c492302aed1f9f071a2ca133b77479ffdafd44e8a957aa34c30fb71fd3c92bcfa87ae53cc2d1c712a10b49326cc36b9e987731255254f0f76becf99323ba7633d6d83c098db543a87221b275923afa283f486fd7296d0b7ef387b3da71ba5c4018f8ce52dc428ee0d0ff79601736da9155837bd72a0f40df50a1781ee376a7c20d3d58b7383fcd7d7e4512e1b8024e2090</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Game和Project窗口</title>
+    <link href="/2022/06/18/Unity/Unity%E5%85%A5%E9%97%A8/Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/"/>
+    <url>/2022/06/18/Unity/Unity%E5%85%A5%E9%97%A8/Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/</url>
+    
+    <content type="html"><![CDATA[<p>Game和Project窗口</p><span id="more"></span><h1 id="Game和Project窗口"><a href="#Game和Project窗口" class="headerlink" title="Game和Project窗口"></a>Game和Project窗口</h1><p>Game游戏窗口： 游戏画面窗口，玩家能看到的画面内容<br>Project工程窗口： 工程资源窗口，所有的工程资源都会在该窗口中显示，显示的内容为Assets文件夹中的所有内容</p><h2 id="Game游戏窗口"><a href="#Game游戏窗口" class="headerlink" title="Game游戏窗口"></a>Game游戏窗口</h2><p>Game游戏窗口中显示的内容是场景中<strong>摄像机</strong>拍摄范围内的游戏对象，是玩家通过屏幕能看到的东西</p><ol><li>引擎中运行游戏</li><li>暂停运行</li><li>逐帧运行</li></ol><ol><li><em>Warn if No Cameras Rendering</em><br>场景中没有摄像机时会发出警告</li><li><em>Clear Every Frame in Edit Mode</em><br>游戏未播放时，也更新Game窗口，避免显示问题</li><li><em>Maximize</em><br>场景最大化</li><li><em>Close Tab</em><br>关闭窗口</li></ol><h2 id="Project工程窗口"><a href="#Project工程窗口" class="headerlink" title="Project工程窗口"></a>Project工程窗口</h2><p>窗口中显示的内容主要是Assets文件夹中的所有内容，主要用来管理资源脚本文件，所有游戏资源都会显示在该窗口中</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/18/Unity/Unity%E5%85%A5%E9%97%A8/Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/exam.png" class="">]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年6月17日</title>
     <link href="/2022/06/17/diary/2022.6/2022%E5%B9%B46%E6%9C%8817%E6%97%A5/"/>
     <url>/2022/06/17/diary/2022.6/2022%E5%B9%B46%E6%9C%8817%E6%97%A5/</url>
@@ -62,7 +116,7 @@
     <link href="/2022/06/16/Unity/Unity%E5%85%A5%E9%97%A8/Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/"/>
     <url>/2022/06/16/Unity/Unity%E5%85%A5%E9%97%A8/Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/</url>
     
-    <content type="html"><![CDATA[<p>Scene和Hierarchy窗口</p><span id="more"></span><h1 id="Scene和Hierarchy窗口"><a href="#Scene和Hierarchy窗口" class="headerlink" title="Scene和Hierarchy窗口"></a>Scene和Hierarchy窗口</h1><h2 id="窗口布局"><a href="#窗口布局" class="headerlink" title="窗口布局"></a>窗口布局</h2><p>右上角 Layout</p><h2 id="Hierarchy层级窗口"><a href="#Hierarchy层级窗口" class="headerlink" title="Hierarchy层级窗口"></a>Hierarchy层级窗口</h2><p>可以在Hierarchy窗口中，创建或拖入各种游戏对象<br>比如：模型、光源、图片、UI等等内容<br>层级窗口中显示的就是一个场景中的所有对象</p><p>窗口中右键&#x2F;点击左上角+号键，可以创建、操作对象</p><p>F2: 对象改名<br>Ctrl+C: 复制<br>Ctrl+V: 粘贴<br>Ctrl+D: 克隆一个<br>Delete: 删除</p><h2 id="Scene场景窗口"><a href="#Scene场景窗口" class="headerlink" title="Scene场景窗口"></a>Scene场景窗口</h2><p>窗口上方工具条内容</p><ol><li>渲染模式</li><li>2D&#x2F;3D视图切换</li><li>光源&#x2F;音效&#x2F;特效显示开启</li><li>辅助线显示</li><li>辅助功能，控制场景上提示图标等</li><li>搜索</li><li>场景轴向</li></ol><h2 id="场景中的操作"><a href="#场景中的操作" class="headerlink" title="场景中的操作"></a>场景中的操作</h2><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>所有的游戏对象都会出现在Scene场景窗口和Hierarchy层级窗口中<br>需要掌握的就是熟练快捷地在Scene窗口中操作游戏物体(位置旋转缩放)</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/16/Unity/Unity%E5%85%A5%E9%97%A8/Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/exam.png" class="">]]></content>
+    <content type="html"><![CDATA[<p>Scene和Hierarchy窗口</p><span id="more"></span><h1 id="Scene和Hierarchy窗口"><a href="#Scene和Hierarchy窗口" class="headerlink" title="Scene和Hierarchy窗口"></a>Scene和Hierarchy窗口</h1><h2 id="窗口布局"><a href="#窗口布局" class="headerlink" title="窗口布局"></a>窗口布局</h2><p>右上角 Layout</p><h2 id="Hierarchy层级窗口"><a href="#Hierarchy层级窗口" class="headerlink" title="Hierarchy层级窗口"></a>Hierarchy层级窗口</h2><p>可以在Hierarchy窗口中，创建或拖入各种游戏对象<br>比如：模型、光源、图片、UI等等内容<br>层级窗口中显示的就是一个场景中的所有对象</p><p>窗口中右键&#x2F;点击左上角+号键，可以创建、操作对象</p><p>F2: 对象改名<br>Ctrl+C: 复制<br>Ctrl+V: 粘贴<br>Ctrl+D: 克隆一个<br>Delete: 删除</p><h2 id="Scene场景窗口"><a href="#Scene场景窗口" class="headerlink" title="Scene场景窗口"></a>Scene场景窗口</h2><p>窗口上方工具条内容</p><ol><li>渲染模式</li><li>2D&#x2F;3D视图切换</li><li>光源&#x2F;音效&#x2F;特效显示开启</li><li>辅助线显示</li><li>辅助功能，控制场景上提示图标等</li><li>搜索</li><li>场景轴向</li></ol><h2 id="场景中的操作"><a href="#场景中的操作" class="headerlink" title="场景中的操作"></a>场景中的操作</h2><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>所有的游戏对象都会出现在Scene场景窗口和Hierarchy层级窗口中<br>需要掌握的就是熟练快捷地在Scene窗口中操作游戏物体(位置旋转缩放)</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/16/Unity/Unity%E5%85%A5%E9%97%A8/Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/exam.png" class=""><img src="/2022/06/16/Unity/Unity%E5%85%A5%E9%97%A8/Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/Mycar.png" class="">]]></content>
     
     
     <categories>
