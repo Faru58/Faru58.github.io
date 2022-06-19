@@ -4,6 +4,89 @@
   
   
   <entry>
+    <title>工具栏和父子关系</title>
+    <link href="/2022/06/19/Unity/Unity%E5%85%A5%E9%97%A8/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/"/>
+    <url>/2022/06/19/Unity/Unity%E5%85%A5%E9%97%A8/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/</url>
+    
+    <content type="html"><![CDATA[<p>工具栏和父子关系</p><span id="more"></span><h1 id="工具栏和父子关系"><a href="#工具栏和父子关系" class="headerlink" title="工具栏和父子关系"></a>工具栏和父子关系</h1><h2 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h2><p>GameObject&#x2F;Move To View ： 将选中对象移动到目前摄像机对着的位置<br>GameObject&#x2F;Align With View ： 将选中对象移动到目前摄像机的位置</p><p>Flie中的重要选项：<br>BuildSetting（工程发布打包）</p><p>Edit中的重要选项： </p><ol><li>Project Setting（工程各系统设置）</li><li>Preferences（首选项，可设置编程软件）</li></ol><p>GameObject中的重要选项：</p><ol><li>Move To View</li><li>Align With View </li><li>Align View to Selected</li></ol><h2 id="父子关系"><a href="#父子关系" class="headerlink" title="父子关系"></a>父子关系</h2><p>对象间的父子关系</p><ol><li>子对象会随着父对象的变化而变化</li><li>子对象Inspector窗口中Transform信息是相对父对象的</li><li>Scene上方 Pivot 和 Global 的作用</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Inspector和Console窗口</title>
+    <link href="/2022/06/19/Unity/Unity%E5%85%A5%E9%97%A8/Inspector%E5%92%8CConsole%E7%AA%97%E5%8F%A3/"/>
+    <url>/2022/06/19/Unity/Unity%E5%85%A5%E9%97%A8/Inspector%E5%92%8CConsole%E7%AA%97%E5%8F%A3/</url>
+    
+    <content type="html"><![CDATA[<p>Inspector和Console窗口</p><span id="more"></span><h1 id="Inspector和Console窗口"><a href="#Inspector和Console窗口" class="headerlink" title="Inspector和Console窗口"></a>Inspector和Console窗口</h1><p>Inspector检查窗口：查看场景中游戏对象关联的C#脚本信息<br>Console控制台窗口：用于查看调试信息的窗口，报错、警告、测试打印都可以显示在其中</p><h2 id="Inspector检查窗口"><a href="#Inspector检查窗口" class="headerlink" title="Inspector检查窗口"></a>Inspector检查窗口</h2><p>不选择场景中游戏对象或不进行任何相关设置，该界面不会显示任何信息<br>当选择场景中游戏对象事，该界面将显示和该游戏对象关联的C#脚本 </p><p>红色部分： 游戏对象基本设置<br>蓝色部分： 关联的C#脚本<br>绿色部分： 脚本的公共成员变量</p><h2 id="Console窗口"><a href="#Console窗口" class="headerlink" title="Console窗口"></a>Console窗口</h2><p>该窗口将显示代码编译过程中，或者游戏运行过程中的报错、警告、测试信息，主要用于查错和调试用</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年6月19日</title>
+    <link href="/2022/06/19/diary/2022.6/2022%E5%B9%B46%E6%9C%8819%E6%97%A5/"/>
+    <url>/2022/06/19/diary/2022.6/2022%E5%B9%B46%E6%9C%8819%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="ac685fee2d9669f76b50d8738d1bd28787ea7a2d503056269da87bd6da19929c">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe502f360968c9feb9ddee6ab236ae2f7ae823dc9f5a9a035dfc5de9d8a029587c37a7364c96ab8d87affe73cde16feadc9256dc57054a5a94d707f154f58e9488335fcd4695156765853140f34f4a630f4cd308eb9b62b79825bac9ea0ebcca80969aa3532da0f428b61ba9c7de568e8982d6808f623d88724f0c1ed6576698e7211a1720f85c00deeeb8731daddbf0bee395f8b24b6bba340ceb1e49e7f76cb371070392c48106ef5ec02309de5e46155f</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年6月18日</title>
     <link href="/2022/06/18/diary/2022.6/2022%E5%B9%B46%E6%9C%8818%E6%97%A5/"/>
     <url>/2022/06/18/diary/2022.6/2022%E5%B9%B46%E6%9C%8818%E6%97%A5/</url>
