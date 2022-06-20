@@ -4,11 +4,94 @@
   
   
   <entry>
+    <title>反射机制和游戏场景</title>
+    <link href="/2022/06/20/Unity/Unity%E5%85%A5%E9%97%A8/%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/"/>
+    <url>/2022/06/20/Unity/Unity%E5%85%A5%E9%97%A8/%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/</url>
+    
+    <content type="html"><![CDATA[<p>反射机制和游戏场景</p><span id="more"></span><h1 id="反射机制和游戏场景"><a href="#反射机制和游戏场景" class="headerlink" title="反射机制和游戏场景"></a>反射机制和游戏场景</h1><h2 id="场景中对象的本质"><a href="#场景中对象的本质" class="headerlink" title="场景中对象的本质"></a>场景中对象的本质</h2><p>GameObject类对象是Unity引擎提供的，作为场景中所有对象的根本<br>在游戏场景中出现一个对象，不管是图片、模型、音效、摄像机等等都是依附于GameObject对象的</p><p>举例体现：<br>前提：Unity已经实现了对象查找和关联</p><ol><li>修改Inspector面板中Transform的内容<br>利用反射：已知对象，类名，变量名，通过反射为该对象设置变量值</li><li>新建一个脚本后，添加给一个指定的GameObject对象<br>利用反射：已知类名，可以获取所有公共成员，故可以在Inspector面板上创建各公共字段信息</li></ol><h2 id="游戏场景的本质"><a href="#游戏场景的本质" class="headerlink" title="游戏场景的本质"></a>游戏场景的本质</h2><p>游戏场景文件后缀为.unity<br>它的本质就是一个配置文件<br>Unity有一套自己识别处理它的机制<br>本质就是把场景对象相关信息读取出来，通过反射来创建各个对象关联各个脚本对象</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>unity的工作机制<br>本质就是利用反射，动态的创建GameObject对象并且关联各种C#脚本对象在其之上<br>让不同的GameObject对象各司其职扮演好自己的角色<br>根据unity提供以及我们书写的剧本(C#脚本)，呈现一出游戏戏剧</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年6月20日</title>
+    <link href="/2022/06/20/diary/2022.6/2022%E5%B9%B46%E6%9C%8820%E6%97%A5/"/>
+    <url>/2022/06/20/diary/2022.6/2022%E5%B9%B46%E6%9C%8820%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="e6ceb9adc66a49f5d94a9f4b4acf26ce97731701b2d8f2e5dab55de3890d1365">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe506c3b09322422576395ab679632643e7f84c4be0dd9ea5fc1248408384266ee181352923f338df02dd88cc50b2e3f1039df660e1fa81cf418a070b42bb07fcf05f6ef23264a1b7d3055cd54a362ec8baeee0fb421557dc4ede399c404debade6b1427265ce5dff556ea114dd516b203b036c8e64e461d081ad4d3a4d212846cd9f1b915ed44b4ff112af9b8403961ccdd260f0b7e19fcc463782ca68c51a3089f90ed8c996ef130b95307ae33f09214ac8f3e86eb1219948169cbcbbdf3f562fce9aee63b3b64cdb6c2a29ca7cad16235c141b5627377c2312885fe49d2b5c47c</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>图</title>
+    <link href="/2022/06/20/DataStructure/Vector/%E5%9B%BE/"/>
+    <url>/2022/06/20/DataStructure/Vector/%E5%9B%BE/</url>
+    
+    <content type="html"><![CDATA[<p>图</p><span id="more"></span><h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>G &#x3D; (V; E)  其中V为点, E为边</p><p>邻接(adjacency): 点-点关系<br>关联(incidence): 点-边关系</p><h2 id="无向图和有向图"><a href="#无向图和有向图" class="headerlink" title="无向图和有向图"></a>无向图和有向图</h2><p>无向图(undigraph): 若邻接顶点u和v的次序无所谓, 则(u, v)为无向边(undirected edge), 所有边均无方向的图，即无向图<br>有向图(digraph): 图中均为有向边，边有头和尾</p><p>路径 π &#x3D; &lt;v0, v1, …, vk&gt; , 长度 |π| &#x3D; k<br>简单路径: 不含重复节点</p><p>环路<br>简单环路: 不经过重复边<br>欧拉环路: 经过每个顶点一次<br>哈密尔顿环路: 经过所有边一次</p><h2 id="BFS-DFS和拓扑排序"><a href="#BFS-DFS和拓扑排序" class="headerlink" title="BFS, DFS和拓扑排序"></a>BFS, DFS和拓扑排序</h2><p>BFS:<br>复杂度: 理论上 O(n^2 + e), 实际上 O(n + e)</p><p>DFS:<br>两类时间dtime, ftime, 递归， 多可达域<br>嵌套引理: 祖先的活跃期覆盖后代<br>Tree的边的数量总是 &#x3D; 定点数 - 联通分量的数量 </p><p>拓扑排序:<br>有向无环图必有拓扑排序<br>零入度点 顺序输出: 从入度为0的顶点开始，压入栈，并取一个空队列，迭代<br>零出度点 逆序输出: 从出度为0的顶点开始，压入栈，迭代</p><h1 id="图应用"><a href="#图应用" class="headerlink" title="图应用"></a>图应用</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>工具栏和父子关系</title>
     <link href="/2022/06/19/Unity/Unity%E5%85%A5%E9%97%A8/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/"/>
     <url>/2022/06/19/Unity/Unity%E5%85%A5%E9%97%A8/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/</url>
     
-    <content type="html"><![CDATA[<p>工具栏和父子关系</p><span id="more"></span><h1 id="工具栏和父子关系"><a href="#工具栏和父子关系" class="headerlink" title="工具栏和父子关系"></a>工具栏和父子关系</h1><h2 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h2><p>GameObject&#x2F;Move To View ： 将选中对象移动到目前摄像机对着的位置<br>GameObject&#x2F;Align With View ： 将选中对象移动到目前摄像机的位置</p><p>Flie中的重要选项：<br>BuildSetting（工程发布打包）</p><p>Edit中的重要选项： </p><ol><li>Project Setting（工程各系统设置）</li><li>Preferences（首选项，可设置编程软件）</li></ol><p>GameObject中的重要选项：</p><ol><li>Move To View</li><li>Align With View </li><li>Align View to Selected</li></ol><h2 id="父子关系"><a href="#父子关系" class="headerlink" title="父子关系"></a>父子关系</h2><p>对象间的父子关系</p><ol><li>子对象会随着父对象的变化而变化</li><li>子对象Inspector窗口中Transform信息是相对父对象的</li><li>Scene上方 Pivot 和 Global 的作用</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>工具栏和父子关系</p><span id="more"></span><h1 id="工具栏和父子关系"><a href="#工具栏和父子关系" class="headerlink" title="工具栏和父子关系"></a>工具栏和父子关系</h1><h2 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h2><p>GameObject&#x2F;Move To View ： 将选中对象移动到目前摄像机对着的位置<br>GameObject&#x2F;Align With View ： 将选中对象移动到目前摄像机的位置</p><p>Flie中的重要选项：<br>BuildSetting（工程发布打包）</p><p>Edit中的重要选项： </p><ol><li>Project Setting（工程各系统设置）</li><li>Preferences（首选项，可设置编程软件）</li></ol><p>GameObject中的重要选项：</p><ol><li>Move To View</li><li>Align With View </li><li>Align View to Selected</li></ol><h2 id="父子关系"><a href="#父子关系" class="headerlink" title="父子关系"></a>父子关系</h2><p>对象间的父子关系</p><ol><li>子对象会随着父对象的变化而变化</li><li>子对象Inspector窗口中Transform信息是相对父对象的</li><li>Scene上方 Pivot 和 Global 的作用</li></ol><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/19/Unity/Unity%E5%85%A5%E9%97%A8/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/exam.png" class=""><img src="/2022/06/19/Unity/Unity%E5%85%A5%E9%97%A8/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/answer.png" class="">]]></content>
     
     
     <categories>
