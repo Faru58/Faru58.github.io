@@ -24,7 +24,7 @@
 <meta property="og:description" content="图">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-20T11:52:00.000Z">
-<meta property="article:modified_time" content="2022-06-20T12:39:23.464Z">
+<meta property="article:modified_time" content="2022-06-21T13:20:46.427Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="数据结构">
@@ -208,7 +208,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      446 字
+      1.7k 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      15 分钟
     </span>
   
 
@@ -260,7 +260,55 @@
 <h2 id="BFS-DFS和拓扑排序"><a href="#BFS-DFS和拓扑排序" class="headerlink" title="BFS, DFS和拓扑排序"></a>BFS, DFS和拓扑排序</h2><p>BFS:<br>复杂度: 理论上 O(n^2 + e), 实际上 O(n + e)</p>
 <p>DFS:<br>两类时间dtime, ftime, 递归， 多可达域<br>嵌套引理: 祖先的活跃期覆盖后代<br>Tree的边的数量总是 &#x3D; 定点数 - 联通分量的数量 </p>
 <p>拓扑排序:<br>有向无环图必有拓扑排序<br>零入度点 顺序输出: 从入度为0的顶点开始，压入栈，并取一个空队列，迭代<br>零出度点 逆序输出: 从出度为0的顶点开始，压入栈，迭代</p>
-<h1 id="图应用"><a href="#图应用" class="headerlink" title="图应用"></a>图应用</h1>
+<h1 id="图应用"><a href="#图应用" class="headerlink" title="图应用"></a>图应用</h1><h2 id="双连通分量"><a href="#双连通分量" class="headerlink" title="双连通分量"></a>双连通分量</h2><p>双连通分量(biconnected component, 简称bcc)<br>在一个无向图中，若任意两点间至少存在两条“点不重复”的路径，则说这个图是点双连通的（简称双连通,biconnected）<br>在一个无向图中，点双连通的极大子图称为点双连通分量（简称双连通分量,Biconnected Component,BCC）</p>
+<p>点双连通和边双连通：</p>
+<ol>
+<li>连通的概念：在无向图中，所有点能互相到达</li>
+<li>连通分量：互相联通的子图</li>
+<li>点双连通：删掉一个点之后，图仍联通</li>
+<li>边双连通：删掉一条边之后，图仍联通</li>
+</ol>
+<p>性质：</p>
+<ol>
+<li>任意两点间至少存在两条点不重复的路径等价于图中删去任意一个点都不会改变图的连通性，即BCC中无割点</li>
+<li>若BCC间有公共点，则公共点为原图的割点</li>
+<li>无向连通图中割点一定属于至少两个BCC，非割点只属于一个BCC</li>
+</ol>
+<p>对于每个BCC，它在DFS树中最先被发现的点一定是割点或DFS树的树根</p>
+<h2 id="优先级搜索"><a href="#优先级搜索" class="headerlink" title="优先级搜索"></a>优先级搜索</h2><p>优先级搜索(Priority First Search)<br>不同的遍历算法的区别，取决于顶点的选取策略。不同的顶点选取策略，取决于存放和提供顶点的数据结构。<br>每个顶点都有初始的优先级数，并可能随着算法的推进而调整。通常的习惯是，优先级数越大&#x2F;小，优先级越低&#x2F;高<br>特别的，priority(v) &#x3D;&#x3D; INT_MAX, 意味着v的优先级最低</p>
+<p>Dijkstra算法：最短路径树</p>
+<ol>
+<li><p>给定：连通有向图G及其中的顶点u和v</p>
+</li>
+<li><p>找到：从u到v的最短路径及其长度</p>
+</li>
+<li><p>给定顶点s，计算s到其余各个顶点的最短路径及长度</p>
+</li>
+<li><p>套用PFS框架，为将Tk扩充至Tk+1，只需选出优先级最高的跨边ek及其对应顶点vk，并将其加入Tk，随后更新Vk\Vk+1中所有顶点的优先级数</p>
+</li>
+<li><p>注意，优先级数随后可能改变的顶点，必与vk邻接</p>
+</li>
+<li><p>因此，只需枚举vk的每一邻接顶点v，并取priority(v) &#x3D; min(priority(v), priority(vk) + ||vk, v||)</p>
+</li>
+<li><p>以上完全符合PFS框架，唯一要做的工作无非是按照prioUpdater()规范，编写一个优先级更新器</p>
+</li>
+</ol>
+<p>prim算法：最小生成树<br>最小支撑树：</p>
+<ol>
+<li>连通网络N &#x3D; (V; E)的子图T &#x3D; (V; F)</li>
+<li>支撑&#x2F;spanning &#x3D; 覆盖N中所有顶点</li>
+<li>树，连通且无环，|V| &#x3D; |F| + 1;加边出单环，再删除同环边即恢复为树；删边不连通，再加联通边即恢复为树</li>
+<li>同一网络的支撑树不唯一，对负边也适用</li>
+</ol>
+<p>割&amp;极短跨边<br>设（U; V \ U）是N的一个割(Cut），即将点集划分为两个集合<br>若uv是该割的一条极短跨边，则必存在一颗包含uv的MST</p>
+<p>递增式构造,套用PFS框架</p>
+<ol>
+<li>选出优先级最高的跨边ek及其对应顶点vk，并将其加入Tk，随后，更新V\Vk中所有顶点的优先级</li>
+<li>注意，优先级数随后可能改变的顶点，必与vk邻接</li>
+<li>因此，只需枚举vk的每一邻接顶点v，并取priority(v) &#x3D; min(priority(v), ||vk, v||)</li>
+<li>以上完全符合PFS规范，唯一要做的就是按照prioUpdate()规范，编写一个改变优先级的函数</li>
+</ol>
+
             </div>
             <hr>
             <div>
