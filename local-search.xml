@@ -4,6 +4,89 @@
   
   
   <entry>
+    <title>2022年6月22日</title>
+    <link href="/2022/06/22/diary/2022.6/2022%E5%B9%B46%E6%9C%8822%E6%97%A5/"/>
+    <url>/2022/06/22/diary/2022.6/2022%E5%B9%B46%E6%9C%8822%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="94fde847809bc5787c49372735a2dae99c48cdf92525bbab77e4ba8c96c5b0b5">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe500c1a2d71992cefe312d1a6e87b777fcf78cc60ba4fc20f8eb54f4d0ac77c469a600e6d8d61ae21f80cb802b2633947d6638a312d0e5a333cfb255c553ef473c4e405c0ddae268d3711bb9ec599b4a1b464927370cfcb7df2c7be3ab0947dc1e963512838f5200a835b48d4c04c633d565c93a5c2ccef5e9a92972bb93351d4a6a1be5fcd3eef150b3dc2f05e636eb106e101eb4f7171fa646c3a45d046fa7ef13e4485b921b599869ad76c2e5e44d25646a925c6e93c6ee95a0a8b08752c976fbecc8d3987f9fc18fb57564fa461090137ec84770cf6aabe6e089a7e0276b014d7998ba3e0c59fa5b944f97a2a4005c27dbfc58a1731e47e4e54aca474021ef9665a0ac15100cf68c9751e4904a671dc702ed2ebeb311f1c1674727642642c37afdaa2e098b4929c014f834e84211281800c4dbd2b9cf18ae9b32fcc2ef2d478e3d4400639dc40485e77186a40902cee99ec273a2203c71bec65c062cca975ac544039570f36c166d7bebc4fe007cc066f430caa09dca42862d28a2089cf1834a7ca8c6c169d986868be6908aeb8c66fe96c65d4cd6ff42e98a1c53d68ae6f7ee213767402b66677a42ea198562f8f49</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>脚本基本规则</title>
+    <link href="/2022/06/22/Unity/Unity%E5%85%A5%E9%97%A8/%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/"/>
+    <url>/2022/06/22/Unity/Unity%E5%85%A5%E9%97%A8/%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/</url>
+    
+    <content type="html"><![CDATA[<p>脚本基本规则</p><span id="more"></span><h1 id="脚本基本规则"><a href="#脚本基本规则" class="headerlink" title="脚本基本规则"></a>脚本基本规则</h1><p>设置编程用工具：<br>Edit&#x2F;Preferences&#x2F;External Tools</p><h2 id="创建规则"><a href="#创建规则" class="headerlink" title="创建规则"></a>创建规则</h2><ol><li>不在VS中创建脚本了</li><li>可以放在Assets文件夹下的任何位置(建议同一文件夹管理)</li><li>类名和文件名必须一致，不然不能挂载(因为反射机制创建对象，会通过文件名去找Type)</li><li>建议不要使用中文名</li><li>没有特殊需求，不用管命名空间</li><li>创建的脚本默认继承MonoBehavior</li></ol><h2 id="MonoBehavior基类"><a href="#MonoBehavior基类" class="headerlink" title="MonoBehavior基类"></a>MonoBehavior基类</h2><ol><li>创建的脚本默认都继承MonoBehavior，继承了它才能够挂载在GameObject上</li><li>继承了MonoBehavior的脚本不能new，只能挂载</li><li>继承了MonoBehavior的脚本不要去写构造函数，因为我们不会去new，写构造函数没有任何意义</li><li>继承了MonoBehavior的脚本可以在一个对象上挂多个(如果没有加DisallowMultipleComponent特性)</li><li>继承MonoBehavior的类也可以再次被继承，遵循面向对象继承多态的规则</li></ol><h2 id="不继承MonoBehavior的类"><a href="#不继承MonoBehavior的类" class="headerlink" title="不继承MonoBehavior的类"></a>不继承MonoBehavior的类</h2><ol><li>不继承MonoBehavior的类，不能挂载在GameObject上</li><li>不继承MonoBehavior的类，想怎么写怎么写，如果要使用需要自己new</li><li>不继承MonoBehavior的类，一般是单例模式的类(用于管理模块)，或者数据结构类(用于存储数据)</li><li>不继承MonoBehavior的类，不用保留默认出现的几个函数</li></ol><h2 id="执行的先后顺序"><a href="#执行的先后顺序" class="headerlink" title="执行的先后顺序"></a>执行的先后顺序</h2><p>选中脚本，在Inspector窗口中选择Execution Order，点击+号可以加入脚本的运行顺序</p><h2 id="默认脚本内容"><a href="#默认脚本内容" class="headerlink" title="默认脚本内容"></a>默认脚本内容</h2><p>Editor\Data\Resources\ScriptTemplates</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/22/Unity/Unity%E5%85%A5%E9%97%A8/%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>因为MonoBehavior不能new，只能挂<br>我们不会通过构造函数实例化对象，写构造函数没有意义</p><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><ol><li>这是unity定好的规则</li><li>继承MonoBehavior的类只能挂载在GameObject上配合使用</li></ol><h2 id="题3"><a href="#题3" class="headerlink" title="题3"></a>题3</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;&#x2F; &lt;summary&gt;&#x2F;&#x2F;&#x2F; 玩家信息类&#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;public class PlayerInfo&#123;    public string name;    public bool sex;    public int atk;    public int def;    public int hp;    public int maxHp;&#125;</code></pre></div><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;&#x2F; &lt;summary&gt;&#x2F;&#x2F;&#x2F; 怪物管理类&#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;public class MonsterMgr&#123;    private static MonsterMgr instance &#x3D; new MonsterMgr();    private static MonsterMgr Instance &#x3D;&gt; instance;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>二叉搜索树</title>
+    <link href="/2022/06/22/DataStructure/Tree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
+    <url>/2022/06/22/DataStructure/Tree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</url>
+    
+    <content type="html"><![CDATA[<p>二叉搜索树</p><span id="more"></span><h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>二叉搜索树(binary serach tree, BST)<br>扩展为平衡二叉搜索树(balanced binary serach tree, BBST)</p><h2 id="循关键码访问"><a href="#循关键码访问" class="headerlink" title="循关键码访问"></a>循关键码访问</h2><p>数据项之间，按照格子的<strong>关键码</strong>(key)彼此区分  (call-by-key)<br>条件：关键码之间支持<strong>大小比较</strong>与<strong>相等比对</strong></p><p>节点 ≈ 词条 ≈ 关键码</p><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>顺序性： 任意节点均不小于&#x2F;不大于其左&#x2F;右后代<br>虽是局部特征刻画，但能推广到整体</p><p>注：</p><ol><li>只含单个节点的二叉树一定是BST</li><li>即使只有单分支，但满足顺序性，也是BST</li></ol><p>单调性： BST的<strong>中序</strong>遍历序列，必然<strong>单调</strong>非降</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>预设体和资源包的导入导出</title>
     <link href="/2022/06/21/Unity/Unity%E5%85%A5%E9%97%A8/%E9%A2%84%E8%AE%BE%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/"/>
     <url>/2022/06/21/Unity/Unity%E5%85%A5%E9%97%A8/%E9%A2%84%E8%AE%BE%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</url>
@@ -113,8 +196,8 @@
   
   <entry>
     <title>图</title>
-    <link href="/2022/06/20/DataStructure/Vector/%E5%9B%BE/"/>
-    <url>/2022/06/20/DataStructure/Vector/%E5%9B%BE/</url>
+    <link href="/2022/06/20/DataStructure/Tree/%E5%9B%BE/"/>
+    <url>/2022/06/20/DataStructure/Tree/%E5%9B%BE/</url>
     
     <content type="html"><![CDATA[<p>图</p><span id="more"></span><h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>G &#x3D; (V; E)  其中V为点, E为边</p><p>邻接(adjacency): 点-点关系<br>关联(incidence): 点-边关系</p><h2 id="无向图和有向图"><a href="#无向图和有向图" class="headerlink" title="无向图和有向图"></a>无向图和有向图</h2><p>无向图(undigraph): 若邻接顶点u和v的次序无所谓, 则(u, v)为无向边(undirected edge), 所有边均无方向的图，即无向图<br>有向图(digraph): 图中均为有向边，边有头和尾</p><p>路径 π &#x3D; &lt;v0, v1, …, vk&gt; , 长度 |π| &#x3D; k<br>简单路径: 不含重复节点</p><p>环路<br>简单环路: 不经过重复边<br>欧拉环路: 经过每个顶点一次<br>哈密尔顿环路: 经过所有边一次</p><h2 id="BFS-DFS和拓扑排序"><a href="#BFS-DFS和拓扑排序" class="headerlink" title="BFS, DFS和拓扑排序"></a>BFS, DFS和拓扑排序</h2><p>BFS:<br>复杂度: 理论上 O(n^2 + e), 实际上 O(n + e)</p><p>DFS:<br>两类时间dtime, ftime, 递归， 多可达域<br>嵌套引理: 祖先的活跃期覆盖后代<br>Tree的边的数量总是 &#x3D; 定点数 - 联通分量的数量 </p><p>拓扑排序:<br>有向无环图必有拓扑排序<br>零入度点 顺序输出: 从入度为0的顶点开始，压入栈，并取一个空队列，迭代<br>零出度点 逆序输出: 从出度为0的顶点开始，压入栈，迭代</p><h1 id="图应用"><a href="#图应用" class="headerlink" title="图应用"></a>图应用</h1><h2 id="双连通分量"><a href="#双连通分量" class="headerlink" title="双连通分量"></a>双连通分量</h2><p>双连通分量(biconnected component, 简称bcc)<br>在一个无向图中，若任意两点间至少存在两条“点不重复”的路径，则说这个图是点双连通的（简称双连通,biconnected）<br>在一个无向图中，点双连通的极大子图称为点双连通分量（简称双连通分量,Biconnected Component,BCC）</p><p>点双连通和边双连通：</p><ol><li>连通的概念：在无向图中，所有点能互相到达</li><li>连通分量：互相联通的子图</li><li>点双连通：删掉一个点之后，图仍联通</li><li>边双连通：删掉一条边之后，图仍联通</li></ol><p>性质：</p><ol><li>任意两点间至少存在两条点不重复的路径等价于图中删去任意一个点都不会改变图的连通性，即BCC中无割点</li><li>若BCC间有公共点，则公共点为原图的割点</li><li>无向连通图中割点一定属于至少两个BCC，非割点只属于一个BCC</li></ol><p>对于每个BCC，它在DFS树中最先被发现的点一定是割点或DFS树的树根</p><h2 id="优先级搜索"><a href="#优先级搜索" class="headerlink" title="优先级搜索"></a>优先级搜索</h2><p>优先级搜索(Priority First Search)<br>不同的遍历算法的区别，取决于顶点的选取策略。不同的顶点选取策略，取决于存放和提供顶点的数据结构。<br>每个顶点都有初始的优先级数，并可能随着算法的推进而调整。通常的习惯是，优先级数越大&#x2F;小，优先级越低&#x2F;高<br>特别的，priority(v) &#x3D;&#x3D; INT_MAX, 意味着v的优先级最低</p><p>Dijkstra算法：最短路径树</p><ol><li><p>给定：连通有向图G及其中的顶点u和v</p></li><li><p>找到：从u到v的最短路径及其长度</p></li><li><p>给定顶点s，计算s到其余各个顶点的最短路径及长度</p></li><li><p>套用PFS框架，为将Tk扩充至Tk+1，只需选出优先级最高的跨边ek及其对应顶点vk，并将其加入Tk，随后更新Vk\Vk+1中所有顶点的优先级数</p></li><li><p>注意，优先级数随后可能改变的顶点，必与vk邻接</p></li><li><p>因此，只需枚举vk的每一邻接顶点v，并取priority(v) &#x3D; min(priority(v), priority(vk) + ||vk, v||)</p></li><li><p>以上完全符合PFS框架，唯一要做的工作无非是按照prioUpdater()规范，编写一个优先级更新器</p></li></ol><p>prim算法：最小生成树<br>最小支撑树：</p><ol><li>连通网络N &#x3D; (V; E)的子图T &#x3D; (V; F)</li><li>支撑&#x2F;spanning &#x3D; 覆盖N中所有顶点</li><li>树，连通且无环，|V| &#x3D; |F| + 1;加边出单环，再删除同环边即恢复为树；删边不连通，再加联通边即恢复为树</li><li>同一网络的支撑树不唯一，对负边也适用</li></ol><p>割&amp;极短跨边<br>设（U; V \ U）是N的一个割(Cut），即将点集划分为两个集合<br>若uv是该割的一条极短跨边，则必存在一颗包含uv的MST</p><p>递增式构造,套用PFS框架</p><ol><li>选出优先级最高的跨边ek及其对应顶点vk，并将其加入Tk，随后，更新V\Vk中所有顶点的优先级</li><li>注意，优先级数随后可能改变的顶点，必与vk邻接</li><li>因此，只需枚举vk的每一邻接顶点v，并取priority(v) &#x3D; min(priority(v), ||vk, v||)</li><li>以上完全符合PFS规范，唯一要做的就是按照prioUpdate()规范，编写一个改变优先级的函数</li></ol>]]></content>
     
@@ -304,8 +387,8 @@
   
   <entry>
     <title>二叉树</title>
-    <link href="/2022/06/17/DataStructure/Vector/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    <url>/2022/06/17/DataStructure/Vector/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <link href="/2022/06/17/DataStructure/Tree/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <url>/2022/06/17/DataStructure/Tree/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     
     <content type="html"><![CDATA[<p>二叉树</p><span id="more"></span><h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p>树是一个半线性的数据结构(连通无环图)<br>任意子树的高度 &#x3D; 根节点的高度</p><p>度2的树至少3节点，如果只有一个孩子不区分左右</p><p>二叉树即为每个节点均设两个引用</p><p>父+子结构存储n个节点的树，需要空间O(n)</p><h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p>二叉树(binary tree)是有根有序的<br>二叉树可以空，有孩子必区分左右，可以只有左或右</p><h2 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h2><p>先序遍历(preorder)<br>沿着左子树向下遍历<br>沿着右子树向上遍历</p><h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h2><p>中序遍历(inorder)<br>从最左的节点开始访问，沿右斜向上的方向访问<br>有右子树进右子树</p><h2 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h2><p>后序遍历(postorder)<br>从左右都无法向下的几点开始访问</p><h2 id="层次遍历"><a href="#层次遍历" class="headerlink" title="层次遍历"></a>层次遍历</h2><p>用Queue存储</p><p>根节点先入队<br>while(队列 !&#x3D; null)<br>{<br>    取出首节点访问;<br>    if(有左子节点) 左子节点入队;<br>    if(有右子节点) 右子节点入队;<br>}</p><p>[先序&#x2F;后序]+中序<br>[先序+后序]*真遍历</p><h2 id="Huffman算法"><a href="#Huffman算法" class="headerlink" title="Huffman算法"></a>Huffman算法</h2><p>PFC编码:.</p><ol><li>字符编码不必等长</li><li>不同字符编码互不为前缀</li></ol><p>最优带权编码数：<br>频率高&#x2F;低的字符，应尽可能放在高&#x2F;低处，<br>可通过适当交换，同样靠要缩短wald(T)</p><p>合并树达到最优解</p>]]></content>
     

@@ -16,22 +16,22 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="图">
+    <meta name="description" content="二叉树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图">
-<meta property="og:url" content="https://faru58.github.io/2022/06/20/DataStructure/Vector/%E5%9B%BE/index.html">
+<meta property="og:title" content="二叉树">
+<meta property="og:url" content="https://faru58.github.io/2022/06/17/DataStructure/Tree/%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="图">
+<meta property="og:description" content="二叉树">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-20T11:52:00.000Z">
-<meta property="article:modified_time" content="2022-06-21T13:20:46.427Z">
+<meta property="article:published_time" content="2022-06-17T10:28:44.000Z">
+<meta property="article:modified_time" content="2022-06-21T13:36:50.971Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>图 - 垃圾桶</title>
+  <title>二叉树 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -187,7 +187,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="图">
+            <span class="h2" id="subtitle" title="二叉树">
               
             </span>
 
@@ -197,8 +197,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-06-20 19:52" pubdate>
-        2022年6月20日 晚上
+      <time datetime="2022-06-17 18:28" pubdate>
+        2022年6月17日 晚上
       </time>
     </span>
   
@@ -208,7 +208,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      473 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15 分钟
+      4 分钟
     </span>
   
 
@@ -246,68 +246,30 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">图</h1>
+            <h1 style="display: none">二叉树</h1>
             
             <div class="markdown-body">
-              <p>图</p>
+              <p>二叉树</p>
 <span id="more"></span>
 
-<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>G &#x3D; (V; E)  其中V为点, E为边</p>
-<p>邻接(adjacency): 点-点关系<br>关联(incidence): 点-边关系</p>
-<h2 id="无向图和有向图"><a href="#无向图和有向图" class="headerlink" title="无向图和有向图"></a>无向图和有向图</h2><p>无向图(undigraph): 若邻接顶点u和v的次序无所谓, 则(u, v)为无向边(undirected edge), 所有边均无方向的图，即无向图<br>有向图(digraph): 图中均为有向边，边有头和尾</p>
-<p>路径 π &#x3D; &lt;v0, v1, …, vk&gt; , 长度 |π| &#x3D; k<br>简单路径: 不含重复节点</p>
-<p>环路<br>简单环路: 不经过重复边<br>欧拉环路: 经过每个顶点一次<br>哈密尔顿环路: 经过所有边一次</p>
-<h2 id="BFS-DFS和拓扑排序"><a href="#BFS-DFS和拓扑排序" class="headerlink" title="BFS, DFS和拓扑排序"></a>BFS, DFS和拓扑排序</h2><p>BFS:<br>复杂度: 理论上 O(n^2 + e), 实际上 O(n + e)</p>
-<p>DFS:<br>两类时间dtime, ftime, 递归， 多可达域<br>嵌套引理: 祖先的活跃期覆盖后代<br>Tree的边的数量总是 &#x3D; 定点数 - 联通分量的数量 </p>
-<p>拓扑排序:<br>有向无环图必有拓扑排序<br>零入度点 顺序输出: 从入度为0的顶点开始，压入栈，并取一个空队列，迭代<br>零出度点 逆序输出: 从出度为0的顶点开始，压入栈，迭代</p>
-<h1 id="图应用"><a href="#图应用" class="headerlink" title="图应用"></a>图应用</h1><h2 id="双连通分量"><a href="#双连通分量" class="headerlink" title="双连通分量"></a>双连通分量</h2><p>双连通分量(biconnected component, 简称bcc)<br>在一个无向图中，若任意两点间至少存在两条“点不重复”的路径，则说这个图是点双连通的（简称双连通,biconnected）<br>在一个无向图中，点双连通的极大子图称为点双连通分量（简称双连通分量,Biconnected Component,BCC）</p>
-<p>点双连通和边双连通：</p>
+<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p>树是一个半线性的数据结构(连通无环图)<br>任意子树的高度 &#x3D; 根节点的高度</p>
+<p>度2的树至少3节点，如果只有一个孩子不区分左右</p>
+<p>二叉树即为每个节点均设两个引用</p>
+<p>父+子结构存储n个节点的树，需要空间O(n)</p>
+<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p>二叉树(binary tree)是有根有序的<br>二叉树可以空，有孩子必区分左右，可以只有左或右</p>
+<h2 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h2><p>先序遍历(preorder)<br>沿着左子树向下遍历<br>沿着右子树向上遍历</p>
+<h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h2><p>中序遍历(inorder)<br>从最左的节点开始访问，沿右斜向上的方向访问<br>有右子树进右子树</p>
+<h2 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h2><p>后序遍历(postorder)<br>从左右都无法向下的几点开始访问</p>
+<h2 id="层次遍历"><a href="#层次遍历" class="headerlink" title="层次遍历"></a>层次遍历</h2><p>用Queue存储</p>
+<p>根节点先入队<br>while(队列 !&#x3D; null)<br>{<br>    取出首节点访问;<br>    if(有左子节点) 左子节点入队;<br>    if(有右子节点) 右子节点入队;<br>}</p>
+<p>[先序&#x2F;后序]+中序<br>[先序+后序]*真遍历</p>
+<h2 id="Huffman算法"><a href="#Huffman算法" class="headerlink" title="Huffman算法"></a>Huffman算法</h2><p>PFC编码:.</p>
 <ol>
-<li>连通的概念：在无向图中，所有点能互相到达</li>
-<li>连通分量：互相联通的子图</li>
-<li>点双连通：删掉一个点之后，图仍联通</li>
-<li>边双连通：删掉一条边之后，图仍联通</li>
+<li>字符编码不必等长</li>
+<li>不同字符编码互不为前缀</li>
 </ol>
-<p>性质：</p>
-<ol>
-<li>任意两点间至少存在两条点不重复的路径等价于图中删去任意一个点都不会改变图的连通性，即BCC中无割点</li>
-<li>若BCC间有公共点，则公共点为原图的割点</li>
-<li>无向连通图中割点一定属于至少两个BCC，非割点只属于一个BCC</li>
-</ol>
-<p>对于每个BCC，它在DFS树中最先被发现的点一定是割点或DFS树的树根</p>
-<h2 id="优先级搜索"><a href="#优先级搜索" class="headerlink" title="优先级搜索"></a>优先级搜索</h2><p>优先级搜索(Priority First Search)<br>不同的遍历算法的区别，取决于顶点的选取策略。不同的顶点选取策略，取决于存放和提供顶点的数据结构。<br>每个顶点都有初始的优先级数，并可能随着算法的推进而调整。通常的习惯是，优先级数越大&#x2F;小，优先级越低&#x2F;高<br>特别的，priority(v) &#x3D;&#x3D; INT_MAX, 意味着v的优先级最低</p>
-<p>Dijkstra算法：最短路径树</p>
-<ol>
-<li><p>给定：连通有向图G及其中的顶点u和v</p>
-</li>
-<li><p>找到：从u到v的最短路径及其长度</p>
-</li>
-<li><p>给定顶点s，计算s到其余各个顶点的最短路径及长度</p>
-</li>
-<li><p>套用PFS框架，为将Tk扩充至Tk+1，只需选出优先级最高的跨边ek及其对应顶点vk，并将其加入Tk，随后更新Vk\Vk+1中所有顶点的优先级数</p>
-</li>
-<li><p>注意，优先级数随后可能改变的顶点，必与vk邻接</p>
-</li>
-<li><p>因此，只需枚举vk的每一邻接顶点v，并取priority(v) &#x3D; min(priority(v), priority(vk) + ||vk, v||)</p>
-</li>
-<li><p>以上完全符合PFS框架，唯一要做的工作无非是按照prioUpdater()规范，编写一个优先级更新器</p>
-</li>
-</ol>
-<p>prim算法：最小生成树<br>最小支撑树：</p>
-<ol>
-<li>连通网络N &#x3D; (V; E)的子图T &#x3D; (V; F)</li>
-<li>支撑&#x2F;spanning &#x3D; 覆盖N中所有顶点</li>
-<li>树，连通且无环，|V| &#x3D; |F| + 1;加边出单环，再删除同环边即恢复为树；删边不连通，再加联通边即恢复为树</li>
-<li>同一网络的支撑树不唯一，对负边也适用</li>
-</ol>
-<p>割&amp;极短跨边<br>设（U; V \ U）是N的一个割(Cut），即将点集划分为两个集合<br>若uv是该割的一条极短跨边，则必存在一颗包含uv的MST</p>
-<p>递增式构造,套用PFS框架</p>
-<ol>
-<li>选出优先级最高的跨边ek及其对应顶点vk，并将其加入Tk，随后，更新V\Vk中所有顶点的优先级</li>
-<li>注意，优先级数随后可能改变的顶点，必与vk邻接</li>
-<li>因此，只需枚举vk的每一邻接顶点v，并取priority(v) &#x3D; min(priority(v), ||vk, v||)</li>
-<li>以上完全符合PFS规范，唯一要做的就是按照prioUpdate()规范，编写一个改变优先级的函数</li>
-</ol>
+<p>最优带权编码数：<br>频率高&#x2F;低的字符，应尽可能放在高&#x2F;低处，<br>可通过适当交换，同样靠要缩短wald(T)</p>
+<p>合并树达到最优解</p>
 
             </div>
             <hr>
@@ -346,9 +308,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/20/diary/2022.6/2022%E5%B9%B46%E6%9C%8820%E6%97%A5/">
+                      <a href="/2022/06/17/diary/2022.6/2022%E5%B9%B46%E6%9C%8817%E6%97%A5/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022年6月20日</span>
+                        <span class="hidden-mobile">2022年6月17日</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -356,8 +318,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/19/Unity/Unity%E5%85%A5%E9%97%A8/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/">
-                        <span class="hidden-mobile">工具栏和父子关系</span>
+                      <a href="/2022/06/16/Unity/Unity%E5%85%A5%E9%97%A8/Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/">
+                        <span class="hidden-mobile">Scene和Hierarchy窗口</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
