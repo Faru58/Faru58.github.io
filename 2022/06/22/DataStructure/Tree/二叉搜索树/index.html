@@ -24,7 +24,7 @@
 <meta property="og:description" content="二叉搜索树">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-22T12:10:46.000Z">
-<meta property="article:modified_time" content="2022-06-22T13:15:32.154Z">
+<meta property="article:modified_time" content="2022-06-23T12:35:58.173Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="数据结构">
@@ -208,7 +208,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      257 字
+      554 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3 分钟
+      5 分钟
     </span>
   
 
@@ -262,6 +262,10 @@
 <li>即使只有单分支，但满足顺序性，也是BST</li>
 </ol>
 <p>单调性： BST的<strong>中序</strong>遍历序列，必然<strong>单调</strong>非降</p>
+<h2 id="BST：查找"><a href="#BST：查找" class="headerlink" title="BST：查找"></a>BST：查找</h2><p>减而治之：从根节点出发，逐步缩小查找范围，直到发现目标(指向_hot父节点，目标是它的孩子)&#x2F;或寻找到空null<br>对照中序遍历序列，可以看做整个仿效有序向量的二分查找</p>
+<h2 id="BST：插入"><a href="#BST：插入" class="headerlink" title="BST：插入"></a>BST：插入</h2><p>通过查找达到需插入的父节点(_hot)，返回父节点下的空引用，进行插入</p>
+<h2 id="BST：删除"><a href="#BST：删除" class="headerlink" title="BST：删除"></a>BST：删除</h2><p>单分支情况（待删除节点至多只有一个孩子）：若没有孩子则直接Remove，有孩子则把指向的_hot位置内容改为孩子内容</p>
+<p>双分支情况：找到待删除节点的后续节点，与之交换，若该后续节点存在孩子，再与之孩子交换，而_hot会指向实际删除节点的父亲<br>实际删除的是  中序遍历下的直接后续节点 &#x3D; 右子树中左侧分支的最后一个节点</p>
 
             </div>
             <hr>

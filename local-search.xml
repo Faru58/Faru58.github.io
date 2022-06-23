@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>2022年6月23日</title>
+    <link href="/2022/06/23/diary/2022.6/2022%E5%B9%B46%E6%9C%8823%E6%97%A5/"/>
+    <url>/2022/06/23/diary/2022.6/2022%E5%B9%B46%E6%9C%8823%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="9fdcf02f2765edafb29a6db7456dbb80248c83e9d3bf9ff6c23283671fd29886">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe5070532c8e4114bd9c03d18d2a56193c5e1f09f8c3d2f234a13cc7981f259bf6f59462fc009c94e30f07638068339268e801fb0fefad4a5445b1557a3e31caf43c4e774c022ad81ee5c8ba14d307f05c0e07b58ad814c8e9895f903bb5755d3cad3ba4db274f14124ee5227425c8f309a71ac82351b97dad957e09bf61b096352331f158744d8f07dc489b90d40554ea373c1afee6dfddc81df275a93fabaaf89b91a4f6a40e2a12f12b1037a7a85426fb3e5051ce66ac62c8ae49f8518c9008442f8db475e222d0406292ebb11fccda837796b0dee662b5edc6774cf8faf76185dc766803ea14f278d2347508adf4022def9d03c1b9179b136347010dac5ea15187e4dd75ce8f86e1c5120c6169b96da9583cf9f31ba3f376a7b76caf54af85d653560da62cfc56eb5ae8ab112e3a4b48a648aa6cf09c7b0a4f2702f966f38175d88226b0f405340628036a5121c786dc9333ba0cfa91ffbc53171b347331cf6a9c3ea4e12b55b790b272e2e0667aef7f1f6dedfec255c0b9768e73b4a16a04bdbc8e97d06c203fb692ca71cfe9d4f42f95dec4e68225cafccb71d1760c6cd88a253dc404d8d111ee574ab9896612022ee2688524b1c693d4cadc8ffbd17472234f38ef01397e326986088198bd44e2a6d713d915045667de5636d04f7afc996e0d4d510ca125a387397d03270beb83cb60f6332ecb8095a9aa42e2a0e9692d041addecb68d372820075e38db2cc64c35751ea5257c10a5a5c63d53d03c6bdc1b09df0402d9342f6fd66fcfd11a412287</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年6月22日</title>
     <link href="/2022/06/22/diary/2022.6/2022%E5%B9%B46%E6%9C%8822%E6%97%A5/"/>
     <url>/2022/06/22/diary/2022.6/2022%E5%B9%B46%E6%9C%8822%E6%97%A5/</url>
@@ -62,7 +87,7 @@
     <link href="/2022/06/22/DataStructure/Tree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
     <url>/2022/06/22/DataStructure/Tree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</url>
     
-    <content type="html"><![CDATA[<p>二叉搜索树</p><span id="more"></span><h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>二叉搜索树(binary serach tree, BST)<br>扩展为平衡二叉搜索树(balanced binary serach tree, BBST)</p><h2 id="循关键码访问"><a href="#循关键码访问" class="headerlink" title="循关键码访问"></a>循关键码访问</h2><p>数据项之间，按照格子的<strong>关键码</strong>(key)彼此区分  (call-by-key)<br>条件：关键码之间支持<strong>大小比较</strong>与<strong>相等比对</strong></p><p>节点 ≈ 词条 ≈ 关键码</p><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>顺序性： 任意节点均不小于&#x2F;不大于其左&#x2F;右后代<br>虽是局部特征刻画，但能推广到整体</p><p>注：</p><ol><li>只含单个节点的二叉树一定是BST</li><li>即使只有单分支，但满足顺序性，也是BST</li></ol><p>单调性： BST的<strong>中序</strong>遍历序列，必然<strong>单调</strong>非降</p>]]></content>
+    <content type="html"><![CDATA[<p>二叉搜索树</p><span id="more"></span><h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>二叉搜索树(binary serach tree, BST)<br>扩展为平衡二叉搜索树(balanced binary serach tree, BBST)</p><h2 id="循关键码访问"><a href="#循关键码访问" class="headerlink" title="循关键码访问"></a>循关键码访问</h2><p>数据项之间，按照格子的<strong>关键码</strong>(key)彼此区分  (call-by-key)<br>条件：关键码之间支持<strong>大小比较</strong>与<strong>相等比对</strong></p><p>节点 ≈ 词条 ≈ 关键码</p><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>顺序性： 任意节点均不小于&#x2F;不大于其左&#x2F;右后代<br>虽是局部特征刻画，但能推广到整体</p><p>注：</p><ol><li>只含单个节点的二叉树一定是BST</li><li>即使只有单分支，但满足顺序性，也是BST</li></ol><p>单调性： BST的<strong>中序</strong>遍历序列，必然<strong>单调</strong>非降</p><h2 id="BST：查找"><a href="#BST：查找" class="headerlink" title="BST：查找"></a>BST：查找</h2><p>减而治之：从根节点出发，逐步缩小查找范围，直到发现目标(指向_hot父节点，目标是它的孩子)&#x2F;或寻找到空null<br>对照中序遍历序列，可以看做整个仿效有序向量的二分查找</p><h2 id="BST：插入"><a href="#BST：插入" class="headerlink" title="BST：插入"></a>BST：插入</h2><p>通过查找达到需插入的父节点(_hot)，返回父节点下的空引用，进行插入</p><h2 id="BST：删除"><a href="#BST：删除" class="headerlink" title="BST：删除"></a>BST：删除</h2><p>单分支情况（待删除节点至多只有一个孩子）：若没有孩子则直接Remove，有孩子则把指向的_hot位置内容改为孩子内容</p><p>双分支情况：找到待删除节点的后续节点，与之交换，若该后续节点存在孩子，再与之孩子交换，而_hot会指向实际删除节点的父亲<br>实际删除的是  中序遍历下的直接后续节点 &#x3D; 右子树中左侧分支的最后一个节点</p>]]></content>
     
     
     <categories>
