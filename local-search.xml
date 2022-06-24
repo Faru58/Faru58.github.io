@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>2022年6月24日</title>
+    <link href="/2022/06/24/diary/2022.6/2022%E5%B9%B46%E6%9C%8824%E6%97%A5/"/>
+    <url>/2022/06/24/diary/2022.6/2022%E5%B9%B46%E6%9C%8824%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="0dc4c865a82d56523a64e6468fd2b5ab30d40e306d6d0e47b5590b0b1a74bcb4">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50d65263e7513481dc56266ffad57fcfaf564a00c2986007bd0524d5a2120cbff063b7c9a76411c127225c26f7c8b5a2226fe5912ffe2d4550d9a4e6e5c15bfd4f2f27299ea3b3f5df8b8c4ec4357a1cffc47c7f26e43744349507fb8256cfa6e4</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年6月23日</title>
     <link href="/2022/06/23/diary/2022.6/2022%E5%B9%B46%E6%9C%8823%E6%97%A5/"/>
     <url>/2022/06/23/diary/2022.6/2022%E5%B9%B46%E6%9C%8823%E6%97%A5/</url>
@@ -87,7 +112,7 @@
     <link href="/2022/06/22/DataStructure/Tree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
     <url>/2022/06/22/DataStructure/Tree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</url>
     
-    <content type="html"><![CDATA[<p>二叉搜索树</p><span id="more"></span><h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>二叉搜索树(binary serach tree, BST)<br>扩展为平衡二叉搜索树(balanced binary serach tree, BBST)</p><h2 id="循关键码访问"><a href="#循关键码访问" class="headerlink" title="循关键码访问"></a>循关键码访问</h2><p>数据项之间，按照格子的<strong>关键码</strong>(key)彼此区分  (call-by-key)<br>条件：关键码之间支持<strong>大小比较</strong>与<strong>相等比对</strong></p><p>节点 ≈ 词条 ≈ 关键码</p><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>顺序性： 任意节点均不小于&#x2F;不大于其左&#x2F;右后代<br>虽是局部特征刻画，但能推广到整体</p><p>注：</p><ol><li>只含单个节点的二叉树一定是BST</li><li>即使只有单分支，但满足顺序性，也是BST</li></ol><p>单调性： BST的<strong>中序</strong>遍历序列，必然<strong>单调</strong>非降</p><h2 id="BST：查找"><a href="#BST：查找" class="headerlink" title="BST：查找"></a>BST：查找</h2><p>减而治之：从根节点出发，逐步缩小查找范围，直到发现目标(指向_hot父节点，目标是它的孩子)&#x2F;或寻找到空null<br>对照中序遍历序列，可以看做整个仿效有序向量的二分查找</p><h2 id="BST：插入"><a href="#BST：插入" class="headerlink" title="BST：插入"></a>BST：插入</h2><p>通过查找达到需插入的父节点(_hot)，返回父节点下的空引用，进行插入</p><h2 id="BST：删除"><a href="#BST：删除" class="headerlink" title="BST：删除"></a>BST：删除</h2><p>单分支情况（待删除节点至多只有一个孩子）：若没有孩子则直接Remove，有孩子则把指向的_hot位置内容改为孩子内容</p><p>双分支情况：找到待删除节点的后续节点，与之交换，若该后续节点存在孩子，再与之孩子交换，而_hot会指向实际删除节点的父亲<br>实际删除的是  中序遍历下的直接后续节点 &#x3D; 右子树中左侧分支的最后一个节点</p>]]></content>
+    <content type="html"><![CDATA[<p>二叉搜索树</p><span id="more"></span><h1 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h1><p>二叉搜索树(binary serach tree, BST)<br>扩展为平衡二叉搜索树(balanced binary serach tree, BBST)</p><h2 id="循关键码访问"><a href="#循关键码访问" class="headerlink" title="循关键码访问"></a>循关键码访问</h2><p>数据项之间，按照格子的<strong>关键码</strong>(key)彼此区分  (call-by-key)<br>条件：关键码之间支持<strong>大小比较</strong>与<strong>相等比对</strong></p><p>节点 ≈ 词条 ≈ 关键码</p><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>顺序性： 任意节点均不小于&#x2F;不大于其左&#x2F;右后代<br>虽是局部特征刻画，但能推广到整体</p><p>注：</p><ol><li>只含单个节点的二叉树一定是BST</li><li>即使只有单分支，但满足顺序性，也是BST</li></ol><p>单调性： BST的<strong>中序</strong>遍历序列，必然<strong>单调</strong>非降</p><h2 id="BST：查找"><a href="#BST：查找" class="headerlink" title="BST：查找"></a>BST：查找</h2><p>减而治之：从根节点出发，逐步缩小查找范围，直到发现目标(指向_hot父节点，目标是它的孩子)&#x2F;或寻找到空null<br>对照中序遍历序列，可以看做整个仿效有序向量的二分查找</p><h2 id="BST：插入"><a href="#BST：插入" class="headerlink" title="BST：插入"></a>BST：插入</h2><p>通过查找达到需插入的父节点(_hot)，返回父节点下的空引用，进行插入</p><h2 id="BST：删除"><a href="#BST：删除" class="headerlink" title="BST：删除"></a>BST：删除</h2><p>单分支情况（待删除节点至多只有一个孩子）：若没有孩子则直接Remove，有孩子则把指向的_hot位置内容改为孩子内容</p><p>双分支情况：找到待删除节点的后续节点，与之交换，若该后续节点存在孩子，再与之孩子交换，而_hot会指向实际删除节点的父亲<br>实际删除的是  中序遍历下的直接后续节点 &#x3D; 右子树中左侧分支的最后一个节点</p><h1 id="平衡二叉搜索树"><a href="#平衡二叉搜索树" class="headerlink" title="平衡二叉搜索树"></a>平衡二叉搜索树</h1><h2 id="平衡"><a href="#平衡" class="headerlink" title="平衡"></a>平衡</h2><p>对于一个关键码总数为n：<br>可能<strong>随机生成</strong>(有重复)的BST为 n! 个，平均高度为 O(logn)<br>可能<strong>随机组成</strong>(互异拓扑)的BST为 Catalan(n) 个，平均高度为 O(√n)</p><h2 id="理想平衡"><a href="#理想平衡" class="headerlink" title="理想平衡"></a>理想平衡</h2><p>节点数目固定时，兄弟子树高度越接近平衡，全树也倾向于更低<br>由n个节点组成的二叉树，高度不低于 O(logn)<br>当恰为 O(logn) 时，成为理想平衡</p><h2 id="适度平衡"><a href="#适度平衡" class="headerlink" title="适度平衡"></a>适度平衡</h2><p>由于理解平衡出现概率极低，维护成本过高<br>因此适当放松标准，令高度渐进地不超过 O(logn)<br>如此构造的BST称为平衡二叉搜索树(BBST)</p><h2 id="等价变换"><a href="#等价变换" class="headerlink" title="等价变换"></a>等价变换</h2><p>利用中序遍历序列的歧义性，将BST转换为等价的BBST<br>(上下可变，左右不乱)<br>旋转调整：<br>以节点v顺时针( zig(v) )<br>以节点v逆时针( zag(v) )</p><p>等价变换不应超过 O(logn) 次</p>]]></content>
     
     
     <categories>
