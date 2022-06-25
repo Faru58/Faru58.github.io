@@ -24,7 +24,7 @@
 <meta property="og:description" content="二叉搜索树">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-22T12:10:46.000Z">
-<meta property="article:modified_time" content="2022-06-24T15:50:03.098Z">
+<meta property="article:modified_time" content="2022-06-25T17:02:52.752Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="数据结构">
@@ -208,7 +208,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      884 字
+      1.8k 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      16 分钟
     </span>
   
 
@@ -266,11 +266,50 @@
 <h2 id="BST：插入"><a href="#BST：插入" class="headerlink" title="BST：插入"></a>BST：插入</h2><p>通过查找达到需插入的父节点(_hot)，返回父节点下的空引用，进行插入</p>
 <h2 id="BST：删除"><a href="#BST：删除" class="headerlink" title="BST：删除"></a>BST：删除</h2><p>单分支情况（待删除节点至多只有一个孩子）：若没有孩子则直接Remove，有孩子则把指向的_hot位置内容改为孩子内容</p>
 <p>双分支情况：找到待删除节点的后续节点，与之交换，若该后续节点存在孩子，再与之孩子交换，而_hot会指向实际删除节点的父亲<br>实际删除的是  中序遍历下的直接后续节点 &#x3D; 右子树中左侧分支的最后一个节点</p>
-<h1 id="平衡二叉搜索树"><a href="#平衡二叉搜索树" class="headerlink" title="平衡二叉搜索树"></a>平衡二叉搜索树</h1><h2 id="平衡"><a href="#平衡" class="headerlink" title="平衡"></a>平衡</h2><p>对于一个关键码总数为n：<br>可能<strong>随机生成</strong>(有重复)的BST为 n! 个，平均高度为 O(logn)<br>可能<strong>随机组成</strong>(互异拓扑)的BST为 Catalan(n) 个，平均高度为 O(√n)</p>
+<h1 id="平衡二叉搜索树-BBST"><a href="#平衡二叉搜索树-BBST" class="headerlink" title="平衡二叉搜索树(BBST)"></a>平衡二叉搜索树(BBST)</h1><h2 id="平衡"><a href="#平衡" class="headerlink" title="平衡"></a>平衡</h2><p>对于一个关键码总数为n：<br>可能<strong>随机生成</strong>(有重复)的BST为 n! 个，平均高度为 O(logn)<br>可能<strong>随机组成</strong>(互异拓扑)的BST为 Catalan(n) 个，平均高度为 O(√n)</p>
 <h2 id="理想平衡"><a href="#理想平衡" class="headerlink" title="理想平衡"></a>理想平衡</h2><p>节点数目固定时，兄弟子树高度越接近平衡，全树也倾向于更低<br>由n个节点组成的二叉树，高度不低于 O(logn)<br>当恰为 O(logn) 时，成为理想平衡</p>
 <h2 id="适度平衡"><a href="#适度平衡" class="headerlink" title="适度平衡"></a>适度平衡</h2><p>由于理解平衡出现概率极低，维护成本过高<br>因此适当放松标准，令高度渐进地不超过 O(logn)<br>如此构造的BST称为平衡二叉搜索树(BBST)</p>
 <h2 id="等价变换"><a href="#等价变换" class="headerlink" title="等价变换"></a>等价变换</h2><p>利用中序遍历序列的歧义性，将BST转换为等价的BBST<br>(上下可变，左右不乱)<br>旋转调整：<br>以节点v顺时针( zig(v) )<br>以节点v逆时针( zag(v) )</p>
 <p>等价变换不应超过 O(logn) 次</p>
+<h1 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h1><p>通过重平衡(rebalance)使得每次变换都不会改变平衡二叉搜索树的特性<br>重点为：</p>
+<ol>
+<li>如何界定一种适度平衡特性</li>
+<li>一整套重平衡的技巧和算法</li>
+</ol>
+<p>特点：</p>
+<ol>
+<li>存在平衡因子： balFac(v) &#x3D; height(lc(v)) - height(rc(v)), 且 | balFac(v) | &lt;&#x3D; 1</li>
+<li>左右两个子树都是BBST(子树为空，高度为-1)</li>
+</ol>
+<p>由此，BBST中适度平衡的概念可转换为</p>
+<ol>
+<li>height(AVL) &#x3D; O( logn )</li>
+<li>n &#x3D; Ω(2^height(AVL))</li>
+</ol>
+<p>接口：</p>
+<ol>
+<li>理想平衡：Balanced(x)</li>
+<li>平衡因子：BalFac(x)</li>
+<li>AVL平衡条件：AvlBalanced(x)</li>
+<li>AVL类作为BST的派生类，继承接口：查找(沿用)、插入(重写)、删除(重写)</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>插入可能导致插入节点的父节点及其祖父节点全失衡</li>
+<li>删除至多导致一个节点失衡</li>
+</ol>
+<p>若是左孩子则左旋，若是右孩子则右旋<br>单旋：只向一边旋转(zigzig&#x2F;zagzag)<br>双旋：会向两边旋转(zigzag&#x2F;zagzig)</p>
+<h2 id="AVL：插入"><a href="#AVL：插入" class="headerlink" title="AVL：插入"></a>AVL：插入</h2><p>同时可有<strong>多个失衡</strong>节点<br>最低者g不低于<strong>x祖父</strong>(_hot指向)<br>g经单旋调整后复衡，子树<strong>高度复原</strong>，更高祖先也必平衡，<strong>全树复衡</strong><br>时间复杂度O(logn)</p>
+<h2 id="AVL：删除"><a href="#AVL：删除" class="headerlink" title="AVL：删除"></a>AVL：删除</h2><p>调整后的新树高度可能会缩短<br>同时至多一个失衡节点g，首个可能就是x的父节点<br>g经单旋调整后复衡，子树<strong>高度未必复原</strong>，更高祖先<strong>仍可能失衡</strong><br>因有失衡传播现象，可能需做O(logn)次调整</p>
+<p>_hot指向被删除节点的父节点<br>删后，从_hot触发逐层向上，依次检查各代祖先<br>一旦发现失衡，调整恢复平衡AvlBalanced</p>
+<h2 id="AVL：3-4重构"><a href="#AVL：3-4重构" class="headerlink" title="AVL：3+4重构"></a>AVL：3+4重构</h2><p>3+4重构算法(connect34)<br>让g(x)为最低的失衡节点，若祖孙三代(g p v)<br>按中序遍历次序，将其重命名为(a &lt; b &lt; c)<br>它们总共拥有4棵互不相交(可能为空)的子树<br>按中序遍历次序，将其命名为(T0 &lt; T1 &lt; T2 &lt; T3)</p>
+<h2 id="AVL：旋转"><a href="#AVL：旋转" class="headerlink" title="AVL：旋转"></a>AVL：旋转</h2><p>旋转(RemoveAt)：调用3+4重构</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>优点：无论查找&#x2F;删除&#x2F;插入，最坏情况下复杂度为O(logn),内存O(n)<br>缺点：</p>
+<ol>
+<li>需要借助平衡因子(改造元素结构&#x2F;需要额外封装)</li>
+<li>实测性能与理论性能差异大</li>
+<li>单次动态调整后，全树拓扑结构的变化量可能高达O(logn)</li>
+</ol>
 
             </div>
             <hr>
