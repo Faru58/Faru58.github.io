@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年6月26日</title>
+    <link href="/2022/06/26/diary/2022.6/2022%E5%B9%B46%E6%9C%8826%E6%97%A5/"/>
+    <url>/2022/06/26/diary/2022.6/2022%E5%B9%B46%E6%9C%8826%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="2c2af33b8bfa9d06a2b2de21e889d0b6809fc712475e2525aa071d00fc4820d4">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe5098306ebfcb83a3085b668fcba048aa0c911866639062c0e1c816d1b93de604238404a9e8b570f48b57ace99f7cda040b726a818216d08c53db7929f5baf1f1bbc056c4e327b56eb3e7892f97d94a48603084ebb24346d4393def78789f5674f7baf1579ba99e7ac989443cdf791e512f44eff71581114f181f00c94ef3e6d494c4a0eedc42c747a981ac15dedec59544</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>生命周期函数</title>
+    <link href="/2022/06/26/Unity/Unity%E5%85%A5%E9%97%A8/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/"/>
+    <url>/2022/06/26/Unity/Unity%E5%85%A5%E9%97%A8/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<p>生命周期函数</p><span id="more"></span><h1 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h1><h2 id="帧的概念"><a href="#帧的概念" class="headerlink" title="帧的概念"></a>帧的概念</h2><p>游戏的本质就是一个死循环<br>每一次循环处理游戏逻辑就会更新一次画面<br>之所以能看到画面在动是因为切换画面的速度达到一定时人眼就会认为画面是流畅的<br>一帧就是执行一次循环</p><p>fps(Frame Per Second)即每秒钟帧数<br>一般我们说的60帧30帧意思是1秒更新60次30次画面<br>1s &#x3D; 1000ms<br>60帧：1帧为 1000ms&#x2F;60 ≈ 16.66ms<br>30帧：1帧为 1000ms&#x2F;30 ≈ 33.33ms</p><p>人眼舒适放松时可视帧数为24帧</p><p>游戏卡顿的原因：<br>跑一帧游戏逻辑中的计算量过大<br>或者CPU不给力，不能在一帧的时间内处理完所有游戏逻辑</p><p>unity底层已经帮助我们做好了死循环<br>需要利用unity的生命周期函数执行游戏逻辑</p><h2 id="生命周期函数的概念"><a href="#生命周期函数的概念" class="headerlink" title="生命周期函数的概念"></a>生命周期函数的概念</h2><p>所有继承MonoBehavior的脚本 最终都会挂载到GameObject游戏对象上<br>生命周期函数就是该脚本对象衣服的GameObject对象从出生到消亡的整个生命周期中<br>会通过反射自动调用的一些特殊函数</p><p>unity记录了一个GameObject对象衣服了哪些脚本<br>会自动的得到这些对象，通过反射去执行一些固定名字的函数</p><p>注意：生命周期函数的访问修饰符一般为private和protected<br>因为不需要在外部自己调用生命周期函数 unity自己帮助我们调用的</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson生命周期函数 : MonoBehaviour&#123;    &#x2F;&#x2F;当对象(自己这个类对象)被创建时，才会调用该生命周期函数    &#x2F;&#x2F;类似构造函数的存在，我们可以在一个类对象创建时进行一下初始化操作    private void Awake()    &#123;        &#x2F;&#x2F;在unity中打印信息的两种方式        &#x2F;&#x2F;1.没有继承MonoBehaviour类的时候        &#x2F;&#x2F;Debug.Log(&quot;123&quot;);        &#x2F;&#x2F;Debug.LogError(&quot;出错&quot;);        &#x2F;&#x2F;Debug.LogWarning(&quot;警告&quot;);        &#x2F;&#x2F;2.继承MonoBehaviour类的时候 有一个现成的方法可以使用        print(&quot;Awake&quot;);    &#125;    &#x2F;&#x2F;想要当一个对象被激活时，进行一些逻辑处理，就可以写在这个函数中    private void OnEnable()    &#123;        print(&quot;OnEnable&quot;);    &#125;    &#x2F;&#x2F;主要作用还是用于初始化信息的，但是相对于Awake来说要晚一点    &#x2F;&#x2F;因为他是在对象进行第一次帧更新之前才会执行的    void Start()    &#123;        print(&quot;Start&quot;);    &#125;    &#x2F;&#x2F;它主要是用于 进行物理帧更新    &#x2F;&#x2F;它是每一帧执行的 但是这里的帧和游戏帧有所不同    private void FixedUpdate()    &#123;        &#x2F;&#x2F;改变 Edit\Project Settings\Time\Fixed Timestep 可以改变更新速度        print(&quot;FixedUpdate&quot;);    &#125;    &#x2F;&#x2F;主要是用于处理游戏核心逻辑更新的函数    void Update()    &#123;        print(&quot;Update&quot;);    &#125;    &#x2F;&#x2F;一般这个更新是用来处理 摄像机位置更新相关内容的    &#x2F;&#x2F;Update和LateUpdate之间 unity进行了一些处理动画相关的更新    private void LateUpdate()    &#123;        print(&quot;LateUpdate&quot;);    &#125;    &#x2F;&#x2F;对象失活的函数处理    private void OnDisable()    &#123;        print(&quot;OnDisable&quot;);    &#125;    &#x2F;&#x2F;对象销毁时调用    private void OnDestroy()    &#123;        print(&quot;OnDestroy&quot;);    &#125;&#125;&#125;</code></pre></div><h2 id="生命周期函数支持继承多态"><a href="#生命周期函数支持继承多态" class="headerlink" title="生命周期函数支持继承多态"></a>生命周期函数支持继承多态</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些生命周期函数，如果不需要在里面写逻辑，那么就不要在脚本中声明出来</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/06/26/Unity/Unity%E5%85%A5%E9%97%A8/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>Awake -&gt; OnEnable -&gt; Start -&gt; FixedUpdate -&gt; Update -&gt; LateUpdate -&gt; OnDisable -&gt; OnDestory</p><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><p>unity帮助我们记录了场景上的所有GameObject对象以及各个关联的脚本对象，在游戏执行的特定时机(对象创建时，失活激活时，帧更新时)，他会通过函数名反射得到脚本对象中对应的生命周期函数，然后在这些特定时机执行他们</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年6月25日</title>
     <link href="/2022/06/25/diary/2022.6/2022%E5%B9%B46%E6%9C%8825%E6%97%A5/"/>
     <url>/2022/06/25/diary/2022.6/2022%E5%B9%B46%E6%9C%8825%E6%97%A5/</url>
