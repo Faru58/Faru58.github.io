@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年6月27日</title>
+    <link href="/2022/06/27/diary/2022.6/2022%E5%B9%B46%E6%9C%8827%E6%97%A5/"/>
+    <url>/2022/06/27/diary/2022.6/2022%E5%B9%B46%E6%9C%8827%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="79758f84566bc3e3cd8e63bb4eb9f38d032622856ddc508a446b5d5cc69326f6">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50c7c38e5c9e63ba5ca989017b5f77bb552386bd891d828faccba4c554d6bf75729bc39cd02c78b35b6c213f78df528c9d4a388e043de1cea39b91294d6dee98156a92ddc00b61843f925565250b917cf9a0e2ee253e93a34de530b1b29bf1e72a4f91fb8a385d7799987326c4c88c2f9d286d826be760b206cde75939cfac120efba61ef4a2d42f5ce23ed24c64a9c946f44d90184ef9c1a82f1d7e50d4ee1c3013601473130a2f746efa207155890767</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>高级搜索树</title>
+    <link href="/2022/06/27/DataStructure/Tree/%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
+    <url>/2022/06/27/DataStructure/Tree/%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%A0%91/</url>
+    
+    <content type="html"><![CDATA[<p>高级搜索树</p><span id="more"></span><h1 id="高级搜索树"><a href="#高级搜索树" class="headerlink" title="高级搜索树"></a>高级搜索树</h1><h2 id="伸展树"><a href="#伸展树" class="headerlink" title="伸展树"></a>伸展树</h2><p>局部性(locality)：刚被访问过的数据，极有可能很快地再次被访问<br>连续的m次查找，采用Avl共需O(mlogn)时间<br>节点v一旦被访问，随机转移至树根(逐层伸展)，自下而上逐层单旋</p><p>最坏情况：旋转次数呈<strong>周期性</strong>的<strong>算术级数</strong>演变，每一周期累计Ω(n^2),分摊Ω(n)</p><h3 id="双层伸展"><a href="#双层伸展" class="headerlink" title="双层伸展"></a>双层伸展</h3><p>向上追溯两层，而非一层<br>反复考察祖孙三代，根据他们的相对位置，经<strong>两次旋转</strong>使得v上升两层，成为树根</p><p>子孙异侧：与AVL树双旋完全等效，与逐层伸展别无二致<br>子孙同侧：从祖父节点开始旋转</p><p>折叠效果：一旦访问坏节点，对应路径的长度随即减半，单趟伸展操作分摊O(logn)时间</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>优点：</p><ol><li>无需记录节点高度或平衡因子(优于AVL)</li><li>分摊复杂度O(logn)与AVL树相当</li><li>局部性强，缓存命中率极高时(k &lt;&lt; n &lt;&lt; m)，效率甚至可以更高(自适应的O(logk))，任何连续的m次查找都可在O(mlogk + nlogn)时间内完成</li></ol><p>缺点：<br>仍不能保证单次最坏情况的出现，不适用于对效率敏感的场合</p><h2 id="B-树"><a href="#B-树" class="headerlink" title="B-树"></a>B-树</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年6月26日</title>
     <link href="/2022/06/26/diary/2022.6/2022%E5%B9%B46%E6%9C%8826%E6%97%A5/"/>
     <url>/2022/06/26/diary/2022.6/2022%E5%B9%B46%E6%9C%8826%E6%97%A5/</url>
