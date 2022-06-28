@@ -24,7 +24,7 @@
 <meta property="og:description" content="高级搜索树">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-27T13:17:16.000Z">
-<meta property="article:modified_time" content="2022-06-27T13:31:02.374Z">
+<meta property="article:modified_time" content="2022-06-28T13:57:18.937Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="数据结构">
@@ -208,7 +208,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      442 字
+      1.3k 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      11 分钟
     </span>
   
 
@@ -264,7 +264,40 @@
 <li>局部性强，缓存命中率极高时(k &lt;&lt; n &lt;&lt; m)，效率甚至可以更高(自适应的O(logk))，任何连续的m次查找都可在O(mlogk + nlogn)时间内完成</li>
 </ol>
 <p>缺点：<br>仍不能保证单次最坏情况的出现，不适用于对效率敏感的场合</p>
-<h2 id="B-树"><a href="#B-树" class="headerlink" title="B-树"></a>B-树</h2>
+<h2 id="B-树"><a href="#B-树" class="headerlink" title="B-树"></a>B-树</h2><p>物理上，存储器容量越大&#x2F;小，访问速度就越慢&#x2F;快</p>
+<ol>
+<li>不同容量存储器，访问速度差异悬殊，为避免1次外存访问，宁愿访问内存10次，100次，…<br>多数存储系统，都是分级组织的(caching)，最常用的数据尽可能放在更高层、更小的存储器</li>
+<li>从磁盘中读写1B和读写1KB几乎一样快(批量式访问)</li>
+</ol>
+<h3 id="B-树：结构"><a href="#B-树：结构" class="headerlink" title="B-树：结构"></a>B-树：结构</h3><p>B-树的每一个节点包含多个分支<br>它实际上是一个平衡的多路搜索树，经过适当合并，得到超级节点<br>每2代合并：4路，每3代合并：8路，…，每d代合并：m &#x3D; 2^d 路和 m - 1 个关键码<br>多级存储系统中使用B-树，可针对外部查找，大大减少I&#x2F;O次数，具体视磁盘的数据块大小而定</p>
+<p>m阶B-树，即m路平衡搜索树(m &gt;&#x3D; 2)</p>
+<ol>
+<li>外部节点的深度统一相等</li>
+<li>所有叶节点的深度统一相等</li>
+<li>树高h &#x3D; 外部节点的深度</li>
+</ol>
+<p>内部节点各有：</p>
+<ol>
+<li>不超过 m - 1 个关键码</li>
+<li>不超过 m 个分支</li>
+</ol>
+<p>内部节点的分支数 n + 1 也不能太少</p>
+<ol>
+<li>树根 2 &lt;&#x3D; n + 1</li>
+<li>其余 [m &#x2F; 2] &lt;&#x3D; n + 1</li>
+</ol>
+<p>超级节点(BTNode)的内部可以实现为两个向量</p>
+<ol>
+<li>n个关键码</li>
+<li>n + 1个分支引用</li>
+</ol>
+<h3 id="B-树：查找"><a href="#B-树：查找" class="headerlink" title="B-树：查找"></a>B-树：查找</h3><p>反复在关键码向量中顺序查找<br>最大树高： log[m &#x2F; 2](N &#x2F; 2) ~ O(longmN)<br>最小树高： logmN - 1 ~ Ω(logmN)<br>BBST高度的 1 &#x2F; (log2m - 1)</p>
+<h3 id="B-树：插入"><a href="#B-树：插入" class="headerlink" title="B-树：插入"></a>B-树：插入</h3><p>因插入而上溢后的分裂处理</p>
+<p>分裂： 上溢时，指针停留向量的中位数关键码上升一层，并以其左右两边作为左右孩子<br>再分裂： 上溢缺陷可能会传播，但只能逐层向上且最高到根<br>复杂度 0(h)</p>
+<h3 id="B-树：删除"><a href="#B-树：删除" class="headerlink" title="B-树：删除"></a>B-树：删除</h3><p>因删除而下溢后的合并处理</p>
+<p>先判断是否可以旋转，再决定是否合并</p>
+<p>旋转： 节点下溢时，比恰好包含[m &#x2F; 2] - 2个key 和 [m &#x2F; 2] - 1个分支<br>若左孩子下溢且右孩子有足够关键码不至于下溢，则该节点的该关键码转给左孩子节点，右孩子的最左关键码转给该节点<br>当无法满足旋转的条件时，进行合并<br>合并： 将该关键码下移与其左右孩子的关键码拼接，该节点的关键码 - 1<br>有可能会出现反复向上合并的现象，但最多不到树根</p>
+<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2>
             </div>
             <hr>
             <div>

@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>2022年6月28日</title>
+    <link href="/2022/06/28/diary/2022.6/2022%E5%B9%B46%E6%9C%8828%E6%97%A5/"/>
+    <url>/2022/06/28/diary/2022.6/2022%E5%B9%B46%E6%9C%8828%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="1628c19aeb69772e0e07e77d045648aa6e735d3c07b237e8ca52a078ed2372e7">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50abb750919ea0d3de915f14a4f4cdb3c2a1d497a94095c6ecc3e5ae6c5bcc3ebaa5540579e774a89165cb3de32a96479dc4038eb8bca7d3e4bda624b03ccdffa4c80756e60b9df17d2a1f77e6d7b7e2a4d4e3e5e2228fb57964633d289e5021c46c4ce1062cf6a1c4b1961184be11d6b47fe58665f609245e4535e68a6c27b10e82830c5d52f995da0171ceec356e36cac07efb83d809c66bf852bba648d2a284f84d7477a96d1d62c71a19a743a0242e6886ad119532110822f988542d02e2ae2bb4532e64d93c38a6c2d74fbd773e4cd2907a3d4248f62789801922bd250627</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年6月27日</title>
     <link href="/2022/06/27/diary/2022.6/2022%E5%B9%B46%E6%9C%8827%E6%97%A5/"/>
     <url>/2022/06/27/diary/2022.6/2022%E5%B9%B46%E6%9C%8827%E6%97%A5/</url>
@@ -33,7 +58,7 @@
     <link href="/2022/06/27/DataStructure/Tree/%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
     <url>/2022/06/27/DataStructure/Tree/%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%A0%91/</url>
     
-    <content type="html"><![CDATA[<p>高级搜索树</p><span id="more"></span><h1 id="高级搜索树"><a href="#高级搜索树" class="headerlink" title="高级搜索树"></a>高级搜索树</h1><h2 id="伸展树"><a href="#伸展树" class="headerlink" title="伸展树"></a>伸展树</h2><p>局部性(locality)：刚被访问过的数据，极有可能很快地再次被访问<br>连续的m次查找，采用Avl共需O(mlogn)时间<br>节点v一旦被访问，随机转移至树根(逐层伸展)，自下而上逐层单旋</p><p>最坏情况：旋转次数呈<strong>周期性</strong>的<strong>算术级数</strong>演变，每一周期累计Ω(n^2),分摊Ω(n)</p><h3 id="双层伸展"><a href="#双层伸展" class="headerlink" title="双层伸展"></a>双层伸展</h3><p>向上追溯两层，而非一层<br>反复考察祖孙三代，根据他们的相对位置，经<strong>两次旋转</strong>使得v上升两层，成为树根</p><p>子孙异侧：与AVL树双旋完全等效，与逐层伸展别无二致<br>子孙同侧：从祖父节点开始旋转</p><p>折叠效果：一旦访问坏节点，对应路径的长度随即减半，单趟伸展操作分摊O(logn)时间</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>优点：</p><ol><li>无需记录节点高度或平衡因子(优于AVL)</li><li>分摊复杂度O(logn)与AVL树相当</li><li>局部性强，缓存命中率极高时(k &lt;&lt; n &lt;&lt; m)，效率甚至可以更高(自适应的O(logk))，任何连续的m次查找都可在O(mlogk + nlogn)时间内完成</li></ol><p>缺点：<br>仍不能保证单次最坏情况的出现，不适用于对效率敏感的场合</p><h2 id="B-树"><a href="#B-树" class="headerlink" title="B-树"></a>B-树</h2>]]></content>
+    <content type="html"><![CDATA[<p>高级搜索树</p><span id="more"></span><h1 id="高级搜索树"><a href="#高级搜索树" class="headerlink" title="高级搜索树"></a>高级搜索树</h1><h2 id="伸展树"><a href="#伸展树" class="headerlink" title="伸展树"></a>伸展树</h2><p>局部性(locality)：刚被访问过的数据，极有可能很快地再次被访问<br>连续的m次查找，采用Avl共需O(mlogn)时间<br>节点v一旦被访问，随机转移至树根(逐层伸展)，自下而上逐层单旋</p><p>最坏情况：旋转次数呈<strong>周期性</strong>的<strong>算术级数</strong>演变，每一周期累计Ω(n^2),分摊Ω(n)</p><h3 id="双层伸展"><a href="#双层伸展" class="headerlink" title="双层伸展"></a>双层伸展</h3><p>向上追溯两层，而非一层<br>反复考察祖孙三代，根据他们的相对位置，经<strong>两次旋转</strong>使得v上升两层，成为树根</p><p>子孙异侧：与AVL树双旋完全等效，与逐层伸展别无二致<br>子孙同侧：从祖父节点开始旋转</p><p>折叠效果：一旦访问坏节点，对应路径的长度随即减半，单趟伸展操作分摊O(logn)时间</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>优点：</p><ol><li>无需记录节点高度或平衡因子(优于AVL)</li><li>分摊复杂度O(logn)与AVL树相当</li><li>局部性强，缓存命中率极高时(k &lt;&lt; n &lt;&lt; m)，效率甚至可以更高(自适应的O(logk))，任何连续的m次查找都可在O(mlogk + nlogn)时间内完成</li></ol><p>缺点：<br>仍不能保证单次最坏情况的出现，不适用于对效率敏感的场合</p><h2 id="B-树"><a href="#B-树" class="headerlink" title="B-树"></a>B-树</h2><p>物理上，存储器容量越大&#x2F;小，访问速度就越慢&#x2F;快</p><ol><li>不同容量存储器，访问速度差异悬殊，为避免1次外存访问，宁愿访问内存10次，100次，…<br>多数存储系统，都是分级组织的(caching)，最常用的数据尽可能放在更高层、更小的存储器</li><li>从磁盘中读写1B和读写1KB几乎一样快(批量式访问)</li></ol><h3 id="B-树：结构"><a href="#B-树：结构" class="headerlink" title="B-树：结构"></a>B-树：结构</h3><p>B-树的每一个节点包含多个分支<br>它实际上是一个平衡的多路搜索树，经过适当合并，得到超级节点<br>每2代合并：4路，每3代合并：8路，…，每d代合并：m &#x3D; 2^d 路和 m - 1 个关键码<br>多级存储系统中使用B-树，可针对外部查找，大大减少I&#x2F;O次数，具体视磁盘的数据块大小而定</p><p>m阶B-树，即m路平衡搜索树(m &gt;&#x3D; 2)</p><ol><li>外部节点的深度统一相等</li><li>所有叶节点的深度统一相等</li><li>树高h &#x3D; 外部节点的深度</li></ol><p>内部节点各有：</p><ol><li>不超过 m - 1 个关键码</li><li>不超过 m 个分支</li></ol><p>内部节点的分支数 n + 1 也不能太少</p><ol><li>树根 2 &lt;&#x3D; n + 1</li><li>其余 [m &#x2F; 2] &lt;&#x3D; n + 1</li></ol><p>超级节点(BTNode)的内部可以实现为两个向量</p><ol><li>n个关键码</li><li>n + 1个分支引用</li></ol><h3 id="B-树：查找"><a href="#B-树：查找" class="headerlink" title="B-树：查找"></a>B-树：查找</h3><p>反复在关键码向量中顺序查找<br>最大树高： log[m &#x2F; 2](N &#x2F; 2) ~ O(longmN)<br>最小树高： logmN - 1 ~ Ω(logmN)<br>BBST高度的 1 &#x2F; (log2m - 1)</p><h3 id="B-树：插入"><a href="#B-树：插入" class="headerlink" title="B-树：插入"></a>B-树：插入</h3><p>因插入而上溢后的分裂处理</p><p>分裂： 上溢时，指针停留向量的中位数关键码上升一层，并以其左右两边作为左右孩子<br>再分裂： 上溢缺陷可能会传播，但只能逐层向上且最高到根<br>复杂度 0(h)</p><h3 id="B-树：删除"><a href="#B-树：删除" class="headerlink" title="B-树：删除"></a>B-树：删除</h3><p>因删除而下溢后的合并处理</p><p>先判断是否可以旋转，再决定是否合并</p><p>旋转： 节点下溢时，比恰好包含[m &#x2F; 2] - 2个key 和 [m &#x2F; 2] - 1个分支<br>若左孩子下溢且右孩子有足够关键码不至于下溢，则该节点的该关键码转给左孩子节点，右孩子的最左关键码转给该节点<br>当无法满足旋转的条件时，进行合并<br>合并： 将该关键码下移与其左右孩子的关键码拼接，该节点的关键码 - 1<br>有可能会出现反复向上合并的现象，但最多不到树根</p><h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2>]]></content>
     
     
     <categories>
