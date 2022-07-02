@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>Inspector窗口可编辑的变量</title>
+    <link href="/2022/07/02/Unity/Unity%E5%85%A5%E9%97%A8/Inspector%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E7%9A%84%E5%8F%98%E9%87%8F/"/>
+    <url>/2022/07/02/Unity/Unity%E5%85%A5%E9%97%A8/Inspector%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E7%9A%84%E5%8F%98%E9%87%8F/</url>
+    
+    <content type="html"><![CDATA[<p>Inspector窗口可编辑的变量</p><span id="more"></span><h1 id="Inspector窗口可编辑的变量"><a href="#Inspector窗口可编辑的变量" class="headerlink" title="Inspector窗口可编辑的变量"></a>Inspector窗口可编辑的变量</h1><p>Inspector窗口可编辑的变量就是脚本中的成员变量</p><h2 id="私有和保护的变量无法在窗口中显示编辑"><a href="#私有和保护的变量无法在窗口中显示编辑" class="headerlink" title="私有和保护的变量无法在窗口中显示编辑"></a>私有和保护的变量无法在窗口中显示编辑</h2><h2 id="让私有和保护的变量可以在窗口中显示编辑"><a href="#让私有和保护的变量可以在窗口中显示编辑" class="headerlink" title="让私有和保护的变量可以在窗口中显示编辑"></a>让私有和保护的变量可以在窗口中显示编辑</h2><p>加上强制序列化字段特性 [SerializeField]<br>所谓序列化就是把一个对象保存到一个文件或数据库字段中去</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[SerializeField]private int privateInt;[SerializeField]protected string protectedStr;</code></pre></div><h2 id="公共的变量可以在窗口中显示编辑"><a href="#公共的变量可以在窗口中显示编辑" class="headerlink" title="公共的变量可以在窗口中显示编辑"></a>公共的变量可以在窗口中显示编辑</h2><h2 id="让公共的变量无法在窗口中显示编辑"><a href="#让公共的变量无法在窗口中显示编辑" class="headerlink" title="让公共的变量无法在窗口中显示编辑"></a>让公共的变量无法在窗口中显示编辑</h2><p>加上特性 [HideInInspector]</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[HideInInspector]public int publicInt2;</code></pre></div><h2 id="大部分类型都可以在窗口中显示编辑"><a href="#大部分类型都可以在窗口中显示编辑" class="headerlink" title="大部分类型都可以在窗口中显示编辑"></a>大部分类型都可以在窗口中显示编辑</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年7月2日</title>
+    <link href="/2022/07/02/diary/2022.7/2022%E5%B9%B47%E6%9C%882%E6%97%A5/"/>
+    <url>/2022/07/02/diary/2022.7/2022%E5%B9%B47%E6%9C%882%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="4dcf8a4344492cffd30b2c24ea2fb1a41ae9cf78fa88934ecebba7167a539335">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50fdd0ca3edc57389bd0e88084b7db20230e08519736a6dd1d06db6fd82096dcc82c87bf6d9dd3fd8a4479d58ade1c7d5fa311fb33cf2463ad1d91ea504e3f0bc405632f0a6553bc1d95512944325d55c50f14d3e5522f81ebfbc112e778d48d3497dd83914ef55fdcd8410bee70ef1279a10dad7607029668c4143a19b09a4f2cfbf4b0104d7712f9625f415db4f86175889a9ba4c99c8d30e405033777f408969007594cd2848a9241d5fc4670afd043fba0ff77b9977e4cdf961ada90d27a5b83d1a194ebba6c98e0e165a26c3cea6e9cdad07e586aba543d8339d2b44153d122438ba5f134290a4bc68bab51969336e385e3b0ee961cfb7091f8c99f89863581d1e9389cdf8a53085e11b7390ee295b934ea0390e239b59d7da53c017bc252ec5f4965ff29fa73ae3fe8fe7d7d183da1a7abf8f4e2c8a723e42222f208375be29faa9817476c42739ab37f367bf64df8ec4a1b7abec9951a63e2c85d666014aa5764731a6c2ee04cc6f7bed0508a71872c24263e0ed5928cf4649153a2010988de84d14702b33b5eff476260bda177</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月1日</title>
     <link href="/2022/07/01/diary/2022.7/2022%E5%B9%B47%E6%9C%881%E6%97%A5/"/>
     <url>/2022/07/01/diary/2022.7/2022%E5%B9%B47%E6%9C%881%E6%97%A5/</url>
