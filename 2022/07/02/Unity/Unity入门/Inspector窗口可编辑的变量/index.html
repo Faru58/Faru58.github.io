@@ -23,12 +23,14 @@
 <meta property="og:site_name" content="垃圾桶">
 <meta property="og:description" content="Inspector窗口可编辑的变量">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://faru58.github.io/2022/07/02/Unity/Unity%E5%85%A5%E9%97%A8/Inspector%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E7%9A%84%E5%8F%98%E9%87%8F/exam.png">
 <meta property="article:published_time" content="2022-07-02T14:27:02.000Z">
-<meta property="article:modified_time" content="2022-07-02T15:45:59.691Z">
+<meta property="article:modified_time" content="2022-07-03T13:54:42.125Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://faru58.github.io/2022/07/02/Unity/Unity%E5%85%A5%E9%97%A8/Inspector%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E7%9A%84%E5%8F%98%E9%87%8F/exam.png">
   
   
   <title>Inspector窗口可编辑的变量 - 垃圾桶</title>
@@ -208,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      338 字
+      1.1k 字
     </span>
   
 
@@ -217,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3 分钟
+      10 分钟
     </span>
   
 
@@ -259,11 +261,52 @@ private int privateInt;
 [SerializeField]
 protected string protectedStr;</code></pre></div>
 
-<h2 id="公共的变量可以在窗口中显示编辑"><a href="#公共的变量可以在窗口中显示编辑" class="headerlink" title="公共的变量可以在窗口中显示编辑"></a>公共的变量可以在窗口中显示编辑</h2><h2 id="让公共的变量无法在窗口中显示编辑"><a href="#让公共的变量无法在窗口中显示编辑" class="headerlink" title="让公共的变量无法在窗口中显示编辑"></a>让公共的变量无法在窗口中显示编辑</h2><p>加上特性 [HideInInspector]</p>
+<h2 id="公共的变量可以在窗口中显示编辑"><a href="#公共的变量可以在窗口中显示编辑" class="headerlink" title="公共的变量可以在窗口中显示编辑"></a>公共的变量可以在窗口中显示编辑</h2><h2 id="让公共的变量无法在窗口中显示编辑"><a href="#让公共的变量无法在窗口中显示编辑" class="headerlink" title="让公共的变量无法在窗口中显示编辑"></a>让公共的变量无法在窗口中显示编辑</h2><p>加上序列化特性 [HideInInspector]</p>
 <div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[HideInInspector]
 public int publicInt2;</code></pre></div>
 
-<h2 id="大部分类型都可以在窗口中显示编辑"><a href="#大部分类型都可以在窗口中显示编辑" class="headerlink" title="大部分类型都可以在窗口中显示编辑"></a>大部分类型都可以在窗口中显示编辑</h2>
+<h2 id="大部分类型都可以在窗口中显示编辑"><a href="#大部分类型都可以在窗口中显示编辑" class="headerlink" title="大部分类型都可以在窗口中显示编辑"></a>大部分类型都可以在窗口中显示编辑</h2><p>字典、自定义类型&#x2F;结构体 不能显示编辑</p>
+<h2 id="让自定义类型可以在窗口中显示编辑"><a href="#让自定义类型可以在窗口中显示编辑" class="headerlink" title="让自定义类型可以在窗口中显示编辑"></a>让自定义类型可以在窗口中显示编辑</h2><p>加上序列化特性 [System.Serializable]</p>
+<p>但字典怎么都不行 </p>
+<h2 id="一些辅助特性"><a href="#一些辅助特性" class="headerlink" title="一些辅助特性"></a>一些辅助特性</h2><ol>
+<li><p>分组说明特性 Header<br>为成员变量分组</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[Header(&quot;分组说明&quot;)]</code></pre></div>
+</li>
+<li><p>悬停注释 Tooltip<br>为成员变量添加说明</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[Tooltip(&quot;悬停说明&quot;)]</code></pre></div>
+</li>
+<li><p>间隔特性 Space()<br>让两个字段间出现间隔</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[Space()]</code></pre></div>
+</li>
+<li><p>修饰数值的滑条范围 Range</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[Range(最小值，最大值)]</code></pre></div>
+</li>
+<li><p>多行显示字符串 Multiline<br>默认不写参数显示3行<br>写参数就是对应行</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[Multiline(行数)]</code></pre></div>
+</li>
+<li><p>滚动条显示字符串 TextArea<br>默认不写参数为超过3行显示滚动条</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[TextArea(3, 4)] &#x2F;&#x2F;最少显示3行，超过4行显示滚动条</code></pre></div>
+</li>
+<li><p>为变量添加快捷方法 ContextMeunItem<br>参数1：显示按钮名<br>参数2：方法名，不能有参数(访问修饰符无所谓)</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[ContextMeunItem(&quot;显示按钮名&quot;, &quot;方法名&quot;)] &#x2F;&#x2F;最少显示3行，超过4行显示滚动条</code></pre></div>
+
+</li>
+<li><p>为方法添加特性能够在Inspector中执行 ContextMeun<br>在脚本那一栏右边的三个点里选</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">[ContextMeun(&quot;测试方法名&quot;)] </code></pre></div></li>
+</ol>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>Inspector窗口中的变量关联的就是对象的成员变量，运行时改变他们就是在改变成员变量</li>
+<li>拖曳到GameObject对象后，再改变脚本中变量默认值，页面中不会改变</li>
+<li>运行中修改的信息不会保存</li>
+</ol>
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/02/Unity/Unity%E5%85%A5%E9%97%A8/Inspector%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E7%9A%84%E5%8F%98%E9%87%8F/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+<h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><ol>
+<li>加上序列化特性 [HideInInspector]</li>
+<li>加上强制序列化字段特性 [SerializeField]</li>
+</ol>
+<h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><p>因为Unity中是通过反射得到类的信息，然后在Inspector窗口中显示字段信息，Unity内部通过反射获取字段的特性，当具有一些特殊特性时，便会做对应的处理    </p>
+
             </div>
             <hr>
             <div>
@@ -300,6 +343,12 @@ public int publicInt2;</code></pre></div>
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/07/03/diary/2022.7/2022%E5%B9%B47%E6%9C%883%E6%97%A5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022年7月3日</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
