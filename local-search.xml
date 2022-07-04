@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>优先级队列</title>
+    <link href="/2022/07/04/DataStructure/List/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/"/>
+    <url>/2022/07/04/DataStructure/List/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<p>优先级队列</p><span id="more"></span><h1 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h1><p>联系实际： 夜间门诊，多任务调度</p><p>call-by-priority<br>完全二叉树(忽略最底层，应为满树)<br>具有堆序性</p><p>用向量实现完全二叉树</p><ol><li>逻辑上等同于完全二叉树</li><li>物理上直接借助于向量实现<br>逻辑节点与物理元素依层次遍历次序彼此对应</li></ol><p>秩为i的元素：</p><ol><li>父节点的秩 (i - 1) &#x2F; 2</li><li>左孩子的秩 1 + i * 2</li><li>右孩子的秩 (1 + i) * 2</li></ol><p>数值上任何节点都不能超过他的父亲</p><h2 id="插入与上滤"><a href="#插入与上滤" class="headerlink" title="插入与上滤"></a>插入与上滤</h2><p>为插入词条e，只需将e作为末元素接入向量</p><ol><li>结构性自然保持</li><li>若堆序性亦未被破坏，则完成</li></ol><p>否则 (只可能是e与其父节点违反堆序性)<br>e再与父节点换位 (迭代向上验证)</p><p>不断重复直到 e与其父亲满足堆序性 或 e到达堆顶(无父亲)</p><p>时间复杂度为O(logn)</p><h2 id="删除与下滤"><a href="#删除与下滤" class="headerlink" title="删除与下滤"></a>删除与下滤</h2><p>只能获取&#x2F;删除最大元(始终在堆顶)</p><p>摘除向量首元素，代之以末元素e<br>(结构性保持，若堆序性依然保持则完成)</p><p>否则 (即与孩子们违背堆序性)<br>e与孩子们中大者交换 (迭代向下检查)</p><p>时间复杂度为O(logn)</p><h2 id="完全二叉堆"><a href="#完全二叉堆" class="headerlink" title="完全二叉堆"></a>完全二叉堆</h2><p>批量建堆： </p><ol><li><p>自上而下的上滤<br>最坏情况：每个节点都需上滤至根，所需成本线性正比于其深度<br>时间复杂度O(nlogn)</p></li><li><p>自下而上的下滤<br>假设两个堆的堆顶是p的左右孩子，对p下滤，迭代<br>每个内部节点所需的调整时间，正比于其高度而非深度<br>时间复杂度O(n)</p></li></ol><h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>本质是交换+下滤</p><ol><li>对未排序部分先进行预处理(下溢)</li><li>堆顶与堆底交换，放入已排序部分(有序序列)，未排序部分-1</li><li>下滤，返回执行2</li></ol><p>时间复杂度O(nlogn)，空间复杂度O(1)</p><h2 id="左式堆"><a href="#左式堆" class="headerlink" title="左式堆"></a>左式堆</h2><p>保持堆序性，附加新条件，使得在堆合并过程中，只需调整很少部分的节点<br>时间复杂度O(logn)<br>新条件：单侧倾斜</p><ol><li>节点分布偏向于左侧</li><li>合并操作只涉及右侧</li></ol><p>引入空节点路径长度(Null Path Length)<br>npl(Null) &#x3D; 0; npl(x) &#x3D; 1 + min( npl( lc( x ) ), npl( rc( x ) ) )<br>npl(x) &#x3D; x到外部节点的最近距离 &#x2F; 以x为根的最大满子树高度</p><p>右倾性： 对任意节点x，都有 npl( lc( x ) &gt;&#x3D; npl( rc( x )<br>推论： 对任意节点x，都有 npl(x) &#x3D; 1 + npl( rc( x )<br>与堆序性相容而不矛盾，左式堆的子堆必是左式堆</p><h2 id="右侧链"><a href="#右侧链" class="headerlink" title="右侧链"></a>右侧链</h2><p>右侧链：rChain(x) 从节点x出发，一直沿着右分支前进<br>rChain(root)的终点必为全堆中最浅的外部节点</p><p>右侧链长为d的左式堆，至少包含 2^d - 1 个内部节点，2^(d + 1) - 1 个节点<br>反之，在包含n个节点的左式堆中，右侧链的长度 d &lt;&#x3D; O(logn)</p><p>合并过程围绕右侧链进行<br>时间复杂度 &lt;&#x3D; 右侧链长度</p><p>插入即是合并<br>删除即是合并</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年7月4日</title>
+    <link href="/2022/07/04/diary/2022.7/2022%E5%B9%B47%E6%9C%884%E6%97%A5/"/>
+    <url>/2022/07/04/diary/2022.7/2022%E5%B9%B47%E6%9C%884%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="3e0ec7d84f5ed3b2f25fd8e33ba36667409cd6aaf2dcf0b5926be373ec0899bf">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50ed11bef72dc57a08d1ff5a0f39619459de368d86cbb100c522524007854856f69b8b28175de81d7469ef5f1e0755cb9d6773c56116df06f1bb19116bb57825eb0d07f0e0ab9e4afd90098fe9160db58a6a5728bf0f9edd0e01c3fa0ecdb2e08f24e87eee85d4d13f0ecab35e71ccbe965093b3337e2d58cb3f2946fc131b7cccda431c369e3ad9700e16c39db11d866297999acfa2623f41e1b19bf5a3a44676</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月3日</title>
     <link href="/2022/07/03/diary/2022.7/2022%E5%B9%B47%E6%9C%883%E6%97%A5/"/>
     <url>/2022/07/03/diary/2022.7/2022%E5%B9%B47%E6%9C%883%E6%97%A5/</url>
