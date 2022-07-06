@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年7月6日</title>
+    <link href="/2022/07/06/diary/2022.7/2022%E5%B9%B47%E6%9C%886%E6%97%A5/"/>
+    <url>/2022/07/06/diary/2022.7/2022%E5%B9%B47%E6%9C%886%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="2021e8878f90b1f25f245316e72821ca7d075cbda40f7bddb428920f0f036080">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50dde96bebb5553027342532d372e64872fc377b24d188cbb09d8e733f594857e1525fc428056bdf6c3233e8a35af749d011ce8ef6863a3d8877a509bcb23e3d161daa19b9cbdcb9eca6ea18fa822529ee6422cb493b56a6346a438be627738196fe3043d22f646530c4df7fd5aebb130880950efbb8956337f089bdad7607d00786f2b29811634c92b124ff51cee3f1d6752ad1cfda0f26d6e9a77103a0e8b1a1851a21748f19e345a6a8271a28fb4107</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>串</title>
+    <link href="/2022/07/06/DataStructure/Vector/%E4%B8%B2/"/>
+    <url>/2022/07/06/DataStructure/Vector/%E4%B8%B2/</url>
+    
+    <content type="html"><![CDATA[<p>串</p><span id="more"></span><h1 id="串"><a href="#串" class="headerlink" title="串"></a>串</h1><p>实际上是向量<br>由来自字母表∑的字符所组成的有限序列 S &#x3D; a0,a1,…,a(n-1)<br>通常字符的种类不多，而串长 &#x3D; n &gt;&gt; |∑| (字母表长度)</p><h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><ol><li><p>相等： S[0, n) &#x3D; T[0, m)<br>长度相等(n &#x3D; m)，且对应的字符均相同(S[i] &#x3D; T[i])</p></li><li><p>子串： S.substr(i, k) &#x3D; S[i, i+k)<br>亦即从S[i]起连续k个字符</p></li><li><p>前缀： S.prefix(k) &#x3D; S.substr(0, k) &#x3D; S[0, k)<br>亦即S中最靠前的k个字符</p></li><li><p>后缀： S.suffix(k) &#x3D; S.substr(n-k, n) &#x3D; S[n-k, n)<br>亦即S中最靠后的k个字符</p></li><li><p>联系： S.substr(i, k) &#x3D; S.prefix(i+k).suffix(k)</p></li><li><p>空串： S[0, n&#x3D;0) 是任何串的子串，前缀，后缀</p></li></ol><h2 id="蛮力匹配"><a href="#蛮力匹配" class="headerlink" title="蛮力匹配"></a>蛮力匹配</h2><p>自左向右，以字符为单位，依次移动模式串，直到在某个位置发现匹配<br>|∑| 越小，最坏情况的出现概率越高<br>m 越大，最坏情况的后果更加严重<br>对于长度为n的文本串，长度为m的模式串，时间复杂度为O(m*n)</p><h2 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h2><p>蛮力匹配低效原因：此前比对过的字符，将再次参与比对</p><p>不变性： T[i-j, i) &#x3D; P[0, j)， 即已掌握T[i-j, i)的全部信息<br>记忆性： 失败后的下一轮，不必再次比对T[i-j, i)，直接从T[i]开始往后比对<br>预知力： 失败后，将模式串中前一个字符与刚才失败的那个字符重新对齐</p><p>为此，需要事先确定t，即构建查询表next[0, m)</p><h2 id="next-表"><a href="#next-表" class="headerlink" title="next[]表"></a>next[]表</h2><p>自匹配：</p><ol><li><p>快速右移<br>集合N(P,j) &#x3D; P[0, t) &#x3D;&#x3D; P[j-t, j), 即在P[j]的前缀P[0, j)中，所有匹配真前缀和真后缀的长度<br>一旦失配(T[i] !&#x3D; P[j]),可以从N(P,j)中取t，继续比对</p></li><li><p>避免回退<br>通配哨兵 next[0] &#x3D; -1 (默认比对必然成功)</p></li></ol><p>构造next[]表<br>next[j] &#x3D; 在P[0, j)中，最大自匹配的真前缀和真后缀的长度<br>next[j+1] &lt;&#x3D; next[j] + 1，当且仅当P[j] &#x3D;&#x3D; P[ next[j] ]时取等号</p><p>由此，我们需要充分利用每一次对比的信息，可提高算法效率<br>分摊分析 时间复杂度为O(n+m)</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月5日</title>
     <link href="/2022/07/06/diary/2022.7/2022%E5%B9%B47%E6%9C%885%E6%97%A5/"/>
     <url>/2022/07/06/diary/2022.7/2022%E5%B9%B47%E6%9C%885%E6%97%A5/</url>
@@ -40,7 +94,7 @@
       
       <category>study</category>
       
-      <category>Unity</category>
+      <category>数据结构</category>
       
     </categories>
     
@@ -49,7 +103,7 @@
       
       <tag>学习笔记</tag>
       
-      <tag>Unity</tag>
+      <tag>数据结构</tag>
       
     </tags>
     
@@ -198,7 +252,7 @@
       
       <category>study</category>
       
-      <category>Unity</category>
+      <category>数据结构</category>
       
     </categories>
     
@@ -207,7 +261,7 @@
       
       <tag>学习笔记</tag>
       
-      <tag>Unity</tag>
+      <tag>数据结构</tag>
       
     </tags>
     
