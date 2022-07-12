@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://faru58.github.io/2022/05/16/CSharp/CSharp%E6%A0%B8%E5%BF%83/%E7%BB%A7%E6%89%BF/%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/exam.png">
 <meta property="article:published_time" content="2022-05-16T15:24:17.000Z">
-<meta property="article:modified_time" content="2022-05-17T11:16:54.893Z">
+<meta property="article:modified_time" content="2022-07-12T15:23:09.296Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="C#">
@@ -256,8 +256,16 @@
 
 
 <h1 id="继承中的构造函数"><a href="#继承中的构造函数" class="headerlink" title="继承中的构造函数"></a>继承中的构造函数</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>特点：</strong><br>当声明一个子类对象时<br>先执行父类的构造函数<br>再执行子类的构造函数</p>
-<p><strong>注意：</strong><br>1.父类的无参构造 很重要<br>2.子类可以通过base关键字 代表父类 调用父类构造</p>
-<h2 id="继承中构造函数的执行顺序"><a href="#继承中构造函数的执行顺序" class="headerlink" title="继承中构造函数的执行顺序"></a>继承中构造函数的执行顺序</h2><p>1.父类的父类的构造函数<br>2.父类的构造函数<br>3.子类的构造函数<br>即<strong>从高到低依次调用</strong></p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>父类的无参构造 很重要</li>
+<li>子类可以通过base关键字 代表父类 调用父类构造</li>
+</ol>
+<h2 id="继承中构造函数的执行顺序"><a href="#继承中构造函数的执行顺序" class="headerlink" title="继承中构造函数的执行顺序"></a>继承中构造函数的执行顺序</h2><ol>
+<li>父类的父类的构造函数 </li>
+<li>父类的构造函数  </li>
+<li>子类的构造函数<br>即<strong>从高到低依次调用</strong></li>
+</ol>
 <div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class GameObject
 &#123;
     public GameObject()
