@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年7月13日</title>
+    <link href="/2022/07/13/diary/2022.7/2022%E5%B9%B47%E6%9C%8813%E6%97%A5/"/>
+    <url>/2022/07/13/diary/2022.7/2022%E5%B9%B47%E6%9C%8813%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="806a83c8f4605c58fd5e507e8a18beff906a4a6e813fcb088a452745abea0ea0">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50fdd0ca3edc57389bd0e88084b7db20232732a3c4dc3d77b9f28522fe8390302d20cc92b46fdc4ff87b85236ee8d903416850d4f9d7d31a419406068139c6cfb060b3d6bc49c283d174c0167afa62ec664b98fc0cad91cd750b27d815d94d78ec9cae502e23f357580da498d0c4de24d432159458b60911422a901b2c0967ef4f5ab341d973fb577a1d3329ed57b5e60457366252ea0f1fda75fc830fdf29ad4443f4f6ad55c393d4327959e5213469b091bc6ec320490c52bca5b3d1892f087466408c7ed2e31b355a49c769f87811b998cd38360fd9344ff03963b69ab98498a10e3aa26300964fdfe05cfb197985e1</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>最小单位GameObject</title>
+    <link href="/2022/07/13/Unity/Unity%E5%85%A5%E9%97%A8/%E6%9C%80%E5%B0%8F%E5%8D%95%E4%BD%8DGameObject/"/>
+    <url>/2022/07/13/Unity/Unity%E5%85%A5%E9%97%A8/%E6%9C%80%E5%B0%8F%E5%8D%95%E4%BD%8DGameObject/</url>
+    
+    <content type="html"><![CDATA[<p>最小单位GameObject</p><span id="more"></span><h1 id="最小单位GameObject"><a href="#最小单位GameObject" class="headerlink" title="最小单位GameObject"></a>最小单位GameObject</h1><h2 id="GameObject中的成员变量"><a href="#GameObject中的成员变量" class="headerlink" title="GameObject中的成员变量"></a>GameObject中的成员变量</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class LessonGameObject : MonoBehaviour&#123;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;        &#x2F;&#x2F;名字        this.gameObject.name &#x3D; &quot;Lesson4&quot;;        print(gameObject.name);        &#x2F;&#x2F;是否激活        print(gameObject.activeSelf);        &#x2F;&#x2F;是否是静态        print(gameObject.isStatic);        &#x2F;&#x2F;层级        print(gameObject.layer);        &#x2F;&#x2F;标签        print(gameObject.tag);        &#x2F;&#x2F;transform        print(transform);        print(gameObject.transform);        print(transform.position);    &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;            &#125;&#125;</code></pre></div><h2 id="GameObject中的静态方法"><a href="#GameObject中的静态方法" class="headerlink" title="GameObject中的静态方法"></a>GameObject中的静态方法</h2><p>unity中的Object不是C#里的万物之父，是unity自己的类</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class LessonGameObject : MonoBehaviour&#123;    &#x2F;&#x2F;准备用来克隆的对象    &#x2F;&#x2F;1. 直接是场景上的对象    &#x2F;&#x2F;2. 可以是一个预设体对象    public GameObject myObj;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;        &#x2F;&#x2F;创建自带几何体        &#x2F;&#x2F;只要得到了一个GameObject对象，就可以通过GetComponent来得到它身上挂的任何脚本信息        GameObject obj &#x3D; GameObject.CreatePrimitive(PrimitiveType.Cube);        obj.name &#x3D; &quot;xCube&quot;;        &#x2F;&#x2F;查找对象(无法找到失活对象)(存在多个同名或同tag对象，无法准确找到是哪个)        &#x2F;&#x2F;查找单个对象        &#x2F;&#x2F;1.通过对象名查找：效率较低，会在场景中所有对象中去查找，没有找到就会返回null        GameObject obj2 &#x3D; GameObject.Find(&quot;xCube&quot;);        if(obj2 !&#x3D; null)        &#123;            print(obj2.name);        &#125;        &#x2F;&#x2F;2.通过tag查找：两个方法一样        &#x2F;&#x2F;GameObject obj3 &#x3D; GameObject.FindWithTag(&quot;Player&quot;);        GameObject obj3 &#x3D; GameObject.FindGameObjectWithTag(&quot;Player&quot;);        if (obj3 !&#x3D; null)        &#123;            print(obj3.name);        &#125;        &#x2F;&#x2F;查找多个对象(只能通过tag找，名字不行)        GameObject[] objs &#x3D; GameObject.FindGameObjectsWithTag(&quot;Player&quot;);        print(objs.Length);        &#x2F;&#x2F;实例化(克隆对象)对象：根据一个GameObject对象，创建出一个和它一模一样的对象        GameObject.Instantiate(myObj);        &#x2F;&#x2F;删除对象(第二个参数代表延迟几秒删除)        GameObject.Destroy(obj, 5);        &#x2F;&#x2F;也可以删除脚本        GameObject.Destroy(this);        &#x2F;&#x2F;注意：Destroy不会马上移除对象，是先给这个对象加一个移除标识，一般情况下会在下一帧移除对象并从内存中删除(异步)        GameObject.DestroyImmediate(myObj); &#x2F;&#x2F;立刻移除，但可能卡顿        &#x2F;&#x2F;过场景不移除，不想谁被移除就传谁        &#x2F;&#x2F;默认情况下，在切换场景时，场景中对象都会被自动删除掉        GameObject.DontDestroyOnLoad(this.gameObject);    &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;            &#125;&#125;</code></pre></div><h2 id="GameObject中的成员变量-1"><a href="#GameObject中的成员变量-1" class="headerlink" title="GameObject中的成员变量"></a>GameObject中的成员变量</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月12日</title>
     <link href="/2022/07/12/diary/2022.7/2022%E5%B9%B47%E6%9C%8812%E6%97%A5/"/>
     <url>/2022/07/12/diary/2022.7/2022%E5%B9%B47%E6%9C%8812%E6%97%A5/</url>
