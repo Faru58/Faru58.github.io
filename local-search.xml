@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>Time知识点</title>
+    <link href="/2022/07/15/Unity/Unity%E5%85%A5%E9%97%A8/Time%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <url>/2022/07/15/Unity/Unity%E5%85%A5%E9%97%A8/Time%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<p>Time知识点</p><span id="more"></span><h1 id="Time知识点"><a href="#Time知识点" class="headerlink" title="Time知识点"></a>Time知识点</h1><p>主要用于游戏中参与位移，计时，时间暂停等<br>写在Update函数里</p><h2 id="时间缩放比例"><a href="#时间缩放比例" class="headerlink" title="时间缩放比例"></a>时间缩放比例</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;停止时间Time.timeScale &#x3D; 0;&#x2F;&#x2F;恢复时间Time.timeScale &#x3D; 1;&#x2F;&#x2F;2倍速Time.timeScale &#x3D; 2;</code></pre></div><h2 id="帧间隔时间"><a href="#帧间隔时间" class="headerlink" title="帧间隔时间"></a>帧间隔时间</h2><p>帧间隔时间： 最近的一帧用了多长时间（秒）<br>主要用来计算位移： 位移 &#x3D; 时间 * 速度<br>根据需求选择参与计算的间隔时间</p><p>如果希望游戏暂停时就不动，那就使用deltaTime<br>如果希望游戏不受暂停影响，那就使用unscaledDeltaTime</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;受scale影响(小于16.67就能达到60帧)print(&quot;帧间隔时间&quot; + Time.deltaTime);&#x2F;&#x2F;不受scale影响print(&quot;不受scale影响的帧间隔时间&quot; + Time.unscaledDeltaTime);</code></pre></div><h2 id="游戏开始时间到现在的时间"><a href="#游戏开始时间到现在的时间" class="headerlink" title="游戏开始时间到现在的时间"></a>游戏开始时间到现在的时间</h2><p>用于单机游戏计时</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;受scale影响print(&quot;游戏开始到现在的时间&quot; + Time.time);&#x2F;&#x2F;不受scale影响print(&quot;不受scale影响的游戏开始到现在的时间&quot; + Time.unscaledTime);</code></pre></div><h2 id="物理帧间隔时间-FixedUpdate"><a href="#物理帧间隔时间-FixedUpdate" class="headerlink" title="物理帧间隔时间 FixedUpdate"></a>物理帧间隔时间 FixedUpdate</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">private void FixedUpdate()&#123;    &#x2F;&#x2F;受scale影响    print(&quot;物理帧间隔时间&quot; + Time.fixedDeltaTime);    &#x2F;&#x2F;不受scale影响    print(&quot;不受scale影响的物理帧间隔时间&quot; + Time.fixedUnscaledDeltaTime);&#125;</code></pre></div><h2 id="帧数"><a href="#帧数" class="headerlink" title="帧数"></a>帧数</h2><p>从开始到现在游戏跑了多少帧（一帧就是一次循环）</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">print(Time.frameCount);</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/15/Unity/Unity%E5%85%A5%E9%97%A8/Time%E7%9F%A5%E8%AF%86%E7%82%B9/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>Edit\Project Setting\Time\Fixed Timestep</p><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><img src="/2022/07/15/Unity/Unity%E5%85%A5%E9%97%A8/Time%E7%9F%A5%E8%AF%86%E7%82%B9/T2.png" class="">]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年7月15日</title>
+    <link href="/2022/07/15/diary/2022.7/2022%E5%B9%B47%E6%9C%8815%E6%97%A5/"/>
+    <url>/2022/07/15/diary/2022.7/2022%E5%B9%B47%E6%9C%8815%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="532e69f913ef5d43ca4ec6d13f304654bfe4b3bf826631ed72d239483ad3ea79">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe505aa3df2355a527c265c52ee42134d3ca2c042803294960bb3c84ddad0f33b9f91cdaa1aefc8a1adcbd3188b8ef24be9838893297cc45cf394e16648dee6bd505a614a31c995872ce0bb74fd9b546725de2837f60de89802937ad8b61eae178c707a58ed9cc1c10bc39a1fd67894daf2243fee6d700a6089a13110d526dcfc9979dae93bd28bdf055f8f57c871ab97c13ef4986d972f05b1e4562c0c86002cbcc</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月14日</title>
     <link href="/2022/07/14/diary/2022.7/2022%E5%B9%B47%E6%9C%8814%E6%97%A5/"/>
     <url>/2022/07/14/diary/2022.7/2022%E5%B9%B47%E6%9C%8814%E6%97%A5/</url>
