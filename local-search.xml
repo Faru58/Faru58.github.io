@@ -4,6 +4,85 @@
   
   
   <entry>
+    <title>Transform相关知识点</title>
+    <link href="/2022/07/17/Unity/Unity%E5%85%A5%E9%97%A8/Transform%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <url>/2022/07/17/Unity/Unity%E5%85%A5%E9%97%A8/Transform%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<p>Transform相关知识点</p><span id="more"></span><h1 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h1><p>游戏对象(GameObject)位移、旋转、缩放、父子关系、坐标转换等相关操作都由它处理<br>它是unity提供的极其重要的类</p><h2 id="Vector3基础"><a href="#Vector3基础" class="headerlink" title="Vector3基础"></a>Vector3基础</h2><p>Vector3是用来表示三维坐标系中的<strong>一个点</strong>或者<strong>一个向量</strong></p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;声明Vector3 v &#x3D; new Vector3();v.x &#x3D; 10;v.y &#x3D; 10;v.z &#x3D; 10;&#x2F;&#x2F;只传x, y 默认z &#x3D; 0Vector3 v1 &#x3D; new Vector3(10, 10);&#x2F;&#x2F;一步到位Vector3 v2 &#x3D; new Vector3(10, 10, 10);&#x2F;&#x2F;+ - * &#x2F; 同向量（向量之间相乘除没说） </code></pre></div><p>常用的点</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Vector3.zero (0 0 0)Vector3.left (-1 0 0)Vector3.right (1 0 0)Vector3.forward (0 0 1)Vector3.back (1 0 0)Vector3.up (0 1 0)Vector3.down (0 -1 0)</code></pre></div><p>计算两个点之间的距离</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Vector3.Distance(v1, v2);</code></pre></div><h2 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h2><p>相对世界坐标系原点位置，即通过position得到的位置</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.GameObject.transform</code></pre></div><p>相对于父对象的位置，面板上显示的transform是相对于父对象的</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.localPosition</code></pre></div><p>对象当前的各朝向(这还是得到坐标)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.forward &#x2F;&#x2F;对象当前的面朝向this.transform.up &#x2F;&#x2F;对象当前的头顶朝向this.transform.right &#x2F;&#x2F;对象当前的右手边</code></pre></div><p>注意：位置的赋值不能直接改变x、y、z，即不能单独改变x、y、z某一个值，只能整体改变</p><p>若只想改一个值:</p><ol><li><p>直接赋值</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.position &#x3D; new Vector3(20, this.transform.position.y, this.transform.position.z);</code></pre></div></li><li><p>先取出来再赋值</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Vector3 vPos &#x3D; this.transform.localPosition;vPos.x &#x3D; 20;this.transform.position &#x3D; vPos;</code></pre></div></li></ol><h2 id="位移"><a href="#位移" class="headerlink" title="位移"></a>位移</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年7月16日</title>
+    <link href="/2022/07/17/diary/2022.7/2022%E5%B9%B47%E6%9C%8816%E6%97%A5/"/>
+    <url>/2022/07/17/diary/2022.7/2022%E5%B9%B47%E6%9C%8816%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="fd31285db71adf785e10209b19e500b4e97018801256329173bca712240cc188">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe5013d90dcf8fec980e6eb8d4a394bda69a79dd7f5066ce11245b65b3b8b9af9d87b1057cf4e038841b7fcbc4a00582175278ca88a30965a0081e7ae834921bdbc5bcff070a9bf02ddf9a66247cd6ff877ffcd3f0e397b4d81929e6998664556ab6</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年7月17日</title>
+    <link href="/2022/07/17/diary/2022.7/2022%E5%B9%B47%E6%9C%8817%E6%97%A5/"/>
+    <url>/2022/07/17/diary/2022.7/2022%E5%B9%B47%E6%9C%8817%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="969536bd116b892509d7bd125a8e8de361bd9eacb8f8783b0bb39fba43ecbb5d">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50a77c731a7bf93db6416f573b34cb718f77fda078d66ea5236db5c490d04be4827de879f1438f9f0420328db3e131ed949002ce7be1354852dda549ecfd7f3fe71ac6b5e8051c8b8fad8c45e572718ff729771998a733ede32546dddd3cd93042f0568e6c08b6c78c4fb61de15ede5b2abd5ced040534313497ea44005389bd77bf6772b5b5cba3daa15a9ecd2cd8e94537a3f8a539e67fba59caf13f73d56413bcbacdb9121681d50a7d39ea1ee2e3dd</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Time知识点</title>
     <link href="/2022/07/15/Unity/Unity%E5%85%A5%E9%97%A8/Time%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     <url>/2022/07/15/Unity/Unity%E5%85%A5%E9%97%A8/Time%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
