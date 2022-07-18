@@ -24,7 +24,7 @@
 <meta property="og:description" content="Transform相关知识点">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-17T10:34:08.000Z">
-<meta property="article:modified_time" content="2022-07-17T14:19:42.667Z">
+<meta property="article:modified_time" content="2022-07-18T12:39:26.963Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="Unity">
@@ -208,7 +208,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      2.4k 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9 分钟
+      21 分钟
     </span>
   
 
@@ -303,7 +303,81 @@ this.transform.right &#x2F;&#x2F;对象当前的右手边</code></pre></div>
 vPos.x &#x3D; 20;
 this.transform.position &#x3D; vPos;</code></pre></div></li>
 </ol>
-<h2 id="位移"><a href="#位移" class="headerlink" title="位移"></a>位移</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>
+<h2 id="位移"><a href="#位移" class="headerlink" title="位移"></a>位移</h2><p>路程 &#x3D; 方向 * 速度 * 时间</p>
+<p>参数1：表示位移多少<br>参数2：表示相对坐标系，默认是相对于自己坐标系的</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;相对自己坐标系（只能朝着自己的z方向移动）
+this.transform.Translate(Vector3.forward * 1 * Time.deltaTime);
+&#x2F;&#x2F;相对世界坐标系（只能朝着世界的z方向移动）
+this.transform.Translate(Vector3.forward * 1 * Time.deltaTime, Space.World);</code></pre></div>
+
+
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>层数规律: 每一层方块的数量 &#x3D; 层数 * 层数<br>坐标规律: 把每一层的左上角认为是开始位置</p>
+<ol>
+<li>x: -0.5 * （层数 - 1）</li>
+<li>y: -1 * （层数 - 1）</li>
+<li>z: 0.5 * （层数 - 1）<br>每一层立方体位置规律: 起始位置 + new Vector(编号 % 层数 * 1, 0, 编号 &#x2F; 层数 * (- 1))</li>
+</ol>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TowerCreate : MonoBehaviour
+&#123;
+    public int n &#x3D; 1;
+
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        &#x2F;&#x2F;决定层数(第i+1层)
+        for (int i &#x3D; 0; i &lt; n; i++)
+        &#123;
+            &#x2F;&#x2F;每一层创建时，确定一个初始的坐标
+            Vector3 pos &#x3D; new Vector3(-0.5f * i, -1 * i, 0.5f * i);
+            &#x2F;&#x2F;实例化立方体，设置位置
+            for (int j &#x3D; 0; j &lt; (i + 1) * (i + 1); j++)
+            &#123;
+                &#x2F;&#x2F;实例化立方体
+                GameObject objCube &#x3D; GameObject.CreatePrimitive(PrimitiveType.Cube);
+                &#x2F;&#x2F;设置位置
+                objCube.transform.position &#x3D; pos + new Vector3(j % (i + 1) * 1, 0, j &#x2F; (i + 1) * (-1));
+            &#125;
+        &#125;
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        
+    &#125;
+&#125;</code></pre></div>
+
+
+<h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><ol>
+<li>世界坐标系的z方向移动</li>
+<li>自身坐标系的z方向移动</li>
+<li>不确定方向</li>
+<li>自身坐标系的z方向移动</li>
+</ol>
+<h2 id="题3"><a href="#题3" class="headerlink" title="题3"></a>题3</h2><p>往Tank对象里拖入脚本</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LessonTransform : MonoBehaviour
+&#123;
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        this.transform.Translate(transform.forward * 1 * Time.deltaTime, Space.World);
+    &#125;
+&#125;
+</code></pre></div>
 
 
 
@@ -348,6 +422,12 @@ this.transform.position &#x3D; vPos;</code></pre></div></li>
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/07/18/diary/2022.7/2022%E5%B9%B47%E6%9C%8818%E6%97%A5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022年7月18日</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
