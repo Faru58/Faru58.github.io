@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年7月19日</title>
+    <link href="/2022/07/19/diary/2022.7/2022%E5%B9%B47%E6%9C%8819%E6%97%A5/"/>
+    <url>/2022/07/19/diary/2022.7/2022%E5%B9%B47%E6%9C%8819%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="dda0627508b3c6be877da9d70497253cfcda924486bc088e9420c26460781801">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe504950fe2e2a748b258a98cf08c33ddb80eac83276f5586d1356d4cff141dd9481c8de845815130a3798f399747e0c7c83405b7bc7993f7ea8bbb92f150e85c684f890f347b573e3c0dbaf0ba8297f715558996c8d31f2533def9781faf935e11d991e001940cefcb48d9b41e39aecbe607f1a87bc8e4e8ad3885e353dbc11fe4e6da45de4028b651ca89087bd867e25d718333c23778cee2ef43d4c08d815cb90b6f2ca2c10e2f0674a3a258d45ff243aaada2d2c30a7306d8da57c5e73706fc24ac5eae2d9f728597c0457068d268f03ea9c16b1ebcf6df7dc139fdce2c80b7fb803b5b43d8f47ef889435881f8d1b3b</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>角度和旋转知识点</title>
+    <link href="/2022/07/19/Unity/Unity%E5%85%A5%E9%97%A8/%E8%A7%92%E5%BA%A6%E5%92%8C%E6%97%8B%E8%BD%AC%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <url>/2022/07/19/Unity/Unity%E5%85%A5%E9%97%A8/%E8%A7%92%E5%BA%A6%E5%92%8C%E6%97%8B%E8%BD%AC%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<p>角度和旋转知识点</p><span id="more"></span><h1 id="角度和旋转"><a href="#角度和旋转" class="headerlink" title="角度和旋转"></a>角度和旋转</h1><h2 id="角度"><a href="#角度" class="headerlink" title="角度"></a>角度</h2><p>相对世界坐标系角度</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.eulerAngles</code></pre></div><p>相对父坐标系角度</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.localEulerAngles</code></pre></div><p>注意：设置角度和设置位置一样，不能单独设置xyz，要一起设置</p><h2 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h2><p>写在Update里</p><ol><li>自转<br>每个轴具体转多少度<br>第一个参数：每一帧旋转的角度<br>第二个参数：默认不填是相对于自己坐标系的旋转</li></ol><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;相对自己坐标轴transform.Rotate(new Vector3(0, 10, 0) * Time.deltaTime);&#x2F;&#x2F;相对世界坐标轴transform.Rotate(new Vector3(0, 10, 0) * Time.deltaTime, Space.World);</code></pre></div><ol start="2"><li>相对于某个轴转多少度<br>第一个参数：相对哪个轴进行转动<br>第二个参数：转动的角度是多少<br>第三个参数：默认不填是相对于自己坐标系的旋转</li></ol><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;相对自己的坐标轴transform.Rotate(Vector3.Right, 10 * Time.deltaTime);&#x2F;&#x2F;相对世界的坐标轴transform.Rotate(Vector3.Right, 10 * Time.deltaTime, Space.World);</code></pre></div><ol start="3"><li>相对于某一个点转<br>第一个参数：一个点<br>第二个参数：想要绕的轴<br>第三个参数：转动的角度</li></ol><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">transform.RotateAround(Vector3.Zero, Vector3.Right, 10 * Time.deltaTime);</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/19/Unity/Unity%E5%85%A5%E9%97%A8/%E8%A7%92%E5%BA%A6%E5%92%8C%E6%97%8B%E8%BD%AC%E7%9F%A5%E8%AF%86%E7%82%B9/exam.png" class=""><h2 id="题1、2"><a href="#题1、2" class="headerlink" title="题1、2"></a>题1、2</h2><p>创建一个空物体在炮管和炮台的连接处，让炮管作为空物体的子物体，则炮管会按着空物体的中心旋转</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson7 : MonoBehaviour&#123;    public float rotateSpeed &#x3D; 10;    public float headRotateSpeed &#x3D; 10;    public float connectRotateSpeed &#x3D; 10;    public Transform headTransform;    public Transform connectTransform;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;        &#x2F;&#x2F;创建底座        for (int i &#x3D; 0; i &lt; 2; i++)        &#123;            Vector3 pos &#x3D; new Vector3(-0.5f + i, -1.395f, 0.5f);            for (int j &#x3D; 0; j &lt; 4; j++)            &#123;                GameObject objCube &#x3D; GameObject.CreatePrimitive(PrimitiveType.Cube);                objCube.transform.position &#x3D; pos + new Vector3(0, 0, -j);                &#x2F;&#x2F;让创建的底座成为Tank的子对象，使得可以一起旋转                objCube.transform.parent &#x3D; this.transform;            &#125;        &#125;    &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;        transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime);        &#x2F;&#x2F;炮台旋转        headTransform.Rotate(Vector3.up, headRotateSpeed * Time.deltaTime);        &#x2F;&#x2F;通过localEulerAngles得到的角度只有0~360的正数        if (!(headTransform.localEulerAngles.y &gt;&#x3D; 315 &amp;&amp; headTransform.localEulerAngles.y &lt;&#x3D; 360)            &amp;&amp; (headTransform.localEulerAngles.y &gt;&#x3D; 45 &amp;&amp; headRotateSpeed &gt; 0))        &#123;            headRotateSpeed &#x3D; -headRotateSpeed;        &#125;        else if(!(headTransform.localEulerAngles.y &lt;&#x3D; 45 &amp;&amp; headTransform.localEulerAngles.y &gt;&#x3D; 0)                &amp;&amp; (headTransform.localEulerAngles.y &lt;&#x3D; 315 &amp;&amp; headRotateSpeed &lt; 0))        &#123;            headRotateSpeed &#x3D; -headRotateSpeed;        &#125;        &#x2F;&#x2F;炮管旋转        connectTransform.Rotate(Vector3.right, connectRotateSpeed * Time.deltaTime);        &#x2F;&#x2F;通过localEulerAngles得到的角度只有0~360的正数        if (!(connectTransform.localEulerAngles.x &gt;&#x3D; 345 &amp;&amp; connectTransform.localEulerAngles.x &lt;&#x3D; 360)            &amp;&amp; (connectTransform.localEulerAngles.x &gt;&#x3D; 15 &amp;&amp; connectRotateSpeed &gt; 0))        &#123;            connectRotateSpeed &#x3D; -connectRotateSpeed;        &#125;        else if (!(connectTransform.localEulerAngles.x &lt;&#x3D; 15 &amp;&amp; connectTransform.localEulerAngles.x &gt;&#x3D; 0)                &amp;&amp; (connectTransform.localEulerAngles.x &lt;&#x3D; 345 &amp;&amp; connectRotateSpeed &lt; 0))        &#123;            connectRotateSpeed &#x3D; -connectRotateSpeed;        &#125;    &#125;&#125;</code></pre></div><h2 id="题3"><a href="#题3" class="headerlink" title="题3"></a>题3</h2><p>月亮是地球的子对象，地球是太阳的子对象</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson7_Planet : MonoBehaviour&#123;    public Transform sun;    public Transform earth;    public Transform moon;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;            &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;        &#x2F;&#x2F;自转        sun.transform.Rotate(Vector3.up, 10 * Time.deltaTime);        earth.transform.Rotate(Vector3.up, 10 * Time.deltaTime);        moon.transform.Rotate(Vector3.up, 10 * Time.deltaTime);        &#x2F;&#x2F;公转        earth.transform.RotateAround(sun.position, Vector3.up, 10 * Time.deltaTime);        moon.transform.RotateAround(earth.position, Vector3.up, 10 * Time.deltaTime);    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月18日</title>
     <link href="/2022/07/18/diary/2022.7/2022%E5%B9%B47%E6%9C%8818%E6%97%A5/"/>
     <url>/2022/07/18/diary/2022.7/2022%E5%B9%B47%E6%9C%8818%E6%97%A5/</url>
