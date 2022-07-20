@@ -4,6 +4,118 @@
   
   
   <entry>
+    <title>2022年7月20日</title>
+    <link href="/2022/07/20/diary/2022.7/2022%E5%B9%B47%E6%9C%8820%E6%97%A5/"/>
+    <url>/2022/07/20/diary/2022.7/2022%E5%B9%B47%E6%9C%8820%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="2da5bb32abe063042914c659113ccd6988ea6a96f46e07ac2735b6c894cdc1c5">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50d55af560c8f49c6a6639d4b7f92f13fba6b17211c81375ebd0696aca596f5429a1cf6c1ff028293cee748dac9619ee2992fdb9098af61dd2ac06b0c2501154a26f629186ba0141d1672278e14d8a6b67eec8c677fc621f3395cceca759a249b11403a431c52615aa8ffb46a91503fc5c65dcce61a23d0efefb43ea1ca54c40f2</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>坐标转换知识点</title>
+    <link href="/2022/07/20/Unity/Unity%E5%85%A5%E9%97%A8/%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <url>/2022/07/20/Unity/Unity%E5%85%A5%E9%97%A8/%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<p>坐标转换知识点</p><span id="more"></span><h1 id="坐标转换"><a href="#坐标转换" class="headerlink" title="坐标转换"></a>坐标转换</h1><h2 id="世界坐标转本地坐标"><a href="#世界坐标转本地坐标" class="headerlink" title="世界坐标转本地坐标"></a>世界坐标转本地坐标</h2><p>世界坐标系转本地坐标系可以帮助我们大概判断一个相对位置</p><p>世界坐标系的点转换为相对本地坐标系的点（受到缩放影响）</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.InverseTransformPoint(Vector3.forward)</code></pre></div><p>世界坐标系的方向转换为相对本地坐标系的方向</p><ol><li><p>不受缩放影响</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.InverseTransformDirection(Vector3.forward)</code></pre></div></li><li><p>受到缩放影响</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.InverseTransformVector(Vector3.forward)</code></pre></div></li></ol><h2 id="本地坐标转世界坐标"><a href="#本地坐标转世界坐标" class="headerlink" title="本地坐标转世界坐标"></a>本地坐标转世界坐标</h2><p>本地坐标系的点转换为相对世界坐标系的点（受到缩放影响）</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.TransformPoint(Vector3.forward)</code></pre></div><p>本地坐标系的方向转换为相对世界坐标系的方向</p><ol><li><p>不受缩放影响</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.TransformDirection(Vector3.forward)</code></pre></div></li><li><p>受到缩放影响</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.TransformVector(Vector3.forward)</code></pre></div></li></ol><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/20/Unity/Unity%E5%85%A5%E9%97%A8/%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2%E7%9F%A5%E8%AF%86%E7%82%B9/exam.png" class=""><h2 id="题1、2"><a href="#题1、2" class="headerlink" title="题1、2"></a>题1、2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public static class Trans &#123;    public static void CreateOneEmpty(this Transform obj)    &#123;        GameObject empty &#x3D; new GameObject();        empty.transform.position &#x3D; new Vector3(-1, 0, 1) + obj.transform.position;    &#125;    public static void CreateThreeSphere(this Transform obj)    &#123;        GameObject sphere1 &#x3D; GameObject.CreatePrimitive(PrimitiveType.Sphere);        sphere1.transform.position &#x3D; new Vector3(0, 0, 1) + obj.transform.position;        GameObject sphere2 &#x3D; GameObject.CreatePrimitive(PrimitiveType.Sphere);        sphere2.transform.position &#x3D; new Vector3(0, 0, 2) + obj.transform.position;        GameObject sphere3 &#x3D; GameObject.CreatePrimitive(PrimitiveType.Sphere);        sphere3.transform.position &#x3D; new Vector3(0, 0, 3) + obj.transform.position;    &#125;&#125;</code></pre></div><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson10_Exam : MonoBehaviour&#123;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;        this.transform.CreateOneEmpty();        this.transform.CreateThreeSphere();    &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;            &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>父子关系知识点</title>
+    <link href="/2022/07/20/Unity/Unity%E5%85%A5%E9%97%A8/%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <url>/2022/07/20/Unity/Unity%E5%85%A5%E9%97%A8/%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<p>父子关系知识点</p><span id="more"></span><h1 id="父子关系"><a href="#父子关系" class="headerlink" title="父子关系"></a>父子关系</h1><h2 id="获取和设置父对象"><a href="#获取和设置父对象" class="headerlink" title="获取和设置父对象"></a>获取和设置父对象</h2><p>获取父对象</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.parent</code></pre></div><p>直接设置父对象</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.parent &#x3D; null; &#x2F;&#x2F;断绝父子关系this.transform.parent &#x3D; newParent; &#x2F;&#x2F;认新的爸爸</code></pre></div><p>API设置父对象 SetParent<br>参数1：想要设定的父对象<br>参数2：是否保留世界坐标系的位置、角度、缩放信息<br>（true：会保留世界坐标系下的状态，和父对象进行计算得到本地坐标系的信息；false：不会保留会直接把世界坐标系的状态赋值到本地坐标系下）</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.SetParent(null); &#x2F;&#x2F;断绝父子关系this.transform.SetParent(newParent); &#x2F;&#x2F;认新的爸爸</code></pre></div><h2 id="抛妻弃子"><a href="#抛妻弃子" class="headerlink" title="抛妻弃子"></a>抛妻弃子</h2><p>和自己的所有儿子断绝关系</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.DetachChildren();</code></pre></div><h2 id="获取子对象"><a href="#获取子对象" class="headerlink" title="获取子对象"></a>获取子对象</h2><p>按名字查找儿子，找到儿子的transform信息<br>Find方法能找到失活对象,GameObject.Find是找不到失活对象的</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.Find(&quot;儿子名字&quot;).name;</code></pre></div><p>注意：只能找到儿子，不能找到孙子<br>虽然效率要高于GameObject.Find，但前提是必须要知道父亲是谁</p><p>遍历儿子</p><ol><li>失活的儿子也会算数量</li><li>找不到孙子，所以孙子不会算数量<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.childCount;&#x2F;&#x2F;通过索引号能得到对应的儿子，如果索引号超过儿子数量的范围，那么直接报错for(int i &#x3D; 0; i &lt; transform.childCount; i++)&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div></li></ol><h2 id="儿子的操作"><a href="#儿子的操作" class="headerlink" title="儿子的操作"></a>儿子的操作</h2><p>一个对象判断自己的父亲是不是另一个对象</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">儿子对象.IsChildOf(父亲对象);</code></pre></div><p>得到自己作为儿子的编号</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">儿子对象.GetSiblingIndex();</code></pre></div><p>把自己设置为第一个儿子</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">儿子对象.SetAsFirstSibling();</code></pre></div><p>把自己设置为最后一个儿子</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">儿子对象.SetAsLastSibling();</code></pre></div><p>把自己设置为指定第几个儿子<br>注意：如果填的索引值超出范围（负数或大于最大），不会报错，会直接设置成最后一个编号</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">儿子对象.SetSiblingIndex(索引值);</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/20/Unity/Unity%E5%85%A5%E9%97%A8/%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB%E7%9F%A5%E8%AF%86%E7%82%B9/exam.png" class=""><h2 id="题1、2"><a href="#题1、2" class="headerlink" title="题1、2"></a>题1、2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public static class Tools&#123;    public static void Sort(this Transform obj)    &#123;        &#x2F;&#x2F;把子对象存入list中，然后对list进行排序        List&lt;Transform&gt; list &#x3D; new List&lt;Transform&gt; ();        for (int i &#x3D; 0; i &lt; obj.childCount; i++)         &#123;            list.Add (obj.GetChild (i));        &#125;        &#x2F;&#x2F;利用list的排序对名字长短进行排序        list.Sort ((a, b) &#x3D;&gt;        &#123;            if(a.name.Length &lt; b.name.Length)                return -1;            else                return 1;        &#125;);        &#x2F;&#x2F;根据list中的排序结果，重新设置每一个对象的索引编号        for (int i &#x3D; 0; i &lt; list.Count; i++)        &#123;            list[i].SetSiblingIndex(i);        &#125;    &#125;    public static Transform Search(this Transform father, string childName)    &#123;        Transform target &#x3D; null;        target &#x3D; father.Find(childName);        if (target !&#x3D; null) return target;        for(int i &#x3D; 0; i &lt; father.childCount; i++)        &#123;            target &#x3D; father.GetChild(i).Search(childName);            if (target !&#x3D; null) return target;        &#125;        return target;    &#125;&#125;</code></pre></div><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson9_Exam : MonoBehaviour&#123;    public string childName;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;        transform.Sort();        print(transform.Search(childName));    &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;            &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>缩放和看向知识点</title>
+    <link href="/2022/07/20/Unity/Unity%E5%85%A5%E9%97%A8/%E7%BC%A9%E6%94%BE%E5%92%8C%E7%9C%8B%E5%90%91%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <url>/2022/07/20/Unity/Unity%E5%85%A5%E9%97%A8/%E7%BC%A9%E6%94%BE%E5%92%8C%E7%9C%8B%E5%90%91%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<p>缩放和看向知识点</p><span id="more"></span><h1 id="缩放和看向"><a href="#缩放和看向" class="headerlink" title="缩放和看向"></a>缩放和看向</h1><h2 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h2><p>相对世界坐标系</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.lossyScale</code></pre></div><p>相对自身坐标系(父对象)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.localScale</code></pre></div><p>注意：</p><ol><li>同样缩放不能只改x,y,z,一定要同时一起改(一般修改缩放大小，都是改的相对于父对象的缩放大小 localScale)</li><li>unity没有提供相关的缩放API</li></ol><h2 id="看向"><a href="#看向" class="headerlink" title="看向"></a>看向</h2><p>让一个对象的面朝向(z方向)，可以一直看向某一个点或者某一个对象</p><p>看向一个点(相对于世界坐标系)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.LookAt(Vector3.Zero)</code></pre></div><p>看向一个对象</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">this.transform.LookAt(lookObj)</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/20/Unity/Unity%E5%85%A5%E9%97%A8/%E7%BC%A9%E6%94%BE%E5%92%8C%E7%9C%8B%E5%90%91%E7%9F%A5%E8%AF%86%E7%82%B9/exam.png" class=""><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月19日</title>
     <link href="/2022/07/19/diary/2022.7/2022%E5%B9%B47%E6%9C%8819%E6%97%A5/"/>
     <url>/2022/07/19/diary/2022.7/2022%E5%B9%B47%E6%9C%8819%E6%97%A5/</url>
