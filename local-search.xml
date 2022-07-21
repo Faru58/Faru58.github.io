@@ -4,11 +4,82 @@
   
   
   <entry>
+    <title>2022年7月22日</title>
+    <link href="/2022/07/22/diary/2022.7/2022%E5%B9%B47%E6%9C%8822%E6%97%A5/"/>
+    <url>/2022/07/22/diary/2022.7/2022%E5%B9%B47%E6%9C%8822%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>屏幕相关Screen</title>
+    <link href="/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E5%B1%8F%E5%B9%95%E7%9B%B8%E5%85%B3Screen/"/>
+    <url>/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E5%B1%8F%E5%B9%95%E7%9B%B8%E5%85%B3Screen/</url>
+    
+    <content type="html"><![CDATA[<p>屏幕相关Screen</p><span id="more"></span><h1 id="屏幕相关Screen"><a href="#屏幕相关Screen" class="headerlink" title="屏幕相关Screen"></a>屏幕相关Screen</h1><h2 id="Screen静态属性"><a href="#Screen静态属性" class="headerlink" title="Screen静态属性"></a>Screen静态属性</h2><p>常用：</p><ol><li><p>当前屏幕分辨率(显示器屏幕分辨率)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Resolution r &#x3D; Screen.currentResolution;</code></pre></div></li><li><p>屏幕窗口当前宽高(Game窗口)<br>用窗口宽高做计算时就用他们</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Screen.widthScreem.height</code></pre></div></li><li><p>屏幕休眠模式</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Screen.sleepTimeout &#x3D; SleepTimeout.NeverSleep;</code></pre></div></li></ol><p>不常用：</p><ol><li>运行时是否全屏模式<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Screen.fullScreen &#x3D; true;</code></pre></div></li></ol><p>窗口模式</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;独占全屏Screen.fullScreenMode &#x3D; FullScreenMode.ExclusiveFullScreen;&#x2F;&#x2F;全屏窗口Screen.fullScreenMode &#x3D; FullScreenMode.FullScreenWindow;&#x2F;&#x2F;最大化窗口Screen.fullScreenMode &#x3D; FullScreenMode.MaximizedWindow;&#x2F;&#x2F;窗口模式Screen.fullScreenMode &#x3D; FullScreenMode.Windowed;</code></pre></div><ol start="2"><li>移动设备屏幕转向相关</li></ol><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;允许自动旋转在左横向，Home键在左Screen.autorotateToLandscapeLeft &#x3D; true;&#x2F;&#x2F;允许自动旋转在右横向，Home键在右Screen.autorotateToLandscapeRight &#x3D; true;&#x2F;&#x2F;允许自动旋转到纵向，Home键在下Screen.autorotateToPortrait &#x3D; true;&#x2F;&#x2F;允许自动旋转到反纵向，Home键在上Screen.autorotateToPortraitUpsideDown &#x3D; true;&#x2F;&#x2F;指定屏幕显示方向Screen.orientation &#x3D; ScreenOrientation.Landscape;</code></pre></div><h2 id="Screen静态方法"><a href="#Screen静态方法" class="headerlink" title="Screen静态方法"></a>Screen静态方法</h2><p>设置分辨率(移动端一般不设置)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Screen.SetResolution(1920, 1080, false) &#x3D; true;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E5%B1%8F%E5%B9%95%E7%9B%B8%E5%85%B3Screen/exam.png" class=""><h2 id="题1、2"><a href="#题1、2" class="headerlink" title="题1、2"></a>题1、2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>输入相关Input</title>
+    <link href="/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3Input/"/>
+    <url>/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3Input/</url>
+    
+    <content type="html"><![CDATA[<p>输入相关Input</p><span id="more"></span><h1 id="输入相关Input"><a href="#输入相关Input" class="headerlink" title="输入相关Input"></a>输入相关Input</h1><p>输入相关内容写在Update内</p><h2 id="鼠标在屏幕位置"><a href="#鼠标在屏幕位置" class="headerlink" title="鼠标在屏幕位置"></a>鼠标在屏幕位置</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.mousePosition</code></pre></div><p>屏幕坐标的原点在屏幕的左下角，往右是x轴正向形，往上是y轴正方向<br>返回值是Vector3，但是只有x和y有值，z一直是0，这是因为屏幕本来就是2D的，不存在z轴</p><h2 id="检测鼠标输入"><a href="#检测鼠标输入" class="headerlink" title="检测鼠标输入"></a>检测鼠标输入</h2><p>鼠标按下一瞬间进入</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;0左键 1右键 2中键&#x2F;&#x2F;只有按下的这一瞬间进入if( Input.GetMouseButtonDown(0) )&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div><p>鼠标抬起一瞬间进入</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;0左键 1右键 2中键&#x2F;&#x2F;只有抬起的这一瞬间进入if( Input.GetMouseButtonUp(0) )&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div><p>鼠标长按按下一瞬间进入</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;0左键 1右键 2中键&#x2F;&#x2F;当按住不放时，会一直进入这个判断if( Input.GetMouseButton(0) )&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div><p>中键滚动</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;返回值是Vector3,返回值的y&#x3D;-1表示往下滚，y&#x3D;0表示没有滚，y&#x3D;1表示向上滚Input.mouseScrollDelta.y;</code></pre></div><h2 id="检测键盘输入"><a href="#检测键盘输入" class="headerlink" title="检测键盘输入"></a>检测键盘输入</h2><p>键盘按下</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;检测键盘上的哪个键按下的瞬间if( Input.GetKeyDown(KeyCode.W) )&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div><p>传入字符串的重载(不推荐使用)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;这里传入的字符串不能是大写的(不然会报错)，只能是小写的&#x2F;&#x2F;但大小写都能响应if( Input.GetKeyDown(&quot;q&quot;) )&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div><p>键盘抬起</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;检测键盘上的哪个键抬起的瞬间if( Input.GetKeyUp(KeyCode.W) )&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div><p>键盘长按</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;检测键盘上的哪个键长按下if( Input.GetKey(KeyCode.W) )&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div><h2 id="检测默认轴输入"><a href="#检测默认轴输入" class="headerlink" title="检测默认轴输入"></a>检测默认轴输入</h2><p>键盘AD按下时，返回-1到1之间的变换</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;相当于得到的这个值，就是我们的左右方向，通过他来控制对象左右移动或旋转Input.GetAxis(&quot;Horizontal&quot;);</code></pre></div><p>键盘SW按下时，返回-1到1之间的变换</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;相当于得到的这个值，就是我们的上下方向，通过他来控制对象上下移动或旋转Input.GetAxis(&quot;Vertical&quot;);</code></pre></div><p>鼠标横向移动时，-1到1左右</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.GetAxis(&quot;Mouse X&quot;);</code></pre></div><p>鼠标纵向移动时，-1到1左右</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.GetAxis(&quot;Mouse Y&quot;);</code></pre></div><p>GetAxisRaw方法和GetAxis方法使用相同<br>但GetAxisRaw方法的返回值只会是-1,0,1，不会有中间值<br>而GetAxis方法的返回值是有渐变的</p><h2 id="键鼠拓展功能"><a href="#键鼠拓展功能" class="headerlink" title="键鼠拓展功能"></a>键鼠拓展功能</h2><p>是否有任意键或鼠标长按</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.anyKey)&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div><p>是否有任意键或鼠标按下</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.anyKeyDown)&#123;    &#x2F;&#x2F;逻辑&#125;</code></pre></div><p>当前帧键盘的输入</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.inputString</code></pre></div><h2 id="检测手柄输入"><a href="#检测手柄输入" class="headerlink" title="检测手柄输入"></a>检测手柄输入</h2><p>得到链接的手柄的所有按钮名字</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string[] strs &#x3D; Input.GetJoystickNames();</code></pre></div><p>某一个手柄键按下</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.GetButtonDown(&quot;str&quot;) )&#123;&#125;</code></pre></div><p>某一个手柄键抬起</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.GetButtonUp(&quot;str&quot;) )&#123;&#125;</code></pre></div><p>某一个手柄键长按</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.GetButton(&quot;str&quot;) )&#123;&#125;</code></pre></div><h2 id="移动设备触摸相关"><a href="#移动设备触摸相关" class="headerlink" title="移动设备触摸相关"></a>移动设备触摸相关</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;若屏幕被触摸if( Input.touchCount &gt; 0)&#123;    &#x2F;&#x2F;读出触摸位置    Touch t1 &#x3D; Input.touches[0];    &#x2F;&#x2F;位置    print(t1.position);    &#x2F;&#x2F;相对上次位置的变化    print(t1.deltaPosition)&#125;</code></pre></div><p>是否启用多点触摸</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.multiTouchEnabled &#x3D; false</code></pre></div><h2 id="陀螺仪-重力感应"><a href="#陀螺仪-重力感应" class="headerlink" title="陀螺仪(重力感应)"></a>陀螺仪(重力感应)</h2><p>是否开启陀螺仪</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.gyro.enable &#x3D; true;</code></pre></div><p>重力加速度向量</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.gyro.gravity</code></pre></div><p>旋转速度</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.gyro.rotationRate</code></pre></div><p>陀螺仪当前的旋转四元数<br>比如用这个角度信息来控制场景上的一个3D物体收到重力影响<br>手机怎么动，它怎么动<br>旋转速度</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.gyro.attitude</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3Input/exam.png" class=""><h2 id="题1、2"><a href="#题1、2" class="headerlink" title="题1、2"></a>题1、2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson11_TankMove : MonoBehaviour&#123;    public float moveSpeed &#x3D; 5;    public float rotateSpeed &#x3D; 10;    public Transform head;    public float headSpeed &#x3D; 50;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;            &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;        &#x2F;&#x2F;公式： 前进方向 * 速度 * 时间 * 当前是否移动(-1 ~ 1)        &#x2F;&#x2F;ws控制        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime * Input.GetAxis(&quot;Vertical&quot;));        &#x2F;&#x2F;ad控制        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * Input.GetAxis(&quot;Horizontal&quot;));        &#x2F;&#x2F;头部转动        head.Rotate(Vector3.up * headSpeed * Time.deltaTime * Input.GetAxis(&quot;Mouse X&quot;));    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月21日</title>
     <link href="/2022/07/21/diary/2022.7/2022%E5%B9%B47%E6%9C%8821%E6%97%A5/"/>
     <url>/2022/07/21/diary/2022.7/2022%E5%B9%B47%E6%9C%8821%E6%97%A5/</url>
     
-    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="3eb620c7449b57bb5d6c175c37f2a0024d4a26387f9c20334c8838ac7c0c7ac0">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe506058b903662f30ae90deb836bb6169a3</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="bb8eb5cfc96ea2e920962f8acbcbdbd4d94638b45fb60971f4cf9a6d3f4e8ccf">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe500fa382d2077d20ef94c1baaf938b202cd3083be797d41980433cded4087f94570603d236e49608e59387955debcc6367c2960451847e20530d88a93d48c3c8138a4f37c085cae58909e2aca24f653ce04a6c7518bf712ad02a48c62cceac0fd051a4313d5ba90548a1ee425e38f36442ec4f86856613ed6bda1f4ad30f93214674740781c48f2790a7b3784ece532d708a41d8c92a73ffc55b4cf846d57b6f334ec5b03d81a02ba328c0f07f964a6c80bee4b2884db244f7412a688e426e28e4</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
     <categories>

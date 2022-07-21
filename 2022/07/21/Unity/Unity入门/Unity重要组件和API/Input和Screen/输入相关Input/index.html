@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/yagyu.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="输入相关Input">
+<meta property="og:type" content="article">
+<meta property="og:title" content="输入相关Input">
+<meta property="og:url" content="https://faru58.github.io/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3Input/index.html">
+<meta property="og:site_name" content="垃圾桶">
+<meta property="og:description" content="输入相关Input">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://faru58.github.io/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3Input/exam.png">
+<meta property="article:published_time" content="2022-07-21T05:20:06.000Z">
+<meta property="article:modified_time" content="2022-07-21T14:43:44.894Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://faru58.github.io/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3Input/exam.png">
+  
+  
+  <title>输入相关Input - 垃圾桶</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"faru58.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Faru</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/%E4%BC%8A%E8%8B%8F9.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="输入相关Input">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-21 13:20" pubdate>
+        2022年7月21日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.9k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">输入相关Input</h1>
+            
+            <div class="markdown-body">
+              <p>输入相关Input</p>
+<span id="more"></span>
+
+<h1 id="输入相关Input"><a href="#输入相关Input" class="headerlink" title="输入相关Input"></a>输入相关Input</h1><p>输入相关内容写在Update内</p>
+<h2 id="鼠标在屏幕位置"><a href="#鼠标在屏幕位置" class="headerlink" title="鼠标在屏幕位置"></a>鼠标在屏幕位置</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.mousePosition</code></pre></div>
+
+<p>屏幕坐标的原点在屏幕的左下角，往右是x轴正向形，往上是y轴正方向<br>返回值是Vector3，但是只有x和y有值，z一直是0，这是因为屏幕本来就是2D的，不存在z轴</p>
+<h2 id="检测鼠标输入"><a href="#检测鼠标输入" class="headerlink" title="检测鼠标输入"></a>检测鼠标输入</h2><p>鼠标按下一瞬间进入</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;0左键 1右键 2中键
+&#x2F;&#x2F;只有按下的这一瞬间进入
+if( Input.GetMouseButtonDown(0) )
+&#123;
+    &#x2F;&#x2F;逻辑
+&#125;</code></pre></div>
+
+<p>鼠标抬起一瞬间进入</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;0左键 1右键 2中键
+&#x2F;&#x2F;只有抬起的这一瞬间进入
+if( Input.GetMouseButtonUp(0) )
+&#123;
+    &#x2F;&#x2F;逻辑
+&#125;</code></pre></div>
+
+<p>鼠标长按按下一瞬间进入</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;0左键 1右键 2中键
+&#x2F;&#x2F;当按住不放时，会一直进入这个判断
+if( Input.GetMouseButton(0) )
+&#123;
+    &#x2F;&#x2F;逻辑
+&#125;</code></pre></div>
+
+<p>中键滚动</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;返回值是Vector3,返回值的y&#x3D;-1表示往下滚，y&#x3D;0表示没有滚，y&#x3D;1表示向上滚
+Input.mouseScrollDelta.y;</code></pre></div>
+
+
+
+<h2 id="检测键盘输入"><a href="#检测键盘输入" class="headerlink" title="检测键盘输入"></a>检测键盘输入</h2><p>键盘按下</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;检测键盘上的哪个键按下的瞬间
+if( Input.GetKeyDown(KeyCode.W) )
+&#123;
+    &#x2F;&#x2F;逻辑
+&#125;</code></pre></div>
+
+<p>传入字符串的重载(不推荐使用)</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;这里传入的字符串不能是大写的(不然会报错)，只能是小写的
+&#x2F;&#x2F;但大小写都能响应
+if( Input.GetKeyDown(&quot;q&quot;) )
+&#123;
+    &#x2F;&#x2F;逻辑
+&#125;</code></pre></div>
+
+<p>键盘抬起</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;检测键盘上的哪个键抬起的瞬间
+if( Input.GetKeyUp(KeyCode.W) )
+&#123;
+    &#x2F;&#x2F;逻辑
+&#125;</code></pre></div>
+
+<p>键盘长按</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;检测键盘上的哪个键长按下
+if( Input.GetKey(KeyCode.W) )
+&#123;
+    &#x2F;&#x2F;逻辑
+&#125;</code></pre></div>
+
+
+<h2 id="检测默认轴输入"><a href="#检测默认轴输入" class="headerlink" title="检测默认轴输入"></a>检测默认轴输入</h2><p>键盘AD按下时，返回-1到1之间的变换</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;相当于得到的这个值，就是我们的左右方向，通过他来控制对象左右移动或旋转
+Input.GetAxis(&quot;Horizontal&quot;);</code></pre></div>
+
+<p>键盘SW按下时，返回-1到1之间的变换</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;相当于得到的这个值，就是我们的上下方向，通过他来控制对象上下移动或旋转
+Input.GetAxis(&quot;Vertical&quot;);</code></pre></div>
+
+<p>鼠标横向移动时，-1到1左右</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.GetAxis(&quot;Mouse X&quot;);</code></pre></div>
+
+<p>鼠标纵向移动时，-1到1左右</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.GetAxis(&quot;Mouse Y&quot;);</code></pre></div>
+
+<p>GetAxisRaw方法和GetAxis方法使用相同<br>但GetAxisRaw方法的返回值只会是-1,0,1，不会有中间值<br>而GetAxis方法的返回值是有渐变的</p>
+<h2 id="键鼠拓展功能"><a href="#键鼠拓展功能" class="headerlink" title="键鼠拓展功能"></a>键鼠拓展功能</h2><p>是否有任意键或鼠标长按</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.anyKey)
+&#123;
+    &#x2F;&#x2F;逻辑
+&#125;</code></pre></div>
+
+<p>是否有任意键或鼠标按下</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.anyKeyDown)
+&#123;
+    &#x2F;&#x2F;逻辑
+&#125;</code></pre></div>
+
+<p>当前帧键盘的输入</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.inputString</code></pre></div>
+
+
+<h2 id="检测手柄输入"><a href="#检测手柄输入" class="headerlink" title="检测手柄输入"></a>检测手柄输入</h2><p>得到链接的手柄的所有按钮名字</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string[] strs &#x3D; Input.GetJoystickNames();</code></pre></div>
+
+<p>某一个手柄键按下</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.GetButtonDown(&quot;str&quot;) )
+&#123;
+
+&#125;</code></pre></div>
+
+<p>某一个手柄键抬起</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.GetButtonUp(&quot;str&quot;) )
+&#123;
+
+&#125;</code></pre></div>
+
+<p>某一个手柄键长按</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">if( Input.GetButton(&quot;str&quot;) )
+&#123;
+
+&#125;</code></pre></div>
+
+
+<h2 id="移动设备触摸相关"><a href="#移动设备触摸相关" class="headerlink" title="移动设备触摸相关"></a>移动设备触摸相关</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;若屏幕被触摸
+if( Input.touchCount &gt; 0)
+&#123;
+    &#x2F;&#x2F;读出触摸位置
+    Touch t1 &#x3D; Input.touches[0];
+    &#x2F;&#x2F;位置
+    print(t1.position);
+    &#x2F;&#x2F;相对上次位置的变化
+    print(t1.deltaPosition)
+&#125;</code></pre></div>
+
+<p>是否启用多点触摸</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.multiTouchEnabled &#x3D; false</code></pre></div>
+
+
+<h2 id="陀螺仪-重力感应"><a href="#陀螺仪-重力感应" class="headerlink" title="陀螺仪(重力感应)"></a>陀螺仪(重力感应)</h2><p>是否开启陀螺仪</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.gyro.enable &#x3D; true;</code></pre></div>
+
+<p>重力加速度向量</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.gyro.gravity</code></pre></div>
+
+<p>旋转速度</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.gyro.rotationRate</code></pre></div>
+
+<p>陀螺仪当前的旋转四元数<br>比如用这个角度信息来控制场景上的一个3D物体收到重力影响<br>手机怎么动，它怎么动<br>旋转速度</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Input.gyro.attitude</code></pre></div>
+
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3Input/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+<h2 id="题1、2"><a href="#题1、2" class="headerlink" title="题1、2"></a>题1、2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lesson11_TankMove : MonoBehaviour
+&#123;
+    public float moveSpeed &#x3D; 5;
+    public float rotateSpeed &#x3D; 10;
+
+    public Transform head;
+    public float headSpeed &#x3D; 50;
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        &#x2F;&#x2F;公式： 前进方向 * 速度 * 时间 * 当前是否移动(-1 ~ 1)
+        &#x2F;&#x2F;ws控制
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime * Input.GetAxis(&quot;Vertical&quot;));
+        &#x2F;&#x2F;ad控制
+        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * Input.GetAxis(&quot;Horizontal&quot;));
+
+        &#x2F;&#x2F;头部转动
+        head.Rotate(Vector3.up * headSpeed * Time.deltaTime * Input.GetAxis(&quot;Mouse X&quot;));
+    &#125;
+&#125;
+</code></pre></div>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/study/">study</a>
+                    
+                      <a class="hover-with-bg" href="/categories/study/Unity/">Unity</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Unity/">Unity</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/21/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Input%E5%92%8CScreen/%E5%B1%8F%E5%B9%95%E7%9B%B8%E5%85%B3Screen/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">屏幕相关Screen</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/21/diary/2022.7/2022%E5%B9%B47%E6%9C%8821%E6%97%A5/">
+                        <span class="hidden-mobile">2022年7月21日</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
