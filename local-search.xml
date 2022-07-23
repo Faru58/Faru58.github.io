@@ -4,13 +4,108 @@
   
   
   <entry>
+    <title>2022年7月23日</title>
+    <link href="/2022/07/23/diary/2022.7/2022%E5%B9%B47%E6%9C%8823%E6%97%A5/"/>
+    <url>/2022/07/23/diary/2022.7/2022%E5%B9%B47%E6%9C%8823%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="fe88e983f52cc402d74c04b3370571331e15387560b88628892d91eba4a9dbac">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50ac1689f427ca15fa3d5d981e9d8ba83c709652f244baa7d3d067c45f7ff6a4b8386ecb7db34d5e38d19329f3b22c50f8b287e735bcc91e2b85d5ea7d1df7925541b25156a9446b90e75c7cec96168a96ad8bc6a372f0f43a9aa47aa7b8e861f980b447653e298d7a2e3c46dfa2f59947814dbd16e78a787c531fa1c443114426a810c0cbab1e3c08d25bb0782b94598ae2b15dee9e526651f53b9bc123761a83fd7a9bc6546a5e4ef7a28f10963a1761e0e89c4e80f257fb335f5437c9b12bd081fd99b685e1e737291621dbda27a24efae079be9e536f9498539ead12aa4356</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Camera代码相关</title>
+    <link href="/2022/07/23/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Camera%E7%9F%A5%E8%AF%86%E7%82%B9/Camera%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/"/>
+    <url>/2022/07/23/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Camera%E7%9F%A5%E8%AF%86%E7%82%B9/Camera%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/</url>
+    
+    <content type="html"><![CDATA[<p>Camera代码相关</p><span id="more"></span><h1 id="Camera代码相关"><a href="#Camera代码相关" class="headerlink" title="Camera代码相关"></a>Camera代码相关</h1><h2 id="重要静态成员"><a href="#重要静态成员" class="headerlink" title="重要静态成员"></a>重要静态成员</h2><ol><li><p>获取摄像机<br>主摄像机的获取(tag需要是main camera)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Camera.main</code></pre></div><p>获取摄像机的数量</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Camera.allCamerasCount</code></pre></div><p>得到所有摄像机</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Camera[] allCamera &#x3D; Camera.allCameras;</code></pre></div></li><li><p>渲染相关委托<br>摄像机剔除前处理的委托函数</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Camera.onPreCull +&#x3D; (c) &#x3D;&gt;&#123;    &#125;;</code></pre></div></li></ol><p>摄像机渲染前处理的委托函数</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Camera.onPreRender +&#x3D; (c) &#x3D;&gt;&#123;    &#125;;</code></pre></div><p>摄像机渲染后处理的委托函数</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Camera.onPostRender +&#x3D; (c) &#x3D;&gt;&#123;    &#125;;</code></pre></div><h2 id="重要成员"><a href="#重要成员" class="headerlink" title="重要成员"></a>重要成员</h2><ol><li><p>界面上的参数 都可以在Camera的参数中获取到</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Camera.main.depth &#x3D; 10; &#x2F;&#x2F;主摄像机对象的深度设置</code></pre></div></li><li><p>世界坐标转屏幕坐标</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Vector3 v &#x3D; Camera.main.WorldToScreenPoint(this.transform.position);</code></pre></div></li><li><p>屏幕坐标转世界坐标<br>2D转3D<br>写在Update里</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Vector3 v &#x3D; Input.mousePosition;v.z &#x3D; 10;Camera.main.ScreenToWorldPoint(v)</code></pre></div></li></ol><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/23/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Camera%E7%9F%A5%E8%AF%86%E7%82%B9/Camera%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson14_Exam : MonoBehaviour&#123;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;        Vector3 vCube &#x3D; Camera.main.WorldToScreenPoint(this.transform.position);        print(vCube);    &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;        &#125;&#125;</code></pre></div><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson14_Exam : MonoBehaviour&#123;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;    &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;        if( Input.GetMouseButtonDown(0) )        &#123;            GameObject newCube &#x3D; GameObject.CreatePrimitive(PrimitiveType.Cube);            Vector3 vNewCube &#x3D; Input.mousePosition;            vNewCube.z &#x3D; 10;            newCube.transform.position &#x3D; Camera.main.ScreenToWorldPoint(vNewCube);        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Camera可编辑参数</title>
+    <link href="/2022/07/23/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Camera%E7%9F%A5%E8%AF%86%E7%82%B9/Camera%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%82%E6%95%B0/"/>
+    <url>/2022/07/23/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Camera%E7%9F%A5%E8%AF%86%E7%82%B9/Camera%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%82%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<p>Camera可编辑参数</p><span id="more"></span><h1 id="Camera可编辑参数"><a href="#Camera可编辑参数" class="headerlink" title="Camera可编辑参数"></a>Camera可编辑参数</h1><h2 id="Clear-Flags"><a href="#Clear-Flags" class="headerlink" title="Clear Flags"></a><strong>Clear Flags</strong></h2><p>如何清除背景</p><ol><li>skybox 天空盒(3D游戏)</li><li>Solid Color 颜色填充(2D游戏)</li><li>Depth only 只画该层，背景透明(多个摄像机叠加配合)</li><li>Don’t Clear 不移除，覆盖渲染</li></ol><h2 id="Culling-Mask"><a href="#Culling-Mask" class="headerlink" title="Culling Mask"></a><strong>Culling Mask</strong></h2><p>选择性渲染部分层级：可以指定只渲染对应层级的对象</p><h2 id="Projection"><a href="#Projection" class="headerlink" title="Projection"></a><strong>Projection</strong></h2><h3 id="Perspective-透视模式"><a href="#Perspective-透视模式" class="headerlink" title="Perspective 透视模式"></a>Perspective 透视模式</h3><ol><li>FOV Axis： 视场角、轴，决定了光学仪器的视野范围</li><li>Field of view： 视口大小</li><li>Physical Camera：物理摄像机，勾选后可以模拟真实世界中的摄像机<br>焦距： Focal Length<br>传感器尺寸： Sensor Type<br>传感器尺寸： Sensor Size<br>透镜移位： Lens Shift<br>闸门配合： Gate Fit</li></ol><h3 id="Orthographic-正交摄像机（一般用于2D游戏制作）"><a href="#Orthographic-正交摄像机（一般用于2D游戏制作）" class="headerlink" title="Orthographic 正交摄像机（一般用于2D游戏制作）"></a>Orthographic 正交摄像机（一般用于2D游戏制作）</h3><p>Size： 摄制范围</p><h2 id="Clipping-Planes"><a href="#Clipping-Planes" class="headerlink" title="Clipping Planes"></a><strong>Clipping Planes</strong></h2><p>裁剪平面距离</p><h2 id="Viewport-Rect"><a href="#Viewport-Rect" class="headerlink" title="Viewport Rect"></a>Viewport Rect</h2><p>视口范围： 屏幕上将绘制该摄像机视图的位置<br>主要用于双摄像机游戏，0&#96;1相当于宽高百分比</p><h2 id="Depth"><a href="#Depth" class="headerlink" title="Depth"></a><strong>Depth</strong></h2><p>渲染顺序上的深度</p><h2 id="Redering-path"><a href="#Redering-path" class="headerlink" title="Redering path"></a>Redering path</h2><p>渲染路径</p><h2 id="Target-Texture"><a href="#Target-Texture" class="headerlink" title="Target Texture"></a><strong>Target Texture</strong></h2><p>渲染纹理： 可以把摄像机渲染到一张图上，主要用于制作小地图<br>在Project右键创建Render Texture</p><h2 id="Occlusion-Culling"><a href="#Occlusion-Culling" class="headerlink" title="Occlusion Culling"></a><strong>Occlusion Culling</strong></h2><p>是否启用剔除遮挡</p><h2 id="Allow-HDR"><a href="#Allow-HDR" class="headerlink" title="Allow HDR"></a>Allow HDR</h2><p>是否允许高动态范围渲染</p><h2 id="Allow-MSAA"><a href="#Allow-MSAA" class="headerlink" title="Allow MSAA"></a>Allow MSAA</h2><p>是否允许抗锯齿</p><h2 id="Allow-Dynamic-Resolution"><a href="#Allow-Dynamic-Resolution" class="headerlink" title="Allow Dynamic Resolution"></a>Allow Dynamic Resolution</h2><p>是否允许动态分辨率呈现</p><h2 id="Target-Display"><a href="#Target-Display" class="headerlink" title="Target Display"></a>Target Display</h2><p>用于哪个显示器，用来开发有多个屏幕的平台游戏</p><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/23/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Camera%E7%9F%A5%E8%AF%86%E7%82%B9/Camera%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%82%E6%95%B0/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>Tank预设体挂载Lesson11的脚本</p><img src="/2022/07/23/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Camera%E7%9F%A5%E8%AF%86%E7%82%B9/Camera%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%82%E6%95%B0/exam01.png" class=""><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><p>Depth高的Camera，设置Depth Only</p><img src="/2022/07/23/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/Camera%E7%9F%A5%E8%AF%86%E7%82%B9/Camera%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%82%E6%95%B0/exam02.png" class="">]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月22日</title>
     <link href="/2022/07/22/diary/2022.7/2022%E5%B9%B47%E6%9C%8822%E6%97%A5/"/>
     <url>/2022/07/22/diary/2022.7/2022%E5%B9%B47%E6%9C%8822%E6%97%A5/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="ca6c01b741074a898e741c20f8ad37a5140a9bf37f790a4e65af6e242fabf61a">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50c5fbfe17ff96277aef84a6f612bb868f008268f35755b77645a81ce5c0b3dcadfd80c99836e6608e4d0da0b647e4dbaaf65d0740933ab22edb3477a7aee4ef88d05172fe73eeef1a53484cec3242c7ccd7dcd724b6102392df51cc2e6349c811cbcd70c5cea75870162a81017d8b875a695c3ce92286353b31de3a4ee3d872d9213a9f1b8a9baafdff8e0752fa96746a6f0023fbee44271b7570108c7a0bd4f9</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
     
   </entry>
   
