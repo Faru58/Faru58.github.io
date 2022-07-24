@@ -4,6 +4,118 @@
   
   
   <entry>
+    <title>刚体、碰撞器、物理材质</title>
+    <link href="/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%20%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/%E5%88%9A%E4%BD%93%E3%80%81%E7%A2%B0%E6%92%9E%E5%99%A8%E3%80%81%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/"/>
+    <url>/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%20%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/%E5%88%9A%E4%BD%93%E3%80%81%E7%A2%B0%E6%92%9E%E5%99%A8%E3%80%81%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/</url>
+    
+    <content type="html"><![CDATA[<p>刚体、碰撞器、物理材质</p><span id="more"></span>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>光相关面板</title>
+    <link href="/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E5%85%89%E6%BA%90/%E5%85%89%E7%9B%B8%E5%85%B3%E9%9D%A2%E6%9D%BF/"/>
+    <url>/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E5%85%89%E6%BA%90/%E5%85%89%E7%9B%B8%E5%85%B3%E9%9D%A2%E6%9D%BF/</url>
+    
+    <content type="html"><![CDATA[<p>光相关面板</p><span id="more"></span><h1 id="Environment-环境相关设置"><a href="#Environment-环境相关设置" class="headerlink" title="Environment 环境相关设置"></a>Environment 环境相关设置</h1><h2 id="Skybox-Material-天空盒材质"><a href="#Skybox-Material-天空盒材质" class="headerlink" title="Skybox Material 天空盒材质"></a>Skybox Material 天空盒材质</h2><p>可以改变天空盒</p><h2 id="Sun-Source-太阳来源"><a href="#Sun-Source-太阳来源" class="headerlink" title="Sun Source 太阳来源"></a>Sun Source 太阳来源</h2><p>不设置会默认使用场景中最亮的方向光代表太阳</p><h2 id="Environment-Lighting-环境光设置"><a href="#Environment-Lighting-环境光设置" class="headerlink" title="Environment Lighting 环境光设置"></a>Environment Lighting 环境光设置</h2><h3 id="Source-环境光光源颜色"><a href="#Source-环境光光源颜色" class="headerlink" title="Source 环境光光源颜色"></a>Source 环境光光源颜色</h3><ol><li>Skybox<br>天空和材质作为环境光颜色</li><li>Gradient<br>可以为天空、地平线、地面单独选择颜色和他们之间混合</li></ol><h3 id="Intensity-Multiplier-环境光强度"><a href="#Intensity-Multiplier-环境光强度" class="headerlink" title="Intensity Multiplier 环境光强度"></a>Intensity Multiplier 环境光强度</h3><h3 id="Ambient-Mode-全局光照模式"><a href="#Ambient-Mode-全局光照模式" class="headerlink" title="Ambient Mode 全局光照模式"></a>Ambient Mode 全局光照模式</h3><p>只有启用了实时全局和全局烘焙时才有用</p><h1 id="Other-Settings-其他设置"><a href="#Other-Settings-其他设置" class="headerlink" title="Other Settings 其他设置"></a>Other Settings 其他设置</h1><h2 id="Fog-雾开关"><a href="#Fog-雾开关" class="headerlink" title="Fog 雾开关"></a>Fog 雾开关</h2><h3 id="Color-雾颜色"><a href="#Color-雾颜色" class="headerlink" title="Color 雾颜色"></a>Color 雾颜色</h3><h3 id="Mode-雾计算模式"><a href="#Mode-雾计算模式" class="headerlink" title="Mode 雾计算模式"></a>Mode 雾计算模式</h3><ol><li><p>Linear 随距离感线性增加<br>Start：离摄像机多远开始有雾<br>End：离摄像机多远完全遮挡</p></li><li><p>Exponential 随距离指数增加<br>Density：强度</p></li><li><p>Exponential Quare 随距离比指数更快的增加<br>Density：强度</p></li></ol><h2 id="Halo-Texture"><a href="#Halo-Texture" class="headerlink" title="Halo Texture"></a>Halo Texture</h2><p>光源周围挥着光环的纹理</p><h2 id="Halo-Strength"><a href="#Halo-Strength" class="headerlink" title="Halo Strength"></a>Halo Strength</h2><p>光环可见性</p><h2 id="Flare-Fade-Speed"><a href="#Flare-Fade-Speed" class="headerlink" title="Flare Fade Speed"></a>Flare Fade Speed</h2><p>耀斑淡出时间，最初出现之后淡出的时间</p><h2 id="Flare-Strength"><a href="#Flare-Strength" class="headerlink" title="Flare Strength"></a>Flare Strength</h2><p>耀斑可见性</p><h2 id="Spot-Cookie"><a href="#Spot-Cookie" class="headerlink" title="Spot Cookie"></a>Spot Cookie</h2><p>聚光灯剪影纹理</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年7月24日</title>
+    <link href="/2022/07/24/diary/2022.7/2022%E5%B9%B47%E6%9C%8824%E6%97%A5/"/>
+    <url>/2022/07/24/diary/2022.7/2022%E5%B9%B47%E6%9C%8824%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="68aabe44086b90fdbd6c77a13aec029aad47c513beebb2b71907d522a44dddd8">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50050815f926c21c072854b435441344ec22667fc82a71e31240adb4438c1cf33c57dda91d1baec95ba801cfa658319f99e8deebee4f216eb82ed15353babdb408805a1361efb351cf42268241e86ae968</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>光源系统基础</title>
+    <link href="/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E5%85%89%E6%BA%90/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/"/>
+    <url>/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E5%85%89%E6%BA%90/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<p>光源系统基础</p><span id="more"></span><h1 id="光源系统基础"><a href="#光源系统基础" class="headerlink" title="光源系统基础"></a>光源系统基础</h1><h2 id="Type-光源类型"><a href="#Type-光源类型" class="headerlink" title="Type(光源类型)"></a>Type(光源类型)</h2><ol><li>Spot 聚光灯<br>Range：发光范围距离<br>Spot Angle：光锥角度</li><li>Directional 方向光(环境光)</li><li>Point 点光源</li><li>Area 面光源<br>只在烘焙状态下有用，实时状态下不起用</li></ol><h2 id="Color-颜色"><a href="#Color-颜色" class="headerlink" title="Color(颜色)"></a>Color(颜色)</h2><h2 id="Mode-光源模式"><a href="#Mode-光源模式" class="headerlink" title="Mode(光源模式)"></a>Mode(光源模式)</h2><ol><li><p>Realtime 实时光源<br>每帧实时计算，效果好，性能消耗大</p></li><li><p>Baked 烘焙光源<br>事先计算好，无法动态变化</p></li><li><p>Mixed 混合光源<br>事先计算+实时计算</p></li></ol><h2 id="Intensity-光源亮度"><a href="#Intensity-光源亮度" class="headerlink" title="Intensity(光源亮度)"></a>Intensity(光源亮度)</h2><h2 id="Shadow-Type"><a href="#Shadow-Type" class="headerlink" title="Shadow Type"></a>Shadow Type</h2><ol><li>NoShadows 关闭阴影</li><li>HardShadows 生硬阴影</li><li>SoftShadows 柔和阴影</li></ol><h2 id="Cookie-投影遮罩"><a href="#Cookie-投影遮罩" class="headerlink" title="Cookie(投影遮罩)"></a>Cookie(投影遮罩)</h2><h2 id="Cookie-Size-投影遮罩范围"><a href="#Cookie-Size-投影遮罩范围" class="headerlink" title="Cookie Size(投影遮罩范围)"></a>Cookie Size(投影遮罩范围)</h2><h2 id="Draw-Halo-球形光环开关"><a href="#Draw-Halo-球形光环开关" class="headerlink" title="Draw Halo(球形光环开关)"></a>Draw Halo(球形光环开关)</h2><h2 id="Flare-耀斑"><a href="#Flare-耀斑" class="headerlink" title="Flare(耀斑)"></a>Flare(耀斑)</h2><h2 id="Culling-Mask-提出遮罩层"><a href="#Culling-Mask-提出遮罩层" class="headerlink" title="Culling Mask(提出遮罩层)"></a>Culling Mask(提出遮罩层)</h2><p>决定哪些层的对象受到该光源的影响</p><h2 id="Indirect-Multiplier"><a href="#Indirect-Multiplier" class="headerlink" title="Indirect Multiplier"></a>Indirect Multiplier</h2><p>改变间接光的强度<br>低于1：每次反弹会使光更暗<br>高于1：每次反弹会使光更亮</p><h2 id="RealtimeShadows"><a href="#RealtimeShadows" class="headerlink" title="RealtimeShadows"></a>RealtimeShadows</h2><ol><li>Srength：阴影暗度0~1之间，越大越黑</li><li>Resolution：阴影贴图渲染分辨率，越高越逼真，消耗越高</li><li>Bias：阴影推离光源的距离</li><li>Normal Bias：阴影投射面沿法线收缩距离</li><li>Near Panel：渲染阴影的近裁剪面</li></ol><h2 id="Render-Mode-渲染优先级"><a href="#Render-Mode-渲染优先级" class="headerlink" title="Render Mode(渲染优先级)"></a>Render Mode(渲染优先级)</h2><ol><li>Auto：运行时确定</li><li>Important：以像素质量为单位进行渲染，效果逼真，消耗大</li><li>Not Important：以快速模式进行渲染</li></ol><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E5%85%89%E6%BA%90/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><p>挂载点光源</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson15_LaZhu : MonoBehaviour&#123;    public Light fire;    public float moveSpeed &#x3D; 0.2f;    public float flashSpeed &#x3D; 0.5f;     &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;            &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;        fire.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);        if(fire.transform.position.x &gt;&#x3D; 1 || fire.transform.position.x &lt;&#x3D; 0.5f)        &#123;            moveSpeed &#x3D; -moveSpeed;        &#125;                fire.intensity +&#x3D; flashSpeed * Time.deltaTime;        if(fire.intensity &gt;&#x3D; 1)        &#123;            flashSpeed &#x3D; -flashSpeed;        &#125;        else if (fire.intensity &lt;&#x3D; 0.5)        &#123;            flashSpeed &#x3D; -flashSpeed;        &#125;    &#125;&#125;</code></pre></div><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><p>挂载方向光</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson15_ChangeDay : MonoBehaviour&#123;    public Transform sun;    public float speed;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;            &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;        sun.transform.Rotate(Vector3.right * speed * Time.deltaTime);    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月23日</title>
     <link href="/2022/07/23/diary/2022.7/2022%E5%B9%B47%E6%9C%8823%E6%97%A5/"/>
     <url>/2022/07/23/diary/2022.7/2022%E5%B9%B47%E6%9C%8823%E6%97%A5/</url>
