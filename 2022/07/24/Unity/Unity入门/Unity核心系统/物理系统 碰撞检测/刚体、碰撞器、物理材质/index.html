@@ -16,22 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="刚体、碰撞器、物理材质">
+    <meta name="description" content="刚体、碰撞器、物理材质、碰撞检测函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="刚体、碰撞器、物理材质">
+<meta property="og:title" content="刚体、碰撞器、物理材质、碰撞检测函数">
 <meta property="og:url" content="https://faru58.github.io/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%20%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/%E5%88%9A%E4%BD%93%E3%80%81%E7%A2%B0%E6%92%9E%E5%99%A8%E3%80%81%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/index.html">
 <meta property="og:site_name" content="垃圾桶">
-<meta property="og:description" content="刚体、碰撞器、物理材质">
+<meta property="og:description" content="刚体、碰撞器、物理材质、碰撞检测函数">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://faru58.github.io/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%20%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/%E5%88%9A%E4%BD%93%E3%80%81%E7%A2%B0%E6%92%9E%E5%99%A8%E3%80%81%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/exam.png">
 <meta property="article:published_time" content="2022-07-24T08:51:58.000Z">
-<meta property="article:modified_time" content="2022-07-25T11:55:34.390Z">
+<meta property="article:modified_time" content="2022-07-26T07:30:20.403Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://faru58.github.io/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%20%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/%E5%88%9A%E4%BD%93%E3%80%81%E7%A2%B0%E6%92%9E%E5%99%A8%E3%80%81%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/exam.png">
   
   
-  <title>刚体、碰撞器、物理材质 - 垃圾桶</title>
+  <title>刚体、碰撞器、物理材质、碰撞检测函数 - 垃圾桶</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -187,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="刚体、碰撞器、物理材质">
+            <span class="h2" id="subtitle" title="刚体、碰撞器、物理材质、碰撞检测函数">
               
             </span>
 
@@ -208,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      4.8k 字
     </span>
   
 
@@ -217,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9 分钟
+      40 分钟
     </span>
   
 
@@ -246,10 +248,10 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">刚体、碰撞器、物理材质</h1>
+            <h1 style="display: none">刚体、碰撞器、物理材质、碰撞检测函数</h1>
             
             <div class="markdown-body">
-              <p>刚体、碰撞器、物理材质</p>
+              <p>刚体、碰撞器、物理材质、碰撞检测函数</p>
 <span id="more"></span>
 
 <h1 id="刚体"><a href="#刚体" class="headerlink" title="刚体"></a>刚体</h1><p>碰撞产生的必要条件：两个物体都有碰撞器，且至少一个物体有刚体</p>
@@ -298,7 +300,199 @@
 <li>Capsule Collider：胶囊碰撞器<br>Radius：胶囊体的半径<br>Height：胶囊体的高度<br>Direction：胶囊体在对象局部空间中的轴向</li>
 </ol>
 <h2 id="异形物体使用多种碰撞器组合"><a href="#异形物体使用多种碰撞器组合" class="headerlink" title="异形物体使用多种碰撞器组合"></a>异形物体使用多种碰撞器组合</h2><p>刚体对象的子对象碰撞器信息参与碰撞检测</p>
-<h1 id="物理材质"><a href="#物理材质" class="headerlink" title="物理材质"></a>物理材质</h1>
+<h1 id="物理材质"><a href="#物理材质" class="headerlink" title="物理材质"></a>物理材质</h1><p>物理材质参数：</p>
+<ol>
+<li>Dynamic Friction<br>已在移动时使用的摩擦力<br>通常为 0 到 1 之间的值。值为零就像冰一样，值为 1 将使对象迅速静止（除非用很大的力或重力推动对象）</li>
+<li>Static Friction<br>当对象静止在表面上时使用的摩擦力<br>通常为 0 到 1 之间的值。值为零就像冰一样，值为 1 将导致很难让对象移动。</li>
+<li>Bounciness<br>表面的弹性如何？<br>值为 0 将不会反弹。值为 1 将在反弹时不产生任何能量损失，预计会有一些近似值，但可能只会给模拟增加少量能量。</li>
+<li>Friction Combine<br>两个碰撞对象的摩擦力的组合方式。</li>
+</ol>
+<p>-Average<br>对两个摩擦值求平均值。<br>-Minimum<br>使用两个值中的最小值。<br>-Maximum<br>使用两个值中的最大值。<br>-Multiply<br>两个摩擦值相乘。<br>5. unce Combine<br>两个碰撞对象的弹性的组合方式。其模式与 Friction Combine 模式相同</p>
+<h1 id="碰撞检测函数"><a href="#碰撞检测函数" class="headerlink" title="碰撞检测函数"></a>碰撞检测函数</h1><p>碰撞和触发响应函数属于特殊的生命周期函数，也是通过反射调用</p>
+<h2 id="物理碰撞检测响应函数"><a href="#物理碰撞检测响应函数" class="headerlink" title="物理碰撞检测响应函数"></a>物理碰撞检测响应函数</h2><p>Collision类型的参数包含了碰到自己的对象的相关信息</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;碰撞触发接触时 会自动执行的函数
+private void OnCollisionEnter(Collision collision)
+&#123;
+    &#x2F;&#x2F;关键参数
+    &#x2F;&#x2F;1.碰撞到的对象碰撞器的信息
+    collision.collider
+
+    &#x2F;&#x2F;2.碰撞对象的依附对象(gameObject)
+    collision.gameObject
+
+    &#x2F;&#x2F;3.碰撞对象的依附对象的位置信息
+    collision.transform
+
+    &#x2F;&#x2F;4.碰撞点相关
+    collision.contactCount
+    &#x2F;&#x2F;接触点具体的坐标
+    ContactPoint[] pos &#x3D; collision.contacts;        
+&#125;
+&#x2F;&#x2F;碰撞结束分离时 会自动执行的函数
+private void OnCollisionExit(Collision collision)
+&#123;
+    
+&#125;
+&#x2F;&#x2F;两个物体相互接触摩擦时 会不断执行的函数
+private void OnCollisionStay(Collision collision)
+&#123;
+    
+&#125;</code></pre></div>
+
+<h2 id="触发器检测响应函数"><a href="#触发器检测响应函数" class="headerlink" title="触发器检测响应函数"></a>触发器检测响应函数</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F;触发开始的函数 当第一次接触时 会自动调用
+private void OnTriggerEnter(Collider other)
+&#123;
+    
+&#125;
+&#x2F;&#x2F;触发结束的函数 当水乳相融的状态结束时 会调用一次
+private void OnTriggerExit(Collider other)
+&#123;
+    
+&#125;
+&#x2F;&#x2F;当两个对象 水乳相融的时候 会不停调用
+private void OnTriggerStay(Collider other)
+&#123;
+    
+&#125;</code></pre></div>
+
+<h2 id="明确何时会响应函数"><a href="#明确何时会响应函数" class="headerlink" title="明确何时会响应函数"></a>明确何时会响应函数</h2><ol>
+<li>只要挂载的对象 能和别的物体产生碰撞或者触发 那么对应的这6个函数 就能狗被响应</li>
+<li>6个函数不必全写 按需求选择写即可</li>
+<li>如果是一个异性物体(刚体在父对象上，碰撞器在子对象上) 通过子对象上挂载脚本检测碰撞是不行的 必须挂载到刚体父对象上</li>
+<li>要明确物理碰撞和触发器响应的区别</li>
+</ol>
+<h2 id="碰撞和触发器函数都可以写成虚函数，在子类中重写"><a href="#碰撞和触发器函数都可以写成虚函数，在子类中重写" class="headerlink" title="碰撞和触发器函数都可以写成虚函数，在子类中重写"></a>碰撞和触发器函数都可以写成虚函数，在子类中重写</h2><p>一般会把想要重写的碰撞和触发函数写成保护类型的<br>没有必要写成public(因为不会自己手动调用,都是Unity通过反射帮助我们调用的)</p>
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/24/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%20%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/%E5%88%9A%E4%BD%93%E3%80%81%E7%A2%B0%E6%92%9E%E5%99%A8%E3%80%81%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/exam.png" srcset="/img/loading.gif" lazyload class="">
+
+<h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lesson16_BulletCreate : MonoBehaviour
+&#123;
+    public GameObject bulletObj;
+    public Transform bulletPos;
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        if (Input.GetMouseButtonDown(0))
+        &#123;
+            GameObject bullet &#x3D; Instantiate(bulletObj);
+            bullet.transform.position &#x3D; bulletPos.position;
+            bullet.transform.eulerAngles &#x3D; bulletPos.eulerAngles;
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lesson16_Bullet : MonoBehaviour
+&#123;
+    public float BulletSpeed &#x3D; 10;
+
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        this.transform.Rotate(Vector3.right * -90);
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        
+        this.transform.Translate(Vector3.forward * BulletSpeed * Time.deltaTime);
+    &#125;
+&#125;
+
+</code></pre></div>
+
+
+<h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lesson16_Bullet : MonoBehaviour
+&#123;
+    public float BulletSpeed &#x3D; 10;
+
+    &#x2F;&#x2F;private void OnCollisionEnter(Collision collision)
+    &#x2F;&#x2F;&#123;
+    &#x2F;&#x2F;    &#x2F;&#x2F;碰到炮口也会移除自己，需要判断
+    &#x2F;&#x2F;    if (collision.gameObject.CompareTag(&quot;Ground&quot;))
+    &#x2F;&#x2F;    &#123;
+    &#x2F;&#x2F;        &#x2F;&#x2F;移除自己的对象
+    &#x2F;&#x2F;        Destroy(this.gameObject);
+    &#x2F;&#x2F;    &#125;
+        
+    &#x2F;&#x2F;&#125;
+
+    &#x2F;&#x2F;坦克本身就带有碰撞盒，当子弹和坦克自身的碰撞盒碰撞会产生奇怪的效果
+    &#x2F;&#x2F;故把子弹做成触发器
+    private void OnTriggerEnter(Collider other)
+    &#123;
+        if (other.gameObject.CompareTag(&quot;Ground&quot;))
+        &#123;
+            &#x2F;&#x2F;移除自己的对象
+            Destroy(this.gameObject);
+        &#125;
+    &#125;
+
+
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        this.transform.Rotate(Vector3.right * 90);
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        
+        this.transform.Translate(Vector3.back * BulletSpeed * Time.deltaTime);
+    &#125;
+&#125;
+</code></pre></div>
+
+<h2 id="题3"><a href="#题3" class="headerlink" title="题3"></a>题3</h2><p>挂载在Cube上</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lesson16_CubeAttack : MonoBehaviour
+&#123;
+    public int n &#x3D; 3;
+
+    &#x2F;&#x2F;场景只有子弹是触发器，不需要tag判断
+    private void OnTriggerEnter(Collider other)
+    &#123;
+        n--;
+        if(n &lt;&#x3D; 0)
+        &#123;
+            Destroy(this.gameObject);
+        &#125;
+    &#125;
+
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        
+    &#125;
+&#125;
+</code></pre></div>
             </div>
             <hr>
             <div>

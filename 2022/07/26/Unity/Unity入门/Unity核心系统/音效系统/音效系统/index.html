@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/yagyu.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="音效系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="音效系统">
+<meta property="og:url" content="https://faru58.github.io/2022/07/26/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="垃圾桶">
+<meta property="og:description" content="音效系统">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-26T09:02:23.000Z">
+<meta property="article:modified_time" content="2022-07-26T11:34:17.110Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>音效系统 - 垃圾桶</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"faru58.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Faru</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/%E4%BC%8A%E8%8B%8F9.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="音效系统">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-26 17:02" pubdate>
+        2022年7月26日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      29 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">音效系统</h1>
+            
+            <div class="markdown-body">
+              <p>音效系统</p>
+<span id="more"></span>
+
+<h1 id="音效系统"><a href="#音效系统" class="headerlink" title="音效系统"></a>音效系统</h1><h2 id="音频文件导入"><a href="#音频文件导入" class="headerlink" title="音频文件导入"></a>音频文件导入</h2><p>支持的文件格式：</p>
+<ol>
+<li>mav</li>
+<li>mp3</li>
+<li>ogg</li>
+<li>aiff</li>
+</ol>
+<p>音频文件属性设置：</p>
+<h3 id="Force-To-Mono"><a href="#Force-To-Mono" class="headerlink" title="Force To Mono"></a>Force To Mono</h3><p>多声道转单声道<br>Normalize<br>强制为单声道时，混合过程中被标准化</p>
+<h3 id="Load-In-Background"><a href="#Load-In-Background" class="headerlink" title="Load In Background"></a>Load In Background</h3><p>在后台加载，不阻塞主线程</p>
+<h3 id="Ambisonic"><a href="#Ambisonic" class="headerlink" title="Ambisonic"></a>Ambisonic</h3><p>立体混响声<br>非常适合 360 度视频和 XR 应用程序<br>如果音频文件包含立体混响声编码的音频，请启用此选项</p>
+<h3 id="LoadType-加载类型"><a href="#LoadType-加载类型" class="headerlink" title="LoadType 加载类型"></a>LoadType 加载类型</h3><ol>
+<li>Decompress On Load<br>不压缩形式存在内存，加载块，但是内存占用高<br>适用于小音效</li>
+<li>Compress in memory<br>压缩形式存在内存，加载慢，内存小<br>仅适用于较大音效文件</li>
+<li>Streaming<br>以流形式存在，使用时解码。内存占用最小，cpu消耗高<br>性能换内存</li>
+</ol>
+<h3 id="Preload-Audio-Data"><a href="#Preload-Audio-Data" class="headerlink" title="Preload Audio Data"></a>Preload Audio Data</h3><p>预加载音频，勾选后进入场景就加载，不勾选，第一次使用时才加载</p>
+<h3 id="Compression-Format-压缩方式"><a href="#Compression-Format-压缩方式" class="headerlink" title="Compression Format 压缩方式"></a>Compression Format 压缩方式</h3><ol>
+<li>PCM<br>音频以最高质量存储</li>
+<li>Vorbis<br>相对PCM压缩的更小，根据质量决定</li>
+<li>ADPCM<br>包含噪音，会被多次播放的声音，如碰撞声</li>
+</ol>
+<h3 id="Quality"><a href="#Quality" class="headerlink" title="Quality"></a>Quality</h3><p>音频质量<br>确定要应用于压缩剪辑的压缩量。<br>不适用于 PCM&#x2F;ADPCM&#x2F;HEVAG 格式</p>
+<h3 id="Sample-Rate-Setting"><a href="#Sample-Rate-Setting" class="headerlink" title="Sample Rate Setting"></a>Sample Rate Setting</h3><p>PCM 和 ADPCM 压缩格式允许自动优化或手动降低采样率</p>
+<ol>
+<li>Preserve Sample Rate<br>此设置可保持采样率不变（默认值）</li>
+<li>Optimize Sample Rate<br>此设置根据分析的最高频率内容自动优化采样率</li>
+<li>Override Sample Rate<br>此设置允许手动覆盖采样率<br>因此可有效地将其用于丢弃频率内容。</li>
+</ol>
+<h2 id="音频源和音频监听器脚本"><a href="#音频源和音频监听器脚本" class="headerlink" title="音频源和音频监听器脚本"></a>音频源和音频监听器脚本</h2><ol>
+<li>AudioSource 音频源<h3 id="AudioClip"><a href="#AudioClip" class="headerlink" title="AudioClip"></a>AudioClip</h3>声音剪辑文件（音频文件）<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3>默认将直接输出到场景中的音频监听器<br>可以更改为输出到混音器<h3 id="Mute"><a href="#Mute" class="headerlink" title="Mute"></a>Mute</h3>静音开关<h3 id="Bypass-Effect"><a href="#Bypass-Effect" class="headerlink" title="Bypass Effect"></a>Bypass Effect</h3>开关滤波器效果<h3 id="Bypass-Listener-Effects"><a href="#Bypass-Listener-Effects" class="headerlink" title="Bypass Listener Effects"></a>Bypass Listener Effects</h3>快速开关所有监听器<h3 id="Bypass-Reverb-Zones"><a href="#Bypass-Reverb-Zones" class="headerlink" title="Bypass Reverb Zones"></a>Bypass Reverb Zones</h3>快速开关所有混响区<h3 id="Play-On-Awake"><a href="#Play-On-Awake" class="headerlink" title="Play On Awake"></a>Play On Awake</h3>对象创建时就播放音乐<br>也就是开关启动游戏就播放<h3 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h3>循环<h3 id="Priority"><a href="#Priority" class="headerlink" title="Priority"></a>Priority</h3>优先级<h3 id="Volume"><a href="#Volume" class="headerlink" title="Volume"></a>Volume</h3>音量大小<h3 id="Pitch"><a href="#Pitch" class="headerlink" title="Pitch"></a>Pitch</h3>音高<h3 id="Stereo-Pan"><a href="#Stereo-Pan" class="headerlink" title="Stereo Pan"></a>Stereo Pan</h3>2D声音立体声位置<br>相当于左右声道</li>
+</ol>
+<h3 id="Spatial-Blend"><a href="#Spatial-Blend" class="headerlink" title="Spatial Blend"></a>Spatial Blend</h3><p>音频受3D空间的影响程度</p>
+<h3 id="Reverb-Zone-Mix"><a href="#Reverb-Zone-Mix" class="headerlink" title="Reverb Zone Mix"></a>Reverb Zone Mix</h3><p>到混响区的输出信号量</p>
+<h3 id="3D-Sound-Settings"><a href="#3D-Sound-Settings" class="headerlink" title="3D Sound Settings"></a>3D Sound Settings</h3><p>和Spatial Blend参数成正比应用</p>
+<ol>
+<li>Doppler Level<br>多普勒效果等级</li>
+<li>Spread<br>扩散角度设置为3D立体声还是多声道</li>
+<li>Volume Rolloff 声音衰减速度<br>Logarithmic Rolloff：靠近音频源时，声音很大，但离开对象时，声音降低得非常快。<br>Linear Rolloff：与音频源的距离越远，听到的声音越小。<br>Custom Rolloff：音频源的音频效果是根据曲线图的设置变化的。</li>
+<li>Min&#x2F;Max Distance<br>最小距离内，声音保持最大响度<br>最大距离外，声音开始减弱</li>
+</ol>
+<p>AudioListener<br>音频监听脚本</p>
+<h2 id="代码控制音频源"><a href="#代码控制音频源" class="headerlink" title="代码控制音频源"></a>代码控制音频源</h2><ol>
+<li><p>代码控制播放停止</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lesson18 : MonoBehaviour
+&#123;
+    AudioSource audioSource;
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        audioSource &#x3D; GetComponent&lt;AudioSource&gt;();
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        if (Input.GetKeyDown(KeyCode.P))
+        &#123;
+            &#x2F;&#x2F;播放音频
+            audioSource.Play();
+        &#125;
+        if (Input.GetKeyDown(KeyCode.S))
+        &#123;
+            &#x2F;&#x2F;停止音频
+            audioSource.Stop();
+        &#125;
+        if (Input.GetKeyDown(KeyCode.Space))
+        &#123;
+            &#x2F;&#x2F;暂停音频
+            audioSource.Pause();
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+</li>
+<li><p>如何检测音效播放完毕</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lesson18 : MonoBehaviour
+&#123;
+    AudioSource audioSource;
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        audioSource &#x3D; GetComponent&lt;AudioSource&gt;();
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        if (audioSource.isPlaying)
+        &#123;
+            &#x2F;&#x2F;播放中逻辑
+        &#125;
+        else
+        &#123;
+            &#x2F;&#x2F;播放结束逻辑
+        &#125;
+    &#125;
+&#125;
+</code></pre></div>
+</li>
+<li><p>如何动态控制音效播放</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lesson18 : MonoBehaviour
+&#123;
+    AudioSource audioSource;
+    public GameObject music; &#x2F;&#x2F;搭载音效源
+    public AudioClip clip; &#x2F;&#x2F;音效切片
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        audioSource &#x3D; GetComponent&lt;AudioSource&gt;();
+        &#x2F;&#x2F;1.直接在要播放音效的对象上挂载脚本 控制播放
+
+        &#x2F;&#x2F;2.实例化挂载了音效源脚本的对象
+        Instantiate(music);
+
+        &#x2F;&#x2F;3.用一个AudioSource来控制播放不同的音效
+        AudioSource aus &#x3D; gameObject.GetComponent&lt;AudioSource&gt;();
+        aus.clip &#x3D; clip;
+        aus.Play();
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        
+    &#125;
+&#125;
+</code></pre></div>
+<p>一个gameObject可以挂载多个音效源脚本AudioSource<br>使用时要注意，如果挂载多个脚本，一定要自己管理他们，控制播放停止</p>
+</li>
+</ol>
+<h2 id="麦克风输入相关"><a href="#麦克风输入相关" class="headerlink" title="麦克风输入相关"></a>麦克风输入相关</h2><ol>
+<li><p>获取麦克风设备信息</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Start()
+&#123;
+    string[] strs &#x3D; Microphone.devices;
+    for (int i &#x3D; 0; i &lt; strs.Length; i++)
+    &#123;
+        print(strs[i]);
+    &#125;
+&#125;</code></pre></div>
+</li>
+<li><p>开始录制<br>参数1：设备名，传入null为默认设备<br>参数2：超过录制时长后，是否重头录制<br>参数3：录制时长<br>参数4：采样率</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public AudioClip clip; &#x2F;&#x2F;音效切片
+void Update()
+&#123;
+    clip &#x3D; Microphone.Start(null, false, 10, 44100);
+&#125;</code></pre></div>
+</li>
+<li><p>结束录制</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Update()
+&#123;
+    Microphone.End(null);
+&#125;</code></pre></div>
+
+</li>
+<li><p>获取音频数据用于存储或传输</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Update()
+&#123;
+    Microphone.End(null);
+    &#x2F;&#x2F;规则 用于存储数组数据的长度 &#x3D; 声道数 * 剪辑长度
+    float[] f &#x3D; new float[clip.channels * clip.samples];
+    clip.GetData(f, 0);
+&#125;</code></pre></div></li>
+</ol>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/study/">study</a>
+                    
+                      <a class="hover-with-bg" href="/categories/study/Unity/">Unity</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Unity/">Unity</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/26/diary/2022.7/2022%E5%B9%B47%E6%9C%8826%E6%97%A5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022年7月26日</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/26/Unity/Unity%E5%85%A5%E9%97%A8/Unity%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%20%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/%E5%88%9A%E4%BD%93%E5%8A%A0%E5%8A%9B/">
+                        <span class="hidden-mobile">刚体加力</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
