@@ -4,6 +4,73 @@
   
   
   <entry>
+    <title>2022年8月1日</title>
+    <link href="/2022/08/01/diary/2022.8/2022%E5%B9%B48%E6%9C%881%E6%97%A5/"/>
+    <url>/2022/08/01/diary/2022.8/2022%E5%B9%B48%E6%9C%881%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年7月31日</title>
+    <link href="/2022/08/01/diary/2022.7/2022%E5%B9%B47%E6%9C%8831%E6%97%A5/"/>
+    <url>/2022/08/01/diary/2022.7/2022%E5%B9%B47%E6%9C%8831%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="289cd128ded0d692ab40dc8d4d7ccb068d2778d2fcf2e65e7cb4aaec4a89dfcb">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50f2a9f61a5e84185fa786405c65edd549452d7597bc21e32af77c246a86a810c904d7ff840ae0d2aa61fc88b37766b3c2852f5c4e46fe8bed8a3edca3b045f148afad07d4767980d7e57a78d1b0d211669fb57fb922cb21615d3783ad5b2ba8a9c95949e578944128dbca115f6e1b6e196913ab2dda499b7d30880b4dbd2c8a640694b0f44328e870d14abf3c48699e8a1f3df17c5327edc5bed455b68eb8bab6a92c91a55db95004f24e71182baa28409fbc68257189bdd493aa4a58f69284c0ae5216084a8075bac9fc954ef378b890a0e186f1cfe653e231ee08b32d4ac69536c0b88daeb5d72fe46b669a6e61213f46989ec81749035667cc6ebb87fc5c385184024e1afabd9bd0662bcaaa377949ec23202dac1448559f982718f0e2e950f39c94f79d34d490ed897ff58b69c4188508128abf51fe50a2a9d932c1167e48d5657b6c51234936cd311c0576466b3c7e230d8bb5bb362c8bda3d09a6b3b33df6849d4839e2a7e79b589a8c97f40d4d45f00bed51881d1ed41f29033bafd1c4</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Playerprefs概述</title>
+    <link href="/2022/07/30/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Playerprefs/Playerprefs%E6%A6%82%E8%BF%B0/"/>
+    <url>/2022/07/30/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Playerprefs/Playerprefs%E6%A6%82%E8%BF%B0/</url>
+    
+    <content type="html"><![CDATA[<p>Playerprefs概述</p><span id="more"></span><h1 id="Playerprefs概述"><a href="#Playerprefs概述" class="headerlink" title="Playerprefs概述"></a>Playerprefs概述</h1><p>数据持久化：<br>将内存中的数据模型转换为存储模型，以及将存储模型转换为内存中的数据模型的统称<br>（将游戏数据存档到硬盘，硬盘中数据读取到游戏中）</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年7月30日</title>
     <link href="/2022/07/30/diary/2022.7/2022%E5%B9%B47%E6%9C%8830%E6%97%A5/"/>
     <url>/2022/07/30/diary/2022.7/2022%E5%B9%B47%E6%9C%8830%E6%97%A5/</url>
