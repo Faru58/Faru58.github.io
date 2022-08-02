@@ -4,13 +4,50 @@
   
   
   <entry>
+    <title>2022年8月2日</title>
+    <link href="/2022/08/02/diary/2022.8/2022%E5%B9%B48%E6%9C%882%E6%97%A5/"/>
+    <url>/2022/08/02/diary/2022.8/2022%E5%B9%B48%E6%9C%882%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="d503a51a7923f9909d4847517985483e0f015f6aefb38b3f5ac6ffc240b584a3">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe509e402644257c910d19559f87bd50a0936d677031b2dea5bb244849d43938e0ef585937931827944e67fa48e3cc726088a3524880cd1e2c21e76b4bc152b91099890ec8c9c43ce1f12a732fb0e5b1551e849bde72dd342af5dc1ee9c1617fb27db296e70c7cd3a8020c93c04621f45541142781922a68d66171facd2d04dfb4b46c831901c7f8523726457cebdfdbbe3a473bc19d08b6da0baf8f243cdf195704</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年8月1日</title>
     <link href="/2022/08/01/diary/2022.8/2022%E5%B9%B48%E6%9C%881%E6%97%A5/"/>
     <url>/2022/08/01/diary/2022.8/2022%E5%B9%B48%E6%9C%881%E6%97%A5/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="6ef85f4833fa80d4d462772f3c60e6bb9cb6dadff2e40a92902f6527881bf38a">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe5050b7a022f76bf80094f2ba4753e10fb9c965d050ab3ceee41302c245c615b0b25212d0d30dd5bc95d2c63770758da8a9eeadc24dfda08415ec1d1abfe9b2aca6cbc8f8d0381f5f39278e3eeffb76943fa858fd46f9d0a444bfd623820b68afa7811ceaa558b356b3a5c3873e86a475a598b0a6496d9e6dc16dd365e132c6eca8f50465dc6fa16a21e21d22bf96bf9c23</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
     
   </entry>
   
@@ -42,11 +79,11 @@
   
   
   <entry>
-    <title>Playerprefs概述</title>
-    <link href="/2022/07/30/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Playerprefs/Playerprefs%E6%A6%82%E8%BF%B0/"/>
-    <url>/2022/07/30/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Playerprefs/Playerprefs%E6%A6%82%E8%BF%B0/</url>
+    <title>PlayerPrefs概述与基本方法</title>
+    <link href="/2022/07/30/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E6%A6%82%E8%BF%B0%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/"/>
+    <url>/2022/07/30/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E6%A6%82%E8%BF%B0%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/</url>
     
-    <content type="html"><![CDATA[<p>Playerprefs概述</p><span id="more"></span><h1 id="Playerprefs概述"><a href="#Playerprefs概述" class="headerlink" title="Playerprefs概述"></a>Playerprefs概述</h1><p>数据持久化：<br>将内存中的数据模型转换为存储模型，以及将存储模型转换为内存中的数据模型的统称<br>（将游戏数据存档到硬盘，硬盘中数据读取到游戏中）</p>]]></content>
+    <content type="html"><![CDATA[<p>PlayerPrefs概述与基本方法</p><span id="more"></span><h1 id="PlayerPrefs概述"><a href="#PlayerPrefs概述" class="headerlink" title="PlayerPrefs概述"></a>PlayerPrefs概述</h1><p>数据持久化：<br>将内存中的数据模型转换为存储模型，以及将存储模型转换为内存中的数据模型的统称<br>（将游戏数据存档到硬盘，硬盘中数据读取到游戏中）</p><p>PlayerPrefs：Unity提供的可以用于存储读取玩家数据的公共类</p><h1 id="PlayerPrefs基本方法"><a href="#PlayerPrefs基本方法" class="headerlink" title="PlayerPrefs基本方法"></a>PlayerPrefs基本方法</h1><h2 id="存储相关"><a href="#存储相关" class="headerlink" title="存储相关"></a>存储相关</h2><p>PlayerPrefs的数据存储，类似于键值对存储，一个键对应一个值<br>unity中提供了3种数据的方法：int float string<br>键：string类型<br>值：int float string 对应三种API</p><p>直接调用Set相关方法，只会把数据存到内存里<br>当游戏结束时，unity会自动把数据存到硬盘中<br>如果游戏不是正常结束的(崩溃等)，数据是不会存到硬盘中的</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Start()&#123;    PlayerPrefs.SetInt(&quot;myAge&quot;, 17);    PlayerPrefs.SetFloat(&quot;myHeight&quot;, 155.5f);    PlayerPrefs.SetString(&quot;myName&quot;, &quot;堀江&quot;);&#125;</code></pre></div><p>调用Save方法，就会马上存储到硬盘中</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Start()&#123;    PlayerPrefs.Save();&#125;</code></pre></div><p>PlayerPrefs是有局限性的，它只能存3种类型的数据<br>如果要存储别的类型的数据，只能降低精度或者上升精度来进行存储</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Start()&#123;    bool sex &#x3D; true;     PlayerPrefs.SetInt(&quot;sex&quot;, sex ? 1 : 0);&#125;</code></pre></div><p>如果不同类型用同一键名进行存储，会进行覆盖</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Start()&#123;    PlayerPrefs.SetInt(&quot;myAge&quot;, 17);    PlayerPrefs.SetFloat(&quot;myAge&quot;, 20.2f);&#125;</code></pre></div><h2 id="读取相关"><a href="#读取相关" class="headerlink" title="读取相关"></a>读取相关</h2><p>注意：运行时，只要你Set了对应键值对<br>即使你没有马上存储Save到本地，也能读出数据</p><p>第二个参数：默认值(在得到没有的数据的时候，用它来进行基础数据的初始化)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Start()&#123;    int age &#x3D; PlayerPrefs.GetInt(&quot;myAge&quot;,100);     float age &#x3D; PlayerPrefs.GetFloat(&quot;myHeight&quot;,100);     string name &#x3D; PlayerPrefs.GetString(&quot;myName&quot;); &#125;</code></pre></div><p>判断数据是否存在</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Start()&#123;    if( PlayerPrefs.HasKey(&quot;myName&quot;) )    &#123;        &#x2F;&#x2F;逻辑    &#125;&#125;</code></pre></div><h2 id="删除相关"><a href="#删除相关" class="headerlink" title="删除相关"></a>删除相关</h2><p>删除数据</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">void Start()&#123;    &#x2F;&#x2F;删除指定键值对    PlayerPrefs.DeleteKey(&quot;myName&quot;);    &#x2F;&#x2F;删除所有存储的信息    PlayerPrefs.DeleteAll();&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/07/30/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E6%A6%82%E8%BF%B0%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/exam.png" class=""><h2 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Player&#123;    public string name;    public int age;    public int atk;    public int def;    public void SaveData()    &#123;        PlayerPrefs.SetString(&quot;玩家&quot;, name);        PlayerPrefs.SetInt(&quot;年龄&quot;, age);        PlayerPrefs.SetInt(&quot;攻击力&quot;, atk);        PlayerPrefs.SetInt(&quot;防御力&quot;, def);        PlayerPrefs.SetInt(&quot;道具数&quot;, items.Count);        PlayerPrefs.Save();    &#125;    public void LoadData()    &#123;        name &#x3D; PlayerPrefs.GetString(&quot;玩家&quot;, &quot;未命名&quot;);        age &#x3D; PlayerPrefs.GetInt(&quot;年龄&quot;, 17);        atk &#x3D; PlayerPrefs.GetInt(&quot;攻击力&quot;, 0);        def &#x3D; PlayerPrefs.GetInt(&quot;防御力&quot;, 0);    &#125;&#125;public class Lesson1 : MonoBehaviour&#123;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;        Player p &#x3D; new Player();        print(p.atk);        print(p.def);        p.atk &#x3D; 1000;        p.def &#x3D; 1000;        p.SaveData();        p.LoadData();        print(p.atk);        print(p.def);    &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;            &#125;&#125;</code></pre></div><h2 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Item&#123;    public int id;    public int num;&#125;public class Player&#123;    public string name;    public int age;    public int atk;    public int def;    public List&lt;Item&gt; items;    public void SaveData()    &#123;        PlayerPrefs.SetString(&quot;玩家&quot;, name);        PlayerPrefs.SetInt(&quot;年龄&quot;, age);        PlayerPrefs.SetInt(&quot;攻击力&quot;, atk);        PlayerPrefs.SetInt(&quot;防御力&quot;, def);        PlayerPrefs.SetInt(&quot;道具数&quot;, items.Count);        for (int i &#x3D; 0; i &lt; items.Count; i++)        &#123;            PlayerPrefs.SetInt(&quot;道具ID&quot; + i, items[i].id);            PlayerPrefs.SetInt(&quot;道具&quot; + i + &quot;数量&quot;, items[i].num);        &#125;        PlayerPrefs.Save();    &#125;    public void LoadData()    &#123;        name &#x3D; PlayerPrefs.GetString(&quot;玩家&quot;, &quot;未命名&quot;);        age &#x3D; PlayerPrefs.GetInt(&quot;年龄&quot;, 17);        atk &#x3D; PlayerPrefs.GetInt(&quot;攻击力&quot;, 0);        def &#x3D; PlayerPrefs.GetInt(&quot;防御力&quot;, 0);        int num &#x3D; PlayerPrefs.GetInt(&quot;道具数&quot;, 0);        items &#x3D; new List&lt;Item&gt;();        for (int i &#x3D; 0; i &lt; num; i++)        &#123;            Item item &#x3D; new Item();            item.id &#x3D; PlayerPrefs.GetInt(&quot;道具ID&quot; + i);            item.num &#x3D; PlayerPrefs.GetInt(&quot;道具&quot; + i + &quot;数量&quot;);            items.Add(item);        &#125;    &#125;&#125;public class Lesson1 : MonoBehaviour&#123;    &#x2F;&#x2F; Start is called before the first frame update    void Start()    &#123;        Player p &#x3D; new Player();        p.LoadData();        print(p.items.Count);        for (int i &#x3D; 0; i &lt; p.items.Count; i++)        &#123;            print(&quot;道具ID&quot; + i + &quot;:&quot; + p.items[i].id);            print(&quot;道具&quot; + i + &quot;:&quot; + &quot;数量&quot; + p.items[i].num);        &#125;                Item item &#x3D; new Item();        item.id &#x3D; 1;        item.num &#x3D; 1;        p.items.Add(item);        item &#x3D; new Item();        item.id &#x3D; 3;        item.num &#x3D; 3;        p.items.Add(item);        p.SaveData();    &#125;    &#x2F;&#x2F; Update is called once per frame    void Update()    &#123;            &#125;&#125;</code></pre></div><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>]]></content>
     
     
     <categories>
