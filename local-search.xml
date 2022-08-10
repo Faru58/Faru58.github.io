@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>数据管理类</title>
+    <link href="/2022/08/10/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%B1%BB/"/>
+    <url>/2022/08/10/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%B1%BB/</url>
+    
+    <content type="html"><![CDATA[<p>数据管理类</p><span id="more"></span><h1 id="创建数据管理类"><a href="#创建数据管理类" class="headerlink" title="创建数据管理类"></a>创建数据管理类</h1><img src="/2022/08/10/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%B1%BB/DataMgr.png" class=""><p>PlayerPrefsDataMgr(不需要继承MonoBehaviour)</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections;using System.Collections.Generic;using UnityEngine;&#x2F;&#x2F;&#x2F; &lt;summary&gt;&#x2F;&#x2F;&#x2F; PlayerPrefs数据管理类 统一管理数据的存储和读取&#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;public class PlayerPrefsDataMgr&#123;    private static PlayerPrefsDataMgr instance &#x3D; new PlayerPrefsDataMgr();    public static PlayerPrefsDataMgr Instance    &#123;        get &#123; return instance; &#125;    &#125;    private PlayerPrefsDataMgr()    &#123;    &#125;    &#x2F;&#x2F;&#x2F; &lt;summary&gt;    &#x2F;&#x2F;&#x2F; 存储数据    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;    &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;data&quot;&gt;数据对象&lt;&#x2F;param&gt;    &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;keyName&quot;&gt;数据对象的唯一key 自己控制&lt;&#x2F;param&gt;    public void SaveData(object data, string keyName)    &#123;        &#x2F;&#x2F;通过Type得到传入数据对象的所有的字段，结合PlayerPrefs来存储    &#125;    &#x2F;&#x2F;&#x2F; &lt;summary&gt;    &#x2F;&#x2F;&#x2F; 读取数据    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;    &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;type&quot;&gt;想要读取的数据的数据类型&lt;&#x2F;param&gt;    &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;keyName&quot;&gt;数据对象的唯一key 自己控制&lt;&#x2F;param&gt;    &#x2F;&#x2F;&#x2F; &lt;returns&gt;&lt;&#x2F;returns&gt;    public object LoadData(Type type, string keyName)    &#123;        &#x2F;&#x2F;根据传入的类型和keyName，依据存储数据时key的拼接规则，来进行数据的获取赋值并返回        return null;    &#125;&#125;</code></pre></div><p>注意：LoadData中不用object对象传入，而使用Type传入，主要目的是节约一行代码(在外部)<br>假设现在要读取一个Player类型的数据，如果是object，就必须在外部new一个object对象传入<br>现在用Type只需传入一个Type typeof(Player)，就可以在内部动态创建一个对象返回出去<br>达到了在外部少写一行代码的作用</p><h2 id="常用数据类型存储"><a href="#常用数据类型存储" class="headerlink" title="常用数据类型存储"></a>常用数据类型存储</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;using System.Collections;using System.Collections.Generic;using System.Reflection;using UnityEngine;&#x2F;&#x2F;&#x2F; &lt;summary&gt;&#x2F;&#x2F;&#x2F; PlayerPrefs数据管理类 统一管理数据的存储和读取&#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;public class PlayerPrefsDataMgr&#123;    private static PlayerPrefsDataMgr instance &#x3D; new PlayerPrefsDataMgr();    public static PlayerPrefsDataMgr Instance    &#123;        get &#123; return instance; &#125;    &#125;    private PlayerPrefsDataMgr()    &#123;    &#125;    &#x2F;&#x2F;&#x2F; &lt;summary&gt;    &#x2F;&#x2F;&#x2F; 存储数据    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;    &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;data&quot;&gt;数据对象&lt;&#x2F;param&gt;    &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;keyName&quot;&gt;数据对象的唯一key 自己控制&lt;&#x2F;param&gt;    public void SaveData(object data, string keyName)    &#123;        Type dataType &#x3D; data.GetType();        &#x2F;&#x2F;1.得到传入数据对象所有的字段        FieldInfo[] infos &#x3D; dataType.GetFields();        for (int i &#x3D; 0; i &lt; infos.Length; i++)        &#123;            Debug.Log(infos[i]);        &#125;        &#x2F;&#x2F;2.自定义一个key的规则进行数据存储(保证key的唯一性)        &#x2F;&#x2F;keyName_数据类型_字段类型_字段名        string saveKeyName &#x3D; &quot;&quot;;        FieldInfo field;        for (int i &#x3D; 0; i &lt; infos.Length; i++)        &#123;            field &#x3D; infos[i];            &#x2F;&#x2F;对每一个字段进行存储            saveKeyName &#x3D; keyName + &quot;_&quot; + dataType.Name + &quot;_&quot; + field.FieldType.Name + &quot;_&quot; + field.Name;            &#x2F;&#x2F;封装一个方法专门存储            SaveValue(field.GetValue(data), saveKeyName);        &#125;    &#125;    private void SaveValue(object value, string keyName)    &#123;        &#x2F;&#x2F;PlayerPrefs只支持3种类型存储，故需要判断value类型        Type fieldType &#x3D; value.GetType();        if (fieldType &#x3D;&#x3D; typeof(int))        &#123;            PlayerPrefs.SetInt(keyName, (int)value);        &#125;        else if (fieldType &#x3D;&#x3D; typeof(float))        &#123;            PlayerPrefs.SetFloat(keyName, (float)value);        &#125;        else if (fieldType &#x3D;&#x3D; typeof(string))        &#123;            PlayerPrefs.SetString(keyName, value.ToString());        &#125;        else if (fieldType &#x3D;&#x3D; typeof(bool))        &#123;            PlayerPrefs.SetInt(keyName, (bool)value ? 1 : 0);        &#125;    &#125;&#125;</code></pre></div><h2 id="List数据类型存储"><a href="#List数据类型存储" class="headerlink" title="List数据类型存储"></a>List数据类型存储</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div><h2 id="Dictionary数据类型存储"><a href="#Dictionary数据类型存储" class="headerlink" title="Dictionary数据类型存储"></a>Dictionary数据类型存储</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div><h2 id="自定义类成员存储"><a href="#自定义类成员存储" class="headerlink" title="自定义类成员存储"></a>自定义类成员存储</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div><h2 id="读取常用数据类型"><a href="#读取常用数据类型" class="headerlink" title="读取常用数据类型"></a>读取常用数据类型</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div><h2 id="读取List数据类型"><a href="#读取List数据类型" class="headerlink" title="读取List数据类型"></a>读取List数据类型</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div><h2 id="读取Dictionary数据类型"><a href="#读取Dictionary数据类型" class="headerlink" title="读取Dictionary数据类型"></a>读取Dictionary数据类型</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div><h2 id="读取自定义数据类型"><a href="#读取自定义数据类型" class="headerlink" title="读取自定义数据类型"></a>读取自定义数据类型</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年8月10日</title>
+    <link href="/2022/08/10/diary/2022.8/2022%E5%B9%B48%E6%9C%8810%E6%97%A5/"/>
+    <url>/2022/08/10/diary/2022.8/2022%E5%B9%B48%E6%9C%8810%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="4e002ea7622a9b37d0a1b47bba0cfff95541d01518e43e22ceac3fc95afaf425">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe501c1647bdf8cee8a1c4082b6636b2edb675066e4f43223a38b65038fd80f380ce9895372f4634a1c79b7196010a27a0a727d123b2bfe9ece0f3c558cde25671c0bef977142c9a62901b8eeea68383362d1b793f4eb36d934342276ed9d81f6d50a7d6dbf0bbdb2a269cc82068927d9b2132af5ce43fb9606825336f62b78ef2f202340c7e4802a61f178bd5ecd604844f</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>反射知识点</title>
     <link href="/2022/08/09/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/%E5%8F%8D%E5%B0%84%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     <url>/2022/08/09/Unity/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/%E5%8F%8D%E5%B0%84%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
