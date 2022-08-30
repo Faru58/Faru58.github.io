@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年8月30日</title>
+    <link href="/2022/08/30/diary/2022.8/2022%E5%B9%B48%E6%9C%8830%E6%97%A5/"/>
+    <url>/2022/08/30/diary/2022.8/2022%E5%B9%B48%E6%9C%8830%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="4a7ab0f2b2e5b1c979f943cedb4d6d3fdb1a4b0847ea41980a79e57b1909e903">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe506772d873bd82fbd1e7e05ad1961e9f550ac12575c022a54eb4c0b9db166aeecbd25c0c437e206fc6ba663bf7eb9919286063bbdc298bcb4b993c3c632e54eb5660115d22c910c95f7d24f3def2cdbdbda2c55696213dbfb74cea2ff8c4d1ba008e0cdc218557baf490e3c37ec8bf0d7634303528e0d3a7f59520cdd0bafdd9a40e02cd3f83d8c8f842e0fc9a6320d72cffd79ea2af222a531f0b136a16157750f0dd5d7d886596ba9fb4dcaf41c9a9b8534aae6b23a84621e1b108d0fea48823ff022a4452371b7cf88241c99bc9f879f843b67ea08ca1e461d88122210a36bfb102c2bfa5655256b425e23da70b24a397866779acfbf7c152c588997ecf00eb</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>文本和按钮控件</title>
+    <link href="/2022/08/30/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E6%96%87%E6%9C%AC%E5%92%8C%E6%8C%89%E9%92%AE%E6%8E%A7%E4%BB%B6/"/>
+    <url>/2022/08/30/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E6%96%87%E6%9C%AC%E5%92%8C%E6%8C%89%E9%92%AE%E6%8E%A7%E4%BB%B6/</url>
+    
+    <content type="html"><![CDATA[<p>文本和按钮控件</p><span id="more"></span><h1 id="GUI控件绘制的共同点"><a href="#GUI控件绘制的共同点" class="headerlink" title="GUI控件绘制的共同点"></a>GUI控件绘制的共同点</h1><ol><li>他们都是GUI公共类中提供的静态函数，直接调用即可</li><li>他们的参数都大同小异<br>位置参数：Rect参数（x y位置，w h尺寸）<br>显示文本：string参数<br>图片信息：Texture参数<br>综合信息：GUIContent参数<br>自定义样式：GUIStyle参数</li><li>每一种控件都有多种重载，都是各个参数的排列组合<br>必备的参数内容是位置和显示信息</li></ol><h1 id="文本控件"><a href="#文本控件" class="headerlink" title="文本控件"></a>文本控件</h1><ol><li>基本使用</li></ol><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年8月29日</title>
     <link href="/2022/08/29/diary/2022.8/2022%E5%B9%B48%E6%9C%8829%E6%97%A5/"/>
     <url>/2022/08/29/diary/2022.8/2022%E5%B9%B48%E6%9C%8829%E6%97%A5/</url>
@@ -133,7 +187,7 @@
     <link href="/2022/08/19/Unity/UnityUI%E7%B3%BB%E7%BB%9F/GUI%E6%A6%82%E8%BF%B0/"/>
     <url>/2022/08/19/Unity/UnityUI%E7%B3%BB%E7%BB%9F/GUI%E6%A6%82%E8%BF%B0/</url>
     
-    <content type="html"><![CDATA[<p>GUI概述</p><span id="more"></span><h1 id="UI系统"><a href="#UI系统" class="headerlink" title="UI系统"></a>UI系统</h1><p>UI，即User Interface(用户界面)的简称<br>用户界面是游戏中的登录，注册，背包，任务等等功能面板，游戏中最多的逻辑功能就是和UI相关的功能<br>Unity中的UI系统可以理解为Unity提供给我们制作UI功能的手段</p><p>UI是游戏中最重要的部分</p><h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2>]]></content>
+    <content type="html"><![CDATA[<p>GUI概述</p><span id="more"></span><h1 id="UI系统"><a href="#UI系统" class="headerlink" title="UI系统"></a>UI系统</h1><p>UI，即User Interface(用户界面)的简称<br>用户界面是游戏中的登录，注册，背包，任务等等功能面板，游戏中最多的逻辑功能就是和UI相关的功能<br>Unity中的UI系统可以理解为Unity提供给我们制作UI功能的手段</p><p>UI是游戏中最重要的部分</p><h1 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h1><h2 id="GUI概念"><a href="#GUI概念" class="headerlink" title="GUI概念"></a>GUI概念</h2><p>即时模式游戏用户交互界面（IMGUI），是由代码驱动的UI系统</p><h2 id="GUI的主要作用"><a href="#GUI的主要作用" class="headerlink" title="GUI的主要作用"></a>GUI的主要作用</h2><ol><li>作为程序员的调试工具，创建游戏内调试工具</li><li>为脚本组件创建自定义检视面板</li><li>创建新的编辑器窗口和工具以拓展unity本身（一般用作内置游戏工具）</li></ol><p>注意：不要用它为玩家制作UI功能</p><h2 id="GUI的工作原理"><a href="#GUI的工作原理" class="headerlink" title="GUI的工作原理"></a>GUI的工作原理</h2><p>在继承MonoBehaviour的脚本中的特殊函数里，调用GUI提供的方法，类似生命周期函数</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">private void OnGUI()&#123;    &#x2F;&#x2F;在其中书写GUI相关代码即可显示GUI内容&#125;</code></pre></div><p>注意：</p><ol><li>它每帧执行，相当于是用于专门绘制GUI界面的函数</li><li>一般只在其中执行GUI相关界面绘制和操作逻辑</li><li>该函数在OnDisable之前，LateUpdate之后执行</li><li>只要是继承Mono的脚本，都可以在OnGUI中绘制GUI</li></ol>]]></content>
     
     
     <categories>

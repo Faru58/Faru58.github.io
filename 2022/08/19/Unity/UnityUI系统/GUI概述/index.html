@@ -24,7 +24,7 @@
 <meta property="og:description" content="GUI概述">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-19T08:59:19.000Z">
-<meta property="article:modified_time" content="2022-08-19T09:04:24.435Z">
+<meta property="article:modified_time" content="2022-08-30T13:08:53.250Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="Unity">
@@ -208,7 +208,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      132 字
+      484 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      5 分钟
     </span>
   
 
@@ -254,7 +254,28 @@
 
 <h1 id="UI系统"><a href="#UI系统" class="headerlink" title="UI系统"></a>UI系统</h1><p>UI，即User Interface(用户界面)的简称<br>用户界面是游戏中的登录，注册，背包，任务等等功能面板，游戏中最多的逻辑功能就是和UI相关的功能<br>Unity中的UI系统可以理解为Unity提供给我们制作UI功能的手段</p>
 <p>UI是游戏中最重要的部分</p>
-<h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2>
+<h1 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h1><h2 id="GUI概念"><a href="#GUI概念" class="headerlink" title="GUI概念"></a>GUI概念</h2><p>即时模式游戏用户交互界面（IMGUI），是由代码驱动的UI系统</p>
+<h2 id="GUI的主要作用"><a href="#GUI的主要作用" class="headerlink" title="GUI的主要作用"></a>GUI的主要作用</h2><ol>
+<li>作为程序员的调试工具，创建游戏内调试工具</li>
+<li>为脚本组件创建自定义检视面板</li>
+<li>创建新的编辑器窗口和工具以拓展unity本身（一般用作内置游戏工具）</li>
+</ol>
+<p>注意：不要用它为玩家制作UI功能</p>
+<h2 id="GUI的工作原理"><a href="#GUI的工作原理" class="headerlink" title="GUI的工作原理"></a>GUI的工作原理</h2><p>在继承MonoBehaviour的脚本中的特殊函数里，调用GUI提供的方法，类似生命周期函数</p>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">private void OnGUI()
+&#123;
+    &#x2F;&#x2F;在其中书写GUI相关代码即可显示GUI内容
+
+&#125;</code></pre></div>
+
+<p>注意：</p>
+<ol>
+<li>它每帧执行，相当于是用于专门绘制GUI界面的函数</li>
+<li>一般只在其中执行GUI相关界面绘制和操作逻辑</li>
+<li>该函数在OnDisable之前，LateUpdate之后执行</li>
+<li>只要是继承Mono的脚本，都可以在OnGUI中绘制GUI</li>
+</ol>
+
             </div>
             <hr>
             <div>
