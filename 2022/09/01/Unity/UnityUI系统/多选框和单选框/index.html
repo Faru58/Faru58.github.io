@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://faru58.github.io/2022/09/01/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E5%A4%9A%E9%80%89%E6%A1%86%E5%92%8C%E5%8D%95%E9%80%89%E6%A1%86/exam.png">
 <meta property="article:published_time" content="2022-09-01T06:18:08.000Z">
-<meta property="article:modified_time" content="2022-09-01T14:21:38.159Z">
+<meta property="article:modified_time" content="2022-09-02T13:50:50.851Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="Unity">
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      553 字
+      3.3k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5 分钟
+      28 分钟
     </span>
   
 
@@ -281,13 +281,170 @@ public class Lesson3 : MonoBehaviour
 
 
 <h1 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h1><p>单选框是基于多选框实现的<br>关键：通过一个int标识来决定是否选中</p>
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>
+<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lesson3 : MonoBehaviour
+&#123;
+    private bool isSel;
+    private bool isSel2;
+
+    private int nowSelIndex &#x3D; 1;
+
+    public GUIStyle style;
+    private void OnGUI()
+    &#123;
+        &#x2F;&#x2F;多选框
+        if(GUI.Toggle(new Rect(0, 80, 100, 30), nowSelIndex &#x3D;&#x3D; 1, &quot;选项1&quot;))
+        &#123;
+            nowSelIndex &#x3D; 1;
+        &#125;
+        if (GUI.Toggle(new Rect(0, 110, 100, 30), nowSelIndex &#x3D;&#x3D; 2, &quot;选项2&quot;))
+        &#123;
+            nowSelIndex &#x3D; 2;
+        &#125;
+        if (GUI.Toggle(new Rect(0, 140, 100, 30), nowSelIndex &#x3D;&#x3D; 3, &quot;选项3&quot;))
+        &#123;
+            nowSelIndex &#x3D; 3;
+        &#125;
+    &#125;
+&#125;</code></pre></div>
 
 
 <h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/09/01/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E5%A4%9A%E9%80%89%E6%A1%86%E5%92%8C%E5%8D%95%E9%80%89%E6%A1%86/exam.png" srcset="/img/loading.gif" lazyload class="">
 
-<div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"></code></pre></div>
+<h2 id="BeginPanel-cs"><a href="#BeginPanel-cs" class="headerlink" title="BeginPanel.cs"></a>BeginPanel.cs</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
+public class BeginPanel : MonoBehaviour
+&#123;
+    &#x2F;&#x2F;为使面板的显示隐藏 所有地方都能快速使用
+    &#x2F;&#x2F;静态方法和静态变量 可以直接通过类名调用
+    private static BeginPanel instance;
+
+    public static void ShowMe()
+    &#123;
+        if(instance !&#x3D; null)
+        &#123;
+            instance.gameObject.SetActive(true);
+        &#125;
+    &#125;
+    public static void HideMe()
+    &#123;
+        if (instance !&#x3D; null)
+        &#123;
+            instance.gameObject.SetActive(false);
+        &#125;
+    &#125;
+
+    public Rect labelPos;
+    public GUIContent labelContent;
+    public GUIStyle labelStyle;
+
+    public Rect button1Pos;
+    public Rect button2Pos;
+    public Rect button3Pos;
+
+    public GUIStyle buttonStyle;
+
+    private void Awake()
+    &#123;
+        instance &#x3D; this;
+    &#125;
+
+    private void OnGUI()
+    &#123;
+        &#x2F;&#x2F;游戏标题
+        GUI.Label(labelPos, labelContent, labelStyle);
+
+        &#x2F;&#x2F;3个游戏按钮
+        if(GUI.Button(button1Pos, &quot;开始游戏&quot;, buttonStyle))
+        &#123;
+            SceneManager.LoadScene(&quot;GameScene&quot;);
+        &#125;
+        if(GUI.Button(button2Pos, &quot;设置游戏&quot;, buttonStyle))
+        &#123;
+            SettingPanel.ShowMe();
+            HideMe();
+        &#125;
+        if(GUI.Button(button3Pos, &quot;结束游戏&quot;, buttonStyle))
+        &#123;
+
+        &#125;
+
+
+    &#125;
+&#125;
+
+</code></pre></div>
+
+<h2 id="SettingPanel-cs"><a href="#SettingPanel-cs" class="headerlink" title="SettingPanel.cs"></a>SettingPanel.cs</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SettingPanel : MonoBehaviour
+&#123;
+    &#x2F;&#x2F;为使面板的显示隐藏 所有地方都能快速使用
+    &#x2F;&#x2F;静态方法和静态变量 可以直接通过类名调用
+    private static SettingPanel instance;
+
+    public static void ShowMe()
+    &#123;
+        if (instance !&#x3D; null)
+        &#123;
+            instance.gameObject.SetActive(true);
+        &#125;
+    &#125;
+    public static void HideMe()
+    &#123;
+        if (instance !&#x3D; null)
+        &#123;
+            instance.gameObject.SetActive(false);
+        &#125;
+    &#125;
+
+    public Rect toggleMusicPos;
+    public Rect toggleSoundPos;
+
+    private bool isSelMusic;
+    private bool isSelSound;
+
+    public Rect bottonPos;
+    public GUIStyle bottonStyle;
+
+    private void Awake()
+    &#123;
+        instance &#x3D; this;
+        HideMe();
+    &#125;
+
+    private void OnGUI()
+    &#123;
+        isSelMusic &#x3D; GUI.Toggle(toggleMusicPos, isSelMusic, &quot;音乐开关&quot;);
+        isSelSound &#x3D; GUI.Toggle(toggleSoundPos, isSelSound, &quot;音效开关&quot;);
+
+
+        if(GUI.Button(bottonPos, &quot;&quot;, bottonStyle))
+        &#123;
+            &#x2F;&#x2F;关闭自己这个面板
+            HideMe();
+            &#x2F;&#x2F;显示开始界面
+            BeginPanel.ShowMe();
+        &#125;
+    &#125;
+&#125;
+
+</code></pre></div>
+
+
+<p>总结：</p>
+<ol>
+<li>要完成面板之间相互控制显示有3种方法<br>第一种：都写在一个OnGUI中，通过bool标识去控制显影<br>第二种：挂载在同一个对象上，通过控制脚本的失活激活，enable去控制代码是否执行，达到显影<br>第三种：挂载在不同对象上，通过控制对象的失活激活来达到面板的显影</li>
+<li>关键的，如何在多个面板之间相互调用显影，我们是通过静态变量和静态方法的形式<br>在Awake时初始化静态变量，如果要用该方法，一开始这个对象不能失活</li>
+</ol>
 
             </div>
             <hr>
