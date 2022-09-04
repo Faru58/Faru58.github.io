@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>2022年9月4日</title>
+    <link href="/2022/09/04/diary/2022.9/2022%E5%B9%B49%E6%9C%884%E6%97%A5/"/>
+    <url>/2022/09/04/diary/2022.9/2022%E5%B9%B49%E6%9C%884%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="b8fd7337288b03d9708bc760295a9418435d3e3f2fa14a515fc522fc625a5783">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe5007a2e34d75997a08d658ac72cd334aa4637a9a3d0e1e774fea611f539b34e2c47d5786b730da00baa1330936de2ad5bee29800d3d8f428e29a42d86a1b21c406403051dca328e2453b42c312f7fddd3b2f9242fa6ee80045f0be42c50e7dd352caca5e20852266c67e58be6e46ceff9298baa001b711b1801c1b612ed9c3d7bc</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年9月3日</title>
     <link href="/2022/09/03/diary/2022.9/2022%E5%B9%B49%E6%9C%883%E6%97%A5/"/>
     <url>/2022/09/03/diary/2022.9/2022%E5%B9%B49%E6%9C%883%E6%97%A5/</url>
@@ -150,6 +175,35 @@
     <tags>
       
       <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>图片绘制和框绘制</title>
+    <link href="/2022/08/30/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E5%9B%BE%E7%89%87%E7%BB%98%E5%88%B6%E5%92%8C%E6%A1%86%E7%BB%98%E5%88%B6/"/>
+    <url>/2022/08/30/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E5%9B%BE%E7%89%87%E7%BB%98%E5%88%B6%E5%92%8C%E6%A1%86%E7%BB%98%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<p>图片绘制和框绘制</p><span id="more"></span><h1 id="图片绘制"><a href="#图片绘制" class="headerlink" title="图片绘制"></a>图片绘制</h1><p>ScaleMode</p><ol><li>ScaleMode.StretchToFill：默认模式，始终填充满输入的Rect，会拉伸</li><li>ScaleMode.ScaleAndCrop：通过宽高比计算图片，超出比例会裁剪</li><li>ScaleMode.ScaleToFit：通过宽高比计算，自动调整图片，不会拉变形，保持图片完全显示的状态</li></ol><p>alphaBlend：是否背景透明</p><p>imageAspect：自定义参与计算的宽高比（0代表图片默认的宽高比）</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson5 : MonoBehaviour&#123;    public Rect imgPos;    public Texture tex;    public ScaleMode mode &#x3D; ScaleMode.ScaleToFit;    public bool alpha &#x3D; true;    public float wh &#x3D; 0;    private void OnGUI()    &#123;        &#x2F;&#x2F;图片绘制(不会等比缩放)        GUI.DrawTexture(imgPos, tex, mode, alpha, wh);    &#125;&#125;</code></pre></div><h1 id="框绘制"><a href="#框绘制" class="headerlink" title="框绘制"></a>框绘制</h1><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson5 : MonoBehaviour&#123;    public Rect texPos;    private void OnGUI()    &#123;        &#x2F;&#x2F;框绘制        GUI.Box(texPos, &quot;雀食蟀&quot;);    &#125;&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/08/30/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E5%9B%BE%E7%89%87%E7%BB%98%E5%88%B6%E5%92%8C%E6%A1%86%E7%BB%98%E5%88%B6/exam.png" class=""><p>加入以下代码即可</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public Rect bkPos;public Texture bkImage;public ScaleMode bkMode &#x3D; ScaleMode.ScaleToFit;private void OnGUI()&#123;    &#x2F;&#x2F;设置背景    GUI.DrawTexture(bkPos, bkImage, bkMode);&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
       
     </tags>
     
