@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>2022年9月5日</title>
+    <link href="/2022/09/05/diary/2022.9/2022%E5%B9%B49%E6%9C%885%E6%97%A5/"/>
+    <url>/2022/09/05/diary/2022.9/2022%E5%B9%B49%E6%9C%885%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="d105df8998979ae39a918c186affb095f62b0117d9c4fd10b72673b01574fa02">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe506e3bbc3039a6aa643d94bba3c0a5944c0169a2d7f49afa690b16f46f454faf58c7b13afa84ce98ad6454661140b7ad38e1636210e083c59ee784c03d6afd62db20ea5b97a5ec5a7a1b86775526f8fc65ffeb3b6a0f6a4ba316a7d7ddcf6127a857b055df6a933314dd987a4dbffa98bcdc756d1b1462631ad49f03cc65cbfb255a0fcd85cdbb5713b8d2cdd1fec8c3a5853688cb271d67df67a476175e19d897d5f7849db19d91f68ac68e17386fcce17a8c360093c434cf1b4eb357d420d5149d520ddccfc21ed52dd513088c57111b7d25284fc2d716d50157ddd1bf2332d39d8a36ee368049f268547384c745e9a3ba5681ae04513b3efae2c58c16c70acd</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>工具栏和选择网格</title>
+    <link href="/2022/09/05/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E9%80%89%E6%8B%A9%E7%BD%91%E6%A0%BC/"/>
+    <url>/2022/09/05/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E9%80%89%E6%8B%A9%E7%BD%91%E6%A0%BC/</url>
+    
+    <content type="html"><![CDATA[<p>工具栏和选择网格</p><span id="more"></span><h1 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h1><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson6 : MonoBehaviour&#123;    private int toolbarIndex &#x3D; 0;    private string[] toolbarInfos &#x3D; new string[] &#123; &quot;选项一&quot;, &quot;选项二&quot;, &quot;选项三&quot; &#125;;    private void OnGUI()    &#123;        &#x2F;&#x2F;工具栏        GUI.Toolbar(new Rect(0, 0, 200, 30), toolbarIndex, toolbarInfos);        &#x2F;&#x2F;工具栏可以帮助我们根据不同的返回索引来处理不同的逻辑        switch (toolbarIndex)        &#123;            case 0:                break;            case 1:                break;            case 2:                break;        &#125;    &#125;&#125;</code></pre></div><h1 id="选择网格"><a href="#选择网格" class="headerlink" title="选择网格"></a>选择网格</h1><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson6 : MonoBehaviour&#123;    private string[] toolbarInfos &#x3D; new string[] &#123; &quot;选项一&quot;, &quot;选项二&quot;, &quot;选项三&quot; &#125;;    private int selGridIndex &#x3D; 0;    private void OnGUI()    &#123;        &#x2F;&#x2F;选择网格        &#x2F;&#x2F;比Toolbar多一个参数xCount，代表水平方向最多显示的按钮数量        selGridIndex &#x3D; GUI.SelectionGrid(new Rect(0, 50, 200, 50), selGridIndex, toolbarInfos, 3);    &#125;&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/09/05/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E9%80%89%E6%8B%A9%E7%BD%91%E6%A0%BC/exam.png" class=""><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class TestPanel : MonoBehaviour&#123;    public Rect toolbarPos;    public Rect selGridPos;    public Rect labelPos;        public string[] strs &#x3D; new string[] &#123; &quot;装备&quot;, &quot;进阶&quot;, &quot;幻化&quot; &#125;;    private int nowSelIndex &#x3D; 0;    private void OnGUI()    &#123;        nowSelIndex &#x3D; GUI.Toolbar(toolbarPos, nowSelIndex, strs);        nowSelIndex &#x3D; GUI.SelectionGrid(selGridPos, nowSelIndex, strs, 1);        switch (nowSelIndex)        &#123;            case 0:                GUI.Label(labelPos, &quot;装备信息&quot;);                break;            case 1:                GUI.Label(labelPos, &quot;进阶信息&quot;);                break;            case 2:                GUI.Label(labelPos, &quot;幻化信息&quot;);                break;        &#125;    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年9月4日</title>
     <link href="/2022/09/04/diary/2022.9/2022%E5%B9%B49%E6%9C%884%E6%97%A5/"/>
     <url>/2022/09/04/diary/2022.9/2022%E5%B9%B49%E6%9C%884%E6%97%A5/</url>
