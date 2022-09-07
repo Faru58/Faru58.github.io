@@ -4,6 +4,114 @@
   
   
   <entry>
+    <title>2022年9月7日</title>
+    <link href="/2022/09/07/diary/2022.9/2022%E5%B9%B49%E6%9C%887%E6%97%A5/"/>
+    <url>/2022/09/07/diary/2022.9/2022%E5%B9%B49%E6%9C%887%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="dd79836e31b593ed49fbfc9e4d979bb7712f83633488e0377190a77aeaaaf554">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe501bd85f955d4f77b71cbe9f1ae586184ea78088a906061c742f39cdf6b76e0fed0564466845e980c9a17f378211a766c519b337130fd4347b7d2318953076096f1180ad47b2c96c6ad2afafbcc2ae7a07228b5bd39ebdcffa51ca586aa66e7bd218b0ccd63a2a2fc9e269d804dcf6d5c6c259028039979758b25850e208c19730e079f840f14d107257091cff353b55870a62160e9eecf05852be3f035dfd35bfa6c6f540066ba260a785af610d55fe86042b816eda9a7fde01cdf22d86498687c1d690840e38ebe7ac8f6b8469589b4a</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>窗口</title>
+    <link href="/2022/09/07/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E7%AA%97%E5%8F%A3/"/>
+    <url>/2022/09/07/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E7%AA%97%E5%8F%A3/</url>
+    
+    <content type="html"><![CDATA[<p>窗口</p><span id="more"></span><h1 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h1><p>第一个参数：id  窗口唯一的ID，不能合其他窗口重复<br>第三个参数：委托函数参数  用于绘制窗口的函数，传入即可</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson8 : MonoBehaviour&#123;    private void OnGUI()    &#123;        &#x2F;&#x2F;窗口        GUI.Window(1, new Rect(100, 100, 100, 100), DrawWindow, &quot;测试窗口1&quot;);        &#x2F;&#x2F;id除了区分不同窗口，还可以在一个函数中去处理多个窗口的逻辑        GUI.Window(2, new Rect(300, 100, 100, 100), DrawWindow, &quot;测试窗口2&quot;);    &#125;    private void DrawWindow(int id)    &#123;        switch (id)        &#123;            case 1:                GUI.Button(new Rect(0, 30, 30, 20), &quot;1&quot;);                break;            case 2:                GUI.Button(new Rect(0, 30, 30, 20), &quot;2&quot;);                break;        &#125;    &#125;&#125;</code></pre></div><h1 id="模态窗口"><a href="#模态窗口" class="headerlink" title="模态窗口"></a>模态窗口</h1><p>模态窗口能让其他控件失效，只能先处理该窗口（点击该窗口上控件），才能处理其他窗口逻辑</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson8 : MonoBehaviour&#123;    private void OnGUI()    &#123;        &#x2F;&#x2F;模态窗口        GUI.ModalWindow(3, new Rect(500, 100, 100, 100), DrawWindow, &quot;模态窗口3&quot;);    &#125;    private void DrawWindow(int id)    &#123;        switch (id)        &#123;            case 3:                GUI.Button(new Rect(0, 30, 30, 20), &quot;3&quot;);                break;        &#125;    &#125;&#125;</code></pre></div><h1 id="拖动窗口"><a href="#拖动窗口" class="headerlink" title="拖动窗口"></a>拖动窗口</h1><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson8 : MonoBehaviour&#123;    private Rect dragWindowPos &#x3D; new Rect(400, 400, 200, 150);    private void OnGUI()    &#123;        &#x2F;&#x2F;拖动窗口        &#x2F;&#x2F;位置赋值只是前提        dragWindowPos &#x3D; GUI.Window(4, dragWindowPos, DrawWindow, &quot;拖动窗口&quot;);    &#125;    private void DrawWindow(int id)    &#123;        switch (id)        &#123;                &#x2F;&#x2F;该API写在委托中调用，才能让窗口被拖动                &#x2F;&#x2F;传入Rect参数的重载，决定窗口中哪一部分位置可以被拖动（不填默认全部）                GUI.DragWindow();                break;        &#125;    &#125;&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/09/07/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E7%AA%97%E5%8F%A3/exam.png" class=""><p>QuitTipPanel.cs</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class QuitTipPanel : MonoBehaviour&#123;    &#x2F;&#x2F;为使面板的显示隐藏 所有地方都能快速使用    &#x2F;&#x2F;静态方法和静态变量 可以直接通过类名调用    private static QuitTipPanel instance;    public static void ShowMe()    &#123;        if (instance !&#x3D; null)        &#123;            instance.gameObject.SetActive(true);        &#125;    &#125;    public static void HideMe()    &#123;        if (instance !&#x3D; null)        &#123;            instance.gameObject.SetActive(false);        &#125;    &#125;    public Rect quitWindowPos;    public Rect labelPos;    public Rect button1Pos;    public Rect button2Pos;    private void Awake()    &#123;        instance &#x3D; this;        HideMe();    &#125;    private void OnGUI()    &#123;        GUI.ModalWindow(1, quitWindowPos, DrawWindow, &quot;提示&quot;);    &#125;    private void DrawWindow(int id)    &#123;        GUI.Label(labelPos, &quot;是否退出游戏&quot;);        if (GUI.Button(button1Pos, &quot;退出&quot;))        &#123;            Application.Quit();        &#125;        if (GUI.Button(button2Pos, &quot;取消&quot;))        &#123;            HideMe();            BeginPanel.ShowMe();        &#125;    &#125;&#125;</code></pre></div><p>修改BeginPanel.cs</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;using UnityEngine.SceneManagement;public class BeginPanel : MonoBehaviour&#123;    &#x2F;&#x2F;为使面板的显示隐藏 所有地方都能快速使用    &#x2F;&#x2F;静态方法和静态变量 可以直接通过类名调用    private static BeginPanel instance;    public static void ShowMe()    &#123;        if(instance !&#x3D; null)        &#123;            instance.gameObject.SetActive(true);        &#125;    &#125;    public static void HideMe()    &#123;        if (instance !&#x3D; null)        &#123;            instance.gameObject.SetActive(false);        &#125;    &#125;    public Rect labelPos;    public GUIContent labelContent;    public GUIStyle labelStyle;    public Rect button1Pos;    public Rect button2Pos;    public Rect button3Pos;    public GUIStyle buttonStyle;    public Rect bkPos;    public Texture bkImage;    public ScaleMode bkMode &#x3D; ScaleMode.ScaleToFit;    private void Awake()    &#123;        instance &#x3D; this;    &#125;    private void OnGUI()    &#123;        &#x2F;&#x2F;设置背景        GUI.DrawTexture(bkPos, bkImage, bkMode);        &#x2F;&#x2F;游戏标题        GUI.Label(labelPos, labelContent, labelStyle);        &#x2F;&#x2F;3个游戏按钮        if(GUI.Button(button1Pos, &quot;开始游戏&quot;, buttonStyle))        &#123;            &#x2F;&#x2F;SceneManager.LoadScene(&quot;GameScene&quot;);            HideMe();            LoginPanel.ShowMe();        &#125;        if(GUI.Button(button2Pos, &quot;设置游戏&quot;, buttonStyle))        &#123;            HideMe();            SettingPanel.ShowMe();        &#125;        if(GUI.Button(button3Pos, &quot;结束游戏&quot;, buttonStyle))        &#123;            HideMe();            QuitTipPanel.ShowMe();        &#125;    &#125;    &#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年9月6日</title>
+    <link href="/2022/09/06/diary/2022.9/2022%E5%B9%B49%E6%9C%886%E6%97%A5/"/>
+    <url>/2022/09/06/diary/2022.9/2022%E5%B9%B49%E6%9C%886%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="73a1962d5a83dfb4f3d023e3acc6a0df89c0f1c2e1ad4cf94d170eba4613ed4f">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe500fa0de5ac265e858f5bef4317846e9b438efd64cea5e229810b80ca85bb68ea93a198f26be185935b55584bb170cbf90c170314511068a525a3e54fc230e3f0f3a70142dc1c7bbd41f73219de28331f083311c54b5f650e38aee384adc45a2474ea0a6653714ced23d3e9d9064e22f0fc519cddc4bedd3cc6b6844e1a7ea129d</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>滚动列表和分组</title>
+    <link href="/2022/09/06/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E6%BB%9A%E5%8A%A8%E5%88%97%E8%A1%A8%E5%92%8C%E5%88%86%E7%BB%84/"/>
+    <url>/2022/09/06/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E6%BB%9A%E5%8A%A8%E5%88%97%E8%A1%A8%E5%92%8C%E5%88%86%E7%BB%84/</url>
+    
+    <content type="html"><![CDATA[<p>滚动列表和分组</p><span id="more"></span><h1 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h1><p>用于批量控制控件位置，可以理解为包裹着的控件加了一个父对象，可以通过控制分组来包裹控件的位置</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson7 : MonoBehaviour&#123;    public Rect groupPos;    private void OnGUI()    &#123;        &#x2F;&#x2F;分组        GUI.BeginGroup(groupPos);        GUI.Button(new Rect(0, 0, 100, 50), &quot;测试按钮&quot;);        GUI.Label(new Rect(0, 50, 100, 50), &quot;测试信息&quot;);        GUI.EndGroup();    &#125;&#125;</code></pre></div><h1 id="滚动列表"><a href="#滚动列表" class="headerlink" title="滚动列表"></a>滚动列表</h1><p>scPos：可见内容范围的尺寸<br>showPos：具体全部内容范围的尺寸<br>nowPos：滚动条位置</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson7 : MonoBehaviour&#123;    public Rect scPos;    private Vector2 nowPos;    public Rect showPos;    private string[] strs &#x3D; new string[] &#123;&quot;111&quot;, &quot;222&quot;, &quot;333&quot;, &quot;444&quot;&#125;;    private void OnGUI()    &#123;        &#x2F;&#x2F;滚动列表        nowPos &#x3D; GUI.BeginScrollView(scPos, nowPos, showPos, false, false);        GUI.Toolbar(new Rect(0, 0, 300, 50), 0, strs);        GUI.Toolbar(new Rect(0, 60, 300, 50), 0, strs);        GUI.Toolbar(new Rect(0, 120, 300, 50), 0, strs);        GUI.Toolbar(new Rect(0, 180, 300, 50), 0, strs);        GUI.EndScrollView();    &#125;&#125;</code></pre></div><h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><img src="/2022/09/06/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E6%BB%9A%E5%8A%A8%E5%88%97%E8%A1%A8%E5%92%8C%E5%88%86%E7%BB%84/exam.png" class=""><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class ScrollViewTestPanel : MonoBehaviour&#123;    public Rect svPos;    public Rect showPos;    private Vector2 nowPos;    public string[] strs;    private void OnGUI()    &#123;        &#x2F;&#x2F;通过字符串数组动态计算出具体显示内容的尺寸        showPos.height &#x3D; strs.Length * 30;        nowPos &#x3D; GUI.BeginScrollView(svPos, nowPos, showPos);        for(int i &#x3D; 0; i &lt; strs.Length; i++)        &#123;            GUI.Label(new Rect(0, i * 30, svPos.width, 30), strs[i]);        &#125;        GUI.EndScrollView();    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年9月5日</title>
     <link href="/2022/09/05/diary/2022.9/2022%E5%B9%B49%E6%9C%885%E6%97%A5/"/>
     <url>/2022/09/05/diary/2022.9/2022%E5%B9%B49%E6%9C%885%E6%97%A5/</url>
