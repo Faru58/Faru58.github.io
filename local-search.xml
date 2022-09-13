@@ -4,13 +4,158 @@
   
   
   <entry>
+    <title>2022年9月13日</title>
+    <link href="/2022/09/13/diary/2022.9/2022%E5%B9%B49%E6%9C%8813%E6%97%A5/"/>
+    <url>/2022/09/13/diary/2022.9/2022%E5%B9%B49%E6%9C%8813%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="ebc4e64b082d60bf4954db0f42425b0383b0fe120a8d487d9624d5a9bf00e073">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50016237ab31399f3751c3548491ff8ed028204d872852572b96ffe4334925303db989f98b223eccb02f43a909031b0ec0aecb8ddff0ef8287ead0c385fbe40f1b6696e4e1c08d025f9c1adf19f86edfafeeab113cdf371ab0aa7bf1f552c391ed450d26fd49f430b4fa07cb931c3082a761c72ab128d6c2a9fe56d46b535deb6b9754789b70ec8883937b8b9b86b2309f1172530b07f676ef9285c3be00c8dc0d</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>GUILayout自动布局</title>
+    <link href="/2022/09/12/Unity/UnityUI%E7%B3%BB%E7%BB%9F/GUILayout%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80/"/>
+    <url>/2022/09/12/Unity/UnityUI%E7%B3%BB%E7%BB%9F/GUILayout%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80/</url>
+    
+    <content type="html"><![CDATA[<p>GUILayout自动布局</p><span id="more"></span><h1 id="GUILayout-自动布局"><a href="#GUILayout-自动布局" class="headerlink" title="GUILayout 自动布局"></a>GUILayout 自动布局</h1><p>主要用于进行编辑器开发  不适合用于制作游戏UI</p><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson10 : MonoBehaviour&#123;    private void OnGUI()    &#123;        &#x2F;&#x2F;自动布局        &#x2F;&#x2F;默认竖向自动布局        GUILayout.Button(&quot;1&quot;);        GUILayout.Button(&quot;2&quot;);        GUILayout.Button(&quot;3&quot;);        &#x2F;&#x2F;横向自动布局        GUILayout.BeginHorizontal();        GUILayout.Button(&quot;1&quot;);        GUILayout.Button(&quot;2&quot;);        GUILayout.Button(&quot;3&quot;);        GUILayout.EndHorizontal();    &#125;&#125;</code></pre></div><h1 id="GUILayoutOption-自动布局选项"><a href="#GUILayoutOption-自动布局选项" class="headerlink" title="GUILayoutOption 自动布局选项"></a>GUILayoutOption 自动布局选项</h1><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson10 : MonoBehaviour&#123;    private void OnGUI()    &#123;        &#x2F;&#x2F;控件的固定宽高        GUILayout.Width(200);        GUILayout.Height(200);        &#x2F;&#x2F;允许控件的最小宽高        GUILayout.MinWidth(200);        &#x2F;&#x2F;允许控件的最大宽高        GUILayout.MaxWidth(200);        &#x2F;&#x2F;允许或禁止水平拓展        GUILayout.ExpandHeight(true);    &#125;&#125;</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年9月12日</title>
+    <link href="/2022/09/12/diary/2022.9/2022%E5%B9%B49%E6%9C%8812%E6%97%A5/"/>
+    <url>/2022/09/12/diary/2022.9/2022%E5%B9%B49%E6%9C%8812%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="910c0b6ceb6eed22510323cf13d1963e1716a6690ab5427808824525a43454c6">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe506e3bbc3039a6aa643d94bba3c0a5944c33a7670b9ce51e46ce347b83e23a7d1ed289229c53f4567068127abb98c56a250abed93c6acc4f794bb77a1ee444f2b90e48774c3217e7711e47ae5fef02e716fca8704bcbd6a33fbdd1b0349020c588d4cf0bd16c5aadb9a36e426a32ae3a9447b4a1b61ae7123ea2d07ecb2f295c15ed569ed8c54b2e27c3aa3fcec166060681d7d2563f5e007ea7068ff870173fe6194c6faf6b4e57675cb7d4f6086ee6ea1912ccf443b2113e4a7c9d8809a51fc5</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年9月11日</title>
+    <link href="/2022/09/12/diary/2022.9/2022%E5%B9%B49%E6%9C%8811%E6%97%A5/"/>
+    <url>/2022/09/12/diary/2022.9/2022%E5%B9%B49%E6%9C%8811%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="e5dfa3c32396f5bf44693466567f13b720740104ea5dcba0979d00e8809e3b24">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50ab56c713f0ab23ce39641e8909eeb9678dec572d69296469fc562319c5d2453d1279db22da777d727c7d9748fe0fcbbf8f16635a1df7752ccb90ab3c8a70f5430cc0d441ec6e5ce6305349dc8e29e0a17e886252c06a7b6f7218ce75c9629ba92925a02aaaaa4af3a39931ad62130bf6c8444c2954d0347c182dfb9373b9ff7da76dba7dd59a7192225e75e20488b7d048c26e01a48a247b7989a757026c6a4d5da072f02d73d07c59e9f4f2a18dbfe0fd9ab040654deac297cde883e68d217714cd611c5dd9fe8da3c3950eeb5a3b62d7508431eeb0ab11ecc20994f5a013b2475f2a36c085c3c840ebc931fb482c6fac1f67ac02b3c564d777bffb4881bdc688e956bde662141474658064bb395410</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年9月10日</title>
+    <link href="/2022/09/12/diary/2022.9/2022%E5%B9%B49%E6%9C%8810%E6%97%A5/"/>
+    <url>/2022/09/12/diary/2022.9/2022%E5%B9%B49%E6%9C%8810%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="4f8bdf9c7454b51f5673b18fb9ca062aab4dcd2f9179811ebbce50e0047d905b">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50a9bddbb2db34ae23cd4b3f0f1f91ec1ea4e14a1bbe996aea794c36ab522c4a1b0d38506485d8948767d6771fc042796a62ce79305045ccb4f7343c9a429569067bae0f25eb7afac1924a380b5d6f7cc3582fa5ef788843f490ec9dedfec15d9c0c83a69f5bdda99bdcf432277ab96768e87077ddd39f3c4a82fb44214b68e5de4123af7bfcd08c868f30c82342601b5d387bc88ebd5c28f36f3e4ab445d21c4a3f56525090a052094b9dd24110f59fa83de20d70738cac945e29db01c229b107</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>自定义皮肤样式</title>
-    <link href="/2022/09/09/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%AE%E8%82%A4%E6%A0%B7%E5%BC%8F/"/>
-    <url>/2022/09/09/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%AE%E8%82%A4%E6%A0%B7%E5%BC%8F/</url>
+    <link href="/2022/09/09/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%AE%E8%82%A4%E6%A0%B7%E5%BC%8F/"/>
+    <url>/2022/09/09/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%AE%E8%82%A4%E6%A0%B7%E5%BC%8F/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>自定义皮肤样式</p><span id="more"></span><h1 id="GUI-Skin"><a href="#GUI-Skin" class="headerlink" title="GUI Skin"></a>GUI Skin</h1><h2 id="全局颜色"><a href="#全局颜色" class="headerlink" title="全局颜色"></a>全局颜色</h2><div class="code-wrapper"><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System.Collections;using System.Collections.Generic;using UnityEngine;public class Lesson9 : MonoBehaviour&#123;    private void OnGUI()    &#123;        &#x2F;&#x2F;修改全局颜色 可重复改变 影响背景和文本颜色        GUI.color &#x3D; Color.yellow;        &#x2F;&#x2F;文本着色颜色 会和全局颜色相乘        GUI.contentColor &#x3D; Color.red;        &#x2F;&#x2F;背景元素着色颜色 会和全局颜色相乘        GUI.backgroundColor &#x3D; Color.gray;    &#125;&#125;</code></pre></div><h2 id="整体皮肤样式"><a href="#整体皮肤样式" class="headerlink" title="整体皮肤样式"></a>整体皮肤样式</h2><p>新建GUI Skin文件，通过public进行关联<br>每一个控件用一个skin，整体设置更简便</p>]]></content>
     
     
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
     
   </entry>
   
