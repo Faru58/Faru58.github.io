@@ -4,13 +4,104 @@
   
   
   <entry>
+    <title>九宫格概念</title>
+    <link href="/2022/09/17/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E4%B9%9D%E5%AE%AB%E6%A0%BC%E6%A6%82%E5%BF%B5/"/>
+    <url>/2022/09/17/Unity/UnityUI%E7%B3%BB%E7%BB%9F/%E4%B9%9D%E5%AE%AB%E6%A0%BC%E6%A6%82%E5%BF%B5/</url>
+    
+    <content type="html"><![CDATA[<p>九宫格概念</p><span id="more"></span><p>九宫格即将屏幕分为9个部分<br>左 右 上 下 中 左上 右上 左下 右下<br>↖ ↑ ↗<br>←    →<br>↙ ↓ ↘<br>每一个部分都有一个相对UI屏幕原点的原点(通过屏幕宽w和高h计算出来的)</p><h1 id="分辨率自适应"><a href="#分辨率自适应" class="headerlink" title="分辨率自适应"></a>分辨率自适应</h1><p>分辨率改变时重新计算UI控件的位置<br>控件坐标计算公式：相对屏幕位置 + 中心点偏移位置 + 偏移位置</p><p>相对屏幕位置 和 中心点偏移位置 决定控件在哪个九宫格<br>偏移位置 决定控件相对该九宫格的位置</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+      <category>Unity</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年9月17日</title>
+    <link href="/2022/09/17/diary/2022.9/2022%E5%B9%B49%E6%9C%8817%E6%97%A5/"/>
+    <url>/2022/09/17/diary/2022.9/2022%E5%B9%B49%E6%9C%8817%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="3eb620c7449b57bb5d6c175c37f2a0024d4a26387f9c20334c8838ac7c0c7ac0">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe506058b903662f30ae90deb836bb6169a3</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年9月16日</title>
+    <link href="/2022/09/16/diary/2022.9/2022%E5%B9%B49%E6%9C%8816%E6%97%A5/"/>
+    <url>/2022/09/16/diary/2022.9/2022%E5%B9%B49%E6%9C%8816%E6%97%A5/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="9e6f0890c7d45d61c7f6c6eef64ab03fe24b673a707be570ae428d1e7672de73">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe5033f09006027e03c5e959b07f8aae4e4b21126a67934538b5175fcb677dd078bc29e4e13f8d4487e4a9163bf5ad6351c96e0151928d7fae5a38717ea9f021ded3be20e8d1ccb0e6adaece61c52d166ed2922040da91b1de1ff1b691c472b2208e7195b0cae37b8ba47705329ee44d046393d008c20982034932aa6b93d446bccbb5d9593f06bf8335dbc6be3f6e75a11902aba9f8c0107e8ff96058b4d612fba92daae72c63e4c1d38414c968d5fd37d3</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022年9月15日</title>
     <link href="/2022/09/14/diary/2022.9/2022%E5%B9%B49%E6%9C%8815%E6%97%A5/"/>
     <url>/2022/09/14/diary/2022.9/2022%E5%B9%B49%E6%9C%8815%E6%97%A5/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="速爬." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="05a9f065f5cfcb5ab09395550de3c7273eb7e0f4eabaecb8f88670087fa758a6">a03af1012de36d86e65bfb0d51f6ff10900603ce8e1feef70407caf928a182bf41b818d5f65dbb1254e9f8e8cd0146ef1a8971be6ac892f2b981ce4dc32dbe50523ab4363063144f20bb5214e1eccb657e27b481fb79c7bbd5eafbebbae99ec6596be3fe650d68b3ba786af3d68ff6a4c031aca33e21e5ff5f85bc6dec809ffeb408e2d3db3fd8d9a6217f7067e7d1c2d832815b87f1c80b2048927665319815169402d7d45156726399fd24713a6a5566a94fcc9039d89b7a233697fec94594</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
     
   </entry>
   
